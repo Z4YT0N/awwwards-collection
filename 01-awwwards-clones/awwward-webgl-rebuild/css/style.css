@@ -1,0 +1,248 @@
+@import url(./global.css);
+@import url(./nav.css);
+
+/* nav */
+
+body {
+  color: var(--white-color);
+  background-color: var(--light-dark-color);
+  transition: background 0.5s ease;
+}
+
+a {
+  color: var(--white-color);
+}
+
+/* webgl menu */
+
+.menu {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  counter-reset: menucounter;
+  padding: 10rem 0;
+}
+
+.menu .title_box {
+  text-align: center;
+}
+
+.menu h1 {
+  font-size: var(--h5-font);
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: var(--theme-color);
+}
+
+.menu__item {
+  flex: none;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  padding: 10vh 10vw;
+}
+
+.menu__item:nth-of-type(1) {
+  margin-top: 2rem;
+}
+
+.menu__item::before {
+  counter-increment: menucounter;
+  content: counters(menucounter, ".", decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  color: var(--white-color);
+  border-left: 3px solid currentColor;
+  top: 20%;
+  height: 60%;
+  padding-left: 1rem;
+  display: flex;
+  align-items: center;
+  line-height: 1;
+  font-weight: bold;
+  opacity: 0;
+  transform: translateX(-1rem);
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.menu__item:hover::before {
+  color: var(--theme-color);
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.menu__item-text {
+  position: relative;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: block;
+  /* overflow: hidden; */
+  font-size: 6vw;
+}
+
+.menu__item-textinner {
+  display: block;
+  font-size: var(--h2-font);
+  font-family: var(--robo-font);
+  font-weight: bold;
+  letter-spacing: 2px;
+  white-space: nowrap;
+  color: var(--white-color);
+  transition: all 0.5s ease;
+}
+
+.menu__item:hover .menu__item-textinner {
+  color: var(--theme-color);
+}
+
+.menu__item-sub {
+  display: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  white-space: nowrap;
+  align-items: center;
+  position: relative;
+  margin-left: 2rem;
+  padding-left: 3rem;
+  color: var(--white-color);
+  opacity: 0;
+  transform: translateX(-1rem);
+  transition: transform 0.3s, opacity 0.3s;
+  mix-blend-mode: difference;
+}
+
+.menu__item:hover .menu__item-sub {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.menu__item-sub::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 15%;
+  width: 1px;
+  height: 70%;
+  background: currentColor;
+  transform-origin: 0 100%;
+  transform: rotate(22.5deg) scale3d(1, 0, 1);
+  transition: transform 0.3s;
+}
+
+.menu__item:hover .menu__item-sub::before {
+  transform: rotate(22.5deg) scale3d(1, 1, 1);
+}
+
+.hover-reveal {
+  position: absolute;
+  z-index: -1;
+  width: 50rem;
+  height: 30rem;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  opacity: 0;
+  overflow: hidden;
+  will-change: transform, filter;
+}
+
+.hover-reveal__inner {
+  overflow: hidden;
+}
+
+.hover-reveal__inner,
+.hover-reveal__img {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.hover-reveal__img {
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+@media screen and (min-width: 53em) {
+  .menu__item {
+    padding-left: 25vw;
+    justify-content: initial;
+  }
+  .menu__item-text {
+    padding: 1vh 0;
+    font-size: 4vw;
+  }
+  .menu__item-sub {
+    display: flex;
+  }
+}
+
+/* media qeurry */
+
+@media only screen and (max-width: 1200px) {
+  .menu__item {
+    padding: 5vh 5vw;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  :root {
+    --h2-font: 6rem;
+  }
+  .container {
+    max-width: 90%;
+  }
+  .hover-reveal {
+    width: 35rem;
+    height: 22rem;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .menu__item {
+    justify-content: flex-start;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .hover-reveal {
+    width: 24rem;
+    height: 14rem;
+  }
+  :root {
+    --h2-font: 4rem;
+  }
+  .menu__item {
+    padding: 5vh 3rem;
+  }
+  .menu__item-textinner {
+    letter-spacing: 1px;
+  }
+  .menu {
+    padding: 10rem 0 5rem 0;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  :root {
+    --h2-font: 3rem;
+  }
+  .menu__item {
+    padding: 1.5rem 2rem;
+  }
+  .hover-reveal {
+    width: 15rem;
+    height: 9rem;
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  :root {
+    --h2-font: 2rem;
+  }
+}

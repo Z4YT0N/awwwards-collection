@@ -1,0 +1,155 @@
+.eight{
+    height: 180vh;
+    background-color: rgb(192, 192, 192);
+    overflow-x: hidden;
+    font-family: Formular;
+}
+.news{
+    position: absolute;
+    color: black;
+    font-size: 2.5vw;
+    font-weight: lighter;
+    text-transform: uppercase;
+    text-align: left;
+    left: 20px;
+    margin-top: 40px;
+}
+.view{
+    position: absolute;
+    color: black;
+    font-size: 1.6vw;
+    font-weight: lighter;
+    text-transform: uppercase;
+    text-decoration: underline;
+    right: 20px;
+    text-align: left;
+    margin-top: 40px;
+}
+.view a:after {
+    top: 32px;
+    content: '';
+    position: absolute;
+    width: 0%;
+    transform: scaleX(0);
+    height: 0px;
+    transform-origin: bottom right;
+    transition: transform 1s ease-out;
+}
+.view:hover:after {
+    text-decoration: none;
+    transform: scaleX(0);
+    transform-origin: bottom left;
+}
+.view:hover{
+    color: red;
+}
+.one{
+    width: 96%;
+    height: 47px;
+    border-bottom: 1px solid black;
+    position: absolute;
+    margin-top: 7%;
+    left: 20px;
+}
+.two{
+    width: 96%;
+    height: 47px;
+    border-bottom: 1px solid black;
+    position: absolute;
+    margin-top: 45%;
+    left: 20px;
+}
+.new-box{
+    height: 350px;
+    width: 30%;
+    position: absolute;
+    margin-top: 14%;
+    left: 20px;
+    overflow-x: hidden;
+    overflow: hidden;
+}
+.box-fill{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+.new-box-two{
+    height: 350px;
+    width: 30%;
+    position: absolute;
+    margin-top: 53%;
+    left: 20px;
+    overflow-x: hidden;
+    overflow: hidden;
+}
+.box-fill-two{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+.box-head{
+    font-size: 3.2vw;
+    text-transform: uppercase;
+    position: absolute;
+    margin-top: 20%;
+    left: 33%;
+}
+.box-head-two{
+    font-size: 3.2vw;
+    text-transform: uppercase;
+    position: absolute;
+    margin-top: 60%;
+    left: 33%;
+}
+.box-sub{
+    font-size: 1.5vw;
+    text-transform: uppercase;
+    text-align: left;
+    position: absolute;
+    margin-top: 25%;
+    left: 33%;
+    font-family: Formular-Light;
+}
+.box-sub-two{
+    font-size: 1.5vw;
+    text-transform: uppercase;
+    text-align: left;
+    position: absolute;
+    margin-top: 65%;
+    left: 33%;
+    font-family: Formular-Light;
+}
+.date{
+    font-size: 1vw;
+    font-weight: 700;
+    text-transform: uppercase;
+    position: absolute;
+    margin-top: 35%;
+    left: 33%;
+}
+.date-two{
+    font-size: 1vw;
+    font-weight: 700;
+    text-transform: uppercase;
+    position: absolute;
+    margin-top: 75%;
+    left: 33%;
+}
+.new-box img{
+  transform-origin: 30% 25%;
+  transition: transform 5s, filter 3s ease-in-out;
+  overflow: hidden;
+}
+.new-box:hover img{
+    transform: scale(1.5);
+    overflow: hidden;
+}
+.new-box-two img{
+    transform-origin: 30% 25%;
+    transition: transform 5s, filter 3s ease-in-out;
+    overflow: hidden;
+}
+.new-box-two:hover img{
+    transform: scale(1.5);
+    overflow: hidden;
+}

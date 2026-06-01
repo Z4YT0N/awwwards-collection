@@ -1,0 +1,475 @@
+[
+
+     {
+        "id": "AWWWARD",
+        "classPath" : "view/modules/background/interactive/awwward/awwward",
+        "desktop": {
+            "number": 1,
+            "textures": [
+
+                { "id": "AWWWARD_INTRO_LIGHT", "src": "/img/home/awwward/intro_light.png" },
+
+                { "id": "AWWWARD_MAIN_TEXTURE", "src": "/img/home/awwward/trophie_texture.jpg" },
+                { "id": "AWWWARD_MAIN_TEXTURE_MASK", "src": "/img/home/awwward/trophie_texture_mask.jpg" },
+                { "id": "AWWWARD_MAIN_TEXTURE_MASK_S", "src": "/img/home/awwward/trophie_texture_mask_s.jpg" },
+
+                { "id": "AWWWARD_BURN_TEXTURE", "src": "/img/home/awwward/burn_white_alpha.png" },
+
+                { "id": "AWWWARD_FLAME_ANIM_INTRO_0", "src": "/img/home/awwward/light_anim_intro_0.png" },
+                { "id": "AWWWARD_FLAME_ANIM_0", "src": "/img/home/awwward/light_anim_0.png" },
+                { "id": "AWWWARD_FLAME_ANIM_1", "src": "/img/home/awwward/light_anim_1.png" },
+                { "id": "AWWWARD_FLAME_ANIM_OUTRO_0", "src": "/img/home/awwward/light_anim_outro_0.png" },
+
+                { "id": "AWWWARD_BACKBONE", "src": "/img/home/awwward/backbone_texture.jpg" },
+
+                { "id": "AWWWARD_MAP_LIGHTER", "src": "/img/home/awwward/map_lighter.jpg" },
+                { "id": "AWWWARD_HAZE_MASK", "src": "/img/home/awwward/map_haze_mask.png" },
+                { "id": "AWWWARD_BG", "src": "/img/home/awwward/bg.jpg" },
+
+                { "id": "AWWWARD_THANKS_NR", "src": "/img/home/awwward/thankyouNR.png" }
+            ],
+            "models": [
+                { "id": "AWWWARD_MAIN_OBJECT", "src": "/models/awwward/trophie.obj" },
+                { "id": "AWWWARD_BACKBONE_OBJECT", "src": "/models/awwward/backbone.obj" },
+                { "id": "AWWWARD_LIGHTER_OBJECT", "src": "/models/awwward/lighter.obj" }
+            ],
+            "sea": [
+                { "id": "AWWWARD_OBJECTS", "src": "/models/awwward/objects.tjs.sea", "type": "binary" }
+            ],
+            "sounds": [
+
+                { "id": "aw-ashtray-05", "src": "/audio/interactive/awwwards/AW_ashtray_05.mp3" },
+                { "id": "aw-lol", "src": "/audio/interactive/awwwards/AW_LOL.mp3" },
+                { "id": "aw-vlc-new", "src": "/audio/interactive/awwwards/AW_VLC_NEW.mp3" },
+                { "id": "aw-balloon-new", "src": "/audio/interactive/awwwards/AW_balloon_NEW.mp3" },
+                { "id": "aw-bat-new", "src": "/audio/interactive/awwwards/AW_bat_NEW.mp3" },
+                { "id": "aw-bg-ambience", "src": "/audio/interactive/awwwards/AW_bg_ambience.mp3" },
+                { "id": "aw-bounce-01", "src": "/audio/interactive/awwwards/AW_bounce_01.mp3" },
+                { "id": "aw-bounce-02", "src": "/audio/interactive/awwwards/AW_bounce_02.mp3" },
+                { "id": "aw-bounce-03", "src": "/audio/interactive/awwwards/AW_bounce_03.mp3" },
+                { "id": "aw-bounce-04", "src": "/audio/interactive/awwwards/AW_bounce_04.mp3" },
+                { "id": "aw-bounce-05", "src": "/audio/interactive/awwwards/AW_bounce_05.mp3" },
+                { "id": "aw-bounce-06", "src": "/audio/interactive/awwwards/AW_bounce_06.mp3" },
+                { "id": "aw-bounce-07", "src": "/audio/interactive/awwwards/AW_bounce_07.mp3" },
+                { "id": "aw-buildup-and-impact-p1", "src": "/audio/interactive/awwwards/AW_buildup_and_impact_P1.mp3" },
+                { "id": "aw-burning-loop", "src": "/audio/interactive/awwwards/AW_burning_loop.mp3" },
+                { "id": "aw-can-new", "src": "/audio/interactive/awwwards/AW_can_NEW.mp3" },
+                { "id": "aw-converse", "src": "/audio/interactive/awwwards/AW_converse.mp3" },
+                { "id": "aw-fire-hydrant-siren", "src": "/audio/interactive/awwwards/AW_fire_hydrant_siren.mp3" },
+                { "id": "aw-first-burn", "src": "/audio/interactive/awwwards/AW_first_burn.mp3" },
+                { "id": "aw-joystick", "src": "/audio/interactive/awwwards/AW_joystick.mp3" },
+                { "id": "aw-lighter-lighting", "src": "/audio/interactive/awwwards/AW_lighter_lighting.mp3" },
+                { "id": "aw-madeinresn", "src": "/audio/interactive/awwwards/AW_madeinresn.mp3" },
+                { "id": "aw-music-p1", "src": "/audio/interactive/awwwards/AW_music_P1.mp3" },
+                { "id": "aw-music-p2", "src": "/audio/interactive/awwwards/AW_music_P2.mp3" },
+                { "id": "aw-paintbrush-short", "src": "/audio/interactive/awwwards/AW_paintbrush_short.mp3" },
+                { "id": "aw-palm-tree-new", "src": "/audio/interactive/awwwards/AW_palm_tree_NEW.mp3" },
+                { "id": "aw-racket-applause", "src": "/audio/interactive/awwwards/AW_racket_applause.mp3" },
+                { "id": "aw-random-burns", "src": "/audio/interactive/awwwards/AW_random_burns.mp3" },
+                { "id": "aw-squad", "src": "/audio/interactive/awwwards/AW_squad.mp3" },
+                { "id": "aw-sword-1", "src": "/audio/interactive/awwwards/AW_sword_1.mp3" },
+                { "id": "aw-wine-bot", "src": "/audio/interactive/awwwards/AW_wine_bot.mp3" }
+
+            ]
+        },
+        "mobile": {
+            "number": 1,
+            "textures": [
+
+                { "id": "AWWWARD_INTRO_LIGHT", "src": "/img/home/awwward/intro_light.png" },
+
+                { "id": "AWWWARD_MAIN_TEXTURE", "src": "/img/home/awwward/trophie_texture.jpg" },
+                { "id": "AWWWARD_MAIN_TEXTURE_MASK", "src": "/img/home/awwward/trophie_texture_mask.jpg" },
+                { "id": "AWWWARD_MAIN_TEXTURE_MASK_S", "src": "/img/home/awwward/trophie_texture_mask_s.jpg" },
+
+                { "id": "AWWWARD_BURN_TEXTURE", "src": "/img/home/awwward/burn_white_alpha.png" },
+
+                { "id": "AWWWARD_FLAME_ANIM_INTRO_0", "src": "/img/home/awwward/light_anim_intro_0.png" },
+                { "id": "AWWWARD_FLAME_ANIM_0", "src": "/img/home/awwward/light_anim_0.png" },
+                { "id": "AWWWARD_FLAME_ANIM_1", "src": "/img/home/awwward/light_anim_1.png" },
+                { "id": "AWWWARD_FLAME_ANIM_OUTRO_0", "src": "/img/home/awwward/light_anim_outro_0.png" },
+
+                { "id": "AWWWARD_BACKBONE", "src": "/img/home/awwward/backbone_texture.jpg" },
+
+                { "id": "AWWWARD_MAP_LIGHTER", "src": "/img/home/awwward/map_lighter.jpg" },
+                { "id": "AWWWARD_HAZE_MASK", "src": "/img/home/awwward/map_haze_mask.png" },
+                { "id": "AWWWARD_BG", "src": "/img/home/awwward/bg.jpg" },
+
+                { "id": "AWWWARD_THANKS_NR", "src": "/img/home/awwward/thankyouNR.png" }
+            ],
+            "models": [
+                { "id": "AWWWARD_MAIN_OBJECT", "src": "/models/awwward/trophie.obj" },
+                { "id": "AWWWARD_BACKBONE_OBJECT", "src": "/models/awwward/backbone.obj" },
+                { "id": "AWWWARD_LIGHTER_OBJECT", "src": "/models/awwward/lighter.obj" }
+            ],
+            "sea": [
+                { "id": "AWWWARD_OBJECTS", "src": "/models/awwward/objects.tjs.sea", "type": "binary" }
+            ],
+            "sounds": [
+                { "id": "aw-ashtray-05", "src": "/audio/interactive/awwwards/AW_ashtray_05.mp3" },
+                { "id": "aw-lol", "src": "/audio/interactive/awwwards/AW_LOL.mp3" },
+                { "id": "aw-vlc-new", "src": "/audio/interactive/awwwards/AW_VLC_NEW.mp3" },
+                { "id": "aw-balloon-new", "src": "/audio/interactive/awwwards/AW_balloon_NEW.mp3" },
+                { "id": "aw-bat-new", "src": "/audio/interactive/awwwards/AW_bat_NEW.mp3" },
+                { "id": "aw-bg-ambience", "src": "/audio/interactive/awwwards/AW_bg_ambience.mp3" },
+                { "id": "aw-bounce-01", "src": "/audio/interactive/awwwards/AW_bounce_01.mp3" },
+                { "id": "aw-bounce-02", "src": "/audio/interactive/awwwards/AW_bounce_02.mp3" },
+                { "id": "aw-bounce-03", "src": "/audio/interactive/awwwards/AW_bounce_03.mp3" },
+                { "id": "aw-bounce-04", "src": "/audio/interactive/awwwards/AW_bounce_04.mp3" },
+                { "id": "aw-bounce-05", "src": "/audio/interactive/awwwards/AW_bounce_05.mp3" },
+                { "id": "aw-bounce-06", "src": "/audio/interactive/awwwards/AW_bounce_06.mp3" },
+                { "id": "aw-bounce-07", "src": "/audio/interactive/awwwards/AW_bounce_07.mp3" },
+                { "id": "aw-buildup-and-impact-p1", "src": "/audio/interactive/awwwards/AW_buildup_and_impact_P1.mp3" },
+                { "id": "aw-burning-loop", "src": "/audio/interactive/awwwards/AW_burning_loop.mp3" },
+                { "id": "aw-can-new", "src": "/audio/interactive/awwwards/AW_can_NEW.mp3" },
+                { "id": "aw-converse", "src": "/audio/interactive/awwwards/AW_converse.mp3" },
+                { "id": "aw-fire-hydrant-siren", "src": "/audio/interactive/awwwards/AW_fire_hydrant_siren.mp3" },
+                { "id": "aw-first-burn", "src": "/audio/interactive/awwwards/AW_first_burn.mp3" },
+                { "id": "aw-joystick", "src": "/audio/interactive/awwwards/AW_joystick.mp3" },
+                { "id": "aw-lighter-lighting", "src": "/audio/interactive/awwwards/AW_lighter_lighting.mp3" },
+                { "id": "aw-madeinresn", "src": "/audio/interactive/awwwards/AW_madeinresn.mp3" },
+                { "id": "aw-music-p1", "src": "/audio/interactive/awwwards/AW_music_P1.mp3" },
+                { "id": "aw-music-p2", "src": "/audio/interactive/awwwards/AW_music_P2.mp3" },
+                { "id": "aw-paintbrush-short", "src": "/audio/interactive/awwwards/AW_paintbrush_short.mp3" },
+                { "id": "aw-palm-tree-new", "src": "/audio/interactive/awwwards/AW_palm_tree_NEW.mp3" },
+                { "id": "aw-racket-applause", "src": "/audio/interactive/awwwards/AW_racket_applause.mp3" },
+                { "id": "aw-random-burns", "src": "/audio/interactive/awwwards/AW_random_burns.mp3" },
+                { "id": "aw-squad", "src": "/audio/interactive/awwwards/AW_squad.mp3" },
+                { "id": "aw-sword-1", "src": "/audio/interactive/awwwards/AW_sword_1.mp3" },
+                { "id": "aw-wine-bot", "src": "/audio/interactive/awwwards/AW_wine_bot.mp3" }
+
+            ]
+        },
+        "basic": null
+    },
+
+
+
+    {
+        "id": "SHAPESHIFTER",
+        "classPath" : "view/modules/background/interactive/shapeshifter/shapeshifter",
+        "desktop": {
+            "number": 2,
+            "textures": [
+                { "id": "SF_MOON1", "src": "/img/home/shapeshifter/moon.png" },
+                { "id": "SF_MOON2", "src": "/img/home/shapeshifter/moon2.png" },
+                { "id": "SF_APPLE", "src": "/img/home/shapeshifter/apple.png" }
+            ]
+        },
+        "basic": {
+            "number": 1,
+            "textures": [
+                { "id": "SF_MOON1", "src": "/img/home/shapeshifter/moon.png" },
+                { "id": "SF_MOON2", "src": "/img/home/shapeshifter/moon2.png" },
+                { "id": "SF_APPLE", "src": "/img/home/shapeshifter/apple.png" }
+            ]
+        },
+        "mobile": {
+            "number": 2,
+            "textures": [
+                { "id": "SF_MOON1", "src": "/img/home/shapeshifter/moon.png" },
+                { "id": "SF_MOON2", "src": "/img/home/shapeshifter/moon2.png" },
+                { "id": "SF_APPLE", "src": "/img/home/shapeshifter/apple.png" }
+            ]
+        }
+    },
+
+    {
+        "id": "ROD",
+        "classPath" : "view/modules/background/interactive/rod/rod",
+        "desktop": {
+            "number": 3,
+            "sounds": [
+                { "id": "ROD_HIT_0", "src": "/audio/interactive/rod/rod0.mp3" },
+                { "id": "ROD_HIT_1", "src": "/audio/interactive/rod/rod1.mp3" },
+                { "id": "ROD_HIT_2", "src": "/audio/interactive/rod/rod2.mp3" },
+                { "id": "ROD_HIT_3", "src": "/audio/interactive/rod/rod3.mp3" },
+                { "id": "ROD_HIT_4", "src": "/audio/interactive/rod/rod4.mp3" },
+                { "id": "ROD_HIT_5", "src": "/audio/interactive/rod/rod5.mp3" }
+            ]
+        },
+        "basic": {
+            "number": 2,
+            "sounds": [
+                { "id": "ROD_HIT_0", "src": "/audio/interactive/rod/rod0.mp3" },
+                { "id": "ROD_HIT_1", "src": "/audio/interactive/rod/rod1.mp3" },
+                { "id": "ROD_HIT_2", "src": "/audio/interactive/rod/rod2.mp3" },
+                { "id": "ROD_HIT_3", "src": "/audio/interactive/rod/rod3.mp3" },
+                { "id": "ROD_HIT_4", "src": "/audio/interactive/rod/rod4.mp3" },
+                { "id": "ROD_HIT_5", "src": "/audio/interactive/rod/rod5.mp3" }
+            ]
+        },
+        "mobile": {
+            "number": 3,
+            "sounds": []
+        }
+    },
+
+    {
+        "id": "BAT",
+        "classPath" : "view/modules/background/interactive/bat/bat",
+        "desktop": {
+            "number": 4,
+            "textures": [
+
+                { "id": "BAT",         "src": "/img/home/bat/bat.png" },
+                { "id": "BAT_BG1",     "src": "/img/home/bat/bg.png" },
+                { "id": "BAT_BG2",     "src": "/img/home/bat/bg2.png" },
+                { "id": "BAT_BG3",     "src": "/img/home/bat/bg3.png" },
+                { "id": "BAT_BG4",     "src": "/img/home/bat/bg4.png" },
+                { "id": "BAT_BG5",     "src": "/img/home/bat/bg5.png" },
+                { "id": "BAT_BG6",     "src": "/img/home/bat/bg6.png" },
+                { "id": "BAT_SPARK1",     "src": "/img/home/bat/sparks1.png" },
+                { "id": "BAT_SPARK2",     "src": "/img/home/bat/sparks2.png" },
+                { "id": "BAT_SPARK3",     "src": "/img/home/bat/sparks3.png" },
+                { "id": "BAT_SPARK4",     "src": "/img/home/bat/sparks4.png" },
+                { "id": "BAT_SPARK5",     "src": "/img/home/bat/sparks5.png" },
+                { "id": "BAT_BRUSH",   "src": "/img/home/bat/brush.png" },
+                { "id": "BAT_BURN",    "src": "/img/home/bat/burn2.png" },
+                { "id": "BAT_EYEOVER", "src": "/img/home/bat/eye_over.png" },
+                { "id": "BAT_LAZER",   "src": "/img/home/bat/lazer.png" }
+            ],
+            "animations": [
+                "batouija"
+            ]
+        },
+        "basic": null,
+        "mobile": {
+            "number": 4,
+            "textures": [
+
+                { "id": "BAT",         "src": "/img/home/bat/bat.png" },
+                { "id": "BAT_BG1",     "src": "/img/home/bat/mobile/bg.png" },
+                { "id": "BAT_BG2",     "src": "/img/home/bat/mobile/bg2.png" },
+                { "id": "BAT_BG3",     "src": "/img/home/bat/mobile/bg3.png" },
+                { "id": "BAT_BG4",     "src": "/img/home/bat/mobile/bg4.png" },
+                { "id": "BAT_BG5",     "src": "/img/home/bat/mobile/bg5.png" },
+                { "id": "BAT_BG6",     "src": "/img/home/bat/mobile/bg6.png" },
+                { "id": "BAT_SPARK1",     "src": "/img/home/bat/sparks1.png" },
+                { "id": "BAT_SPARK2",     "src": "/img/home/bat/sparks2.png" },
+                { "id": "BAT_SPARK3",     "src": "/img/home/bat/sparks3.png" },
+                { "id": "BAT_SPARK4",     "src": "/img/home/bat/sparks4.png" },
+                { "id": "BAT_SPARK5",     "src": "/img/home/bat/sparks5.png" },
+                { "id": "BAT_BRUSH",   "src": "/img/home/bat/brush.png" },
+                { "id": "BAT_BURN",    "src": "/img/home/bat/burn2.png" },
+                { "id": "BAT_EYEOVER", "src": "/img/home/bat/eye_over.png" },
+                { "id": "BAT_LAZER",   "src": "/img/home/bat/lazer.png" }
+            ],
+            "animations": [
+                "batouija"
+            ]
+        }
+    },
+
+    {
+        "id": "TUNNEL",
+        "classPath" : "view/modules/background/interactive/tunnel/tunnel",
+        "desktop": {
+            "number": 5
+        },
+        "basic": null,
+        "mobile": null
+    },
+
+    {
+        "id": "SKETCH",
+        "classPath" : "view/modules/background/interactive/sketch/sketch",
+        "desktop": {
+            "number": 6,
+            "textures": [
+                { "id": "SKETCH_BOTTLE", "src": "/img/home/sketch/resndine.png" },
+                { "id": "SKETCH_PLANE", "src": "/img/home/sketch/3d_plane.png" },
+                { "id": "SKETCH_BALL", "src": "/img/home/sketch/Ball.png" },
+                { "id": "SKETCH_CLOG", "src": "/img/home/sketch/Clog.png" },
+                { "id": "SKETCH_CRYING", "src": "/img/home/sketch/Crying.png" },
+                { "id": "SKETCH_DARTS", "src": "/img/home/sketch/Darts.png" },
+                { "id": "SKETCH_DRAKE", "src": "/img/home/sketch/Drake.png" },
+                { "id": "SKETCH_DRUGS", "src": "/img/home/sketch/Drugs.png" },
+                { "id": "SKETCH_EYE_BIG", "src": "/img/home/sketch/Eye_Big.png" },
+                { "id": "SKETCH_EYES", "src": "/img/home/sketch/Eyes.png" },
+                { "id": "SKETCH_FLAG", "src": "/img/home/sketch/Flag.png" },
+                { "id": "SKETCH_GUCCI", "src": "/img/home/sketch/Gucci_Mane.png" },
+                { "id": "SKETCH_IMPOSSIBLE", "src": "/img/home/sketch/Impossible_3d.png" },
+                { "id": "SKETCH_LINGLINGBOX", "src": "/img/home/sketch/linglingbox.png" },
+                { "id": "SKETCH_LINGLINGSIGN", "src": "/img/home/sketch/Linglingsign.png" },
+                { "id": "SKETCH_MOUTH", "src": "/img/home/sketch/Mouth.png" },
+                { "id": "SKETCH_NZ", "src": "/img/home/sketch/New_Zeeland.png" },
+                { "id": "SKETCH_OK_HAND", "src": "/img/home/sketch/OK_Hand.png" },
+                { "id": "SKETCH_PIE", "src": "/img/home/sketch/Pie.png" },
+                { "id": "SKETCH_RESN_HAND", "src": "/img/home/sketch/resn_hand.png" },
+                { "id": "SKETCH_RESN_WILLSTABYOU", "src": "/img/home/sketch/RESNWILLSTABYOU.png" },
+                { "id": "SKETCH_RIK", "src": "/img/home/sketch/Rik.png" },
+                { "id": "SKETCH_ROSE", "src": "/img/home/sketch/Rose.png" },
+                { "id": "SKETCH_SHOE", "src": "/img/home/sketch/Shoe.png" },
+                { "id": "SKETCH_SPORTSKIT", "src": "/img/home/sketch/shortskit.png" },
+                { "id": "SKETCH_SPIRAL", "src": "/img/home/sketch/Spiral-1.png" },
+                { "id": "SKETCH_SPIRAL2", "src": "/img/home/sketch/Spiral.png" },
+                { "id": "SKETCH_SQUA", "src": "/img/home/sketch/SQUA.png" },
+                { "id": "SKETCH_STAB", "src": "/img/home/sketch/Stab.png" },
+                { "id": "SKETCH_STATUE", "src": "/img/home/sketch/Statue.png" },
+                { "id": "SKETCH_SWORD", "src": "/img/home/sketch/Sword.png" },
+                { "id": "SKETCH_SYRINGE", "src": "/img/home/sketch/Syringe.png" },
+                { "id": "SKETCH_VALHALLA", "src": "/img/home/sketch/Valhalla.png" }
+            ],
+            "sounds": [
+
+                { "id": "STICKER_1", "src": "/audio/interactive/sketch/sticker_1.mp3" },
+                { "id": "STICKER_2", "src": "/audio/interactive/sketch/sticker_2.mp3" },
+                { "id": "STICKER_3", "src": "/audio/interactive/sketch/sticker_3.mp3" },
+                { "id": "STICKER_4", "src": "/audio/interactive/sketch/sticker_4.mp3" },
+                { "id": "STICKER_5", "src": "/audio/interactive/sketch/sticker_5.mp3" },
+                { "id": "STICKER_6", "src": "/audio/interactive/sketch/sticker_6.mp3" },
+                { "id": "STICKER_7", "src": "/audio/interactive/sketch/sticker_7.mp3" },
+                { "id": "STICKER_8", "src": "/audio/interactive/sketch/sticker_8.mp3" },
+                { "id": "STICKER_9", "src": "/audio/interactive/sketch/sticker_9.mp3" },
+                { "id": "STICKER_10", "src": "/audio/interactive/sketch/sticker_10.mp3" }
+            ]
+        },
+        "basic": {
+            "number": 3,
+            "textures": [
+                { "id": "SKETCH_BOTTLE", "src": "/img/home/sketch/resndine.png" },
+                { "id": "SKETCH_PLANE", "src": "/img/home/sketch/3d_plane.png" },
+                { "id": "SKETCH_BALL", "src": "/img/home/sketch/Ball.png" },
+                { "id": "SKETCH_CLOG", "src": "/img/home/sketch/Clog.png" },
+                { "id": "SKETCH_CRYING", "src": "/img/home/sketch/Crying.png" },
+                { "id": "SKETCH_DARTS", "src": "/img/home/sketch/Darts.png" },
+                { "id": "SKETCH_DRAKE", "src": "/img/home/sketch/Drake.png" },
+                { "id": "SKETCH_DRUGS", "src": "/img/home/sketch/Drugs.png" },
+                { "id": "SKETCH_EYE_BIG", "src": "/img/home/sketch/Eye_Big.png" },
+                { "id": "SKETCH_EYES", "src": "/img/home/sketch/Eyes.png" },
+                { "id": "SKETCH_FLAG", "src": "/img/home/sketch/Flag.png" },
+                { "id": "SKETCH_GUCCI", "src": "/img/home/sketch/Gucci_Mane.png" },
+                { "id": "SKETCH_IMPOSSIBLE", "src": "/img/home/sketch/Impossible_3d.png" },
+                { "id": "SKETCH_LINGLINGBOX", "src": "/img/home/sketch/linglingbox.png" },
+                { "id": "SKETCH_LINGLINGSIGN", "src": "/img/home/sketch/Linglingsign.png" },
+                { "id": "SKETCH_MOUTH", "src": "/img/home/sketch/Mouth.png" },
+                { "id": "SKETCH_NZ", "src": "/img/home/sketch/New_Zeeland.png" },
+                { "id": "SKETCH_OK_HAND", "src": "/img/home/sketch/OK_Hand.png" },
+                { "id": "SKETCH_PIE", "src": "/img/home/sketch/Pie.png" },
+                { "id": "SKETCH_RESN_HAND", "src": "/img/home/sketch/resn_hand.png" },
+                { "id": "SKETCH_RESN_WILLSTABYOU", "src": "/img/home/sketch/RESNWILLSTABYOU.png" },
+                { "id": "SKETCH_RIK", "src": "/img/home/sketch/Rik.png" },
+                { "id": "SKETCH_ROSE", "src": "/img/home/sketch/Rose.png" },
+                { "id": "SKETCH_SHOE", "src": "/img/home/sketch/Shoe.png" },
+                { "id": "SKETCH_SPORTSKIT", "src": "/img/home/sketch/shortskit.png" },
+                { "id": "SKETCH_SPIRAL", "src": "/img/home/sketch/Spiral-1.png" },
+                { "id": "SKETCH_SPIRAL2", "src": "/img/home/sketch/Spiral.png" },
+                { "id": "SKETCH_SQUA", "src": "/img/home/sketch/SQUA.png" },
+                { "id": "SKETCH_STAB", "src": "/img/home/sketch/Stab.png" },
+                { "id": "SKETCH_STATUE", "src": "/img/home/sketch/Statue.png" },
+                { "id": "SKETCH_SWORD", "src": "/img/home/sketch/Sword.png" },
+                { "id": "SKETCH_SYRINGE", "src": "/img/home/sketch/Syringe.png" },
+                { "id": "SKETCH_VALHALLA", "src": "/img/home/sketch/Valhalla.png" }
+            ],
+            "sounds": [
+
+                { "id": "STICKER_1", "src": "/audio/interactive/sketch/sticker_1.mp3" },
+                { "id": "STICKER_2", "src": "/audio/interactive/sketch/sticker_2.mp3" },
+                { "id": "STICKER_3", "src": "/audio/interactive/sketch/sticker_3.mp3" },
+                { "id": "STICKER_4", "src": "/audio/interactive/sketch/sticker_4.mp3" },
+                { "id": "STICKER_5", "src": "/audio/interactive/sketch/sticker_5.mp3" },
+                { "id": "STICKER_6", "src": "/audio/interactive/sketch/sticker_6.mp3" },
+                { "id": "STICKER_7", "src": "/audio/interactive/sketch/sticker_7.mp3" },
+                { "id": "STICKER_8", "src": "/audio/interactive/sketch/sticker_8.mp3" },
+                { "id": "STICKER_9", "src": "/audio/interactive/sketch/sticker_9.mp3" },
+                { "id": "STICKER_10", "src": "/audio/interactive/sketch/sticker_10.mp3" }
+            ]
+        },
+        "mobile": {
+            "number": 5,
+            "textures": [
+                { "id": "SKETCH_BOTTLE", "src": "/img/home/sketch/resndine.png" },
+                { "id": "SKETCH_PLANE", "src": "/img/home/sketch/3d_plane.png" },
+                { "id": "SKETCH_BALL", "src": "/img/home/sketch/Ball.png" },
+                { "id": "SKETCH_CLOG", "src": "/img/home/sketch/Clog.png" },
+                { "id": "SKETCH_CRYING", "src": "/img/home/sketch/Crying.png" },
+                { "id": "SKETCH_DARTS", "src": "/img/home/sketch/Darts.png" },
+                { "id": "SKETCH_DRAKE", "src": "/img/home/sketch/Drake.png" },
+                { "id": "SKETCH_DRUGS", "src": "/img/home/sketch/Drugs.png" },
+                { "id": "SKETCH_EYE_BIG", "src": "/img/home/sketch/Eye_Big.png" },
+                { "id": "SKETCH_EYES", "src": "/img/home/sketch/Eyes.png" },
+                { "id": "SKETCH_FLAG", "src": "/img/home/sketch/Flag.png" },
+                { "id": "SKETCH_GUCCI", "src": "/img/home/sketch/Gucci_Mane.png" },
+                { "id": "SKETCH_IMPOSSIBLE", "src": "/img/home/sketch/Impossible_3d.png" },
+                { "id": "SKETCH_LINGLINGBOX", "src": "/img/home/sketch/linglingbox.png" },
+                { "id": "SKETCH_LINGLINGSIGN", "src": "/img/home/sketch/Linglingsign.png" },
+                { "id": "SKETCH_MOUTH", "src": "/img/home/sketch/Mouth.png" },
+                { "id": "SKETCH_NZ", "src": "/img/home/sketch/New_Zeeland.png" },
+                { "id": "SKETCH_OK_HAND", "src": "/img/home/sketch/OK_Hand.png" },
+                { "id": "SKETCH_PIE", "src": "/img/home/sketch/Pie.png" },
+                { "id": "SKETCH_RESN_HAND", "src": "/img/home/sketch/resn_hand.png" },
+                { "id": "SKETCH_RESN_WILLSTABYOU", "src": "/img/home/sketch/RESNWILLSTABYOU.png" },
+                { "id": "SKETCH_RIK", "src": "/img/home/sketch/Rik.png" },
+                { "id": "SKETCH_ROSE", "src": "/img/home/sketch/Rose.png" },
+                { "id": "SKETCH_SHOE", "src": "/img/home/sketch/Shoe.png" },
+                { "id": "SKETCH_SPORTSKIT", "src": "/img/home/sketch/shortskit.png" },
+                { "id": "SKETCH_SPIRAL", "src": "/img/home/sketch/Spiral-1.png" },
+                { "id": "SKETCH_SPIRAL2", "src": "/img/home/sketch/Spiral.png" },
+                { "id": "SKETCH_SQUA", "src": "/img/home/sketch/SQUA.png" },
+                { "id": "SKETCH_STAB", "src": "/img/home/sketch/Stab.png" },
+                { "id": "SKETCH_STATUE", "src": "/img/home/sketch/Statue.png" },
+                { "id": "SKETCH_SWORD", "src": "/img/home/sketch/Sword.png" },
+                { "id": "SKETCH_SYRINGE", "src": "/img/home/sketch/Syringe.png" },
+                { "id": "SKETCH_VALHALLA", "src": "/img/home/sketch/Valhalla.png" }
+            ]
+        }
+    },
+
+    {
+        "id": "CUBES",
+        "classPath" : "view/modules/background/interactive/cubes/cubes",
+        "desktop": {
+            "number": 7,
+            "textures": [
+                { "id": "CUBES_TEXTURE_1", "src": "/img/home/cubes/01-1024.png" },
+                { "id": "CUBES_TEXTURE_2", "src": "/img/home/cubes/02-1024.png" },
+                { "id": "CUBES_TEXTURE_3", "src": "/img/home/cubes/03-1024.png" },
+                { "id": "CUBES_TEXTURE_3", "src": "/img/home/cubes/04-1024.png" },
+                { "id": "CUBES_TEXTURE_3", "src": "/img/home/cubes/05-1024.png" },
+                { "id": "CUBES_TEXTURE_3", "src": "/img/home/cubes/06-1024.png" }
+            ],
+            "sounds": [
+                { "id": "CUBES_SOUND_LIGHT", "src": "/audio/interactive/cubes/light.mp3" },
+                { "id": "CUBES_SOUND_DARK", "src": "/audio/interactive/cubes/dark.mp3" },
+                { "id": "CUBES_SOUND_HIT_A", "src": "/audio/interactive/cubes/hit-a.mp3" },
+                { "id": "CUBES_SOUND_HIT_B", "src": "/audio/interactive/cubes/hit-b.mp3" },
+                { "id": "CUBES_SOUND_HIT_C", "src": "/audio/interactive/cubes/hit-c.mp3" },
+                { "id": "CUBES_SOUND_HIT_D", "src": "/audio/interactive/cubes/hit-d.mp3" }
+            ]
+        },
+        "basic": {
+            "id": "CUBES",
+            "number": 4,
+            "textures": [
+                { "id": "CUBES_TEXTURE_1", "src": "/img/home/cubes/01-1024.png" },
+                { "id": "CUBES_TEXTURE_2", "src": "/img/home/cubes/02-1024.png" },
+                { "id": "CUBES_TEXTURE_3", "src": "/img/home/cubes/03-1024.png" },
+                { "id": "CUBES_TEXTURE_3", "src": "/img/home/cubes/04-1024.png" },
+                { "id": "CUBES_TEXTURE_3", "src": "/img/home/cubes/05-1024.png" },
+                { "id": "CUBES_TEXTURE_3", "src": "/img/home/cubes/06-1024.png" }
+            ],
+            "sounds": [
+                { "id": "CUBES_SOUND_LIGHT", "src": "/audio/interactive/cubes/light.mp3" },
+                { "id": "CUBES_SOUND_DARK", "src": "/audio/interactive/cubes/dark.mp3" },
+                { "id": "CUBES_SOUND_HIT_A", "src": "/audio/interactive/cubes/hit-a.mp3" },
+                { "id": "CUBES_SOUND_HIT_B", "src": "/audio/interactive/cubes/hit-b.mp3" },
+                { "id": "CUBES_SOUND_HIT_C", "src": "/audio/interactive/cubes/hit-c.mp3" },
+                { "id": "CUBES_SOUND_HIT_D", "src": "/audio/interactive/cubes/hit-d.mp3" }
+            ]
+        },
+        "mobile": {
+            "number": 6,
+            "textures": [
+                { "id": "CUBES_TEXTURE_1", "src": "/img/home/cubes/01-512.png" },
+                { "id": "CUBES_TEXTURE_2", "src": "/img/home/cubes/02-512.png" },
+                { "id": "CUBES_TEXTURE_3", "src": "/img/home/cubes/03-512.png" },
+                { "id": "CUBES_TEXTURE_3", "src": "/img/home/cubes/04-512.png" },
+                { "id": "CUBES_TEXTURE_3", "src": "/img/home/cubes/05-512.png" },
+                { "id": "CUBES_TEXTURE_3", "src": "/img/home/cubes/06-512.png" }
+            ],
+            "sounds": [
+            ]
+        }
+    }
+]

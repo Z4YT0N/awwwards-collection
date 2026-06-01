@@ -1,0 +1,32 @@
+What is this ? 
+    Landing Page Clone of 'https://thisismagma.com/' which includes important sections like -
+    HTML5 Canvas animations
+    Scrolling animations using GSAP Scroll Trigger & Locomotive
+    Carousel using Swiper JS.
+
+Why ?
+    To learn about the following - 
+    1. GSAP animations
+    2. GSAP Scroll Trigger
+    3. Swiper JS
+    4. HTML5 Canvas
+    5. Locomotive
+
+Resources used ?
+    Original landing page - 'https://thisisdigital.co.uk/'
+    My version - ''
+    Youtube video - 'https://youtu.be/H1EYbOzF194'
+
+Additional features apart from the video ?
+    A fully responsive website including a responsive nav bar
+    Have tried to make the clone parts closer to the original as much as possible -
+        Eg; the navbar burger menu animation
+
+Tools used -
+Locomotive
+ScrollTrigger
+GSAP
+HTML 5 Canvas
+Sass
+SwiperJS
+Textillate js

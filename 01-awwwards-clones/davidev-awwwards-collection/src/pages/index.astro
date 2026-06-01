@@ -1,0 +1,52 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+---
+
+<Layout title='Welcome to Astro.'>
+	<header class='container-title'>
+		<h1>Top 16 websites built with Astro</h1>
+	</header>
+	<ul>
+		<li>
+			<a href='/gravityteam-co'> gravityteam.co</a>
+		</li>
+		<li>
+			<a href='/caroselling-it'> caroselling-it</a>
+		</li>
+	</ul>
+</Layout>
+
+<style>
+	ul {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	ul > li > a {
+		color: #3a7bd5;
+	}
+	.container-title {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	h1 {
+		font-weight: bold;
+		text-align: center;
+		font-size: 3.5rem;
+		margin: 1rem 0;
+		background-image: linear-gradient(
+			90deg,
+			#00d2ff 0%,
+			#3a7bd5 50%,
+			#00d2ff 100%
+		);
+		max-width: 600px;
+		background-size: 200% auto;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		-webkit-animation: gradient 3s ease infinite;
+		-moz-background-clip: text;
+	}
+</style>

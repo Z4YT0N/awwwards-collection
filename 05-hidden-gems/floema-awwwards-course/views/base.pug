@@ -1,0 +1,45 @@
+block variables
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+
+    base(href="/")
+
+    title=meta.data.title
+
+    meta(name="description" content=meta.data.description)
+
+    //- link(rel="apple-touch-icon" sizes="100x100" href="/apple-touch-icon.png")
+    //- link(rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png")
+    //- link(rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png")
+    //- link(rel="manifest" href="/site.webmanifest")
+    link(rel="mask-icon" href="/safari-pinned-tab.svg" color="#ff3a00")
+    meta(name="msapplication-TileColor" content="##f4d8cc")
+    meta(name="theme-color" content="#f4d8cc")
+
+    meta(property="og:type" content="website")
+    meta(property="og:title" content=meta.data.title)
+    meta(property="og:description" content=meta.data.description)
+    meta(property="og:image" content=meta.data.image ? meta.data.image : '')
+
+    meta(property="og:card" content="summary_large_image")
+    meta(property="og:title" content=meta.data.title)
+    meta(property="og:description" content=meta.data.description)
+    meta(property="og:image" content=meta.data.image ? meta.data.image : '')
+
+    style
+      include ../public/main.css
+
+  body(class=isDesktop ? "desktop" : isTablet ? "tablet" : isPhone ? 'phone' : '')
+    include ./partials/preloader
+    include ./partials/navigation
+
+    .content#content(data-template=template)
+      block content
+
+    script window.ASSETS = !{JSON.stringify(assets).replace(/<\//g, "<\\/")}
+
+    script(src='main.js')

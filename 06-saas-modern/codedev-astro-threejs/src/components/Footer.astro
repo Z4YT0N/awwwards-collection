@@ -1,0 +1,121 @@
+---
+import {
+	getLangFromUrl,
+	useTranslatedPath,
+	useTranslations,
+} from '@/i18n/utils';
+import logo from '@/assets/logo.svg';
+import LanguagePicker from '@/components/LanguagePicker.astro';
+import arrowIcon from '@/assets/icons/arrow-big.svg';
+import { socials } from '@/scripts/consts';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+
+const pages = [
+	{
+		name: t('nav.home'),
+		link: translatePath('/'),
+	},
+	{
+		name: t('nav.about'),
+		link: translatePath('/about'),
+	},
+	{
+		name: t('nav.projects'),
+		link: translatePath('/projects'),
+	},
+	{
+		name: t('nav.contact'),
+		link: translatePath('/contact'),
+	},
+];
+---
+
+<div class='bg-white w-full a'></div>
+
+<footer
+	class='section sticky bottom-0 py-7 mb-5 flex gap-5 flex-col md:flex-row items-center md:items-start md:justify-between'>
+	<a href={translatePath('/')}
+		><img src={logo.src} alt='Logo' class='w-10' loading='lazy' /></a
+	>
+
+	<div class='flex flex-col md:flex-row gap-5 md:gap-14'>
+		<section>
+			<h5 class='text-[17px] font-medium mb-2'>Contact</h5>
+
+			<ul>
+				<li>
+					<a
+						class='hover:translate-x-1 hover:text-indigo-600 transition-all inline-block opacity-85 hover:opacity-100 group'
+						href='mailto:contact@codedev.com'
+						target='_blank'
+						rel='noopener noreferrer'>
+						contact@codedev.com
+						<img
+							src={arrowIcon.src}
+							alt=''
+							class='w-5 top-0 bottom-0 -rotate-45 my-auto absolute right-0 translate-x-2 group-hover:translate-x-6 transition-all opacity-0 group-hover:opacity-100'
+						/>
+					</a>
+				</li>
+			</ul>
+		</section>
+
+		<section>
+			<h5 class='text-[17px] font-medium mb-2'>Socials</h5>
+			<nav>
+				<ul class='flex flex-col gap-1'>
+					{
+						socials.map((social) => (
+							<li>
+								<a
+									class='hover:translate-x-1 hover:text-indigo-600 transition-all inline-block opacity-85 hover:opacity-100 group'
+									href={social.link}
+									target='_blank'
+									rel='noopener noreferrer'>
+									{social.name}
+									<img
+										src={arrowIcon.src}
+										alt=''
+										class='w-5 max-w-none top-0 bottom-0 -rotate-45 my-auto absolute right-0 translate-x-2 group-hover:translate-x-6 transition-all opacity-0 group-hover:opacity-100'
+									/>
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</nav>
+		</section>
+
+		<section>
+			<h5 class='text-[17px] font-medium mb-2'>Pages</h5>
+
+			<nav>
+				<ul class='flex flex-col gap-1'>
+					{
+						pages.map((page) => (
+							<li>
+								<a
+									class='hover:translate-x-1 hover:text-indigo-600 group transition-all inline-block opacity-85 hover:opacity-100'
+									href={page.link}>
+									{page.name}
+									<img
+										src={arrowIcon.src}
+										alt=''
+										class='w-5 max-w-none top-0 bottom-0 my-auto absolute right-0 translate-x-2 group-hover:translate-x-6 transition-all opacity-0 group-hover:opacity-100'
+									/>
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</nav>
+		</section>
+
+		<section class='flex justify-center'>
+			<LanguagePicker />
+		</section>
+	</div>
+</footer>

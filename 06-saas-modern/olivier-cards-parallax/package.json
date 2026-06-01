@@ -1,0 +1,23 @@
+{
+  "name": "cards-parallax",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@studio-freight/lenis": "^1.0.27",
+    "framer-motion": "^10.16.4",
+    "next": "14.0.2",
+    "react": "^18",
+    "react-dom": "^18",
+    "sass": "^1.69.5"
+  },
+  "devDependencies": {
+    "eslint": "^8",
+    "eslint-config-next": "14.0.2"
+  }
+}

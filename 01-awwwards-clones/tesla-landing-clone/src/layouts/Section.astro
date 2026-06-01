@@ -1,0 +1,23 @@
+---
+const { headerColor = "black" } = Astro.props;
+---
+
+<section
+    class="landing-section relative w-screen h-screen"
+    data-header-color={headerColor}
+>
+    <slot name="background" />
+
+    <div class="absolute top-0 w-full h-full px-6 flex flex-col">
+        <header class="pt-[7.5em] text-center">
+            <slot name="title" />
+            <div class="pt-[.6250em]">
+                <slot name="subtitle" />
+            </div>
+        </header>
+
+        <footer class="flex-grow flex flex-col justify-end">
+            <slot name="footer" />
+        </footer>
+    </div>
+</section>

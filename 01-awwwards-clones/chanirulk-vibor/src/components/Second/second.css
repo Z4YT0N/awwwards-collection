@@ -1,0 +1,48 @@
+.second{
+    background-color: rgb(7, 7, 7);
+    height: 100vh;
+    overflow-x: hidden;
+    font-family: Formular;
+}
+.globe{
+    position: absolute;
+    height: 40px;
+    width: auto;
+    margin-top: 240px;
+    left: 20px;
+}
+.globe-text{
+    position: absolute;
+    font-size: 15px;
+    text-transform: uppercase;
+    color: white;
+    text-align: left;
+    font-weight: lighter;
+    margin-top: 240px;
+    left: 70px;
+}
+.globe-text-credit{
+    position: absolute;
+    font-size: 15px;
+    text-transform: uppercase;
+    color: white;
+    text-align: right;
+    font-weight: lighter;
+    margin-top: 240px;
+    right: 30px;
+}
+.about-title{
+    color: white;
+    position: relative;
+    font-size: 3.5vw;
+    font-weight: 100;
+    top: 380px;
+    left: 10px;
+    text-align: center;
+    text-transform: uppercase;
+}
+.about-title span{
+    text-transform: none;
+    font-style: italic;
+    font-family: Canela;
+}

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Dimensional Glass Landing - Stunning 3D glass morphism landing page with prismatic refraction effects"
+    />
+    <meta name="theme-color" content="#0f0f23" />
+
+    <title>Dimensional Glass | Immersive 3D Landing Experience</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' stop-color='%238B5CF6'/><stop offset='100%25' stop-color='%2306B6D4'/></linearGradient></defs><polygon points='50,5 95,27.5 95,72.5 50,95 5,72.5 5,27.5' fill='url(%23g)' opacity='0.9'/><polygon points='50,20 80,35 80,65 50,80 20,65 20,35' fill='white' opacity='0.3'/></svg>"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Inter", system-ui, sans-serif;
+        background: #0f0f23;
+        color: #ffffff;
+        overflow-x: hidden;
+      }
+
+      #app {
+        min-height: 100vh;
+      }
+
+      ::selection {
+        background: rgba(139, 92, 246, 0.4);
+        color: #ffffff;
+      }
+
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: #0f0f23;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: linear-gradient(180deg, #8b5cf6, #06b6d4);
+        border-radius: 4px;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/index.jsx"></script>
+  </body>
+</html>

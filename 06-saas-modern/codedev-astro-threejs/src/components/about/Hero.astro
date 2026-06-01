@@ -1,0 +1,35 @@
+---
+import { getLangFromUrl, useTranslations } from '@/i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<main class='section mb-28 relative'>
+	<div
+		class='absolute inset-0 opacity-10 -z-10 h-full w-full bg-[linear-gradient(to_right,var(--main-color)_1px,transparent_1px),linear-gradient(to_bottom,var(--main-color)_1px,transparent_1px)] bg-[size:6rem_4rem]'>
+	</div>
+
+	<section class='relative'>
+		<div
+			class='hidden lg:block w-[10rem] appear-top skew-y-12 lg:bg-indigo-500 h-[20rem] absolute -top-5 right-24 -z-10'>
+		</div>
+		<h1
+			class='text-3xl md:text-5xl font-semibold text-indigo-600 pt-40 mb-4 appear'>
+			{t('about.title')}
+		</h1>
+
+		<p class='max-w-[75ch] appear'>
+			{t('about.description')}
+		</p>
+	</section>
+
+	<section class='my-16 md:flex items-end flex-col'>
+		<h2
+			class='text-2xl max-w-[55rem] text-indigo-600 w-full font-semibold mb-3 appear'>
+			{t('about.story.title')}
+		</h2>
+		<p class='max-w-[73ch] appear'>
+			{t('about.story.description')}
+		</p>
+	</section>
+</main>

@@ -1,0 +1,192 @@
+.home{
+    height: 155vh;
+    background-color: black;
+    font-family: rabo;
+}
+.navbar{
+
+    justify-content: space-around;
+    position: absolute;
+}
+.menu{
+    right: 20px;
+    font-size: 1.2vw;
+    text-transform: uppercase;
+    margin-top: 20px;
+    position: absolute;
+    z-index: 1;
+}
+.menu a{
+    text-decoration: none;
+    color: white;
+    padding: 1em;
+    font-family: araz;
+}
+.brand{
+    color: white;
+    font-size: 3vw;
+    position: absolute;
+    margin-top: -40px;
+    left: 20px;
+}
+.menu a:hover{
+  text-align: center;
+  color: rgba(0, 0, 0, 0.1);
+  background: -webkit-gradient(linear, left top, right top, from(rgb(0, 0, 0)), to(#222), color-stop(0.5, #fff));
+  background: -moz-gradient(linear, left top, right top, from(rgb(0, 0, 0)), to(#222), color-stop(0.5, #fff));
+  background: gradient(linear, left top, right top, from(rgb(0, 0, 0)), to(#222), color-stop(0.5, #fff));
+  -webkit-background-size: 125px 100%;
+  -moz-background-size: 125px 100%;
+  background-size: 125px 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  -webkit-animation-name: shimmer;
+  -moz-animation-name: shimmer;
+  animation-name: shimmer;
+  -webkit-animation-duration: 1.5s;
+  -moz-animation-duration: 1.5s;
+  animation-duration: 1.5s;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-color: black;
+  animation: blink-animation 1s steps(5, start) infinite;
+  -webkit-animation: blink-animation 1s steps(5, start) infinite;
+}
+@-moz-keyframes shimmer {
+  0% {
+    background-position: top left;
+  }
+  100% {
+    background-position: top right;
+  }
+}
+@-webkit-keyframes shimmer {
+  0% {
+    background-position: top left;
+  }
+  100% {
+    background-position: top right;
+  }
+}
+@-o-keyframes shimmer {
+  0% {
+    background-position: top left;
+  }
+  100% {
+    background-position: top right;
+  }
+}
+@keyframes shimmer {
+  0% {
+    background-position: top left;
+  }
+  100% {
+    background-position: top right;
+  }
+}
+.line{
+    position: absolute;
+    color: white;
+    width: 96%;
+    left: 20px;
+    margin-top: 5%;
+}
+.title{
+    font-size: 24vw;
+    position: absolute;
+    color: rgb(252, 27, 27);
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.hover-el{
+    position: absolute;
+    margin-top: 12%;
+    right: 75px;
+    animation: blink-animation 1s steps(5, start) infinite;
+    -webkit-animation: blink-animation 1s steps(5, start) infinite;
+}
+.hover-el-two{
+    position: absolute;
+    margin-top: 12%;
+    right: 25%;
+     animation: blink-animation 1s steps(5, start) infinite;
+    -webkit-animation: blink-animation 1s steps(5, start) infinite;
+}
+@keyframes blink-animation {
+    to {
+      visibility: hidden;
+    }
+  }
+  @-webkit-keyframes blink-animation {
+    to {
+      visibility: hidden;
+    }
+}
+.green {
+    height: auto;
+    width: 90px;
+}
+.line-two{
+    position: absolute;
+    color: white;
+    width: 96%;
+    left: 20px;
+    margin-top: 28%;
+}
+.vid-block{
+    position: absolute;
+    margin-top: 30%;
+    left: 20px;
+    width: 60%;
+    height: 90vh;
+    animation: move 10s ease-in infinite alternate;
+}
+.vid-block-two{
+    position: absolute;
+    margin-top: 30%;
+    right: 2%;
+    width: 35%;
+    height: 56vh;
+    animation: move 10s ease-in infinite alternate;
+}
+
+@keyframes move {
+     
+    25% {
+        transform: translateY(-2px);
+    }
+
+    50% {
+        transform: translateY(3px);
+    }
+    
+
+    75% {
+        transform: translateY(3px);
+    }
+   
+    100% {
+        transform: translateY(2px);
+    }
+}
+.move{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+.des-about{
+    font-size: 0.9vw;
+    font-weight: normal;
+    font-family: araz;
+    position: absolute;
+    color: white;
+    text-align: left;
+    margin-top: 65%;
+    right: 8%;
+    letter-spacing: 1px;
+}

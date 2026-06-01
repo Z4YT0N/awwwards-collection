@@ -1,0 +1,6 @@
+[wb-animate-text],
+.char,
+.word,
+.line {
+  visibility: hidden;
+}

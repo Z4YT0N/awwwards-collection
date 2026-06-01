@@ -1,0 +1,124 @@
+.third{
+    height: 100vh;
+    background-color: black;
+    font-family: rabo;
+}
+.arrow{
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    left: 20px;
+    margin-top: -6%;
+}
+.column {
+  position: relative;
+  right: 20px;
+  float: right;
+  width: 30%;
+  padding: 10px;
+  height: 250px;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.odd{
+    font-size: 2.5vw;
+    font-family: araz;
+    position: relative;
+    text-align: left;
+    margin-top: 15%;
+    color: white;
+}
+span{
+    font-family: rabo;
+}
+.text-small{
+    font-size: 1vw;
+    font-family: araz;
+    position: absolute;
+    text-align: left;
+    margin-top: 15%;
+    color: white;
+}
+.myButton {
+    position: absolute;
+    left: 20px;
+    margin-top: 42%;
+	border-radius: 20px;
+	border: 1px solid white;
+	display: inline-block;
+	cursor: pointer;
+    color: white;
+    font-family: araz;
+	font-size: 1vw;
+	padding: 6px 10px;
+	text-decoration: none;
+}
+.myButton:hover {
+    background-color: white;
+    border: 1px solid black;
+    color: black;
+}
+.line-seg{
+    position: absolute;
+    color: white;
+    width: 62%;
+    right: 20px;
+    margin-top: 2%;
+}
+.pic-text{
+    color: white;
+    font-size: 2.6vw;
+    position: absolute;
+    right: 22px;
+}
+.log-it{
+    height: 40px;
+    width: 40px;
+    margin-top: 10px;
+}
+.marquee {
+    position: relative;
+    overflow: hidden;
+    --offset: 20vw;
+    --move-initial: calc(-25% + var(--offset));
+    --move-final: calc(-50% + var(--offset));
+}
+.marquee__inner {
+
+    width: 100%;
+    margin-top: 20%;
+    display: flex;
+    position: relative;
+    transform: translate3d(var(--move-initial), 0, 0);
+    animation: marquee 5s linear infinite;
+}
+.marquee span {
+    font-size: 2vw;
+    padding: 5px;
+    color: white;
+}
+.bold{
+    font-family: araz;
+}
+.marquee:hover .marquee__inner {
+    animation-play-state: running;
+}
+@keyframes marquee {
+    0% {
+        transform: translate3d(var(--move-initial), 0, 0);
+    }
+
+    100% {
+        transform: translate3d(var(--move-final), 0, 0);
+    }
+}
+.line-mar{
+    position: absolute;
+    color: white;
+    width: 98%;
+    left: 10px;
+    margin-top: 20%;
+}

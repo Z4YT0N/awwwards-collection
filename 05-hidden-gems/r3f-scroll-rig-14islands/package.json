@@ -1,0 +1,100 @@
+{
+  "name": "@14islands/r3f-scroll-rig",
+  "version": "8.15.0",
+  "description": "Progressively enhance any React website with WebGL using @react-three/fiber",
+  "private": false,
+  "type": "module",
+  "source": "src/index.ts",
+  "main": "./dist/scrollrig.cjs",
+  "module": "./dist/scrollrig.module.js",
+  "unpkg": "./dist/scrollrig.umd.js",
+  "types": "./dist/src/index.d.ts",
+  "sideEffects": false,
+  "exports": {
+    "./css": {
+      "default": "./dist/scrollrig.css"
+    },
+    "./scrollbar": {
+      "types": "./dist/scrollbar/index.d.ts",
+      "require": "./dist/scrollbar.cjs",
+      "import": "./dist/scrollbar.modern.js"
+    },
+    "./powerups": {
+      "types": "./dist/powerups/index.d.ts",
+      "require": "./dist/powerups.cjs",
+      "import": "./dist/powerups.modern.js"
+    },
+    ".": {
+      "types": "./dist/src/index.d.ts",
+      "require": "./dist/scrollrig.cjs",
+      "import": "./dist/scrollrig.modern.js"
+    }
+  },
+  "files": [
+    "dist",
+    "scrollbar",
+    "powerups"
+  ],
+  "scripts": {
+    "build": "yarn build-default & yarn build-scrollbar & yarn build-powerups",
+    "build-default": "microbundle --globals react=React,@react-three/fiber=@react-three/fiber,@juggle/resize-observer=@juggle/resize-observer,lenis=lenis src/index.ts",
+    "build-scrollbar": "microbundle --globals react=React,@react-three/fiber=@react-three/fiber,@juggle/resize-observer=@juggle/resize-observer,lenis=lenis src/scrollbar/index.ts -o dist/scrollbar.js",
+    "build-powerups": "microbundle --globals react=React,@react-three/fiber=@react-three/fiber,@juggle/resize-observer=@juggle/resize-observer,lenis=lenis,@react-three/drei=@react-three/drei,@14islands/r3f-scroll-rig=@14islands/r3f-scroll-rig --external=@14islands/r3f-scroll-rig powerups/index.ts -o dist/powerups.js",
+    "dev": "microbundle watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/14islands/r3f-scroll-rig.git"
+  },
+  "keywords": [
+    "@react-three/fiber",
+    "webgl",
+    "react",
+    "three"
+  ],
+  "author": "@14islands",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/14islands/r3f-scroll-rig/issues"
+  },
+  "homepage": "https://github.com/14islands/r3f-scroll-rig#readme",
+  "dependencies": {
+    "@14islands/lerp": "^1.0.3",
+    "@juggle/resize-observer": "^3.4.0",
+    "@types/query-string": "^6.3.0",
+    "debounce": "^1.2.1",
+    "fast-deep-equal": "^3.1.3",
+    "lenis": "^1.1.9",
+    "query-string": "^6.14.1",
+    "react-intersection-observer": "^9.4.0",
+    "supports-webp": "^3.0.0",
+    "suspend-react": "^0.0.8",
+    "vecn": "^1.3.1",
+    "zustand": "^3.4.2"
+  },
+  "devDependencies": {
+    "@react-three/drei": "^9.77.0",
+    "@react-three/fiber": "^8.13.3",
+    "@types/debounce": "^1.2.1",
+    "@types/react": "^18.0.25",
+    "microbundle": "^0.15.1",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "three": "^0.144.0"
+  },
+  "peerDependencies": {
+    "@react-three/drei": ">=9.0.0",
+    "@react-three/fiber": ">=8.0.0",
+    "react": ">=18.0",
+    "react-dom": ">=18.0",
+    "three": ">=0.139.0"
+  },
+  "peerDependenciesMeta": {
+    "@react-three/fiber": {
+      "optional": true
+    },
+    "@react-three/drei": {
+      "optional": true
+    }
+  }
+}

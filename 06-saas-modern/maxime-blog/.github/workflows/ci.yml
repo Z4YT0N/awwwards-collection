@@ -1,0 +1,266 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - '**.js'
+      - '**.jsx'
+      - '**.ts'
+      - '**.tsx'
+      - '**.yml'
+      - '**.json'
+
+concurrency:
+  group: ${{ github.head_ref }}
+  cancel-in-progress: true
+
+jobs:
+  install-cache:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Commit
+        uses: actions/checkout@v4
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'v22.21.1'
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      - name: Cache pnpm dependencies
+        uses: actions/cache@v4
+        id: cache-dependencies
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-
+      - name: Cache Cypress binary
+        id: cache-cypress-binary
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/Cypress
+          key: cypress-binary-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            cypress-binary-
+      - name: Install Dependencies
+        if: steps.cache-dependencies.outputs.cache-hit != 'true' || steps.cache-cypress-binary.outputs.cache-hit != 'true'
+        run: |
+          pnpm install
+  lint-format:
+    runs-on: ubuntu-latest
+    needs: install-cache
+    steps:
+      - name: Checkout Commit
+        uses: actions/checkout@v4
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'v22.21.1'
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      - name: Restore pnpm dependencies
+        uses: actions/cache@v4
+        id: cache-dependencies
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-
+      - name: Run lint
+        run: |
+          pnpm lint
+      - name: Run prettier
+        run: |
+          pnpm check-format
+  type-check:
+    runs-on: ubuntu-latest
+    needs: install-cache
+    steps:
+      - name: Checkout Commit
+        uses: actions/checkout@v4
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'v22.21.1'
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      - name: Restore pnpm dependencies
+        uses: actions/cache@v4
+        id: cache-dependencies
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-
+      - name: Check types
+        run: |
+          pnpm type-check
+  unit-test:
+    runs-on: ubuntu-latest
+    needs: install-cache
+    steps:
+      - name: Checkout Commit
+        uses: actions/checkout@v4
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'v22.21.1'
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      - name: Restore pnpm dependencies
+        uses: actions/cache@v4
+        id: cache-dependencies
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-
+      - name: Run test
+        run: |
+          pnpm test
+  build:
+    runs-on: ubuntu-latest
+    needs: [lint-format, type-check, unit-test]
+    steps:
+      - name: Checkout Commit
+        uses: actions/checkout@v4
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'v22.21.1'
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      - name: Restore pnpm dependencies
+        uses: actions/cache@v4
+        id: cache-dependencies
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-
+      - name: Run build
+        run: |
+          pnpm build
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-output
+          include-hidden-files: true
+          if-no-files-found: error
+          path: .next
+          retention-days: 1
+  e2e-tests-chrome:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Checkout Commit
+        uses: actions/checkout@v4
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'v22.21.1'
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      - name: Restore pnpm dependencies
+        uses: actions/cache@v4
+        id: cache-dependencies
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-
+      - name: Restore Cypress binary
+        id: cache-cypress-binary
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/Cypress
+          key: cypress-binary-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            cypress-binary-
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: build-output
+          path: .next
+      - name: Run cypress
+        uses: cypress-io/github-action@v6.7.6
+        with:
+          start: pnpm start
+          browser: chrome
+          install: false
+      - name: Upload Screenshots
+        uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
+          if-no-files-found: ignore
+      - name: Upload Videos
+        uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: cypress-videos
+          path: cypress/videos
+          if-no-files-found: ignore
+  e2e-tests-firefox:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Checkout Commit
+        uses: actions/checkout@v4
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'v22.21.1'
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      - name: Restore pnpm dependencies
+        uses: actions/cache@v4
+        id: cache-dependencies
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-
+      - name: Restore Cypress binary
+        id: cache-cypress-binary
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/Cypress
+          key: cypress-binary-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            cypress-binary-
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: build-output
+          path: .next
+      - name: Run cypress
+        uses: cypress-io/github-action@v6.7.6
+        with:
+          start: pnpm start
+          browser: firefox
+          install: false
+      - name: Upload Screenshots
+        uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
+          if-no-files-found: ignore
+      - name: Upload Videos
+        uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: cypress-videos
+          path: cypress/videos
+          if-no-files-found: ignore

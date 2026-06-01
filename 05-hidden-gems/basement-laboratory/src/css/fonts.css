@@ -1,0 +1,48 @@
+@font-face {
+  font-family: Inter;
+  font-weight: 100 900;
+  font-display: block;
+  font-style: normal;
+  font-named-instance: 'Regular';
+  src: url('/fonts/inter/Inter-roman.var.woff2?v=3.15') format('woff2');
+}
+
+@font-face {
+  font-family: Inter;
+  font-weight: 100 900;
+  font-display: block;
+  font-style: italic;
+  font-named-instance: 'Italic';
+  src: url('/fonts/inter/Inter-italic.var.woff2?v=3.15') format('woff2');
+}
+
+@font-face {
+  font-family: 'Basement Grotesque Display';
+  src: url('/fonts/grotesque/BasementGrotesqueDisplay-UltraBlackExtraExpanded.woff2')
+      format('woff2'),
+    url('/fonts/grotesque/BasementGrotesqueDisplay-UltraBlackExtraExpanded.woff')
+      format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Basement Grotesque';
+  src: url('https://basement.studio/fonts/basement-grotesque/BasementGrotesque-Black_v1.202.woff2')
+      format('woff2'),
+    url('https://basement.studio/fonts/basement-grotesque/BasementGrotesque-Black_v1.202.woff')
+      format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Ffflauta;
+  font-weight: 500;
+  font-display: block;
+  font-style: normal;
+  font-named-instance: 'Regular';
+  src: url('/fonts/ffflauta/ffflauta.otf');
+}

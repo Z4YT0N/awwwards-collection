@@ -1,0 +1,33 @@
+/* ─── Showreel Section ───────────────────────────────────────────────────── */
+.showreel-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--color-black-deep);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.showreel__content {
+    text-align: center;
+}
+
+.showreel__title {
+    font-family: 'Epilogue', sans-serif;
+    font-size: 5rem;
+    font-weight: 900;
+    letter-spacing: -3px;
+    color: var(--color-white);
+    margin-bottom: 1rem;
+}
+
+.showreel__subtitle {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}

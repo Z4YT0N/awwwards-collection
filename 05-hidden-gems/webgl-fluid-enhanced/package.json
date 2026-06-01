@@ -1,0 +1,75 @@
+{
+  "name": "webgl-fluid-enhanced",
+  "version": "0.8.0",
+  "description": "WebGL Fluid Simulation for modern webpages (works even on mobile)",
+  "keywords": [
+    "webgl",
+    "background",
+    "navier-strokes",
+    "fluid-simulation",
+    "es-module"
+  ],
+  "author": "Michael Brusegard",
+  "license": "MIT",
+  "type": "module",
+  "types": "./dist/index.d.ts",
+  "main": "./dist/index.umd.js",
+  "module": "./dist/index.es.js",
+  "files": [
+    "./dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.umd.js",
+      "import": "./dist/index.es.js"
+    }
+  },
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite --host",
+    "lint": "prettier --write . && eslint --fix .",
+    "start": "vite serve",
+    "docs:build": "cd docs && bunx next build && mkdir -p .next/standalone/public .next/standalone/.next/static && cp -r public/* .next/standalone/public && cp -r .next/static/* .next/standalone/.next/static",
+    "docs:dev": "cd docs && bunx next dev",
+    "docs:start": "cd docs && bun run .next/standalone/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michaelbrusegard/WebGL-Fluid-Enhanced.git"
+  },
+  "bugs": {
+    "url": "https://github.com/michaelbrusegard/WebGL-Fluid-Enhanced/issues"
+  },
+  "homepage": "https://webgl-fluid-enhanced.michaelbrusegard.com",
+  "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
+    "@types/eslint": "^8.56.2",
+    "@typescript-eslint/eslint-plugin": "^6.19.1",
+    "@typescript-eslint/parser": "^6.19.1",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "^3.2.4",
+    "prettier-plugin-tailwindcss": "^0.6.5",
+    "semantic-release": "^23.0.0",
+    "typescript": "^5.5.3",
+    "vite": "^5.3.3",
+    "vite-plugin-dts": "^3.9.1"
+  },
+  "release": {
+    "branches": [
+      "main"
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      "@semantic-release/git",
+      "@semantic-release/github"
+    ]
+  },
+  "packageManager": "bun@1.0.25"
+}

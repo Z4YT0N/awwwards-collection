@@ -1,0 +1,227 @@
+/* ─── Tools landing page ───────────────────────────────────────────────────── */
+.tools-dotfield {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.tools-landing {
+  position: relative;
+  z-index: 1;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 180px 2em 4em;
+  min-height: 100vh;
+}
+
+/* ─── Header ───────────────────────────────────────────────────────────────── */
+.tools-landing-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 3em;
+}
+
+.tools-landing-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tools-landing-title {
+  font-family: 'Geist Pixel Line', sans-serif;
+  font-size: clamp(36px, 5vw, 100px);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin: 0;
+  line-height: 1.1;
+}
+
+.tools-landing-subtitle {
+  font-family: 'Geist', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+  max-width: 40ch;
+}
+
+/* ─── Grid ─────────────────────────────────────────────────────────────────── */
+.tools-landing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+/* ─── Card ─────────────────────────────────────────────────────────────────── */
+.tools-landing-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-elevated, #1a1625);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 16px;
+  padding: 6px;
+  text-decoration: none;
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+
+.tools-landing-card:hover {
+  border-color: rgba(255, 255, 255, 0.1);
+  text-decoration: none;
+}
+
+/* Banner area */
+.tools-landing-card-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 160px;
+  border-radius: 10px;
+  background: linear-gradient(145deg, rgba(168, 85, 247, 0.08) 0%, rgba(124, 58, 237, 0.04) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.tools-landing-card-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 80%, rgba(168, 85, 247, 0.12) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.tools-landing-card-banner-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: rgba(168, 85, 247, 0.15);
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  color: #a855f7;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tools-landing-card:hover .tools-landing-card-banner-icon {
+  transform: scale(1.08);
+  box-shadow: 0 0 24px rgba(168, 85, 247, 0.3);
+}
+
+/* Body */
+.tools-landing-card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  padding: 20px 18px 18px;
+}
+
+.tools-landing-card-top {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tools-landing-card-title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tools-landing-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(168, 85, 247, 0.12);
+  color: #a855f7;
+  flex-shrink: 0;
+}
+
+.tools-landing-card-title {
+  font-family: 'Geist', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.tools-landing-card-tag {
+  font-family: 'Geist Mono', monospace;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 3px 8px;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.tools-landing-card-tag.available {
+  color: #34d399;
+  background: rgba(52, 211, 153, 0.1);
+  border: 1px solid rgba(52, 211, 153, 0.15);
+}
+
+.tools-landing-card-tag.soon {
+  color: rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.tools-landing-card-desc {
+  font-family: 'Geist', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.45);
+  margin: 0;
+}
+
+.tools-landing-card-cta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Geist Mono', monospace;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.4);
+  margin-top: 20px;
+  transition: color 0.2s ease, gap 0.2s ease;
+}
+
+.tools-landing-card:hover .tools-landing-card-cta {
+  color: #a855f7;
+  gap: 12px;
+}
+
+/* ─── Responsive ───────────────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .tools-landing-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .tools-landing {
+    padding: 100px 1em 3em;
+  }
+
+  .tools-landing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tools-landing-card {
+    min-height: auto;
+  }
+}

@@ -1,0 +1,22 @@
+.seven{
+    height: 100vh;
+    background-color: #f0f0f0;
+    overflow-x: hidden;
+    font-family: Formular;
+}
+.sensor-video{
+    object-fit: cover;
+    height: 100%;
+    width: 70%;
+    overflow-x: hidden;
+    overflow: hidden;
+}
+.sensor-head{
+    color: black;
+    font-size: 13vw;
+    text-align: center;
+    text-transform: uppercase;
+    position: absolute;
+    margin-top: -10px;
+    left: 16%;
+}

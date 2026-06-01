@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-display: var(--font-gambarino);
+  --font-sans: var(--font-raleway);
+}
+
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+/* Background Effects */
+.glow-background {
+  background-color: hsla(0, 0%, 0%, 0);
+  background-image:
+    radial-gradient(at 29% 43%, hsla(190, 70%, 90%, 0.08) 0px, transparent 50%),
+    radial-gradient(at 53% 28%, hsla(190, 90%, 90%, 0.18) 0px, transparent 50%),
+    radial-gradient(at 47% 71%, hsla(190, 70%, 90%, 0.13) 0px, transparent 40%),
+    radial-gradient(at 3% 95%, hsla(190, 0%, 10%, 0.2) 0px, transparent 50%),
+    radial-gradient(at 3% 3%, hsla(140, 80%, 10%, 0.2) 0px, transparent 50%),
+    radial-gradient(at 90% 5%, hsla(200, 80%, 5%, 0.2) 0px, transparent 50%),
+    radial-gradient(at 90% 80%, hsla(230, 80%, 10%, 0.2) 0px, transparent 50%);
+}
+
+/* Animation Keyframes */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.98);
+  }
+}
+
+/* Default View Transitions */
+::view-transition-old(root) {
+  animation: 0.5s cubic-bezier(0.33, 1, 0.68, 1) both fade-out;
+}
+
+::view-transition-new(root) {
+  animation: 0.8s cubic-bezier(0.22, 1, 0.36, 1) both fade-in;
+}
+
+/* Persistent Elements */
+.navbar {
+  view-transition-name: navbar;
+}
+
+.nav-drawer-blur {
+  view-transition-name: nav-drawer-blur;
+}
+
+.nav-drawer {
+  view-transition-name: nav-drawer;
+}
+
+.footer {
+  view-transition-name: footer;
+}
+
+::view-transition-old(navbar),
+::view-transition-new(navbar),
+::view-transition-old(footer),
+::view-transition-new(footer) {
+  animation: none;
+}
+
+/* Reduced Motion Preferences */
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition,
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation-duration: 0.001s;
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "id": "video_block",
+  "type": "SharedSlice",
+  "name": "VideoBlock",
+  "description": "VideoBlock",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "youtube_video_id": {
+          "type": "Text",
+          "config": {
+            "label": "YouTube Video ID",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

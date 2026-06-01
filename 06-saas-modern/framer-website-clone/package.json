@@ -1,0 +1,38 @@
+{
+  "name": "framer",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emotion/cache": "^11.7.1",
+    "@emotion/react": "^11.7.1",
+    "@emotion/server": "^11.10.0",
+    "@emotion/styled": "^11.6.0",
+    "@mui/icons-material": "^5.5.1",
+    "@mui/lab": "^5.0.0-alpha.81",
+    "@mui/material": "^5.2.8",
+    "@mui/styled-engine-sc": "^5.1.0",
+    "@mui/styles": "^5.9.3",
+    "@mui/x-data-grid": "^5.8.0",
+    "@mui/x-data-grid-generator": "^5.8.0",
+    "@mui/x-date-pickers": "^5.0.0-alpha.3",
+    "bootstrap": "^4.5.3",
+    "next": "12.2.4",
+    "react": "18.2.0",
+    "react-bootstrap": "^2.0.1",
+    "react-dom": "18.2.0",
+    "react-icons": "^4.7.1",
+    "react-slick": "^0.28.1",
+    "slick-carousel": "^1.8.1",
+    "styled-components": "^5.3.3"
+  },
+  "devDependencies": {
+    "eslint": "8.21.0",
+    "eslint-config-next": "12.2.4"
+  }
+}

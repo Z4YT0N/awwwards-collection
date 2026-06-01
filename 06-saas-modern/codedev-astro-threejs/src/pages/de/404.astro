@@ -1,0 +1,21 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import {
+	getLangFromUrl,
+	useTranslatedPath,
+	useTranslations,
+} from '@/i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const translatePath = useTranslatedPath(lang);
+const t = useTranslations(lang);
+---
+
+<Layout title='404 Error'>
+	<main
+		class='flex flex-col items-center justify-center section min-h-[calc(100vh-300px)]'>
+		<h1 class='text-4xl'>{t('errorpage.title')}</h1>
+		<a href={translatePath('/')} class='underline text-lg mt-1'
+			>{t('errorpage.link')}</a
+		>
+	</main>
+</Layout>

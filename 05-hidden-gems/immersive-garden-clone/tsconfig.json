@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "typeRoots": [
+      "../node_modules/@types/react",
+      "../@types/react"
+    ],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react",
+    "noImplicitAny": false
+  },
+  "include": [
+    "src", "react-app-env.d.ts", "serviceWorker.ts", "src/components/about/About.desc/.tsx"
+  ]
+}

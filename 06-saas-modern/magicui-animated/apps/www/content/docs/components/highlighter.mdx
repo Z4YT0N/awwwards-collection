@@ -1,0 +1,85 @@
+---
+title: Text Highlighter
+date: 2025-02-11
+description: A text highlighter that mimics the effect of a human-drawn marker stroke.
+author: pratiyank
+published: true
+---
+
+<ComponentPreview name="highlighter-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @magicui/highlighter
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+pnpm add motion rough-notation
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="highlighter" />
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Usage
+
+```tsx showLineNumbers
+import { Highlighter } from "@/components/ui/highlighter"
+```
+
+```tsx showLineNumbers
+<p>
+  The{" "}
+  <Highlighter action="underline" color="#FF9800">
+    Magic UI Highlighter
+  </Highlighter>{" "}
+  makes important{" "}
+  <Highlighter action="highlight" color="#87CEFA">
+    text stand out
+  </Highlighter>{" "}
+  effortlessly.
+</p>
+```
+
+## Props
+
+Here's the updated props table with units specified for the numerical values:
+
+| Prop                | Type                                                                                                | Default       | Description                                                                  |
+| ------------------- | --------------------------------------------------------------------------------------------------- | ------------- | ---------------------------------------------------------------------------- |
+| `children`          | `React.ReactNode`                                                                                   | Required      | The content to be highlighted/annotated.                                     |
+| `color`             | `string`                                                                                            | `"#ffd1dc"`   | The color of the highlight.                                                  |
+| `action`            | `"highlight" \| "circle" \| "box" \| "bracket" \| "crossed-off" \| "strike-through" \| "underline"` | `"highlight"` | The type of annotation effect to apply.                                      |
+| `strokeWidth`       | `number`                                                                                            | `1.5px`       | The width of the annotation stroke.                                          |
+| `animationDuration` | `number`                                                                                            | `500ms`       | Duration of the animation in milliseconds.                                   |
+| `iterations`        | `number`                                                                                            | `2`           | Number of times to draw the annotation (adds a sketchy effect when > 1).     |
+| `padding`           | `number`                                                                                            | `2px`         | Padding between the element and the annotation.                              |
+| `multiline`         | `boolean`                                                                                           | `true`        | Whether to annotate across multiple lines or treat content as a single line. |
+| `isView`            | `boolean`                                                                                           | `false`       | Controls whether the animation starts only when the element enters viewport. |
+
+## Credits
+
+- Credit to [@pratiyank](https://github.com/Pratiyankkumar) for this component!

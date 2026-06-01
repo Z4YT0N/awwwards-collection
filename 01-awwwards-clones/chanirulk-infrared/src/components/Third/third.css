@@ -1,0 +1,52 @@
+.third{
+    height: 150vh;
+    background-color: blanchedalmond;
+}
+.box-two{
+    position: absolute;
+    background-color: aqua;
+    height: 120%;
+    width: 35%;
+    margin-top: -5%;
+    left: 0;
+}
+.fill-two{
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+}
+.fill-one{
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+}
+.link-about{
+    color: orangered;
+    text-align: center;
+    font-size: 1.6vw;
+    font-family: ara;
+    text-transform: uppercase;
+    position: absolute;
+    right: 5%;
+}
+.link-about:hover{
+    color: black;
+    text-decoration: none;
+}
+.long-text{
+    font-size: 1.7vw;
+    font-family: ara;
+    text-transform: uppercase;
+    position: absolute;
+    color: orangered;
+    text-align: left;
+    margin-top: 35%;
+    left: 36%;
+}
+.box-third{
+    height: 100%;
+    width: 100%;
+    background-color: aqua;
+    position: absolute;
+    margin-top: 45%;
+}

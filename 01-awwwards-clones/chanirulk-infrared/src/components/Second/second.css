@@ -1,0 +1,73 @@
+.second{
+    height: 200vh;
+    background-color: blanchedalmond;
+}
+.text-one{
+    color: orangered;
+    font-size: 1.7vw;
+    font-weight: 500;
+    text-transform: uppercase;
+   font-family: ara;
+    text-align: left;
+    position: absolute;
+    margin-top: 40px;
+    line-height: 20px;
+    left: 20px;
+}
+.flower-one{
+    position: absolute;
+    height: auto;
+    width: 20px;
+    margin-top: 81px;
+    left: 16%;
+    animation:  spin infinite 5s linear;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.box-on{
+    height: 100vh;
+    width: 48.5%;
+    background-color: aqua;
+    position: absolute;
+    margin-top: 20px;
+    right: 0%;
+}
+.box-fill{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.small-ver{
+    font-family: ara;
+    text-transform: uppercase;
+    font-size: 0.8vw;
+    transform: rotate(-90deg);
+    color: rgb(255, 122, 228);  
+    position: absolute;
+    margin-top: 60%;
+    left: 2px;
+}
+.next-text{
+    color: orangered;
+    font-size: 5vw;
+    position: absolute;
+    margin-top: 43.5%;
+    text-align: left;
+    font-family: zuz;
+    left: 33%;
+    word-spacing: 20px;
+    letter-spacing: 3px;
+}
+.svg-arrw{
+    height: 88%;
+    width: 56%;
+    position: absolute;
+    margin-top: 50%;
+    left: 40%;
+}

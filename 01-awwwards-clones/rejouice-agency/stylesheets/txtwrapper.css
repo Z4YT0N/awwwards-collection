@@ -1,0 +1,87 @@
+#txt-wrapper{
+    max-height: 80vh;
+    width: 100vw;
+    
+    padding:  40px;
+    color: rgb(0, 0, 0);
+    /* background: #9b6c6c; */
+}
+
+#txt-wrapper #slogan{
+    height: 70px;
+    /* background: #a49c9c; */
+    border-bottom: 1px solid rgb(0, 0, 0);
+    overflow: hidden;
+    
+}
+
+#txt-wrapper #slogan div{
+    overflow: hidden;
+}
+
+#txt-wrapper #slogan.spacebtw{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#txt-wrapper #slogan p{
+    font-size: 20px;
+}
+
+#txt-wrapper #txt div {
+    height: fit-content;
+    margin-bottom: 6px;
+    overflow: hidden;
+    /* background: #614b4b; */
+}
+
+
+#txt-wrapper #txt {
+    margin-top: 10px;
+}
+
+
+#txt-wrapper #txt p{
+    font-size: 4.1vw;
+    text-align: center;
+}
+
+
+
+@media (max-width: 768px) {
+    #txt-wrapper{
+        max-height: 50vh;
+        width: 100vw;
+        
+        padding: 10px;
+        color: rgb(0, 0, 0);
+        /* background: #9b6c6c; */
+    }
+
+
+    #txt-wrapper #slogan{
+        height: 40px;
+        /* background: #a49c9c; */
+        border-bottom: 1px solid rgb(0, 0, 0);
+        overflow: hidden;
+        
+    }
+
+
+
+
+   #txt-wrapper #slogan p{
+    font-size: 15px;
+
+
+    #txt-wrapper #txt div {
+        height: fit-content;
+        margin-bottom: 3px;
+        overflow: hidden;
+        /* background: #614b4b; */
+    }
+    
+}
+}
+

@@ -1,0 +1,48 @@
+---
+import Layout from '@layouts/Layout.astro';
+import Footer from '../gravityteam-co/layouts/Footer.svelte';
+import Contantti from './layouts/Contantti.astro';
+import Description from './layouts/Description.astro';
+import Drops from './layouts/Drops.astro';
+import GridMessaggi from './layouts/GridMessaggi.astro';
+import Header from './layouts/Header.astro';
+import ImageParrallax from './layouts/ImageParrallax.astro';
+import Indistinguibile from './layouts/Indistinguibile.astro';
+import Lettere from './layouts/Lettere.astro';
+import Navbar from './layouts/Navbar.astro';
+import Premi from './layouts/Premi.astro';
+import Servizi from './layouts/Servizi.astro';
+import WrapperAnimations from './layouts/WrapperAnimations.astro';
+---
+
+<Layout title='caroselling-it'>
+	<WrapperAnimations>
+		<Navbar />
+		<Header />
+		<Description
+			sub='(noi)'
+			title='le grandi cose, come le piccole, tutto ci appassiona.'
+		/>
+		<Servizi />
+		<Indistinguibile />
+		<GridMessaggi />
+		<Drops />
+		<Description
+			sub='(human)'
+			title='abbiamo bisogno di parole che dicono cose. e poi di cose che si trasformano in realtà.'
+		/>
+		<ImageParrallax
+			reverse
+			title='L’unico modo per scoprire i limiti del possibile è avventurarsi '
+			titleEffect='un po’ oltre, verso l’impossibile.'
+			image='/public/caroselling-it/home-quote-deskto.webp'
+		/>
+		<Description
+			sub='(chi siamo)'
+			title='no, non siamo giovani e dinamici,	anche se rischiamo come	se avessimo 23 anni.'
+		/>
+		<Premi />
+		<Lettere />
+		<Contantti />
+	</WrapperAnimations>
+</Layout>

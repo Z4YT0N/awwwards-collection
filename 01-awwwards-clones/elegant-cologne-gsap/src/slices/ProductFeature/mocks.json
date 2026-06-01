@@ -1,0 +1,62 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Badly"
+						}
+					}
+				]
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Qui fugiat sit ipsum voluptate laborum exercitation et irure sint nulla anim."
+						}
+					}
+				]
+			},
+			"image": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1601933973783-43cf8a7d4c5f",
+					"width": 6597,
+					"height": 4398
+				},
+				"url": "https://images.unsplash.com/photo-1601933973783-43cf8a7d4c5f",
+				"width": 6597,
+				"height": 4398,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"alt": "shout",
+				"credits": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"fragrance": {
+				"__TYPE__": "LinkContent",
+				"key": "5d8362da-ba9a-40c8-adf4-56f9de61429d",
+				"value": {
+					"__TYPE__": "DocumentLink",
+					"id": "mock_document_id"
+				}
+			}
+		},
+		"items": []
+	}
+]

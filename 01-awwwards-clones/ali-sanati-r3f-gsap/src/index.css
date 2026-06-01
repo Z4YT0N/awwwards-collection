@@ -1,0 +1,136 @@
+@import "tailwindcss";
+
+/* Amiamie Regular */
+@font-face {
+  font-family: "Amiamie";
+  src: url("/fonts/otf/Amiamie-Regular.otf") format("opentype"),
+    url("/fonts/ttf/Amiamie-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Amiamie Regular Italic */
+@font-face {
+  font-family: "Amiamie";
+  src: url("/fonts/otf/Amiamie-Italic.otf") format("opentype"),
+    url("/fonts/ttf/Amiamie-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Amiamie Light */
+@font-face {
+  font-family: "Amiamie";
+  src: url("/fonts/otf/Amiamie-Light.otf") format("opentype"),
+    url("/fonts/ttf/Amiamie-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Amiamie Light Italic */
+@font-face {
+  font-family: "Amiamie";
+  src: url("/fonts/otf/Amiamie-LightItalic.otf") format("opentype"),
+    url("/fonts/ttf/Amiamie-LightItalic.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Amiamie Black */
+@font-face {
+  font-family: "Amiamie";
+  src: url("/fonts/otf/Amiamie-Black.otf") format("opentype"),
+    url("/fonts/ttf/Amiamie-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Amiamie Black Italic */
+@font-face {
+  font-family: "Amiamie";
+  src: url("/fonts/otf/Amiamie-BlackItalic.otf") format("opentype"),
+    url("/fonts/ttf/Amiamie-BlackItalic.ttf") format("truetype");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Amiamie-Round Variants (if needed separately) */
+@font-face {
+  font-family: "Amiamie-Round";
+  src: url("/fonts/otf/Amiamie-RegularRound.otf") format("opentype"),
+    url("/fonts/ttf/Amiamie-RegularRound.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Amiamie-Round";
+  src: url("/fonts/otf/Amiamie-BlackRound.otf") format("opentype"),
+    url("/fonts/ttf/Amiamie-BlackRound.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Amiamie-Round";
+  src: url("/fonts/otf/Amiamie-BlackItalicRound.otf") format("opentype"),
+    url("/fonts/ttf/Amiamie-BlackItalicRound.ttf") format("truetype");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+@theme {
+  --color-primary: #e5e5e0;
+  --color-DarkLava: #393632;
+  --color-SageGray: #8b8b73;
+  --color-gold: #cfa355;
+  --font-amiamie: "Amiamie", sans-serif;
+  --font-amiamie-round: "Amiamie-Round", sans-serif;
+
+  --animate-marquee: marquee 40s infinite linear;
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+}
+
+body {
+  background: #e5e5e0;
+  color: black;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  font-family: var(--font-amiamie);
+}
+
+@utility clip-path {
+  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+}
+
+@utility banner-text-responsive {
+  @apply text-[68px] sm:text-[118px] md:text-[126px] lg:text-[152px] leading-9 sm:leading-16 lg:leading-20;
+}
+
+@utility value-text-responsive {
+  @apply text-2xl md:text-[26px] lg:text-[32px];
+}
+
+@utility marquee-text-responsive {
+  @apply text-[28px] sm:text-[36px] lg:text-[42px];
+}
+
+@utility contact-text-responsive {
+  @apply text-[42px] sm:text-[52px] md:text-[62px] lg:text-[100px];
+}
+

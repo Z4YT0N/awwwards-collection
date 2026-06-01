@@ -1,0 +1,90 @@
+.f{
+    height: 60vh;
+    font-family: 'Tenor Sans', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    align-items: center;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background-color: black;
+}
+
+.f-logo{
+    color: rgb(255, 247, 234);
+    font-weight: 400;
+    font-size: 45PX;
+    position: relative;
+    top: 20px;
+    left: 1%;
+}
+
+
+.column {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    height: 300px; 
+    box-sizing: border-box;
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 15px;
+    text-transform: uppercase;
+    color: white;
+    left: 33%;
+    position: relative;
+}
+  
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+.tag{
+    text-decoration: none;
+    color: white;
+}
+
+.tag:hover{
+    color: bisque;
+}
+
+.tag-two{
+    text-decoration: none;
+    color: rgb(38, 53, 38);
+}
+
+.tag-two:hover{
+    color: white;
+}
+
+.ig{
+    height: auto;
+    width: 40px;
+}
+
+.footer-last{
+    position: relative;
+    color: rgb(66, 66, 66);
+    font-weight: 400;
+    font-size: 15px;
+    top: 300px;
+}
+
+.footer-last-credit{
+    position: relative;
+    color: rgb(66, 66, 66);
+    font-weight: 400;
+    font-size: 20px;
+    top: 275px;
+    left: 80%;
+    text-decoration: none;
+    color: white;
+    z-index: 1;
+}
+
+.footer-last-credit:hover{
+    color: bisque;
+}

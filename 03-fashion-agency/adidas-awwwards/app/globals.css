@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+:root {
+  --background: #000;
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--background);
+}
+
+@utility hover-animation {
+  @apply cursor-pointer opacity-75 hover:opacity-100 transition-opacity duration-100;
+}

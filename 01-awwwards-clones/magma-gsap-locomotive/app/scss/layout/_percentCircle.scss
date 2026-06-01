@@ -1,0 +1,29 @@
+.percentCircle {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) !important;
+	z-index: 10;
+	min-height: 200px;
+	min-width: 200px;
+	height: 30vw;
+	max-height: 600px;
+	width: 30vw;
+	max-width: 600px;
+	border-radius: 50%;
+	border: 2px solid hsla(0, 0%, 100%, 0.1);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	&__inner {
+		min-height: 100px;
+		min-width: 100px;
+		height: 12vw;
+		max-height: 300px;
+		width: 12vw;
+		max-width: 300px;
+		border-radius: 50%;
+		border: 1px solid hsla(0, 0%, 100%, 0.5);
+	}
+}

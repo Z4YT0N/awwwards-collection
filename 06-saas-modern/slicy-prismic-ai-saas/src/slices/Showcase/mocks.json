@@ -1,0 +1,167 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Discover"
+						}
+					}
+				]
+			},
+			"image": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1571126770897-2d612d1f7b89",
+					"width": 3456,
+					"height": 3456
+				},
+				"url": "https://images.unsplash.com/photo-1571126770897-2d612d1f7b89",
+				"width": 3456,
+				"height": 3456,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"icon": {
+				"__TYPE__": "FieldContent",
+				"value": "cycle",
+				"type": "Select"
+			},
+			"subheading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading3",
+						"content": {
+							"text": "Perhaps"
+						}
+					}
+				]
+			},
+			"body": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Veniam non quis veniam."
+						}
+					}
+				]
+			},
+			"button_text": {
+				"__TYPE__": "FieldContent",
+				"value": "weather",
+				"type": "Text"
+			},
+			"button_link": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://google.com"
+				}
+			}
+		},
+		"items": []
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "reverse",
+		"primary": {
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "History"
+						}
+					}
+				]
+			},
+			"image": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1531771686035-25f47595c87a",
+					"width": 3024,
+					"height": 3778
+				},
+				"url": "https://images.unsplash.com/photo-1531771686035-25f47595c87a",
+				"width": 3024,
+				"height": 3778,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"icon": {
+				"__TYPE__": "FieldContent",
+				"value": "gear",
+				"type": "Select"
+			},
+			"subheading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading3",
+						"content": {
+							"text": "Harbor"
+						}
+					}
+				]
+			},
+			"body": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Eu sit laborum deserunt elit reprehenderit magna exercitation non esse occaecat anim ut dolor duis. Deserunt proident irure est. Exercitation occaecat esse non anim culpa irure duis veniam deserunt."
+						}
+					}
+				]
+			},
+			"button_text": {
+				"__TYPE__": "FieldContent",
+				"value": "so",
+				"type": "Text"
+			},
+			"button_link": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://prismic.io"
+				}
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
+	}
+]

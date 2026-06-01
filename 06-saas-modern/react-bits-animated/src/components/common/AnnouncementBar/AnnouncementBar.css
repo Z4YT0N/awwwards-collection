@@ -1,0 +1,92 @@
+.header-announcement-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 50px;
+  z-index: 200;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.header-announcement-bar.landing-bar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to right, rgba(255, 159, 252, 0.3), transparent, rgba(133, 39, 255, 0.3));
+  pointer-events: none;
+  z-index: 0;
+}
+
+.header-announcement-bar:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.header-announcement-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 12px 24px;
+  width: 100vw;
+  height: 100%;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.header-announcement-message {
+  margin: 0;
+  padding: 0;
+  color: #ffffff;
+  font-size: 15px;
+  text-align: center;
+  letter-spacing: -0.25px;
+  line-height: 1.4;
+  display: inline;
+}
+
+.header-announcement-link-text {
+  color: #ffffff;
+  font-weight: 600;
+  display: inline;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .header-announcement-icon {
+    display: none;
+  }
+
+  .header-announcement-content {
+    padding: 10px 16px;
+  }
+
+  .header-announcement-message {
+    font-size: 0.85rem;
+    text-align: center;
+    padding: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-announcement-content {
+    padding: 8px 12px;
+  }
+
+  .header-announcement-message {
+    font-size: 0.8rem;
+    text-align: center;
+  }
+}

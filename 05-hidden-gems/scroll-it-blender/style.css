@@ -1,0 +1,51 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  overflow-x: hidden;
+}
+
+canvas {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
+
+.headline {
+  position: fixed;
+  z-index: 2;
+  color: white;
+  font-size: 2.2rem;
+  right: 25%;
+  bottom: 40%;
+  transform: translate(-20%, -40%);
+}
+
+@media screen and (max-width: 1024px) {
+  .headline {
+    font-size: 1rem;
+    right: 50%;
+    bottom: 25%;
+    transform: translate(50%, 50%);
+  }
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #0A244B;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #ef4565;
+  box-shadow: inset 2px 2px 5px 0 rgba(#fff, 0.5);
+}

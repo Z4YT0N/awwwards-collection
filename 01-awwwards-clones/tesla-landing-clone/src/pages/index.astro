@@ -1,0 +1,51 @@
+---
+import Header from "../components/Header.astro";
+import HeroSection from "../components/sections/HeroSection.astro";
+import ModelYSection from "../components/sections/ModelYSection.astro";
+import Model3Section from "../components/sections/Model3Section.astro";
+import ModelSSection from "../components/sections/ModelSSection.astro";
+import ModelXSection from "../components/sections/ModelXSection.astro";
+import Layout from "../layouts/Layout.astro";
+import Drawer from "../components/Drawer.astro";
+import HoverOverlay from "../components/commons/HoverOverlay.astro";
+import SolarYPowerWallSection from "../components/sections/SolarYPowerwallSection.astro";
+import AccessoriesSection from "../components/sections/AccessoriesSection.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout title="Coches eléctricos, energía solar y limpia | Tesla">
+	<Header />
+
+	<Drawer />
+
+	<main
+		class="h-screen w-screen snap-y snap-mandatory overflow-x-hidden overflow-y-scroll"
+	>
+		<div class="snap-center">
+			<HeroSection />
+		</div>
+		<div class="snap-center">
+			<ModelYSection />
+		</div>
+		<div class="snap-center">
+			<Model3Section />
+		</div>
+		<div class="snap-center">
+			<ModelSSection />
+		</div>
+		<div class="snap-center">
+			<ModelXSection />
+		</div>
+		<div class="snap-center">
+			<SolarYPowerWallSection />
+		</div>
+		<div class="snap-center">
+			<AccessoriesSection />
+		</div>
+		<div class="snap-center 2md:hidden">
+			<Footer />
+		</div>
+	</main>
+
+	<HoverOverlay />
+</Layout>

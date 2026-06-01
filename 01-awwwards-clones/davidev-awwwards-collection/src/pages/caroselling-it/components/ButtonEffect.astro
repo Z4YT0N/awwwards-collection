@@ -1,0 +1,24 @@
+---
+interface Props {
+	content: string;
+}
+
+const { content } = Astro.props as Props;
+---
+
+<button class='btn-content-effect'>
+	{content}
+</button>
+
+<style>
+	.btn-content-effect {
+		padding-bottom: 3px;
+		cursor: pointer;
+		border-bottom: 1px solid var(--caro-primary);
+		&:hover {
+			color: var(--caro-secondary);
+			border-color: var(--caro-secondary);
+			transition: all 0.3s ease-in-out;
+		}
+	}
+</style>

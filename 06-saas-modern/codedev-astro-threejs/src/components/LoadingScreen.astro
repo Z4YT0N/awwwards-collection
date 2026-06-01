@@ -1,0 +1,39 @@
+---
+import logo from '@/assets/logo.svg';
+---
+
+<script data-astro-rerun>
+	document.addEventListener('astro:page-load', () => {
+		setTimeout(() => {
+			document
+				.querySelector('#loading-screen')
+				?.classList.add('loading-hidden');
+		}, 500);
+	});
+</script>
+
+<div
+	id='loading-screen'
+	class='fixed top-0 flex flex-col gap-3 pt-20 justify-center items-center transition-all duration-300 opacity-100 h-dvh bg-white w-full z-20'>
+	<div
+		class='absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]'>
+	</div>
+
+	<img
+		src={logo.src}
+		class='w-36 animate-pulse [animation-duration:750ms]'
+		alt=''
+	/>
+	<span
+		class='text-4xl font-bold tracking-normal animate-pulse [animation-duration:750ms]'
+		>CodeDev</span
+	>
+</div>
+
+<style>
+	.loading-hidden {
+		pointer-events: none;
+		translate: 0 -50%;
+		opacity: 0;
+	}
+</style>

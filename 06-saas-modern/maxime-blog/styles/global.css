@@ -1,0 +1,86 @@
+::selection {
+  background-color: var(--emphasis);
+  color: var(--accent);
+}
+
+html {
+  font: 100%/1.2888 var(--font-display);
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--background);
+  color: var(--text-primary);
+  word-wrap: break-word;
+  text-rendering: optimizeLegibility;
+  margin: 0;
+}
+
+.hidden-layout {
+  display: none;
+}
+
+/* TODO Find a way to remove the following */
+/* Patch gif wrapped in figure tag */
+
+figure {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* END Patch gif wrapped in figure tag */
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* Anchor links for headings */
+.anchor-link {
+  --anchor-border-color: transparent !important;
+  opacity: 0;
+  text-decoration: none !important;
+  transition: opacity 0.2s ease;
+  margin-left: 0.33rem;
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  color: var(--text-tertiary);
+}
+
+h2,
+h3 {
+  scroll-margin-top: 6.6rem;
+}
+
+h2:hover .anchor-link,
+h3:hover .anchor-link,
+h4:hover .anchor-link {
+  opacity: 1;
+}
+
+.anchor-link:focus-visible {
+  opacity: 1;
+  color: var(--accent);
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+canvas#main-canvas {
+  opacity: 0;
+  animation: fade-in 1s ease 0.3s forwards;
+  animation-delay: 0.2s;
+  user-select: none;
+}

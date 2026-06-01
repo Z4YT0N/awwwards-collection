@@ -1,0 +1,36 @@
+{
+  "name": "solidjs-threejs-gsap-dimensional-glass-landing",
+  "version": "1.0.0",
+  "description": "Stunning 3D dimensional glass landing page with prismatic refraction effects, scroll-driven animations, and magnetic interactions",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [
+    "solidjs",
+    "threejs",
+    "gsap",
+    "landing-page",
+    "3d-web",
+    "glassmorphism",
+    "webgl",
+    "scroll-animation"
+  ],
+  "author": "smart-developer1791",
+  "license": "MIT",
+  "dependencies": {
+    "solid-js": "^1.8.15",
+    "three": "^0.161.0",
+    "gsap": "^3.12.5",
+    "simplex-noise": "^4.0.1"
+  },
+  "devDependencies": {
+    "vite": "^5.1.4",
+    "vite-plugin-solid": "^2.10.1",
+    "tailwindcss": "^3.4.1",
+    "postcss": "^8.4.35",
+    "autoprefixer": "^10.4.18"
+  }
+}

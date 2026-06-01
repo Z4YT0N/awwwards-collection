@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <!-- Metas -->
+    <title>gpu-curtains | Context lost test</title>
+    <meta name="description" content="gpu-curtains context lost test" />
+
+    <link href="../../examples/common-styles.css" rel="stylesheet" />
+    <link href="styles.css" rel="stylesheet" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://raw.githubusercontent.com/martinlaxenaire/gpu-curtains/main/website/assets/favicon.png"
+    />
+  </head>
+
+  <body>
+    <div id="canvas"></div>
+
+    <div id="page">
+      <div class="plane">
+        <img src="https://picsum.photos/1920/1080" crossorigin="" loading="lazy" data-texture-name="planeTexture" />
+      </div>
+
+      <button id="lose-context-button" class="primary-button">Lose context</button>
+    </div>
+
+    <script src="main.js" type="module"></script>
+
+    <!-- Umami -->
+    <script
+      defer
+      src="https://cloud.umami.is/script.js"
+      data-website-id="5633e080-94cc-462b-9158-a45314c01630"
+      data-domains="martinlaxenaire.github.io"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+name: Semantic Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release-npm:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+      id-token: write
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: 1.0.25
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Dependencies
+        run: bun install
+
+      - name: Build
+        run: bun run build
+
+      - name: Run Semantic Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: bunx semantic-release

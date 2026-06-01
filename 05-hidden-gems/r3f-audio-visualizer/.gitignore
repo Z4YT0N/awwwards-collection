@@ -1,0 +1,9 @@
+.env
+.vscode/
+scratch.sh
+scratch/
+notes/
+.agents/
+skills-lock.json
+.cursor/
+.DS_Store

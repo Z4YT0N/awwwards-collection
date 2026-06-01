@@ -1,0 +1,36 @@
+---
+import {
+	getLangFromUrl,
+	useTranslatedPath,
+	useTranslations,
+} from '@/i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+import arrowIcon from '@/assets/icons/arrow-big.svg';
+---
+
+<section class='relative py-20 md:py-32 text-center'>
+	<div
+		class='absolute inset-0 opacity-10 -z-10 h-full w-full bg-[linear-gradient(to_right,var(--main-color)_1px,transparent_1px),linear-gradient(to_bottom,var(--main-color)_1px,transparent_1px)] bg-[size:14px_24px]'>
+	</div>
+	<div
+		class='absolute inset-0 -z-20 h-full w-full [background:radial-gradient(125%_125%_at_50%_10%,#fff_40%,var(--main-color)_100%)]'>
+	</div>
+
+	<div class='section'>
+		<h2 class='md:text-6xl text-4xl font-medium mb-5 appear-top'>
+			{t('callaction.title')}
+		</h2>
+		<a
+			href={translatePath('/contact')}
+			class='md:text-3xl inline-block mx-auto relative hover:!-translate-x-1 transition-transform gap-2 justify-center group items-center text-2xl underline appear'>
+			{t('callaction.link')}
+			<img
+				src={arrowIcon.src}
+				alt=''
+				class='w-8 absolute right-0 group-hover:opacity-100 opacity-0 top-0 bottom-0 my-auto -translate-x-2 group-hover:translate-x-10 transition-all'
+			/>
+		</a>
+	</div>
+</section>

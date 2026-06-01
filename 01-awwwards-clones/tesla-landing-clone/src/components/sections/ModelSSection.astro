@@ -1,0 +1,21 @@
+---
+import Section from "../../layouts/Section.astro";
+import FooterTwo from "../../layouts/footers/FooterTwo.astro";
+import Anchor from "../commons/Anchor.astro";
+import Button from "../commons/Button.astro";
+import Picture from "../commons/Picture.astro";
+import Title from "../commons/Title.astro";
+---
+
+<Section>
+    <Picture slot="background" name="Model-S" breakpoint="1.5xs" />
+
+    <Title slot="title" text="Model S" />
+
+    <Anchor slot="subtitle" text="Programe una consulta virtual" />
+
+    <FooterTwo slot="footer">
+        <Button slot="button" text="Pedido personalizado" flavour="neutral" />
+        <Button slot="button2" text="Saber más" flavour="white" />
+    </FooterTwo>
+</Section>

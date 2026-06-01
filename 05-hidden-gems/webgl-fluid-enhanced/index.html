@@ -1,0 +1,36 @@
+<!doctype html>
+<html style="width: 100%; height: 100%">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebGL Fluid Enhanced</title>
+    <script type="module" defer>
+      import WebGLFluidEnhanced from 'webgl-fluid-enhanced';
+
+      const simulation = new WebGLFluidEnhanced();
+
+      simulation.setConfig({
+        colorPalette: ['#cc211b', '#f1c593', '#e87e54', '#f193a7', '#ec6fa9'],
+        densityDissipation: 3,
+        colorUpdateSpeed: 5,
+        hover: false,
+        brightness: 0.6,
+        velocityDissipation: 0.5,
+        bloom: false,
+      });
+
+      simulation.start();
+
+      window.addEventListener('keydown', function (event) {
+        if (event.code === 'Space') {
+          simulation.multipleSplats(1);
+        }
+      });
+
+      window.addEventListener('beforeunload', () => {
+        simulation.stop();
+      });
+    </script>
+  </head>
+  <body style="margin: 0; width: 100%; height: 100%; overflow: hidden"></body>
+</html>

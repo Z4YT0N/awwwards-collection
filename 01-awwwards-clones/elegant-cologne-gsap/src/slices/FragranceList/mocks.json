@@ -1,0 +1,57 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"eyebrow": {
+				"__TYPE__": "FieldContent",
+				"value": "plane",
+				"type": "Text"
+			},
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Sitting"
+						}
+					}
+				]
+			},
+			"body": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Cillum elit occaecat aliqua ex fugiat consectetur cupidatat excepteur ex velit occaecat non nulla. Aliqua veniam sit minim culpa do cupidatat eu ipsum qui aute minim commodo veniam id aliqua."
+						}
+					}
+				]
+			},
+			"fragrances": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"fragrance",
+								{
+									"__TYPE__": "LinkContent",
+									"key": "0f3a5d9e-3839-46a2-b579-ceba8adb0e2b",
+									"value": {
+										"__TYPE__": "DocumentLink",
+										"id": "mock_document_id"
+									}
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

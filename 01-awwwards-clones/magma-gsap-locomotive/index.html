@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link href="dist/style.css" rel="stylesheet" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css" />
+		<!-- Link Swiper's CSS -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+		<title>Magma</title>
+	</head>
+	<body>
+		<main id="main">
+			<nav class="navbar">
+				<img class="navbar__logo" src="images/Logo.png" alt="Magma Logo" />
+				<div class="navbar__right">
+					<a href="#"><button class="navbar__demoButton">Book a Demo</button></a>
+					<button class="navbar__hamburger bgColor">
+						<span class="first_line"></span>
+						<span class="last_line"></span>
+					</button>
+				</div>
+				<ul class="navbar__navItems">
+					<div class="nav-items">
+						<a href="#"><li>Product</li></a>
+						<a href="#"><li>Mission</li></a>
+						<a href="#"><li>Blog</li></a>
+						<a href="#"><li>FAQ</li></a>
+						<a href="#"><li>Contact</li></a>
+					</div>
+					<div class="social-links">
+						<a href="#"><li>Twitter</li></a>
+						<a href="#"><li>Linkedin</li></a>
+						<a href="#"><li>Instagram</li></a>
+					</div>
+				</ul>
+			</nav>
+			<div data-scroll data-scroll-speed="-5" id="page1">
+				<div class="hero">
+					<h1 class="hero__mainText">Experience Real Estate Agility</h1>
+					<div class="hero__subText-CTA">
+						<p class="hero__subText">
+							Create a digital twin of your existing building and release the potential of Web3.
+						</p>
+
+						<a href=""><button class="hero__CTA cta">LEARN MORE</button></a>
+					</div>
+				</div>
+				<video
+					src="https://thisismagma.com/wp-content/themes/magma/assets/home/hero/1.mp4?2"
+					autoplay
+					loop
+					muted
+				></video>
+			</div>
+			<div id="page2">
+				<div class="textAnimation">
+					<h3 class="text_header">CERTIFY YOUR BUILDING AS A DIGITAL TWIN TOKEN (DTT®)</h3>
+					<h1 class="text_main">
+						The Digital Twin Token is a unique digital asset backed by property data. Magma combines your
+						building’s components and systems essential information into a DTT®.
+					</h1>
+				</div>
+			</div>
+			<div id="page3">
+				<canvas></canvas>
+			</div>
+			<div id="page4">
+				<div class="textAnimation">
+					<h3 class="text_header">CONNECT THE BUILDING'S TWIN TO YOUR STAKEHOLDERS</h3>
+					<h1 class="text_main">
+						Users connect directly to the DTT® without any intermediaries. As Stakeholder, they have the
+						power to upload and verify information that enriches the Digital Twin Token. A Stakeholder's
+						ability to access validated-data to perform tasks depends on their specific role.
+					</h1>
+				</div>
+			</div>
+			<div id="page5">
+				<canvas></canvas>
+			</div>
+			<div id="page6">
+				<div class="textAnimation">
+					<h3 class="text_header">INCREASE YOUR DIGITAL TWIN TOKEN’S VALUE</h3>
+					<h1 class="text_main">
+						DTT® data increases the value of your digital asset by lowering operational costs, improving
+						energy use, assisting commercialization, and boosting the liquidity of your building.
+					</h1>
+				</div>
+			</div>
+			<div id="page7">
+				<div class="percentCircle">
+					<div class="percentCircle__inner"></div>
+				</div>
+				<canvas></canvas>
+			</div>
+			<div id="page8">
+				<div class="textContainer">
+					<h1 class="textContainer__main">Magma DTT®</h1>
+					<a href="#"><button class="cta">LEARN MORE</button></a>
+				</div>
+				<video
+					src="https://thisismagma.com/wp-content/themes/magma/assets/home/glass/1.webm?2"
+					autoplay
+					loop
+					muted
+				></video>
+			</div>
+			<div id="page9">
+				<div class="whatInfo container">
+					<h1 class="whatInfo__title">What is Magma?</h1>
+					<div class="whatInfo__info">
+						<div class="whatInfo__image"></div>
+						<div class="whatInfo__subInfo">
+							<h2>Web3 platform</h2>
+							<p>
+								Magma is a Web3 platform for all real estate stakeholders, which provides users with the
+								ability to manage interactions between physical and digital assets through unique, and
+								collectively generated, 3D representations of their buildings.
+							</p>
+						</div>
+						<div class="whatInfo__subInfo">
+							<h2>The Digital Twin Token: The building’s unique digital copy</h2>
+							<p>
+								Magma uses blockchain technology to record essential data, which enables transparent,
+								traceable, and immutable streams of information to be readily accessible to its users.
+								Magma smart contracts are built with this blockchain data to expedite tasks like
+								requests for proposals, lease agreements, and services arrangements.
+							</p>
+						</div>
+						<div class="whatInfo__subInfo">
+							<h2>An Index of digitization</h2>
+							<p>
+								The Magma Index provides valuable insight for decision-making regarding data-sharing,
+								service-creating, and operational/environmental expectations.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="page10">
+				<div class="creation container">
+					<h1 class="creation__title">DTT Creation</h1>
+					<div class="creation__grid">
+						<div class="grid__left">
+							<div class="roadmap__items" style="grid-row: 1">
+								<picture>
+									<source
+										srcset="https://thisismagma.com/assets/home/roadmap/seq/1.jpg"
+										media="(max-width: 63.9988rem)"
+									/>
+									<img
+										src="https://thisismagma.com/assets/home/roadmap/seq/1.jpg"
+										height="100%"
+										width="100%"
+										style="object-fit: cover"
+									/>
+								</picture>
+								<div class="info">
+									<div class="line"></div>
+									<div class="info__count">01</div>
+									<div class="info__title">
+										<h2>Invite your building’s Stakeholders</h2>
+									</div>
+									<div class="info__text">
+										<p>Stakeholders connect directly to the DTT® without any intermediaries.</p>
+									</div>
+								</div>
+							</div>
+							<div class="roadmap__items" style="grid-row: 2">
+								<picture>
+									<source
+										srcset="https://thisismagma.com/assets/home/roadmap/seq/1.jpg"
+										media="(max-width: 63.9988rem)"
+									/>
+									<img
+										src="https://thisismagma.com/assets/home/roadmap/seq/1.jpg"
+										height="100%"
+										width="100%"
+										style="object-fit: cover"
+									/>
+								</picture>
+								<div class="info">
+									<div class="line"></div>
+									<div class="info__count">02</div>
+									<div class="info__title">
+										<h2>Upload and validate contractual and architectural data</h2>
+									</div>
+									<div class="info__text">
+										<p>Each contribution is rewarded in tokens.</p>
+									</div>
+								</div>
+							</div>
+							<div class="roadmap__items" style="grid-row: 3">
+								<picture>
+									<source
+										srcset="https://thisismagma.com/assets/home/roadmap/seq/1.jpg"
+										media="(max-width: 63.9988rem)"
+									/>
+									<img
+										src="https://thisismagma.com/assets/home/roadmap/seq/1.jpg"
+										height="100%"
+										width="100%"
+										style="object-fit: cover"
+									/>
+								</picture>
+								<div class="info">
+									<div class="line"></div>
+									<div class="info__count">03</div>
+									<div class="info__title">
+										<h2>Mint your building’s Digital Twin Token</h2>
+									</div>
+									<div class="info__text">
+										<p>Increase its Magma Index.</p>
+									</div>
+								</div>
+							</div>
+							<div class="roadmap__items" style="grid-row: 4">
+								<picture>
+									<source
+										srcset="https://thisismagma.com/assets/home/roadmap/seq/1.jpg"
+										media="(max-width: 63.9988rem)"
+									/>
+									<img
+										src="https://thisismagma.com/assets/home/roadmap/seq/1.jpg"
+										height="100%"
+										width="100%"
+										style="object-fit: cover"
+									/>
+								</picture>
+								<div class="info">
+									<div class="line"></div>
+									<div class="info__count">04</div>
+									<div class="info__title">
+										<h2>The Digital Twin is up to date</h2>
+									</div>
+									<div class="info__text">
+										<p>Add liquidity to your asset.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="grid__right">
+							<canvas width="620" height="620" class="roadmap__canvas"></canvas>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="page11">
+				<div class="container blog">
+					<h1 class="blog__title">Recent blog</h1>
+					<div class="blog__items">
+						<div class="item">
+							<div class="item__image">
+								<a href="#">
+									<img
+										src="https://thisismagma.com/wp-content/uploads/2023/05/thisismagma.com-magma-a-la-3eme-edition-du-tech-talk-de-cbre-france-1684942208038.jpeg"
+										alt="Blog Image"
+									/>
+								</a>
+							</div>
+							<div class="item__info">
+								<div class="date">May 30, 2023</div>
+								<div class="text">Magma at CBRE France's 3rd Tech Talk</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="item__image">
+								<a href="#">
+									<img
+										src="https://thisismagma.com/wp-content/uploads/2023/05/thisismagma.com-workshop-blockchain-et-actif-digitaux-sba-16-min-scaled.jpg"
+										alt="Blog Image"
+									/>
+								</a>
+							</div>
+							<div class="item__info">
+								<div class="date">May 30, 2023</div>
+								<div class="text">Blockchain and Digital Assets Workshop - Magma x SBA</div>
+							</div>
+						</div>
+						<div class="item">
+							<div class="item__image">
+								<a href="#">
+									<img
+										src="https://thisismagma.com/wp-content/uploads/2023/03/thisismagma.com-magma-and-superworld-create-breakthrough-partnership-to-link-physical-real-estate-assets-and-their-digital-twins-in-real-world-locations-anywhere-on-earth-partnership-announcement-supe.png"
+										alt="Blog Image"
+									/>
+								</a>
+							</div>
+							<div class="item__info">
+								<div class="date">Stories / Mar 31, 2023</div>
+								<div class="text">
+									Magma and SuperWorld create breakthrough partnership to link physical real estate
+									assets and their digital twins in real world locations anywhere on Earth
+								</div>
+							</div>
+						</div>
+					</div>
+					<a href="#"
+						><button class="cta blog__cta">
+							<p>View all</p>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="16"
+								height="16"
+								fill="currentColor"
+								class="bi bi-arrow-right"
+								viewBox="0 0 16 16"
+							>
+								<path
+									fill-rule="evenodd"
+									d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+								/>
+							</svg></button
+					></a>
+				</div>
+			</div>
+			<div id="page12">
+				<div class="container features">
+					<div class="features__info">
+						<h1 class="title">Featured In</h1>
+						<p class="text">
+							Thrilled to have been featured in several prominent media outlets and leading professionals
+							across the world’s best real estate and web3 institutions.
+						</p>
+					</div>
+					<div class="features__carousel">
+						<div class="swiper mySwiper">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<img
+										src="https://thisismagma.com/wp-content/uploads/2023/04/magma.wp2.cubdev.com-home-1.png"
+									/>
+								</div>
+								<div class="swiper-slide">
+									<img
+										src="https://thisismagma.com/wp-content/uploads/2023/04/magma.wp2.cubdev.com-home-2.png"
+									/>
+								</div>
+								<div class="swiper-slide">
+									<img
+										src="https://thisismagma.com/wp-content/uploads/2023/04/magma.wp2.cubdev.com-home-3.png"
+									/>
+								</div>
+								<div class="swiper-slide">
+									<img
+										src="https://thisismagma.com/wp-content/uploads/2023/04/magma.wp2.cubdev.com-home-4.png"
+									/>
+								</div>
+								<div class="swiper-slide">
+									<img
+										src="https://thisismagma.com/wp-content/uploads/2023/04/magma.wp2.cubdev.com-home-5.png"
+									/>
+								</div>
+								<div class="swiper-slide">
+									<img
+										src="https://thisismagma.com/wp-content/uploads/2023/04/magma.wp2.cubdev.com-home-6.png"
+									/>
+								</div>
+								<div class="swiper-slide">
+									<img
+										src="https://thisismagma.com/wp-content/uploads/2023/04/magma.wp2.cubdev.com-home-7.png"
+									/>
+								</div>
+								<div class="swiper-slide">
+									<img
+										src="https://thisismagma.com/wp-content/uploads/2023/04/magma.wp2.cubdev.com-home-8.png"
+									/>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<footer id="page13">
+				<div class="footer">
+					<div class="footer__part1">
+						<h1 class="footer__title">
+							Become an <br />
+							early adopter
+						</h1>
+						<a href="#"><button class="cta footer__cta">Book a demo</button></a>
+					</div>
+					<div class="footer__part2">
+						<a href="#">
+							<li>
+								<p>Twitter</p>
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="16"
+									height="16"
+									fill="currentColor"
+									class="bi bi-arrow-up-right"
+									viewBox="0 0 16 16"
+								>
+									<path
+										fill-rule="evenodd"
+										d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0v-6z"
+									/>
+								</svg>
+							</li>
+						</a>
+						<a href="#">
+							<li>
+								<p>Linkedin</p>
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="16"
+									height="16"
+									fill="currentColor"
+									class="bi bi-arrow-up-right"
+									viewBox="0 0 16 16"
+								>
+									<path
+										fill-rule="evenodd"
+										d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0v-6z"
+									/>
+								</svg>
+							</li>
+						</a>
+						<a href="#">
+							<li>
+								<p>Instagram</p>
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="16"
+									height="16"
+									fill="currentColor"
+									class="bi bi-arrow-up-right"
+									viewBox="0 0 16 16"
+								>
+									<path
+										fill-rule="evenodd"
+										d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0v-6z"
+									/>
+								</svg>
+							</li>
+						</a>
+					</div>
+					<div class="footer__part3">
+						<div class="footer__navs">
+							<div class="nav_left">
+								<a href="#"><li>MISSION</li></a>
+								<a href="#"><li>PRODUCT</li></a>
+								<a href="#"><li>BLOG</li></a>
+								<a href="#"><li>FAQ</li></a>
+							</div>
+							<div class="nav_right">
+								<a href="#"><li>CONTACT</li></a>
+								<a href="#"><li>PRIVACY POLICY</li></a>
+								<a href="#"><li>TERMS</li></a>
+							</div>
+						</div>
+						<div class="footer__subscribe">
+							<h3 class="subscribe_title">Subscribe</h3>
+							<label>
+								<input type="email" placeholder="E-mail" />
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="16"
+									height="16"
+									fill="currentColor"
+									class="bi bi-arrow-right"
+									viewBox="0 0 16 16"
+								>
+									<path
+										fill-rule="evenodd"
+										d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+									/>
+								</svg>
+							</label>
+						</div>
+						<div class="footer__copyright">&copy 2023 BY MAGMA</div>
+					</div>
+				</div>
+			</footer>
+		</main>
+
+		<!-- jQuery CDN -->
+		<script
+			src="https://code.jquery.com/jquery-3.7.0.min.js"
+			integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+			crossorigin="anonymous"
+		></script>
+		<!-- Lettering CDN -->
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.6.1/jquery.lettering.min.js"
+			integrity="sha512-VJ/iYbiu1eJ6yLimfTi65t2R9TFcG5D9X8ZCfbbEFhTfPnKJh8byoKXEawi5ScJZBYL1eiirL1+MczZDx0Tz9Q=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+		<!-- Textillate JS CDN -->
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/textillate/0.4.0/jquery.textillate.min.js"
+			integrity="sha512-0bHMhYsdpiur1bT84kDH4D7cpxFQ9O7uA5yxVAqWC87h552Xt0swX4M+ZlXMKE8oPVRIJ5lAwXWO2UWeDwJJOw=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+		<!-- Locomotive JS CDN -->
+		<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+		<!-- GSAP CDN -->
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+			integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+		<!-- Scroll Trigger CDN -->
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
+			integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+		<!-- Swiper JS -->
+		<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+		<script src="app/js/script.js"></script>
+	</body>
+</html>

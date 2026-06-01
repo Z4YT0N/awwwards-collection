@@ -1,0 +1,183 @@
+@import "../../../css/helpers.scss";
+
+.container {
+  position: relative;
+  z-index: 1;
+  padding: tovw(32px) 0;
+  overflow: hidden;
+
+  @media screen and (max-width: 800px) {
+    padding: tovw(32px, "mobile") 0;
+  }
+}
+
+.pretitle {
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  margin-left: tovw(500px);
+
+  svg {
+    width: tovw(5px);
+    height: tovw(9px);
+
+    @media screen and (max-width: 800px) {
+      width: tovw(5px, "mobile");
+      height: tovw(9px, "mobile");
+    }
+  }
+
+  span {
+    font-size: tovw(16px);
+    height: toem(21px, 16px);
+    padding: 0 toem(4px, 16px);
+    margin-left: 1em;
+    border-radius: 2px;
+    border: 1px solid white;
+    display: inline-flex;
+    align-items: center;
+
+    @media screen and (max-width: 800px) {
+      font-size: tovw(12px, "mobile");
+    }
+  }
+}
+
+.backgroundSvg {
+  position: absolute;
+  width: tovw(732px);
+  height: tovw(301px);
+  left: tovw(815px);
+
+  @media screen and (max-width: 800px) {
+    width: tovw(532px, "mobile");
+    height: tovw(101px, "mobile");
+    left: 0;
+    top: tovw(52px, "mobile");
+  }
+}
+
+.title {
+  position: relative;
+  z-index: 1;
+  font-size: tovw(128px);
+  font-weight: 900;
+  line-height: 0.91;
+  max-width: tovw(1551px);
+  margin-top: tovw(52px);
+  margin-left: auto;
+  margin-right: auto;
+
+  @media screen and (max-width: 800px) {
+    font-size: tovw(30px, "mobile");
+    margin: 0;
+    margin-top: tovw(32px, "mobile");
+    padding: 0 tovw(16px, "mobile");
+    max-width: unset;
+  }
+}
+
+.subtitle {
+  font-size: tovw(32px);
+  letter-spacing: -0.005em;
+  margin-top: tovw(64px);
+  max-width: tovw(750px);
+  margin-left: tovw(972px);
+  position: relative;
+
+  @media screen and (max-width: 800px) {
+    font-size: tovw(11.5px, "mobile");
+    max-width: tovw(500px, "mobile");
+    margin-left: tovw(90px, "mobile");
+    padding-right: tovw(16px, "mobile");
+    padding-top: tovw(12px, "mobile");
+  }
+
+  .arrowDown {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: tovw(-465px);
+    height: tovw(168.3px);
+    width: tovw(10.8px);
+
+    @media screen and (max-width: 800px) {
+      left: tovw(-30px, "mobile");
+      height: 100%;
+      width: auto;
+      padding-top: tovw(12px, "mobile");
+    }
+  }
+}
+
+.marquees {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: tovw(300px);
+  margin-top: tovw(80px);
+
+  .marquee1 {
+    position: absolute;
+    transform: rotate(-7.37deg) translateX(-2%);
+    width: 105%;
+  }
+
+  .marquee2 {
+    position: absolute;
+    transform: rotate(2.52deg);
+  }
+}
+
+// MARQUEE
+
+.marqueeContainer {
+  font-size: tovw(64px);
+  font-weight: 900;
+  height: tovw(75px);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-top: 2px solid var(--marquee-color);
+  border-bottom: 2px solid var(--marquee-color);
+  color: var(--marquee-color);
+  overflow: hidden;
+  line-height: 1;
+  position: relative;
+  background: black;
+
+  @media screen and (max-width: 800px) {
+    font-size: tovw(18px, "mobile");
+    height: tovw(28px, "mobile");
+    margin-top: tovw(32px, "mobile");
+  }
+}
+
+.marqueeAnimationContainer {
+  flex-wrap: nowrap;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  position: absolute;
+
+  &.reverse {
+    right: 0;
+  }
+}
+
+.marqueeItem {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  --mx: #{tovw(12px)};
+  margin: 0 var(--mx);
+  user-select: none;
+
+  svg {
+    width: tovw(90px);
+    height: tovw(48px);
+    margin-left: var(--mx);
+  }
+}

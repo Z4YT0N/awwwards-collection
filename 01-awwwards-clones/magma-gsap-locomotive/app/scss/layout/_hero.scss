@@ -1,0 +1,73 @@
+@use "../util" as u;
+
+.hero {
+	position: absolute;
+	top: 50%;
+	left: 7%;
+	transform: translate(0%, -50%);
+	display: flex;
+	flex-direction: column;
+
+	@include u.breakpoint-up(small) {
+		width: 70%;
+	}
+
+	@include u.breakpoint-up(medium) {
+		width: 85%;
+	}
+
+	@include u.breakpoint-up(large) {
+		width: unset;
+		top: 70%;
+	}
+
+	&__mainText {
+		margin-bottom: 1.5625rem;
+
+		@include u.breakpoint-up(medium) {
+			margin-bottom: 2.625rem;
+		}
+
+		@include u.breakpoint-up(large) {
+			width: 60%;
+			margin-bottom: 2.375rem;
+		}
+
+		@include u.breakpoint-down(verysmall) {
+			font-size: clamp(32px, 15vw, 58px);
+		}
+	}
+
+	&__subText-CTA {
+		@include u.breakpoint-up(large) {
+			display: flex;
+			gap: 50px;
+		}
+	}
+
+	&__subText {
+		margin-bottom: 2.5rem;
+
+		@include u.breakpoint-up(medium) {
+			margin-bottom: 5.3125rem;
+			width: 65%;
+		}
+
+		@include u.breakpoint-up(large) {
+			margin-bottom: unset;
+			width: 32%;
+		}
+
+		@include u.breakpoint-down(verysmall) {
+			font-size: clamp(12px, 10vw, 18px);
+		}
+	}
+
+	&__CTA {
+		@include u.breakpoint-up(large) {
+			width: 8.75rem;
+			height: 2.5rem;
+			font-size: 0.75rem;
+		}
+	}
+}

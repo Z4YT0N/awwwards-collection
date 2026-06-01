@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body::-webkit-scrollbar {
+	width: 0%;
+}
+
+body {
+	font-family: Bricolage;
+	background-color: #163300;
+	overflow-x: hidden;
+}
+
+@font-face {
+	src: url("../font/Bricolage.woff2");
+	font-family: Bricolage;
+}
+
+@layer utilities {
+	.padding-x {
+		@apply px-[30px] xm:px-[20px] sm:px-[20px];
+	}
+}

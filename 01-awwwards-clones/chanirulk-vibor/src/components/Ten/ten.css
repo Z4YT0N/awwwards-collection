@@ -1,0 +1,117 @@
+.ten{
+    overflow-x: hidden;
+    font-family: Formular;
+    background-color: rgb(7, 7, 7);
+    height: 100vh;
+}
+.pro{
+    color: white;
+    position: absolute;
+    font-size: 1vw;
+    text-transform: uppercase;
+    font-family: Formular-Bold;
+    margin-top: 10%;
+    left: 20px;
+}
+.footer a{
+    font-size: 1vw;
+    color: grey;
+    line-height: 1px;
+    text-transform: uppercase;
+}
+.footer{
+    margin-top: 12%;
+}
+.footer a:hover{
+    color: white;
+}
+.pro-2{
+    color: white;
+    position: absolute;
+    font-size: 1vw;
+    text-transform: uppercase;
+    font-family: Formular-Bold;
+    margin-top: 10%;
+    left: 18%;
+}
+.footer-2 a{
+    font-size: 1vw;
+    color: grey;
+    line-height: 1px;
+    text-transform: uppercase;
+}
+.footer-2{
+    position: absolute;
+    margin-top: -8.5%;
+    left: 16.5%;
+
+}
+.footer-2 a:hover{
+    color: white;
+}
+.footer-2 a:after {
+    top: 32px;
+    content: '';
+    position: absolute;
+    width: 0%;
+    transform: scaleX(0);
+    height: 0px;
+    transform-origin: bottom right;
+    transition: transform 1s ease-out;
+}
+.footer-2:hover:after {
+    text-decoration: none;
+    transform: scaleX(0);
+    transform-origin: bottom left;
+}
+.tag{
+    color: white;
+    position: absolute;
+    font-size: 1vw;
+    text-transform: uppercase;
+    font-family: Formular-Bold;
+    margin-top: -11%;
+    right: 11%;
+}
+.footer-3 a{
+    font-size: 1vw;
+    color: grey;
+    line-height: 1px;
+    text-transform: uppercase;
+}
+.footer-3{
+    position: absolute;
+    margin-top: -8.5%;
+    right: 15.5%;
+
+}
+.footer-3 a:hover{
+    color: white;
+}
+.footer-3 a:after {
+    top: 32px;
+    content: '';
+    position: absolute;
+    width: 0%;
+    transform: scaleX(0);
+    height: 0px;
+    transform-origin: bottom right;
+    transition: transform 1s ease-out;
+}
+.footer-3:hover:after {
+    text-decoration: none;
+    transform: scaleX(0);
+    transform-origin: bottom left;
+}
+.bottom{
+    margin-top: 20%;
+}
+.final:hover{
+    color: red;
+}
+.final-two{
+    position: absolute;
+    color: white;
+    margin-top: -2.5%;
+    right: 10px;
+}

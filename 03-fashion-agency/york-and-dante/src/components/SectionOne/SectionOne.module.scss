@@ -1,0 +1,65 @@
+@import "../../common/include-media";
+
+.section {
+	width: 100vw;
+	height: 100vh;
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	@include media(">mobile") {
+		background-image: url("https://res.cloudinary.com/tobijudah/image/upload/q_auto,f_auto/v1637486753/it/1-desktop_orznd3.png");
+	}
+	@include media("<=mobile") {
+		padding: 3rem 1.5rem 0;
+		background-image: url("https://res.cloudinary.com/tobijudah/image/upload/q_auto,f_auto/v1637486752/it/1-mobile_lnwgdu.png");
+	}
+}
+
+.text {
+	font: 600 10.667vh/98.49% "New York Extra Large", serif;
+	letter-spacing: -0.06em;
+
+	@include media(">mobile") {
+		padding: 12.44vh 0 1.5vh 18vh;
+	}
+	@include media("<=mobile") {
+		font-size: 3rem;
+		padding: 1.9375rem 0 0.75rem;
+	}
+}
+
+.sup {
+	letter-spacing: normal;
+
+	@include media(">mobile") {
+		font-size: 4vh;
+		line-height: 150%;
+	}
+	@include media("<=mobile") {
+		font-size: 1.25rem;
+	}
+}
+
+.subText {
+	color: #414141;
+	font: 600 2.35vh/150% "Neue Haas Grotesk Display Pro", Arial, Helvetica,
+		sans-serif;
+	white-space: pre-wrap;
+
+	@include media(">mobile") {
+		margin-left: 19.22vh;
+	}
+	@include media("<=mobile") {
+		font-size: 1rem;
+	}
+}
+
+.button {
+	position: absolute;
+	right: 13.3vh;
+	bottom: 12.5vh;
+
+	@include media("<=mobile") {
+		display: none;
+	}
+}

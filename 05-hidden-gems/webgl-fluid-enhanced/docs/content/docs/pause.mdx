@@ -1,0 +1,24 @@
+---
+title: Pause
+description: Pausing the simulation
+---
+
+## Usage
+
+To pause the simulation, call the `togglePause` method on the instance.
+
+```javascript
+simulation.togglePause();
+```
+
+Calling it again will resume the simulation. `togglePause` will also return a boolean value indicating whether the simulation is paused.
+
+The `togglePause` method takes in an optional boolean parameter `drawWhilePaused` which determines whether splats will still be drawn when paused.
+
+```javascript
+const drawWhilePaused = true;
+
+simulation.togglePause(drawWhilePaused);
+```
+
+<Callout type='info'>By default, `drawWhilePaused` is set to `false`</Callout>

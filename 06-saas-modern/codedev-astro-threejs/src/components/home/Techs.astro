@@ -1,0 +1,69 @@
+---
+import { getLangFromUrl, useTranslations } from '@/i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+import { techs } from '@/scripts/consts';
+---
+
+<section class='section overflow-hidden relative'>
+	<h2
+		class='text-xl md:text-2xl font-medium after:skew-x-12 after:bg-white flex items-center after:w-12 after:-z-10 after:h-full after:absolute after:-right-3 text-center absolute bg-white z-10 h-full top-0 pr-5'>
+		{t('techs.title')}
+	</h2>
+
+	<ul
+		class='flex justify-center items-center'
+		style={`--count: ${techs.length}`}>
+		{
+			techs.map((tech, i) => (
+				<li
+					class='p-2 rounded bg-gray-200 text-white  font-medium flex gap-3 items-center w-36 justify-center'
+					style={`background: ${tech.color}; --index: ${i}`}>
+					<img src={tech.icon} alt='' class='invert w-7' />
+					{tech.title}
+				</li>
+			))
+		}
+	</ul>
+</section>
+
+<style>
+	ul {
+		--speed: 20;
+		--inset: 0;
+		--outset: 0;
+	}
+
+	ul:hover li {
+		animation-play-state: paused;
+	}
+
+	@media (prefers-reduced-motion: no-preference) {
+		li {
+			--origin-x: calc(
+				((var(--count) - var(--index)) + var(--inset, 0)) * 100%
+			);
+			--origin-y: 0;
+			--destination-x: calc(
+				calc((var(--index) + 1 + var(--outset, 0)) * -100%)
+			);
+			--destination-y: 0;
+			--duration: calc(var(--speed) * 1s);
+			--delay: calc(
+				(var(--duration) / var(--count)) *
+					(var(--index, 0) - (var(--count) * 0.9))
+			);
+			min-width: 7.5rem;
+			animation: slide var(--duration)
+				calc(var(--delay) - (var(--count) * 0.5s)) infinite reverse
+				linear;
+			translate: var(--origin-x) var(--origin-y);
+		}
+
+		@keyframes slide {
+			100% {
+				translate: var(--destination-x) var(--destination-y);
+			}
+		}
+	}
+</style>

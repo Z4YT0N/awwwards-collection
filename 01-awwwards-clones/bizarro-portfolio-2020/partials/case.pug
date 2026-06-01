@@ -1,0 +1,661 @@
+mixin template({ id, title, category, company, role, technologies, link, label, gallery })
+  article.case(id=id)
+    header.case__header
+      h3.case__title
+        span.case__title__text=title
+
+      figure.case__media
+        img.case__media__image(
+          data-src=`/projects/${id}.webp`
+        )
+
+    .case__information
+      p.case__information__detail
+        | #[strong.case__information__detail__title Company]
+        | #{company}
+
+      p.case__information__detail
+        | #[strong.case__information__detail__title Role]
+        | #{role}
+
+      p.case__information__detail
+        | #[strong.case__information__detail__title Technologies]
+        | #{technologies}
+
+      if link
+        p.case__information__detail
+          | #[strong.case__information__detail__title #{label}]
+          | #[a(href=link target="_blank" rel="noreferrer noopener") View →]
+
+    .case__gallery
+      each content, index in gallery
+        .case__gallery__media
+          .case__gallery__media__box(style=`max-width: ${content.width / 10}rem;`)
+            span.case__gallery__media__loader
+              span
+              span
+              span
+
+            span.case__gallery__media__placeholder(
+              data-src=`/case/${id}/${content.image}.webp`
+              style=`padding-top: ${content.height / content.width * 100}%;`
+            )
+
+.cases
+  +template({
+    id: 'xbox-museum',
+    title: 'XBOX MUSEUM',
+    company: 'Active Theory',
+    role: 'Lead Developer',
+    technologies: 'WebGL · GLSL · JavaScript',
+    label: 'Live URL',
+    link: 'https://museum.xbox.com/',
+    gallery: [
+      { image: '1', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '2', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '3', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '4', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '5', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '6', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '7', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '8', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '9', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '10', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '11', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '12', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '13', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '14', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '15', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '16', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '17', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '18', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '19', type: 'screenshot', height: '1080', width: '1920' }
+    ]
+  })
+
+  +template({
+    id: 'bbdo',
+    title: 'BBDO',
+    company: 'Freelance',
+    role: 'Interactive Developer',
+    technologies: 'WordPress · WebGL · GLSL · JavaScript',
+    label: 'Live URL',
+    link: 'https://bbdo.de/',
+    gallery: [
+      { image: '1', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '2', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '3', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '4', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '5', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '6', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '7', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '8', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '9', type: 'screenshot', height: '1080', width: '1920' }
+    ]
+  })
+
+  +template({
+    id: 'peggy-gou',
+    title: 'PEGGY GOU',
+    company: 'Freelance',
+    role: 'Interactive Developer',
+    technologies: 'WebGL · GLSL · JavaScript',
+    label: 'Live URL',
+    link: 'https://peggygou.com/',
+    gallery: [
+      { image: '1', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '2', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '3', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '4', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '5', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '6', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '7', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '8', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '9', type: 'screenshot', height: '1080', width: '1920' }
+    ]
+  })
+
+  +template({
+    id: 'isabel-moranta',
+    title: 'ISABEL MORANTA',
+    company: 'Freelance',
+    role: 'Interactive Developer',
+    technologies: 'JavaScript',
+    label: 'Live URL',
+    link: 'https://isabelmoranta.com/',
+    gallery: [
+      { image: '1', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '2', type: 'screenshot', height: '2353', width: '1920' },
+      { image: '3', type: 'screenshot', height: '2350', width: '1920' },
+      { image: '4', type: 'screenshot', height: '2618', width: '1920' },
+      { image: '5', type: 'screenshot', height: '2500', width: '1920' }
+    ]
+  })
+
+  +template({
+    id: 'floema',
+    title: 'FLOEMA',
+    company: 'Freelance',
+    role: 'Interactive Developer',
+    technologies: 'WebGL · GLSL · JavaScript',
+    label: 'Live URL',
+    link: 'https://floema.jewelry/',
+    gallery: [
+      { image: '1', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '2', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '3', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '4', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '5', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '6', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '7', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '8', type: 'screenshot', height: '1080', width: '1920' }
+    ]
+  })
+
+  +template({
+    id: 'garoa-skincare',
+    title: 'GAROA SKINCARE',
+    company: 'Freelance',
+    role: 'Interactive Developer',
+    technologies: 'JavaScript',
+    label: 'Live URL',
+    link: 'https://garoaskincare.com/',
+    gallery: [
+      { image: '1', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '2', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '3', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '4', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '5', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '6', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '7', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '8', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '9', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '10', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '11', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '12', type: 'screenshot', height: '1080', width: '1920' },
+    ]
+  })
+
+  +template({
+    id: 'design-embraced',
+    title: 'DESIGN EMBRACED',
+    company: 'Freelance',
+    role: 'Interactive Developer',
+    technologies: 'WebGL · GLSL · JavaScript',
+    label: 'Live URL',
+    link: 'https://designembraced.com/',
+    gallery: [
+      { image: '1', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '2', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '3', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '4', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '5', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '6', type: 'screenshot', height: '1080', width: '1920' },
+    ]
+  })
+
+  +template({
+    id: 'kacper-chlebowicz',
+    title: 'KACPER CHLEBOWICZ',
+    company: 'Freelance',
+    role: 'Interactive Developer',
+    technologies: 'WebGL · GLSL · JavaScript',
+    label: 'Live URL',
+    link: 'https://kacper.ch/',
+    gallery: [
+      { image: '1', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '2', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '3', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '4', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '5', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '6', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '7', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '8', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '9', type: 'screenshot', height: '1080', width: '1920' },
+    ]
+  })
+
+  +template({
+    id: 'trolli',
+    title: 'TROLLI',
+    company: 'Active Theory',
+    role: 'Interactive Developer',
+    technologies: 'WebGL · GLSL · JavaScript',
+    label: 'Live URL',
+    link: 'https://trollideliciouslydarkescape.com/',
+    gallery: [
+      { image: '1', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '2', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '3', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '4', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '5', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '6', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '7', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '8', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '9', type: 'screenshot', height: '1080', width: '1920' },
+    ]
+  })
+
+  +template({
+    id: 'adventure-time',
+    title: 'ADVENTURE TIME',
+    company: 'Active Theory',
+    role: 'Creative Developer',
+    technologies: 'WebGL · GLSL · JavaScript',
+    label: 'Live URL',
+    gallery: [
+      { image: '1', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '2', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '3', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '4', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '5', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '6', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '7', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '8', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '9', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '10', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '11', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '12', type: 'screenshot', height: '1080', width: '1920' },
+    ],
+    link: 'https://adventuretimedistantlands.com/'
+  })
+
+  +template({
+    id: 'studio-maertens',
+    title: 'STUDIO MÆRTENS',
+    company: 'Freelance',
+    role: 'Creative Developer',
+    technologies: 'WebGL · GLSL · JavaScript',
+    label: 'Live URL',
+    gallery: [
+      { image: '1', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '2', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '3', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '4', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '5', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '6', type: 'screenshot', height: '1080', width: '1920' },
+    ],
+    link: 'https://studiomaertens.com/'
+  })
+
+  +template({
+    id: 'inbound',
+    title: 'INBOUND',
+    company: 'Active Theory',
+    role: 'Interactive Developer',
+    technologies: 'WebGL · GLSL · JavaScript',
+    label: 'Case Study URL',
+    gallery: [
+      { image: '1', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '2', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '3', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '4', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '5', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '6', type: 'screenshot', height: '1080', width: '1920' },
+    ],
+    link: 'https://dreamwave.tech/inbound-2020'
+  })
+
+  +template({
+    id: 'redis',
+    title: 'REDIS',
+    company: 'Active Theory',
+    role: 'Interactive Developer',
+    technologies: 'WebGL · GLSL · JavaScript',
+    label: 'Case Study URL',
+    gallery: [
+      { image: '1', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '2', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '3', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '4', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '5', type: 'screenshot', height: '1080', width: '1920' },
+    ],
+    link: 'https://dreamwave.tech/redis-conf'
+  })
+
+  +template({
+    id: 'kaleidoz',
+    title: 'KALEIDOZ',
+    company: 'Freelance',
+    role: 'Creative Developer',
+    technologies: 'WebGL · GLSL · JavaScript',
+    label: 'Live URL',
+    gallery: [
+      { image: '1', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '2', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '3', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '4', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '5', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '6', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '7', type: 'screenshot', height: '1080', width: '1920' },
+    ],
+    link: 'https://kaleidozdesign.com/'
+  })
+
+  +template({
+    id: 'erika-moreira',
+    title: 'ERIKA MOREIRA',
+    company: 'Freelance',
+    role: 'Creative Developer',
+    technologies: 'Canvas · JavaScript',
+    label: 'Live URL',
+    gallery: [
+      { image: '1', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '2', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '3', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '4', type: 'screenshot', height: '1080', width: '1920' },
+    ],
+    link: 'https://erikamoreira.co/'
+  })
+
+  +template({
+    id: 'bruno-arizio',
+    title: 'BRUNO ARIZIO',
+    company: 'Freelance',
+    role: 'Creative Developer',
+    technologies: 'WebGL · GLSL · JavaScript',
+    label: 'Case Study URL',
+    gallery: [
+      { image: '1', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '2', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '3', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '4', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '5', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '6', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '7', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '8', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '9', type: 'screenshot', height: '1080', width: '1920' },
+    ],
+    link: 'https://www.behance.net/gallery/89455165/Bruno-Arizio-Portfolio'
+  })
+
+  +template({
+    id: 'dominic-berzins',
+    title: 'DOMINIC BERZINS',
+    company: 'Freelance',
+    role: 'Creative Developer',
+    technologies: 'WebGL · GLSL · JavaScript',
+    label: 'Live URL',
+    gallery: [
+      { image: '1', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '2', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '3', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '4', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '5', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '6', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '7', type: 'screenshot', height: '1080', width: '1920' },
+    ],
+    link: 'https://dominic.bz/'
+  })
+
+  +template({
+    id: 'pagethink',
+    title: 'PAGETHINK',
+    company: 'Antinomy',
+    role: 'Creative Developer',
+    technologies: 'WordPress · JavaScript',
+    label: 'Live URL',
+    gallery: [
+      { image: '1', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '2', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '3', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '4', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '5', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '6', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '7', type: 'screenshot', height: '1080', width: '1920' },
+    ],
+    link: 'https://www.pagethink.com/'
+  })
+
+  +template({
+    id: 'neoway',
+    title: 'NEOWAY',
+    company: 'SOLID',
+    role: 'Creative Developer',
+    technologies: 'WebGL · GLSL · JavaScript',
+    label: 'Case Study URL',
+    gallery: [
+      { image: '1', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '2', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '3', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '4', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '5', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '6', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '7', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '8', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '9', type: 'screenshot', height: '1080', width: '1920' },
+    ],
+    link: 'https://www.linkedin.com/posts/rise-new-york_independent-advertising-agency-activity-6553695483888451584-ejxI/'
+  })
+
+  +template({
+    id: 'cult',
+    title: 'CULT',
+    company: 'Freelance',
+    role: 'Creative Developer',
+    technologies: 'WordPress · Canvas · JavaScript',
+    label: 'Live URL',
+    gallery: [
+      { image: '1', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '2', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '3', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '4', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '5', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '6', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '7', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '8', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '9', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '10', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '11', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '12', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '13', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '14', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '15', type: 'screenshot', height: '1080', width: '1920' },
+    ],
+    link: 'https://cultldn.com/'
+  })
+
+  +template({
+    id: 'movida',
+    title: 'MOVIDA',
+    company: 'Royalpixel',
+    role: 'Creative Developer',
+    technologies: 'Phaser · JavaScript · React Native',
+    label: 'App Store URL',
+    gallery: [
+      { image: '1', type: 'portrait', height: '667', width: '375' },
+      { image: '2', type: 'portrait', height: '667', width: '375' },
+      { image: '3', type: 'portrait', height: '667', width: '375' },
+      { image: '4', type: 'portrait', height: '667', width: '375' },
+      { image: '5', type: 'portrait', height: '667', width: '375' },
+      { image: '6', type: 'portrait', height: '667', width: '375' },
+      { image: '7', type: 'portrait', height: '667', width: '375' },
+      { image: '8', type: 'portrait', height: '667', width: '375' },
+      { image: '9', type: 'portrait', height: '667', width: '375' },
+    ],
+    link: 'https://apps.apple.com/br/app/movida-kids/id1337822375'
+  })
+
+  +template({
+    id: 'lufthansa-2',
+    title: 'LUFTHANSA',
+    company: 'UNIT9',
+    role: 'Creative Developer',
+    technologies: 'WebGL · GLSL · JavaScript',
+    label: 'Case Study URL',
+    gallery: [
+      { image: '1', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '2', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '3', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '4', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '5', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '6', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '7', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '8', type: 'screenshot', height: '1080', width: '1920' },
+    ],
+    link: 'https://www.unit9.com/project/lufthansa-sayyestotheworld-2/'
+  })
+
+  +template({
+    id: 'tiaa',
+    title: 'TIAA',
+    company: 'UNIT9',
+    role: 'Creative Developer',
+    technologies: 'Canvas · React · JavaScript',
+    label: 'Case Study URL',
+    gallery: [
+      { image: '1', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '2', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '3', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '4', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '5', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '6', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '7', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '8', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '9', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '10', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '11', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '12', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '13', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '14', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '15', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '16', type: 'screenshot', height: '1080', width: '1920' },
+    ],
+    link: 'https://www.unit9.com/project/tiaa-difference-maker/'
+  })
+
+  +template({
+    id: 'lufthansa-1',
+    title: 'LUFTHANSA',
+    company: 'UNIT9',
+    role: 'Creative Developer',
+    technologies: 'WebGL · GLSL · JavaScript',
+    label: 'Case Study URL',
+    gallery: [
+      { image: '1', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '2', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '3', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '4', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '5', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '6', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '7', type: 'screenshot', height: '1080', width: '1920' },
+    ],
+    link: 'https://www.unit9.com/project/lufthansa-sayyestotheworld/'
+  })
+
+  +template({
+    id: 'shell',
+    title: 'SHELL',
+    company: 'UNIT9',
+    role: 'Creative Developer',
+    technologies: 'WebGL · GLSL · JavaScript',
+    label: 'Live URL',
+    gallery: [
+      { image: '1', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '2', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '3', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '4', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '5', type: 'screenshot', height: '1080', width: '1920' },
+    ],
+    link: 'http://shell-bts-master.thisisnotbranded.com/ontopoftheworld/en'
+  })
+
+  +template({
+    id: 'corvette',
+    title: 'CORVETTE',
+    company: 'UNIT9',
+    role: 'Creative Developer',
+    technologies: 'WebGL · GLSL · JavaScript',
+    label: 'Case Study URL',
+    gallery: [
+      { image: '1', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '2', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '3', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '4', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '5', type: 'screenshot', height: '1080', width: '1920' },
+    ],
+    link: 'https://www.unit9.com/project/corvette-modules/'
+  })
+
+  +template({
+    id: 'nike',
+    title: 'NIKE',
+    company: 'UNIT9',
+    role: 'Creative Developer',
+    technologies: 'Phaser · JavaScript',
+    label: 'Live URL',
+    gallery: [
+      { image: '1', type: 'landscape', height: '414', width: '736' },
+      { image: '2', type: 'landscape', height: '414', width: '736' },
+      { image: '3', type: 'landscape', height: '414', width: '736' },
+      { image: '4', type: 'landscape', height: '414', width: '736' },
+      { image: '5', type: 'landscape', height: '414', width: '736' },
+      { image: '6', type: 'landscape', height: '414', width: '736' },
+      { image: '7', type: 'landscape', height: '414', width: '736' },
+      { image: '8', type: 'landscape', height: '414', width: '736' },
+      { image: '9', type: 'landscape', height: '414', width: '736' },
+      { image: '10', type: 'landscape', height: '414', width: '736' },
+    ],
+    link: 'http://nikecityfast.co.uk/'
+  })
+
+  +template({
+    id: 'airbnb',
+    title: 'AIRBNB',
+    company: 'UNIT9',
+    role: 'Creative Developer',
+    technologies: 'Angular · Redux · JavaScript',
+    label: 'Case Study URL',
+    gallery: [
+      { image: '1', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '2', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '3', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '4', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '5', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '6', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '7', type: 'screenshot', height: '1080', width: '1920' },
+    ],
+    link: 'https://www.unit9.com/project/airbnb-family-trips/'
+  })
+
+  +template({
+    id: 'discovery-kids',
+    title: 'DISCOVERY KIDS',
+    company: 'Royalpixel',
+    role: 'Creative Developer',
+    technologies: 'Phaser · JavaScript',
+    label: 'Live URL',
+    gallery: [
+      { image: '1', type: 'screenshot', height: '650', width: '1156' },
+      { image: '2', type: 'screenshot', height: '650', width: '1156' },
+      { image: '3', type: 'screenshot', height: '650', width: '1156' },
+      { image: '4', type: 'screenshot', height: '650', width: '1156' },
+      { image: '5', type: 'screenshot', height: '650', width: '1156' },
+      { image: '6', type: 'screenshot', height: '650', width: '1156' },
+      { image: '7', type: 'screenshot', height: '650', width: '1156' },
+      { image: '8', type: 'screenshot', height: '650', width: '1156' },
+      { image: '9', type: 'screenshot', height: '650', width: '1156' },
+      { image: '10', type: 'screenshot', height: '650', width: '1156' },
+      { image: '11', type: 'screenshot', height: '650', width: '1156' },
+      { image: '12', type: 'screenshot', height: '650', width: '1156' },
+    ],
+    link: 'https://lhbizarro.github.io/doki/game-es/'
+  })
+
+  +template({
+    id: 'rock-in-rio',
+    title: 'ROCK IN RIO',
+    company: 'Royalpixel',
+    role: 'Creative Developer',
+    technologies: 'WebGL · GLSL · JavaScript',
+    label: 'Live URL',
+    gallery: [
+      { image: '1', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '2', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '3', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '4', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '5', type: 'screenshot', height: '1080', width: '1920' },
+    ],
+    link: 'https://believe.earth/earth/'
+  })
+

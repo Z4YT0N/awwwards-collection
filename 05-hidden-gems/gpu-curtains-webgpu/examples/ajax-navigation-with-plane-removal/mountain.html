@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <!-- Metas -->
+    <title>gpu-curtains | AJAX Navigation with plane removal example</title>
+    <meta name="description" content="AJAX Navigation with WebGPU plane removal with gpu-curtains" />
+
+    <meta property="og:title" content="gpu-curtains | AJAX Navigation with plane removal example" />
+    <meta property="og:type" content="article" />
+    <meta property="og:description" content="AJAX Navigation with WebGPU plane removal with gpu-curtains" />
+    <meta
+      property="og:image"
+      content="https://raw.githubusercontent.com/martinlaxenaire/gpu-curtains/main/website/assets/gpu-curtains-logo-1920-1280.jpg"
+    />
+    <meta
+      property="og:url"
+      content="https://martinlaxenaire.github.io/gpu-curtains/examples/ajax-navigation-with-plane-removal/mountain.html"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link href="../common-styles.css" rel="stylesheet" />
+    <link href="styles.css" rel="stylesheet" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://raw.githubusercontent.com/martinlaxenaire/gpu-curtains/main/website/assets/favicon.png"
+    />
+  </head>
+
+  <body>
+    <div id="canvas" class="scrollable"></div>
+
+    <div id="loader"></div>
+
+    <div id="page">
+      <header>
+        <nav id="navigation">
+          <a class="navigation-button primary-button" href="index.html">Home</a>
+          <a class="navigation-button primary-button" href="beach.html">Beach</a>
+          <a class="navigation-button primary-button active" href="mountain.html">Mountain</a>
+        </nav>
+      </header>
+
+      <main id="content">
+        <h1>Mountain</h1>
+
+        <div id="content-images">
+          <div class="plane">
+            <img
+              src="https://picsum.photos/id/29/1920/1080"
+              crossorigin=""
+              loading="lazy"
+              data-texture-name="planeTexture"
+            />
+          </div>
+
+          <div class="plane">
+            <img
+              src="https://picsum.photos/id/177/1920/1080"
+              crossorigin=""
+              loading="lazy"
+              data-texture-name="planeTexture"
+            />
+          </div>
+
+          <div class="plane">
+            <img
+              src="https://picsum.photos/id/231/1920/1080"
+              crossorigin=""
+              loading="lazy"
+              data-texture-name="planeTexture"
+            />
+          </div>
+
+          <div class="plane">
+            <img
+              src="https://picsum.photos/id/235/1920/1080"
+              crossorigin=""
+              loading="lazy"
+              data-texture-name="planeTexture"
+            />
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <a
+      href="https://github.com/martinlaxenaire/gpu-curtains/blob/main/examples/ajax-navigation-with-plane-removal/"
+      title="Show source code"
+      id="source-code-link"
+      class="primary-button"
+      target="_blank"
+      >&lt;/ &gt;</a
+    >
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+    <script src="view-transitions-api-utils.js" type="module"></script>
+    <script src="main.js" type="module"></script>
+
+    <!-- Umami -->
+    <script
+      defer
+      src="https://cloud.umami.is/script.js"
+      data-website-id="5633e080-94cc-462b-9158-a45314c01630"
+      data-domains="martinlaxenaire.github.io"
+    ></script>
+  </body>
+</html>

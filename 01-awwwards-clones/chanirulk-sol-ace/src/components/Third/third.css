@@ -1,0 +1,63 @@
+.third{
+    background-color: #ebe6d7;
+    height: 100vh;
+}
+.side-one{
+    position: absolute;
+    background-color: #645832;
+    height: 100vh;
+    width: 50%;
+}
+.side-head{
+    position: absolute;
+    color: white;
+    font-size: 2.4vw;
+    font-family: nue;
+    margin-top: 38%;
+    left: 20%;
+}
+.side-about{
+    text-align: left;
+    font-size: 0.8vw;
+    color: rgba(255, 255, 255, 0.63);
+    font-family: ara;
+    position: absolute;
+    font-weight: lighter;
+    margin-top: 50%;
+    line-height: 20px;
+    left: 20%;
+}
+.link-about{
+    color: white;
+    font-size: 1vw;
+    font-weight: 500;
+    position: absolute;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-top: 70%;
+    left: 20%;
+}
+.link-about:hover{
+    color: black;
+}
+.side-two{
+    position: absolute;
+    height: 100vh;
+    width: 50%;
+    right: 0;
+    overflow: hidden;
+}
+.chair{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.chair{
+    transform-origin: 50% 50%;
+    transition: transform 1s, filter .5s ease-out;
+}
+.chair:hover{
+    transform: scale(1.2);
+    overflow: hidden;
+    transition: transform 3s, filter 3s ease-in-out;
+}

@@ -1,0 +1,130 @@
+.grid{
+    background-color: #ebe6d7;
+    height: 100vh;
+}
+.line{
+   background-color: #645832;
+   height: 1px;
+   width: 100%;
+   position: absolute;
+   margin-top: 8%;
+}
+.line-two{
+    background-color: #645832;
+    height: 1px;
+    width: 100%;
+    position: absolute;
+    margin-top: 13%;
+}
+.line-three{
+    background-color: #645832;
+    height: 1px;
+    width: 100%;
+    position: absolute;
+    margin-top: 45%;
+}
+.feature{
+    position: absolute;
+    margin-top: 11%;
+    left: 17%;
+    transform: translate(50%, -50%);
+    color: black;
+    font-weight: lighter;
+    font-size: 3vw;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: nue;
+}
+.products{
+    font-family: nue;
+}
+.prod-grid{
+    height: 455px;
+    width: 450px;
+    border: 1px solid #645832;
+    position: absolute;
+    margin-top: 15%;
+    left: 1px;
+}
+.prod-grid-two{
+    height: 455px;
+    width: 450px;
+    border: 1px solid #645832;
+    position: absolute;
+    margin-top: 15%;
+    left: 25%;
+}
+.prod-grid-three{
+    height: 455px;
+    width: 450px;
+    border: 1px solid #645832;
+    position: absolute;
+    margin-top: 15%;
+    left: 50%;
+}
+.prod-grid-four{
+    height: 455px;
+    width: 450px;
+    border: 1px solid #645832;
+    position: absolute;
+    margin-top: 15%;
+    left: 75%;
+}
+.prod-grid-pic{
+    height: 400px;
+    width: 400px;
+    background-color: white;
+    position: absolute;
+    margin-top: 15px;
+    left: 25px;
+}
+.contain{
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+}
+.price-des{
+    color: black;
+    position: absolute;
+    font-size: 1vw;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+    text-transform: uppercase;
+    margin-top: 1px;
+}
+.price{
+    position: absolute;
+    color: #645832;
+    font-size: 1vw;
+    font-weight: lighter;
+    font-family: Arial, Helvetica, sans-serif;
+    right: 5px;
+    margin-top: -1px;
+}
+.shop-link{
+    text-decoration: none;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+    position: absolute;
+    margin-top: 42%;
+    left: 48%;
+    font-size: 1.1vw;
+}
+.shop-link:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    transform-origin: bottom right;
+    transition: transform 1s ease-out;
+}
+.shop-link:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+  

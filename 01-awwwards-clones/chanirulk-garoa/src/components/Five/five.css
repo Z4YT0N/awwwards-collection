@@ -1,0 +1,56 @@
+.five{
+    height: 100vh;
+    font-family: time;
+    background-color: #f3ebe3;
+}
+.items{
+    overflow-x: hidden;
+	display: flex;
+	align-items: center;
+	width: fit-content;
+    overflow-x: hidden;
+}
+.entry{
+    overflow-x: hidden;
+    display: flex;
+    align-items: center;
+	flex-direction: column;
+	position: relative;
+	width: 500px;
+	margin: 1em;
+	border-radius: 20px;
+    height: 400px;
+    animation: carouselAnim 60s infinite alternate linear;
+}
+@keyframes carouselAnim {
+	from { transform: translate(0,0); }
+	to { transform: translate(calc(-500% + (5 * 300px))) }
+}
+.slide{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+.season{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1vw;
+    letter-spacing: 5px;
+    line-height: 100px;
+    position: absolute;
+    color: white;
+    z-index: 2;
+    margin-top: 4%;
+    left: 45%;
+}
+.slide-head{
+    text-align: center;
+    font-size: 9vw;
+    line-height: 100px;
+    position: absolute;
+    color: white;
+    z-index: 2;
+    margin-top: 9%;
+    left: 35.5%;
+}

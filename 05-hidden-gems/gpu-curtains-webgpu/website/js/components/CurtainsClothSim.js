@@ -1,0 +1,477 @@
+import { BindGroup, ComputePass, Plane, PlaneGeometry, Vec2, Vec3, Raycaster } from '../../../dist/esm/index.mjs'
+import { computeClothSim } from '../shaders/compute-cloth.wgsl.js'
+import { clothFs, clothVs } from '../shaders/curtains-cloth.wgsl.js'
+
+// Ported and adapted from https://github.com/Yuu6883/WebGPUDemo
+export class CurtainsClothSim {
+  constructor({ gpuCurtains }) {
+    this.gpuCurtains = gpuCurtains
+
+    this._ready = false
+    this.showTween = null
+
+    this.init()
+  }
+
+  get ready() {
+    return this._ready
+  }
+
+  set ready(value) {
+    if (value && !this.ready && this.plane) {
+      this.showTween = gsap
+        .timeline()
+        .set(this.computeForcesPass.uniforms.interaction.wind.value, {
+          z: -30,
+        })
+        .call(() => this.plane.domElement.element.classList.add('canvas-texture-ready'))
+        .to(this.plane.uniforms.global.opacity, {
+          value: 1,
+          duration: 1,
+        })
+        .set(
+          this.computeForcesPass.uniforms.interaction.wind.value,
+          {
+            z: 0,
+          },
+          2
+        )
+
+      this._ready = value
+    }
+  }
+
+  init() {
+    this.isActive = true
+
+    this.raycaster = new Raycaster(this.gpuCurtains)
+
+    this.simulationSteps = 25
+    const { maxComputeInvocationsPerWorkgroup } = this.gpuCurtains.deviceManager.device.limits
+    // Beware of actual compatibility mode limits
+    this.workgroupSize = maxComputeInvocationsPerWorkgroup < 256 ? 8 : 16
+
+    this.clothDefinition = new Vec2(40)
+
+    this.clothGeometry = new PlaneGeometry({
+      widthSegments: this.clothDefinition.x,
+      heightSegments: this.clothDefinition.y,
+    })
+
+    this.positionArray = this.clothGeometry.getAttributeByName('position').array.slice()
+
+    this.vertexPositionArray = new Float32Array((this.positionArray.length * 4) / 3)
+    this.prevVertexPositionArray = new Float32Array((this.positionArray.length * 4) / 3)
+
+    this.normalPositionArray = new Float32Array(this.vertexPositionArray.length)
+    this.vertexVelocityArray = new Float32Array(this.vertexPositionArray.length)
+    this.vertexForceArray = new Float32Array(this.vertexPositionArray.length)
+
+    // padded!
+    for (let i = 0, j = 0; i < this.vertexPositionArray.length; i += 4, j += 3) {
+      this.vertexPositionArray[i] = this.positionArray[j]
+      this.vertexPositionArray[i + 1] = this.positionArray[j + 1]
+      this.vertexPositionArray[i + 2] = this.positionArray[j + 2]
+
+      this.prevVertexPositionArray[i] = this.positionArray[j]
+      this.prevVertexPositionArray[i + 1] = this.positionArray[j + 1]
+      this.prevVertexPositionArray[i + 2] = this.positionArray[j + 2]
+
+      const xPosIndex = Math.round((this.positionArray[j] + 1) * 0.5 * this.clothDefinition.x)
+      const isFixed = this.positionArray[j + 1] === 1 && xPosIndex % 4 === 0
+
+      this.vertexPositionArray[i + 3] = isFixed ? -1 : 0 // fixed point
+      this.prevVertexPositionArray[i + 3] = isFixed ? -1 : 0 // fixed point
+
+      // explicitly set normals
+      this.normalPositionArray[i] = 0
+      this.normalPositionArray[i + 1] = 0
+      this.normalPositionArray[i + 2] = 1
+    }
+
+    const mass = 0.4
+    const springConstant = 90_000
+    const dampingConstant = 50
+
+    this.computeBindGroup = new BindGroup(this.gpuCurtains.renderer, {
+      label: 'Cloth simulation compute bind group',
+      uniforms: {
+        dimension: {
+          struct: {
+            size: {
+              type: 'vec2f',
+              value: this.clothDefinition,
+            },
+          },
+        },
+        params: {
+          struct: {
+            deltaTime: {
+              type: 'f32',
+              value: 1 / 60 / this.simulationSteps,
+            },
+            mass: {
+              type: 'f32',
+              value: mass,
+            },
+            springConstant: {
+              type: 'f32',
+              value: springConstant,
+            },
+            dampingConstant: {
+              type: 'f32',
+              value: dampingConstant,
+            },
+            floor: {
+              type: 'f32',
+              value: -1.25,
+            },
+            gravity: {
+              type: 'vec3f',
+              value: new Vec3(0, -9.81, 0),
+            },
+          },
+        },
+        interaction: {
+          struct: {
+            pointerPosition: {
+              type: 'vec2f',
+              value: new Vec2(Infinity),
+            },
+            pointerVelocity: {
+              type: 'vec2f',
+              value: new Vec2(0), // pointer velocity divided by plane size
+            },
+            pointerSize: {
+              type: 'f32',
+              value: 0.85, // 1 is full plane
+            },
+            pointerStrength: {
+              type: 'f32',
+              value: 2_000,
+            },
+            wind: {
+              type: 'vec3f',
+              value: new Vec3(0, 0, 0),
+            },
+          },
+        },
+      },
+      storages: {
+        clothVertex: {
+          access: 'read_write', // we want a readable AND writable buffer!
+          usage: ['vertex'], // we're going to use this buffer as a vertex buffer along default usages
+          struct: {
+            position: {
+              type: 'array<vec4f>',
+              value: this.vertexPositionArray,
+            },
+            prevPosition: {
+              type: 'array<vec4f>',
+              value: this.prevVertexPositionArray,
+            },
+            normal: {
+              type: 'array<vec4f>',
+              value: this.normalPositionArray,
+            },
+            force: {
+              type: 'array<vec4f>',
+              value: this.vertexForceArray,
+            },
+            velocity: {
+              type: 'array<vec4f>',
+              value: this.vertexVelocityArray,
+            },
+          },
+        },
+      },
+    })
+
+    // first our compute pass
+    this.computeForcesPass = new ComputePass(this.gpuCurtains, {
+      label: 'Compute forces',
+      shaders: {
+        compute: {
+          code: computeClothSim(this.workgroupSize),
+          entryPoint: 'calc_forces',
+        },
+      },
+      autoRender: false, // we will manually take care of rendering
+      bindGroups: [this.computeBindGroup],
+      dispatchSize: [
+        Math.ceil((this.clothDefinition.x + 1) / (this.workgroupSize - 2)),
+        Math.ceil((this.clothDefinition.y + 1) / (this.workgroupSize - 2)),
+      ],
+    })
+
+    this.computeUpdatePass = new ComputePass(this.gpuCurtains, {
+      label: 'Compute update',
+      shaders: {
+        compute: {
+          code: computeClothSim(this.workgroupSize),
+          entryPoint: 'update_verlet',
+        },
+      },
+      autoRender: false, // we will manually take care of rendering
+      bindGroups: [this.computeBindGroup],
+      dispatchSize: [
+        Math.ceil(
+          ((this.clothDefinition.x + 1) * (this.clothDefinition.y + 1)) / (this.workgroupSize * this.workgroupSize)
+        ),
+      ],
+    })
+
+    this.computeNormalPass = new ComputePass(this.gpuCurtains, {
+      label: 'Compute normal',
+      shaders: {
+        compute: {
+          code: computeClothSim(this.workgroupSize),
+          entryPoint: 'calc_normal',
+        },
+      },
+      autoRender: false, // we will manually take care of rendering
+      bindGroups: [this.computeBindGroup],
+      dispatchSize: [
+        Math.ceil((this.clothDefinition.x + 1) / (this.workgroupSize - 2)),
+        Math.ceil((this.clothDefinition.y + 1) / (this.workgroupSize - 2)),
+      ],
+    })
+
+    // add a task to our renderer onBeforeRenderScene tasks queue manager
+    this.computeTaskId = this.gpuCurtains.renderer.onBeforeRenderScene.add((commandEncoder) => {
+      if (!this.isActive) return
+
+      // set bind groups if needed
+      if (!this.computeForcesPass.ready) this.computeForcesPass.onBeforeRenderPass()
+      if (!this.computeUpdatePass.ready) this.computeUpdatePass.onBeforeRenderPass()
+      if (!this.computeNormalPass.ready) this.computeNormalPass.onBeforeRenderPass()
+
+      // now if the compute passes are not ready, do not render them
+      if (!this.computeForcesPass.ready || !this.computeUpdatePass.ready || !this.computeNormalPass.ready) return
+
+      this.ready = this.plane && this.plane.ready
+
+      for (let i = 0; i < this.simulationSteps; i++) {
+        const forcePass = commandEncoder.beginComputePass()
+        this.computeForcesPass.render(forcePass)
+        forcePass.end()
+
+        const updatePass = commandEncoder.beginComputePass()
+        this.computeUpdatePass.render(updatePass)
+        updatePass.end()
+      }
+
+      const normalPass = commandEncoder.beginComputePass()
+      this.computeNormalPass.render(normalPass)
+      normalPass.end()
+    })
+
+    this.clothGeometry.addVertexBuffer({
+      name: 'clothAttributes',
+      // add the compute bind group vertex buffer right away
+      buffer: this.computeBindGroup.getBindingByName('clothVertex')?.buffer,
+      attributes: [
+        {
+          name: 'clothPosition',
+          type: 'vec4f',
+          bufferFormat: 'float32x4',
+          size: 4,
+        },
+        {
+          name: 'clothPrevPosition',
+          type: 'vec4f',
+          bufferFormat: 'float32x4',
+          size: 4,
+        },
+        {
+          name: 'clothNormal',
+          type: 'vec4f',
+          bufferFormat: 'float32x4',
+          size: 4,
+        },
+        {
+          name: 'clothForce',
+          type: 'vec4f',
+          bufferFormat: 'float32x4',
+          size: 4,
+        },
+        {
+          name: 'clothVelocity',
+          type: 'vec4f',
+          bufferFormat: 'float32x4',
+          size: 4,
+        },
+      ],
+    })
+
+    const params = {
+      geometry: this.clothGeometry,
+      domFrustumMargins: {
+        bottom: 300,
+      },
+      shaders: {
+        vertex: {
+          code: clothVs,
+          entryPoint: 'main',
+        },
+        fragment: {
+          code: clothFs,
+          entryPoint: 'main',
+        },
+      },
+      cullMode: 'none',
+      uniforms: {
+        global: {
+          struct: {
+            opacity: {
+              type: 'f32',
+              value: 0,
+            },
+          },
+        },
+      },
+    }
+
+    this.plane = new Plane(this.gpuCurtains, '#cloth', params)
+
+    const canvasTexture = this.plane.createDOMTexture({
+      label: 'Canvas texture',
+      name: 'canvasTexture',
+    })
+
+    // create our text texture as soon as our plane has been created
+    // first we need a canvas
+    const canvas = document.createElement('canvas')
+    const context = canvas.getContext('2d')
+
+    const writeCanvasText = () => {
+      const htmlPlane = this.plane.domElement.element
+
+      const { maxTextureDimension2D } = this.gpuCurtains.deviceManager.device?.limits ?? 2048
+
+      const htmlPlaneWidth = this.plane.boundingRect.width
+      const htmlPlaneHeight = this.plane.boundingRect.height
+
+      // Max resolution to avoid texture to be too large
+      const canvasResolution = Math.min(
+        (maxTextureDimension2D * 0.75) / htmlPlaneWidth,
+        (maxTextureDimension2D * 0.75) / htmlPlaneHeight,
+        window.devicePixelRatio * 2
+      )
+
+      // set sizes
+      canvas.width = htmlPlaneWidth * canvasResolution
+      canvas.height = htmlPlaneHeight * canvasResolution
+
+      context.width = htmlPlaneWidth
+      context.height = htmlPlaneHeight
+
+      context.scale(canvasResolution, canvasResolution)
+
+      const textStyle = window.getComputedStyle(htmlPlane.querySelector('span'))
+
+      // draw our title with the original style
+      context.fillStyle = textStyle.color
+      context.font = `${textStyle.fontStyle} ${textStyle.fontWeight} ${parseFloat(textStyle.fontSize)}px ${
+        textStyle.fontFamily
+      }`
+
+      context.lineHeight = textStyle.lineHeight
+
+      context.textAlign = 'center'
+
+      // vertical alignment is a bit hacky
+      context.textBaseline = 'middle'
+      context.fillText(htmlPlane.innerText, htmlPlaneWidth * 0.5, htmlPlaneHeight * 0.5)
+    }
+
+    writeCanvasText()
+
+    canvasTexture.loadCanvas(canvas)
+
+    this.plane
+      .onReady(() => {
+        this.isActive = this.plane.domFrustum.isIntersecting
+      })
+      .onAfterResize(() => {
+        writeCanvasText()
+        canvasTexture.resize()
+      })
+      .onReEnterView(() => {
+        this.isActive = true
+      })
+      .onLeaveView(() => {
+        this.isActive = false
+      })
+
+    this.pointer = new Vec2(Infinity)
+    this.velocity = new Vec2(0)
+    this.minVelocity = new Vec2(-100)
+    this.maxVelocity = new Vec2(100)
+    this.pointerTimer = null
+
+    window.addEventListener('mousemove', this.onPointerMove.bind(this))
+    window.addEventListener('touchmove', this.onPointerMove.bind(this))
+  }
+
+  onPointerMove(e) {
+    const { clientX, clientY } = e.targetTouches && e.targetTouches.length ? e.targetTouches[0] : e
+
+    if (this.pointer.x === Infinity) {
+      this.velocity.set(0)
+    } else {
+      this.velocity.set(clientX - this.pointer.x, clientY - this.pointer.y)
+    }
+
+    this.velocity.clamp(this.minVelocity, this.maxVelocity)
+
+    this.pointer.set(clientX, clientY)
+
+    if (this.plane && this.computeForcesPass) {
+      if (this.pointerTimer) clearTimeout(this.pointerTimer)
+
+      // we could be a bit smarter here and just compute the vertex position
+      // based on the pointer position and the plane position, and convert to the [-1, 1] range
+      // but for the sake of the demo, let's use a raycaster
+      this.raycaster.setFromMouse(e)
+
+      const intersections = this.raycaster.intersectObject(this.plane)
+
+      if (intersections.length) {
+        const closestIntersection = intersections[0]
+        this.computeForcesPass.uniforms.interaction.pointerPosition.value.set(
+          closestIntersection.localPoint.x,
+          closestIntersection.localPoint.y
+        )
+
+        this.computeForcesPass.uniforms.interaction.pointerVelocity.value.set(
+          this.velocity.x / this.plane.boundingRect.width,
+          this.velocity.y / this.plane.boundingRect.height
+        )
+      } else {
+        this.computeForcesPass.uniforms.interaction.pointerPosition.value.copy(Infinity)
+      }
+
+      this.pointerTimer = setTimeout(() => {
+        this.computeForcesPass.uniforms.interaction.pointerPosition.value.set(Infinity)
+        this.computeForcesPass.uniforms.interaction.pointerVelocity.value.set(0)
+      }, 25)
+    }
+  }
+
+  destroy() {
+    this.isActive = false
+    this.showTween?.kill()
+
+    this.gpuCurtains.renderer.onBeforeRenderScene.remove(this.computeTaskId)
+
+    window.removeEventListener('mousemove', this.onPointerMove.bind(this))
+    window.removeEventListener('touchmove', this.onPointerMove.bind(this))
+
+    this.computeUpdatePass.remove()
+    this.computeNormalPass.remove()
+    this.computeForcesPass.remove()
+
+    this.plane.remove()
+  }
+}

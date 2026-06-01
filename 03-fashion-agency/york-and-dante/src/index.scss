@@ -1,0 +1,103 @@
+@import "./common/include-media";
+
+@font-face {
+	font-family: "Neue Haas Grotesk Display Pro";
+	font-style: normal;
+	font-weight: 300;
+	src: local("Neue Haas Grotesk Display Pro"),
+		url("./fonts/NeueHaasDisplayThin.woff") format("woff");
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Neue Haas Grotesk Display Pro";
+	font-style: normal;
+	font-weight: 500;
+	src: local("Neue Haas Grotesk Display Pro"),
+		url("./fonts/NeueHaasDisplayRoman.woff") format("woff");
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Neue Haas Grotesk Display Pro";
+	font-style: normal;
+	font-weight: 600;
+	src: local("Neue Haas Grotesk Display Pro"),
+		url("./fonts/NeueHaasDisplayMediu.woff") format("woff");
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "New York Extra Large";
+	font-style: normal;
+	font-weight: 500;
+	src: local("New York Extra Large"),
+		url("https://fonts.cdnfonts.com/s/39339/NewYorkExtraLargeMedium.woff")
+			format("woff");
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "New York Extra Large";
+	font-style: normal;
+	font-weight: 600;
+	src: local("New York Extra Large"),
+		url("https://fonts.cdnfonts.com/s/39339/NewYorkExtraLargeBold.woff")
+			format("woff");
+	font-display: swap;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+html {
+	background: #000;
+}
+
+html[data-scroll-direction] {
+	overflow: hidden;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}
+
+html[data-page="credits"] {
+	overflow: auto;
+	position: initial;
+}
+
+body {
+	overflow: hidden;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+		monospace;
+}
+
+a {
+	text-decoration: none;
+}
+
+.hidden {
+	position: absolute;
+	width: 0;
+	height: 0;
+	overflow: hidden;
+	pointer-events: none;
+}
+
+.split-text {
+	overflow: hidden;
+}
+
+.enter-active {
+	visibility: hidden;
+}

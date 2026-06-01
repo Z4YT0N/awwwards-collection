@@ -1,0 +1,28 @@
+.third{
+    background-color: rgb(7, 7, 7);
+    height: 35vh;
+    overflow-x: hidden;
+    font-family: Formular;
+}
+.line{
+    margin-top: 50px;
+}
+.products-title{
+    position: absolute;
+    color: white;
+    font-size: 2.5vw;
+    font-weight: lighter;
+    text-transform: uppercase;
+    left: 20px;
+    margin-top: 40px;
+}
+.products-about{
+    position: absolute;
+    color: white;
+    font-size: 1vw;
+    font-weight: lighter;
+    text-transform: uppercase;
+    right: 20px;
+    text-align: left;
+    margin-top: 40px;
+}

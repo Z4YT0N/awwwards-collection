@@ -1,0 +1,105 @@
+---
+title: Dock
+date: 2024-04-25
+description: An implementation of the MacOS dock using react + tailwindcss + framer motion
+author: dillionverma
+published: true
+video: https://cdn.magicui.design/dock.mp4
+---
+
+<ComponentPreview name="dock-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @magicui/dock
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="dock" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Examples
+
+### Custom Direction
+
+<ComponentPreview name="dock-demo-2" />
+
+### Custom magnification
+
+<ComponentPreview name="dock-demo-3" />
+
+## Usage
+
+```tsx showLineNumbers
+import { Home, Search, Settings } from "lucide-react"
+
+import { Dock, DockIcon } from "@/components/ui/dock"
+```
+
+```tsx showLineNumbers
+<Dock>
+  <DockIcon>
+    <Home />
+  </DockIcon>
+  <DockIcon>
+    <Settings />
+  </DockIcon>
+  <DockIcon>
+    <Search />
+  </DockIcon>
+</Dock>
+```
+
+## Props
+
+### Dock
+
+| Prop                   | Type        | Default    | Description                          |
+| ---------------------- | ----------- | ---------- | ------------------------------------ |
+| `className`            | `string`    | `-`        | Custom CSS class for styling         |
+| `children`             | `ReactNode` | `-`        | Children elements                    |
+| `iconSize`             | `number`    | `40`       | Size of the icon                     |
+| `iconMagnification`    | `number`    | `60`       | Level of icon magnification          |
+| `iconDistance`         | `number`    | `140`      | Distance from cursor to magnify icon |
+| `direction`            | `string`    | `"middle"` | Direction of the dock                |
+| `disableMagnification` | `boolean`   | `false`    | Disable Magnification on hover       |
+
+### DockIcon
+
+| Prop            | Type                | Default | Description                          |
+| --------------- | ------------------- | ------- | ------------------------------------ |
+| `size`          | `number`            | `40`    | Size of the icon                     |
+| `magnification` | `number`            | `60`    | Level of icon magnification          |
+| `distance`      | `number`            | `140`   | Distance from cursor to magnify icon |
+| `mouseX`        | `any`               | `-`     | Mouse X position for magnification   |
+| `className`     | `string`            | `-`     | Custom CSS class for styling         |
+| `children`      | `React.ReactNode`   | `-`     | Children elements                    |
+| `props`         | `PropsWithChildren` | `-`     | Additional props                     |
+
+## Credits
+
+- Credits to [Build UI](https://buildui.com/recipes/magnified-dock) for this fantastic component
+- Credits to [Ritesh Bucha](https://twitter.com/bucha_ritesh) for finding and improving it

@@ -1,0 +1,69 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Every"
+						}
+					}
+				]
+			},
+			"body": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Ipsum qui occaecat deserunt ut aliquip consectetur elit Lorem est. Est amet commodo tempor reprehenderit veniam eiusmod sunt veniam cupidatat do minim eu ad proident irure."
+						}
+					}
+				]
+			},
+			"button": {
+				"__TYPE__": "RepeatableContent",
+				"type": "Link",
+				"value": [
+					{
+						"key": "90c6fe53-88c5-44f4-ba50-c5a85ef60c90",
+						"__TYPE__": "LinkContent",
+						"value": {
+							"__TYPE__": "ExternalLink",
+							"url": "http://twitter.com",
+							"text": "classroom",
+							"variant": "Primary"
+						}
+					}
+				]
+			},
+			"image": {
+				"__TYPE__": "ImageContent",
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1591012911207-0dbac31f37da",
+					"width": 4000,
+					"height": 4000
+				},
+				"url": "https://images.unsplash.com/photo-1591012911207-0dbac31f37da",
+				"width": 4000,
+				"height": 4000,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"alt": "act",
+				"thumbnails": {}
+			}
+		},
+		"items": []
+	}
+]

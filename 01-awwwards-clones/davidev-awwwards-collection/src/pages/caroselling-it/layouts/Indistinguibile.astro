@@ -1,0 +1,96 @@
+<section class='indistinguibile ani-ind'>
+	<div class='wrapper-header'>
+		<header class='header'>
+			<h2 class='header-title'>
+				Qualunque tecnologia sufficientemente avanzata è indistinguibile
+			</h2>
+			<div class='effect-title'>
+				<span class='text-effect'> dalla magia.</span>
+			</div>
+		</header>
+		<div class='header-author'>
+			Arthur C.
+			<span class='block'> Clarke</span>
+		</div>
+	</div>
+	<div class='container-bg-image'>
+		<div class='wrapper-img'>
+			<img
+				src='/caroselling-it/img-parrallax.webp'
+				alt='parallax img'
+				class='parallax-img'
+			/>
+		</div>
+	</div>
+</section>
+
+<style>
+	.container-bg-image {
+		margin-top: var(--divider-top);
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		z-index: -1;
+		& .wrapper-img {
+			position: relative;
+			width: 100%;
+			max-width: 720px;
+			height: 480px;
+			overflow: hidden;
+			border-radius: 1rem;
+			& img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				min-height: 720px;
+				transform: translateY(-120px);
+			}
+		}
+	}
+	.wrapper-header {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		& .header {
+			font-size: calc(var(--title) - 0.5rem);
+			line-height: 1;
+			max-width: 80%;
+			& .header-title {
+				display: inline;
+			}
+			& .effect-title {
+				display: inline;
+				position: relative;
+				&::before {
+					content: '';
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					width: 100%;
+					height: 50%;
+					background: var(--caro-secondary);
+					z-index: 0;
+					opacity: 0.5;
+				}
+				& .text-effect {
+					position: relative;
+					z-index: 9;
+					color: var(--color-primary);
+				}
+			}
+		}
+		& .header-author {
+			font-size: var(--text-2xl);
+			font-weight: var(--bold);
+			position: relative;
+			left: -3rem;
+		}
+	}
+</style>

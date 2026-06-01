@@ -1,0 +1,105 @@
+---
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import { getLangFromUrl } from '@/i18n/utils';
+import { ViewTransitions } from 'astro:transitions';
+import ScrollUp from '@/components/ScrollUp.astro';
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+import '@fontsource-variable/inter';
+// import LoadingScreen from '@/components/LoadingScreen.astro';
+
+const description = {
+	en: "Partner with us for custom web & software development tailored to your needs - whether its a website or a mobile/web application, we've got you covered.",
+	de: "'Arbeiten Sie mit uns zusammen, um maßgeschneiderte Web- und Softwareentwicklung nach Ihren Bedürfnissen zu entwickeln – ob es sich um eine Website oder eine Mobil-/Webanwendung handelt, wir sind für Sie da.",
+};
+---
+
+<!doctype html>
+<html lang={lang} transition:animate='initial'>
+	<head>
+		<meta charset='UTF-8' />
+		<title>{title}</title>
+		<meta name='viewport' content='width=device-width' />
+		<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+		<meta name='robots' content='index, follow' />
+		<meta name='description' content={description[lang]} />
+
+		<!-- Open Graph -->
+		<meta property='og:title' content='CodeDev' />
+		<meta property='og:type' content='website' />
+		<meta property='og:site_name' content='CodeDev' />
+		<meta property='og:description' content={description[lang]} />
+
+		<!-- Twitter -->
+		<meta name='twitter:card' content='summary_large_image' />
+		<meta name='twitter:title' content='CodeDev' />
+		<meta name='twitter:description' content={description[lang]} />
+
+		<script src='@/scripts/animations.js'></script>
+		<ViewTransitions />
+	</head>
+
+	<body>
+		<Header />
+		<!-- <LoadingScreen /> -->
+		<ScrollUp />
+		<div class='bg-white z-[1] relative border-b border-slate-800/20'>
+			<slot />
+		</div>
+		<Footer />
+
+		<style is:global>
+			html {
+				scroll-behavior: smooth;
+				--main-color: rgb(79 70 229);
+				cursor: url(/cursor.svg), auto;
+				color: rgb(15 23 42);
+			}
+			body {
+				font-family: 'Inter Variable', sans-serif;
+			}
+			p {
+				font-size: 18px;
+				text-wrap: pretty;
+			}
+			::selection {
+				background: var(--main-color);
+				color: white;
+			}
+
+			/* Section ============= */
+
+			.section {
+				max-width: 85rem;
+				width: 90%;
+				margin-inline: auto;
+			}
+
+			/* Scroll bar ======== */
+
+			::-webkit-scrollbar {
+				width: 11px;
+			}
+
+			::-webkit-scrollbar-track {
+				background: white;
+			}
+
+			::-webkit-scrollbar-thumb {
+				background: #282a2b;
+				border-radius: 2rem;
+				border: 2px solid white;
+			}
+
+			::-webkit-scrollbar-thumb:hover {
+				background: #454747;
+			}
+		</style>
+	</body>
+</html>

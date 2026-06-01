@@ -1,0 +1,39 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+public/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Cache
+.cache/
+.parcel-cache/
+.next/
+.vite/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Generated files
+coverage/
+*.tsbuildinfo
+registry.json
+
+# Other
+Components.js
+Categories.js
+Information.js

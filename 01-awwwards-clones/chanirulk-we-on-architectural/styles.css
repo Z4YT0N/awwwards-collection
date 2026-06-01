@@ -1,0 +1,330 @@
+body{
+  background-color: #DFDFDF;
+}
+
+@font-face {
+  font-family: gramatika;
+  src: url(./assets/font/Gramatika\ Demo\ Regular.otf);
+}
+
+.cursor { 
+  width: 5rem;
+  height: 5rem;
+  position: fixed;
+  border-radius: 100%;
+  z-index: 99;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cursor-inner {
+  top: 0;
+  left: 0;
+  background: #c6fd00;
+}
+.cursor-inner.hover { 
+  mix-blend-mode: difference;
+}
+
+/* Custom default button */
+.btn-light,
+.btn-light:hover,
+.btn-light:focus {
+  color: #333;
+  text-shadow: none; /* Prevent inheritance from `body` */
+}
+
+
+#loader{
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+	background: #000000;
+	z-index: 999;
+}
+#loader-img{
+  height: 50px;
+  width: auto;
+  position: absolute;
+  top: 50%;
+  left: 48%;
+  transform: translate(-50%, -50%);
+  -webkit-animation: animateHeart 2.5s infinite;
+  animation: animateHeart 2.5s infinite;
+}
+
+/*
+ * Base structure
+ */
+
+
+span{
+  font-size: 0.8rem;
+}
+
+.cover-container {
+  max-width: 42em;
+}
+.fronter{
+  font-family: gramatika;
+}
+.italics{
+  font-style: italic;
+}
+.bg-mid{
+  background-color: #F2F2F2;
+  width: 100%;
+}
+.top-index{
+  z-index: 9999;
+}
+.display-7{
+  font-size: 0.8rem;
+}
+.display-8{
+  font-size: 1rem;
+}
+.display-9{
+  font-size: 1.2rem;
+}
+.display-10{
+  font-size: 1rem;
+}
+.display-pop{
+  font-size: 7.3vw;
+}
+.display-11{
+  font-size: 1.6rem
+}
+.simple{
+  text-transform: none;
+}
+/*
+* Buttons Change
+*/
+
+.btn-bd-primary {
+  color: white;
+  background-color: #333;
+  border-radius: 20px;
+}
+.btn-bd-primary:hover{
+  background-color: white;
+  color: black;
+}
+.mar {
+  margin-top: 20% !important;
+}
+.mar-1 {
+  margin-top: 7% !important;
+}
+.capitalize{
+  text-transform: uppercase;
+}
+.linker{
+  color: white;
+  text-decoration: none;
+} 
+.linker-mail{
+  color: white;
+  text-decoration: none;
+}
+.linker-mail:hover{
+  color: #000000;
+}
+.linker-dark{
+  color: black;
+  text-decoration: none;
+}
+.grey{
+  color: gray;
+}
+.music-btn{
+  color: black;
+  text-decoration: none;
+}
+.music-btn:hover{
+  color: white;
+}
+.skill-box{
+  border: 1px solid black;
+  transition:  2s ease-in-out;
+}
+.skill-box:hover{
+  background-color: black;
+  color: white;
+  transition:  2s ease-in-out;
+}
+.logo-link{
+  color: black;
+  text-decoration: none;
+} 
+
+
+.mt-6{
+  margin-top: 100px;
+}
+.box-fill{
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  mix-blend-mode: color-burn;
+}
+.object-fill{
+  object-fit: fill;
+}
+.full-width{
+  width: 100%;
+}
+
+
+
+
+.grid-container {
+  overflow-x: hidden;
+  z-index: 99;
+  width: 100%;
+}
+.grid-container {
+  display: grid;
+  overflow-x: hidden;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto 1fr auto;  
+}
+.grid-item { 
+  padding: 3.5em 1em; 
+  height: 55vh;
+  width: 100%;
+} 
+.main { 
+  grid-area: main;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: hidden;
+} 
+.items { 
+  position: relative;
+  top: 15%; 
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  white-space: nowrap;
+  transition: all 0.2s;
+  transform: scale(0.98);
+  will-change: transform;
+  user-select: none;
+  cursor: pointer;
+}
+.items.active {
+    cursor: grabbing;
+    cursor: -webkit-grabbing;
+    transform: scale(1);
+}
+.item {
+    display: inline-block; 
+    background: white;
+    height: 300px;
+    width: 300px; 
+    border-radius: 50%;
+    margin-left: 5%;
+    overflow: hidden;
+}
+.fill{
+  object-fit: fill;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.cliper{
+  -webkit-clip-path: ellipse(50% 65% at 70% 50%);
+  clip-path: ellipse(50% 65% at 70% 50%);
+  opacity: 0.2;
+  z-index: -1;
+  position: absolute;
+}
+.mt-7 {
+  margin-top: 20% !important;
+}
+.orange{
+  color: orange;
+}
+.purple{
+  background-color: #4100F5;
+  color: white;
+}
+.bold{
+  font-weight: 600;
+}
+
+
+
+.content-center{
+  justify-content: center;
+  top: 52%;
+  left: 54%;
+  transform: translate(-50%, -50%);
+  position: relative;
+
+}
+.full-width{
+  width: 100%;
+  overflow: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.box-fill-two{
+  position: relative;
+  overflow: hidden;
+  height: 600px;
+  width: 50%;
+  background-color: #000000;
+}
+.zoomer{
+  transition: transform 2s; 
+}
+.zoomer:hover{
+  transform: scale(1.2);
+  transition: transform 2s; 
+}
+.center{
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.logo-link-light{
+  color: white;
+}
+.are-bottom{
+  position: absolute;
+  left: 5%;
+  bottom: 0.5rem;
+}
+.end{
+  position: absolute;
+  justify-content: end;
+  right: 1%;
+}
+.hero-drop{
+  height: 100%;
+  width: 100%;
+}
+
+
+
+
+

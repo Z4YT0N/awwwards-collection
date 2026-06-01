@@ -1,0 +1,79 @@
+.five{
+    height: 150vh;
+    background-color: rgb(7, 7, 7);
+    font-family: Formular;
+}
+.hr{
+    position: relative;
+    margin-top: 0px;
+    content: "";
+}
+.download{
+    position: absolute;
+    color: white;
+    font-size: 2.5vw;
+    font-weight: lighter;
+    text-transform: uppercase;
+    left: 20px;
+    margin-top: 40px;
+}
+.download-about{
+    position: absolute;
+    color: white;
+    font-size: 1vw;
+    font-weight: lighter;
+    text-transform: uppercase;
+    right: 20px;
+    text-align: left;
+    margin-top: 40px;
+}
+.down{
+    text-decoration: underline;
+    color: red;
+    position: absolute;
+    left: 50%;
+}
+.down:hover{
+    color: white;
+    text-decoration: none;
+}
+.down a:after {
+    top: 32px;
+    content: '';
+    position: absolute;
+    width: 0%;
+    transform: scaleX(0);
+    height: 0px;
+    transform-origin: bottom right;
+    transition: transform 1s ease-out;
+}
+.down:hover:after {
+    text-decoration: none;
+    transform: scaleX(0);
+    transform-origin: bottom left;
+}
+.stock{
+    height: 90vh;
+    width: 97%;
+    position: absolute;
+    margin-top: 20%;
+    left: 17px;
+    overflow-x: hidden;
+    overflow: hidden;
+
+}
+.stock-vibor{
+    object-fit: fill;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    overflow: hidden;
+    
+}
+.stock-vibor{
+    transform-origin: 65% 75%;
+    transition: transform 1s, filter .5s ease-out;
+}
+.stock-vibor:hover{
+    transform: scale(2);
+}

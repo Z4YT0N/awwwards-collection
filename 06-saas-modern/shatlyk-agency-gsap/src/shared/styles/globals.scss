@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+
+  &::selection {
+    @apply bg-primary text-bg-1;
+  }
+}
+
+html,
+body {
+  font-family: 'Montserrat', sans-serif;
+  @apply text-text-1;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .align-center {
+    text-align: center;
+  }
+}
+
+//navigation
+.burger {
+  width: 100%;
+  &::after,
+  &::before {
+    content: '';
+    display: block;
+    height: 0.2vw;
+    width: 40%;
+    margin: auto;
+    background-color: #404040;
+    position: relative;
+    transition: transform 0.3s;
+  }
+
+  &::after {
+    top: -0.3vw;
+  }
+
+  &::before {
+    top: 0.3vw;
+  }
+}
+
+.burgerActive {
+  &::after {
+    transform: rotate(45deg);
+    top: -0.1vw;
+  }
+
+  &::before {
+    transform: rotate(-45deg);
+    top: 0px;
+  }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}

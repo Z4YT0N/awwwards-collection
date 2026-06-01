@@ -1,0 +1,59 @@
+.four{
+    height: 170vh;
+}
+.parallax {
+  background-image: url(/src/components/img/scene4.jpg);
+  min-height: 170vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.card{
+    background-color: white;
+    position: absolute;
+    height: 550px;
+    width: 400px;
+    margin-left: 5%;
+    margin-top: 10%;
+}
+.card-two{
+    background-color: white;
+    position: absolute;
+    height: 550px;
+    width: 400px;
+    margin-left: 75%;
+    margin-top: 40%;
+}
+.card-inter{
+    position: absolute;
+    height: 450px;
+    width: 360px;
+    left: 20px;
+    margin-top: 10px;
+}
+.card-fill{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.des-wood{
+    position: absolute;
+    color: black;
+    font-family: ara;
+    font-size: 1vw;
+    font-weight: 100;
+    margin-top: 117%;
+    text-transform: uppercase;
+    left: 5%;
+}
+.des-wood-price{
+    position: absolute;
+    color: black;
+    font-family: ara;
+    font-size: 1vw;
+    font-weight: 100;
+    margin-top: 117%;
+    text-transform: uppercase;
+    right: 5%;
+}

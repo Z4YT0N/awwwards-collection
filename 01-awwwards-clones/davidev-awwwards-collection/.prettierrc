@@ -1,0 +1,23 @@
+{
+    "useTabs": true,
+    "singleQuote": true,
+    "jsxSingleQuote": true,
+    "bracketSpacing": true,
+    "jsxBracketSameLine": true,
+    "arrowParens": "avoid",
+    "tabWidth": 2,
+    "plugins": [
+        "prettier-plugin-svelte"
+    ],
+    "pluginSearchDirs": [
+        "."
+    ],
+    "overrides": [
+        {
+            "files": "*.svelte",
+            "options": {
+                "parser": "svelte"
+            }
+        }
+    ]
+}

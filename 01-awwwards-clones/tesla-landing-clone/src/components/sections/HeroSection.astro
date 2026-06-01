@@ -1,0 +1,34 @@
+---
+import Section from "../../layouts/Section.astro";
+import FooterOne from "../../layouts/footers/FooterOne.astro";
+import Button from "../commons/Button.astro";
+import Title from "../commons/Title.astro";
+---
+
+<Section headerColor="white">
+    <video
+        slot="background"
+        autoplay
+        muted
+        loop
+        src="/video.webm"
+        class="object-cover w-full h-full"></video>
+
+    <Title
+        slot="title"
+        text="Disfrute de Tesla"
+        color="white"
+        classes="animate-fade-up animate-duration-[800ms] animate-delay-[1100ms]"
+    />
+
+    <p
+        slot="subtitle"
+        class="text-sm text-white animate-fade-up animate-duration-[800ms] animate-delay-[1500ms]"
+    >
+        Programe una prueba de conducción hoy mismo
+    </p>
+
+    <FooterOne slot="footer">
+        <Button slot="content" text="Prueba de conducción" flavour="glass" classes="animate-fade animate-duration-[1200ms] animate-delay-[1500ms]" />
+    </FooterOne>
+</Section>

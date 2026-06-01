@@ -1,0 +1,97 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Familiar Skateboards",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"body": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Est ex proident commodo elit aliqua. Nisi elit cupidatat non sunt sint minim et pariatur occaecat dolor adipisicing consectetur nisi. Sit dolore nostrud proident magna ipsum est id mollit magna commodo ea et voluptate nostrud."
+						}
+					}
+				]
+			},
+			"button": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://google.com",
+					"text": "cowboy"
+				}
+			},
+			"skateboard_deck_texture": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1515378960530-7c0da6231fb1",
+					"width": 5616,
+					"height": 3744
+				},
+				"url": "https://images.unsplash.com/photo-1515378960530-7c0da6231fb1",
+				"width": 5616,
+				"height": 3744,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"skateboard_wheel_texture": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+					"width": 3882,
+					"height": 2584
+				},
+				"url": "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+				"width": 3882,
+				"height": 2584,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"skateboard_truck_color": {
+				"__TYPE__": "FieldContent",
+				"value": "#2f8502",
+				"type": "Color"
+			},
+			"skateboard_bolt_color": {
+				"__TYPE__": "FieldContent",
+				"value": "#88df5a",
+				"type": "Color"
+			}
+		},
+		"items": []
+	}
+]

@@ -1,0 +1,30 @@
+{
+  "extends": "astro/tsconfigs/strict",
+  "compilerOptions": {
+    "types": [
+      "astro/'client",
+      "@astro/image/client"
+    ],
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "dist",
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": [
+        "src/components/*"
+      ],
+      "@layouts/*": [
+        "src/layouts/*"
+      ],
+      "@utils/*": [
+        "src/utils/*"
+      ],
+      "~/*": [
+        "src/*"
+      ]
+    },
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
+  }
+}

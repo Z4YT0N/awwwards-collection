@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	/* cursor: none; */
+}
+
+.hero-gradient {
+	background: linear-gradient(
+		97.86deg,
+		#2b417265 0%,
+		#34acc745 53.65%,
+		#2b417246 100%
+	);
+}
+
+body::-webkit-scrollbar {
+	width: 0;
+}
+
+body {
+	overflow-x: hidden;
+	background-color: #1d0f41;
+	font-family: ProximaNova;
+}
+
+@font-face {
+	src: url("../font/ProximaNova-Black.otf");
+	font-family: ProximaNova-Black;
+}
+
+@font-face {
+	src: url("../font/muli.woff");
+	font-family: Muli;
+}
+
+@font-face {
+	src: url("../font/ProximaNova-Regular.otf");
+	font-family: ProximaNova;
+}
+
+@layer utilities {
+	.padding-x {
+		@apply px-[100px] md:px-[30px] sm:px-[20px] xm:px-[20px];
+	}
+
+	.padding-y {
+		@apply py-[100px] lg:py-[80px] md:py-[60px] sm:py-[40px] xm:py-[40px];
+	}
+
+	.margin {
+		@apply mt-[170px] lg:mt-[80px] md:mt-[60px] sm:mt-[40px] xm:mt-[40px] mb-[130px] lg:mb-[80px] md:mb-[60px] sm:mb-[40px] xm:mb-[40px];
+	}
+
+	.heading {
+		@apply text-[60px] md:text-[50px] sm:text-[40px] xm:text-[40px];
+	}
+
+	.sub-heading {
+		@apply text-[17px] md:text-[16px] sm:text-[14px] xm:text-[14px];
+	}
+
+	.paragraph {
+		@apply text-[18px] md:text-[16px] sm:text-[16px] xm:text-[16px];
+	}
+
+	.sub-paragraph {
+		@apply xl:text-[21px] xl:leading-[31px] text-[16px] leading-[24px];
+	}
+
+	.small-text {
+		@apply xl:text-[16px] xl:leading-[24px] lg:text-[16px] lg:leading-[24px] text-[14px] leading-[22px];
+	}
+}
+
+.slider {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.slider .el {
+	width: 100%;
+	height: 100%;
+}
+
+.slider .el:hover .perspectiveText {
+	transform: rotateX(90deg);
+}
+
+.slider .el:hover .perspectiveText p:nth-of-type(1) {
+	transform: translateY(-100%);
+	opacity: 0;
+}
+
+.slider .el:hover .perspectiveText p:nth-of-type(2) {
+	opacity: 1;
+}
+
+.perspectiveText {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+	transform-style: preserve-3d;
+	transition: transform 0.75s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.perspectiveText p {
+	transition: all 0.75s cubic-bezier(0.76, 0, 0.24, 1);
+	pointer-events: none;
+	text-transform: uppercase;
+}
+
+.perspectiveText p:nth-of-type(2) {
+	position: absolute;
+	transform-origin: bottom center;
+	transform: rotateX(-90deg) translateY(12px);
+	opacity: 0;
+}

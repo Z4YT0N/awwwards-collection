@@ -1,0 +1,193 @@
+.five{
+    height: 50vh;
+    font-family: "lue";
+}
+
+
+.column-menu {
+    float: left;
+    width: 25%;
+    margin-left: -50px ;
+    height: 300px; 
+}
+  
+.column-menu-two {
+    float: left;
+    width: 25%;
+    margin-left: 60px ;
+    height: 300px; 
+}
+  
+
+
+.row-five:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.menu-item {
+    float: left;
+    width: 25%;
+    margin-left: 80px ;
+    height: 300px; 
+}
+  
+
+
+
+
+.menu-row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.link-menu{
+    color: red;
+    font-size: 1vw;
+    text-transform: uppercase;
+}
+
+.link-root{
+    color: red;
+    font-size: 1.4vw;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.link-root-social{
+    color: red;
+    font-size: 1.4vw;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.link-root-social:hover{
+    color: transparent;
+    text-shadow: 0px 0px 5px red;
+}
+
+.news-title{
+    color: red;
+    text-transform: uppercase;
+    font-size: 1.4vw;
+    text-align: center;
+}
+
+
+
+
+.signup-box {  
+    display: block;  
+    width: 340px;  
+    height: auto;  
+    background: #fff;  
+}  
+
+.signup-box .signup-form {  
+    display: block;  
+    margin: 0 auto;  
+}  
+  
+.signup-form input {  
+    display: block;  
+    padding: 0;  
+    width: 100%;  
+    border: solid white;
+    border-bottom: 1px solid red;
+} 
+
+.signup-input::placeholder{
+    color: red;
+    text-transform: uppercase;
+    font-size: 1vw;
+}
+
+::-webkit-input-placeholder {
+    text-align: center;
+}
+
+
+
+
+.signup-terms label{
+    color: red;
+    text-transform: uppercase;
+    font-size: 0.8vw;
+}
+
+#cb3 {
+    accent-color: #e74c3c;
+}
+
+
+.submit{
+    margin-top: 5px;
+    border-radius: 50px;
+    background-color: #fff;
+    border: 1px solid red;
+    padding: 5px 50px;
+    justify-content: center;
+    color: red;
+}
+
+.submit:hover{
+    background-color: red;
+    color: white;
+}
+
+.item{
+    color: red;
+    font-size: 1.4vw;
+    text-align: center;
+    justify-content: center;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.item:hover{
+    color: transparent;
+    text-shadow: 0px 0px 5px red;
+}
+
+.footer-credits{
+    color: red;
+    text-transform: uppercase;
+    font-size: 1vw;
+    position: absolute;
+    left: 60px;
+    text-decoration: none;
+}
+
+.address{
+    font-size: 0.8vw;
+    color: red;
+    text-transform: uppercase;
+    position: relative;
+    left: -5%;
+}
+
+.end-logo{
+    height: auto;
+    width: 100px;
+    position: absolute;
+    left: 66%;
+    margin-top: -15px;
+}
+.end-logo-cat{
+    height: auto;
+    width: 100px;
+    position: absolute;
+    left: 90%;
+    margin-top: -120px;
+}
+.end-credit{
+    font-size: 0.8vw;
+    color: red;
+    text-transform: uppercase;
+    position: absolute;
+    margin-top: -3%;
+    left: 78%;
+}

@@ -1,0 +1,31 @@
+{
+  "name": "api-proxy",
+  "version": "1.0.0",
+  "description": "SoundCloud API proxy",
+  "type": "module",
+  "main": "src/app.ts",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "bun build src/app.ts --outdir dist --target bun",
+    "start": "bun run dist/app.js",
+    "dev": "bun run --env-file=../.env src/app.ts",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "bun@1.2.14",
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@eslint/js": "^10.0.0",
+    "@types/bun": "latest",
+    "@types/node": "^22.0.0",
+    "eslint": "^10.0.0",
+    "typescript": "^5.9.0",
+    "typescript-eslint": "^8.0.0"
+  }
+}

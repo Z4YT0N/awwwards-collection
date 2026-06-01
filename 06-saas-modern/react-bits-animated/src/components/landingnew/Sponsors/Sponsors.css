@@ -1,0 +1,291 @@
+/* ══════════════════════════════════════════════
+   Sponsors (Landing)
+   ══════════════════════════════════════════════ */
+
+.ln-sp-section {
+  position: relative;
+  width: 100%;
+  padding: 80px 0 100px;
+  background: #120F17;
+  z-index: 4;
+}
+
+.ln-sp-inner {
+  max-width: 1324px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ─── Title ─── */
+
+.ln-sp-title {
+  font-family: 'Geist Pixel Line', sans-serif;
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin: 0 0 40px;
+}
+
+/* ─── Tier ─── */
+
+.ln-sp-tier {
+  margin-bottom: 16px;
+}
+
+.ln-sp-tier-header {
+  margin-bottom: 12px;
+}
+
+.ln-sp-tier-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 8px;
+  font-family: 'Geist Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.ln-sp-tier-badge--diamond {
+  background: rgba(168, 85, 247, 0.1);
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  color: #c084fc;
+}
+
+.ln-sp-tier-badge--platinum {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.ln-sp-tier-badge--silver {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* ─── Grid ─── */
+
+.ln-sp-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.ln-sp-grid--diamond {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.ln-sp-grid--platinum {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.ln-sp-grid--silver {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+/* ─── Card ─── */
+
+.ln-sp-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(18, 15, 23, 0.45);
+  backdrop-filter: blur(32px) saturate(1.3);
+  -webkit-backdrop-filter: blur(32px) saturate(1.3);
+  box-shadow:
+    0 4px 32px rgba(0, 0, 0, 0.25),
+    inset 0 0.5px 0 rgba(255, 255, 255, 0.06);
+  text-decoration: none;
+  overflow: hidden;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.ln-sp-card:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+/* ─── Card Visual (logo area) ─── */
+
+.ln-sp-card-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.ln-sp-card-visual--diamond {
+  height: 140px;
+}
+
+.ln-sp-card-visual--platinum {
+  height: 110px;
+}
+
+.ln-sp-card-visual--silver {
+  height: 90px;
+}
+
+.ln-sp-card-visual--diamond::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 100%, rgba(168, 85, 247, 0.08) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.ln-sp-card-logo {
+  height: 38%;
+  max-height: 48px;
+  width: auto;
+  max-width: 65%;
+  object-fit: contain;
+  opacity: 0.75;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.ln-sp-card-visual--diamond .ln-sp-card-logo {
+  max-height: 54px;
+  height: 42%;
+}
+
+.ln-sp-card:hover .ln-sp-card-logo {
+  opacity: 1;
+  transform: scale(1.04);
+}
+
+/* ─── Card Info ─── */
+
+.ln-sp-card-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.ln-sp-card-name {
+  font-family: 'Geist', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  letter-spacing: -0.01em;
+}
+
+.ln-sp-card-arrow {
+  color: rgba(255, 255, 255, 0.25);
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.ln-sp-card:hover .ln-sp-card-arrow {
+  color: rgba(255, 255, 255, 0.6);
+  transform: translateX(2px);
+}
+
+/* ─── Empty slot ─── */
+
+.ln-sp-card--empty {
+  border-style: dashed;
+  border-color: rgba(255, 255, 255, 0.06);
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: none;
+  cursor: default;
+}
+
+.ln-sp-card--empty:hover {
+  border-color: rgba(255, 255, 255, 0.06);
+  transform: none;
+}
+
+.ln-sp-empty-label {
+  font-family: 'Geist Mono', monospace;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.15);
+  letter-spacing: 0.02em;
+}
+
+.ln-sp-empty-name {
+  color: rgba(255, 255, 255, 0.15);
+}
+
+/* ─── Footer links ─── */
+
+.ln-sp-footer {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-top: 28px;
+}
+
+.ln-sp-footer-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Geist Mono', monospace;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.35);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.ln-sp-footer-link:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* ─── Responsive ─── */
+
+@media (max-width: 1100px) {
+  .ln-sp-grid--silver {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .ln-sp-grid--silver {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .ln-sp-grid--diamond {
+    grid-template-columns: 1fr;
+  }
+
+  .ln-sp-grid--platinum {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ln-sp-grid--silver {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .ln-sp-section {
+    padding: 60px 0 80px;
+  }
+
+  .ln-sp-inner {
+    padding: 0 16px;
+  }
+
+  .ln-sp-grid--silver {
+    grid-template-columns: 1fr;
+  }
+
+  .ln-sp-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}

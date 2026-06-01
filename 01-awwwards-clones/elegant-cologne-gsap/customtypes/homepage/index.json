@@ -1,0 +1,64 @@
+{
+  "format": "page",
+  "id": "homepage",
+  "label": "Homepage",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "video": {
+              "type": "SharedSlice"
+            },
+            "call_to_action": {
+              "type": "SharedSlice"
+            },
+            "fragrance_list": {
+              "type": "SharedSlice"
+            },
+            "product_feature": {
+              "type": "SharedSlice"
+            },
+            "scroll_text": {
+              "type": "SharedSlice"
+            },
+            "hero": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    },
+    "SEO & Metadata": {
+      "meta_title": {
+        "config": {
+          "label": "Meta Title",
+          "placeholder": "A title of the page used for social media and search engines"
+        },
+        "type": "Text"
+      },
+      "meta_description": {
+        "config": {
+          "label": "Meta Description",
+          "placeholder": "A brief summary of the page"
+        },
+        "type": "Text"
+      },
+      "meta_image": {
+        "config": {
+          "constraint": {
+            "height": 1260,
+            "width": 2400
+          },
+          "label": "Meta Image",
+          "thumbnails": []
+        },
+        "type": "Image"
+      }
+    }
+  }
+}

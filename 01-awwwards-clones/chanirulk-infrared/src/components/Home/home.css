@@ -1,0 +1,149 @@
+.home{
+    height: 100vh;
+    background-color: blanchedalmond;
+}
+.column {
+  float: left;
+  width:  50%;
+  padding: 10px;
+  height: 100vh;
+  background-color: orangered;
+}
+.column-drop {
+    float: left;
+    width:  48.5%;
+    height: 100vh;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.drop-pic{
+    height: 103.2vh;
+    width: 100%;
+    object-fit: fill;
+}
+.head{
+    font-size: 10vw;
+    font-family: frost;
+    color: rgb(255, 122, 228);
+    text-align: left;
+    line-height: 140px;
+    margin-top: 12%;
+    left: 20px;
+    position: absolute;
+}
+.start{
+    position: absolute;
+    height: auto;
+    width: 150px;
+    margin-top: 33%;
+    left: 22%;
+    animation:  spin infinite 20s linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.navbar{
+    display: inline-block;
+    font-size: 0.9vw;
+    font-family: ara;
+    text-transform: uppercase;
+    position: absolute;
+    margin-top: 5px;
+    left: 14%;
+}
+.navbar a{
+    text-decoration: none;
+    color: whitesmoke;
+    padding: 0px 10px;
+}
+.navbar a:hover{
+    color: rgb(255, 122, 228);
+}
+.logo{ 
+    font-size: 0.9vw;
+    color: whitesmoke;
+    font-family: ara;
+    text-transform: uppercase;
+    position: absolute;
+    margin-top: 5px;
+    left: 20px;
+}
+
+/**.myButton {
+    position: absolute;
+    margin-top: 10px;
+    right: 10px;
+	background-color: whitesmoke;
+ 	border: 1px solid rgb(255, 122, 228);
+	display:inline-block;
+	cursor:pointer;
+	color: orangered;
+    font-family: ara;
+	font-size: 1.2vw;
+	padding: 16px 31px;
+	text-decoration: none;
+    text-transform: uppercase;
+}
+.myButton:hover {
+	border: 1px solid orangered;
+    color: orangered;
+    background-color: rgb(255, 122, 228);
+}**/
+
+button {
+    text-transform: uppercase;
+	border: 1px solid rgb(255, 122, 228);
+	background: whitesmoke;
+	padding: 10px;
+    position: absolute;
+	box-sizing: border-box;
+	transition: all 100ms ease; 
+    z-index: 1;
+    color: orangered;
+    font-family: ara;
+	font-size: 1.2vw;
+	padding: 16px 31px;
+    border-radius: 40px;
+    margin-top: 10px;
+    right: 10px;
+}
+button a{
+    text-decoration: none;
+    color: orangered;
+}
+button a:hover{
+    color: white;
+}
+button:before {
+	content:'';
+	position: absolute;
+    border-radius: 40px;
+	top: 25px;
+	left: 0px;
+	width: 0%;
+	height: 0px;
+	background: rgb(255, 122, 228);
+	transition: all 150ms ease;
+    color: white !important;
+
+} 
+button:hover:before {
+	width: 100%;
+    top: 0px;
+	left: 0px;
+    height: 50px;
+    z-index: -1;
+}
+button:hover{
+  color: orangered;
+  border:  1px solid orangered;
+}

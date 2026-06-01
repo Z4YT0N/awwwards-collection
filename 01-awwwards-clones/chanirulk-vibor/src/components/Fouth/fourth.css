@@ -1,0 +1,100 @@
+.fourth{
+    height: 170vh;
+    background-color: rgb(7, 7, 7);
+    font-family: Formular;
+}
+.box-1{
+    height: 500px;
+    width: 45%;
+    position: absolute;
+    margin-top: 20px;
+    left: 4%;
+    overflow-x: hidden;
+    overflow: hidden;
+}
+.box-2{
+    height: 500px;
+    width: 45%;
+    position: absolute;
+    margin-top: 20px;
+    left: 50%;
+    overflow-x: hidden;
+    overflow: hidden;
+}
+.box-3{
+    height: 500px;
+    width: 45%;
+    position: absolute;
+    margin-top: 39%;
+    left: 4%;
+    overflow-x: hidden;
+    overflow: hidden;
+}
+.box-4{
+    height: 500px;
+    width: 45%;
+    position: absolute;
+    margin-top: 39%;
+    left: 50%;
+    overflow-x: hidden;
+    overflow: hidden;
+}
+.gallery-picture{
+    object-fit: fill;
+    height: 100%;
+    width: 100%;
+}
+.box-1 img{
+  transform-origin: 50% 25%;
+  transition: transform 5s, filter 3s ease-in-out;
+  overflow: hidden;
+}
+.box-1:hover img{
+    transform: scale(1.5);
+    overflow: hidden;
+}
+.box-2 img{
+  transform-origin: 50% 25%;
+  transition: transform 5s, filter 3s ease-in-out;
+  overflow: hidden;
+}
+.box-2:hover img{
+    transform: scale(1.5);
+    overflow: hidden;
+}
+.box-3 img{
+  transform-origin: 50% 25%;
+  transition: transform 5s, filter 3s ease-in-out;
+  overflow: hidden;
+}
+.box-3:hover img{
+    transform: scale(1.5);
+    overflow: hidden;
+}
+.box-4 img{
+  transform-origin: 50% 25%;
+  transition: transform 5s, filter 3s ease-in-out;
+  overflow: hidden;
+}
+.box-4:hover img{
+    transform: scale(1.5);
+    overflow: hidden;
+}
+.name{
+    font-size: 1.4vw;
+    color: black;
+    position: absolute;
+    font-weight: lighter;
+    text-transform: uppercase;
+    margin-top: 10px;
+    left: 10px;
+}
+.name-two{
+    font-size: 1.4vw;
+    color: black;
+    position: absolute;
+    font-weight: lighter;
+    text-transform: uppercase;
+    margin-top: 10px;
+    left: 10px;
+}

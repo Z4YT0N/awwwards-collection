@@ -1,0 +1,121 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+html, body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.loading{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  color: #fff;
+  pointer-events: none;
+}
+.chrono-counter{
+  position: fixed;
+  left: 50px;
+  bottom: 50px;
+  display: flex;
+  font-size: 100px;
+  height: 100px;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  font-weight: 500;
+}
+.first-counter,
+.second-counter,
+.third-counter{
+  position: relative;
+  top: -15px;
+}
+.num1offset1{
+  position: relative;
+  right: -25px;
+}
+.num1offset2{
+  position: relative;
+  right: -10px;
+}
+.loader{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 50px;
+  display: flex;
+  background-color: gray;
+}
+.first-loader{
+  position: relative;
+  background-color: #fff;
+  width: 200px;
+}
+.second-loader{
+  position: relative;
+  background-color: #fff;
+  width: 100px;
+}
+.letter{
+  height: 50px;
+}
+.container{
+  inset: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+nav ul{
+  display: flex;
+  gap: 2rem;
+}
+.revealer-developer{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.revealer-developer::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  background-color: #fff;
+  width: 0px;
+  height: 0px;
+}
+
+.not-active{
+  display: none;
+}
+
+/* General style */
+header{
+  position: fixed;
+  padding: 2rem 0rem;
+  display: flex;
+  align-items: center;
+  z-index: 20;
+}
+header .logo{
+  font-size: 2rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #000;
+}
+ul li a {
+  font-size: 20px;
+  text-transform: uppercase;
+  border: none;
+  color: #000;
+  font-weight: 500;
+}

@@ -1,0 +1,59 @@
+{
+  "id": "call_to_action",
+  "type": "SharedSlice",
+  "name": "CallToAction",
+  "description": "CallToAction",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "eyebrow": {
+          "type": "Text",
+          "config": {
+            "label": "Eyebrow",
+            "placeholder": ""
+          }
+        },
+        "heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Heading",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading2"
+          }
+        },
+        "body": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Body",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,strong,em"
+          }
+        },
+        "button": {
+          "type": "Link",
+          "config": {
+            "label": "Button",
+            "placeholder": "",
+            "select": null,
+            "allowTargetBlank": true,
+            "allowText": true,
+            "repeat": true,
+            "variants": [
+              "Primary",
+              "Secondary"
+            ]
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

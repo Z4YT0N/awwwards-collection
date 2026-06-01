@@ -1,0 +1,39 @@
+import { useEffect, useState } from "react";
+import { useSearchFiltersContextSetters } from "@/context/searchFilters";
+import { useDebounce } from "@/hooks/use-debounce";
+import { cn } from "@/lib/utils";
+import { Search } from "lucide-react";
+
+export const SearchFilterInput = ({
+  placeholder = "Search...",
+  ...props
+}: Omit<
+  React.HTMLAttributes<HTMLInputElement>,
+  "type" | "onChange" | "placeholder"
+> & { placeholder?: string }) => {
+  const [queryFilter, setQueryFilter] = useState("");
+  const debouncedQueryFilter = useDebounce(queryFilter, 500);
+  const { setQuery } = useSearchFiltersContextSetters();
+
+  useEffect(() => {
+    setQuery(debouncedQueryFilter);
+  }, [debouncedQueryFilter, setQuery]);
+
+  return (
+    <div className="bg-background flex flex-row items-center justify-start gap-2 rounded-[6px] border-[#4E4E4E] px-2">
+      <Search />
+      <input
+        id="search-filter-input"
+        type="search"
+        placeholder={placeholder}
+        onChange={(e) => {
+          setQueryFilter(e.target.value);
+        }}
+        className={cn(
+          "search-cancel:appearance-none search-cancel:cursor-pointer text-foreground placeholder:text-muted-foreground flex-grow bg-transparent text-sm outline-none placeholder:text-xs disabled:cursor-not-allowed disabled:opacity-50",
+          props.className,
+        )}
+      />
+    </div>
+  );
+};

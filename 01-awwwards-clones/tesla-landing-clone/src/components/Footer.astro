@@ -1,0 +1,22 @@
+---
+import List from "./commons/List.astro";
+
+const items = [
+    "Tesla © 2023",
+    "Privacidad y legal",
+    "Contacto",
+    "Noticias",
+    "Seguir informado",
+    "Localización de tiendas",
+];
+---
+
+<footer class="w-screen px-6 pb-12 2xs:pb-20 2md:pb-0">
+    <nav>
+        <ul
+            class="flex gap-5 flex-col items-center 2md:block 2md:text-center [&>li]:2md:inline [&>li]:2md:px-2"
+        >
+            <List items={items} classes="inline-block text-sm 2md:text-xs font-medium text-gray-600 hover:underline" />
+        </ul>
+    </nav>
+</footer>

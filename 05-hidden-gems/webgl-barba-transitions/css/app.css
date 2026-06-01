@@ -1,0 +1,158 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: #000;
+  font-family: 'loos', sans-serif;
+  font-weight: 300;
+  color: #fff;
+}
+.header {
+  font-weight: 900;
+  color: #eee;
+  position: fixed;
+  left: 50px;
+  top: 50px;
+  /* font-family: gravesend-sans, sans-serif;
+  font-weight: 800; */
+  font-family: loos-extrawide, sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  font-size: 3.5rem;
+  z-index: 10;
+  /* text-shadow: 0 2px 2px #000; */
+  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.9);
+  -webkit-text-fill-color: transparent;
+}
+.header a {
+  text-decoration: none;
+  color: #ffffff;
+}
+canvas {
+  display: block;
+}
+#container {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+}
+.content {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  gap: 100px;
+  padding: 200px;
+  /* width: auto; */
+}
+
+/* item */
+.item {
+  font-family: loos, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  text-decoration: none;
+  color: #eee;
+  font-size: 1rem;
+  line-height: 1.45;
+}
+.item a {
+  text-decoration: none;
+  color: #eee;
+}
+.item h2 {
+  font-family: loos-extrawide, sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  color: #fff;
+  /* text-transform: uppercase; */
+  font-size: 1.3rem;
+  margin: 0.65em 0;
+  line-height: 1.2;
+}
+.item p {
+  font-weight: 300;
+  color: #ccc;
+}
+.item:last-child {
+  margin-right: 300px;
+}
+.item img {
+  width: 30vw;
+  height: 30vw;
+  opacity: 0;
+}
+/* single */
+.single {
+}
+.single h1 {
+  margin-bottom: 1em;
+  font-size: 3em;
+}
+figure {
+  margin: 0 0 3em 0;
+  display: flex;
+  gap: 50px;
+}
+figure + figure {
+  flex-direction: row-reverse;
+}
+figure img {
+  float: left;
+  margin-right: 30px;
+}
+.single__content {
+  max-width: 1000px;
+  margin: 50px auto;
+}
+.single__content p {
+  margin: 2em 0;
+  line-height: 1.7;
+  font-size: 1.1em;
+}
+.single__content a {
+  color: #fff;
+}
+.single__top {
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.footer {
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+
+  margin-top: 100px;
+  padding-bottom: 150px;
+  display: flex;
+  font-size: 0.8em;
+}
+.footer p + p {
+  margin-left: auto;
+  text-align-last: left;
+}
+
+.curtain {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background: #187080;
+  transform: translate(0, 100%);
+}
+
+[data-barba-namespace] {
+  position: absolute;
+  top: 0;
+}
+
+canvas {
+  /* display: none !important; */
+}

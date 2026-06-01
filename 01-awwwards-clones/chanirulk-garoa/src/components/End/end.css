@@ -1,0 +1,100 @@
+.end-cr{
+    height: 70vh;
+    font-family: time;
+    background-color: #f3ebe3;
+}
+.footer{
+    background-color: black;
+    width: 99%;
+    height: 69vh;
+    position: absolute;
+    margin-top: 10px;
+    left: 6px;
+    border-radius: 20px 20px 0px 0px;
+}
+.batch{
+    font-size: 3vw;
+    color: white;
+    position: absolute;
+    margin-top: 50px;
+    left: 30px;
+}
+sup{
+    font-size: 1vw;
+}
+.footer-links a{
+    position: absolute;
+    font-size: 1vw;
+    color: white;
+    line-height: 1px;
+    text-transform: uppercase;
+    font-family: ara;
+    text-decoration: none;
+    margin-top: -2%;
+    left: 2%;
+}
+.footer-links-two{
+    margin-top: 12%;
+    text-align: left;
+}
+.footer-links-two a:hover{
+    color: blanchedalmond;
+}
+.footer-links-two a{
+    position: absolute;
+    font-size: 1vw;
+    color: white;
+    line-height: 1px;
+    text-transform: uppercase;
+    font-family: ara;
+    text-decoration: none;
+    margin-top: -16.8%;
+    left: 11%;
+}
+.footer-links{
+    margin-top: 12%;
+    text-align: left;
+}
+.footer-links a:hover{
+    color: blanchedalmond;
+}
+.credit-link{
+    position: absolute;
+    color: white;
+    font-family: ara;
+    font-size: 2vw;
+    text-decoration: none;
+    margin-top: 28%;
+    right: 30px;
+}
+.credit-link:hover{
+    color: blanchedalmond;
+}
+.ig{
+    position: absolute;
+    top: -30px;
+    left: 350px;
+    height: auto;
+    width: 40px;
+}
+.negative{
+    color: grey;
+    font-size: 0.9vw;
+    font-family: ara;
+    text-align: left;
+    position: absolute;
+    right: 5%;
+    margin-top: 9%;
+}
+.end-sup{
+    font-size: 0.5vw;
+}
+.reserves{
+    color: grey;
+    text-transform: uppercase;
+    font-family: ara;
+    font-size: 0.7vw;
+    position: absolute;
+    margin-top: 30%;
+    left: 20px;
+}

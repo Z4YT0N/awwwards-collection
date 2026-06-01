@@ -1,0 +1,102 @@
+.six{
+    overflow-x: hidden;
+    height: 100vh;
+    font-family: gara;
+    margin-top: 60%;
+}
+
+.square {
+  height: 500px;
+  width: 500px;
+  margin-top: 20px;
+  margin-left: 10%;
+  background-color: orangered;
+  position: absolute;
+}
+.circle {
+    position: absolute;
+    height: 500px;
+    width: 500px;
+    background-color: orangered;
+    border-radius: 50%;
+    margin-left: 55%;
+    margin-top: 25px;
+}
+
+.square:hover{
+    border: 1px solid orangered;
+    background-color: #f7f6f2;
+}
+.circle:hover{
+    border: 1px solid orangered;
+    background-color: #f7f6f2;
+}
+
+.pick{
+    text-decoration: none;
+    color: #f7f6f2;
+    font-family: ara;
+    font-size: 2vw;
+    position: relative;
+    top: 45%;
+}
+
+.pick-two{
+    text-align: left;
+    text-decoration: none;
+    color: #f7f6f2;
+    font-family: ara;
+    font-size: 2vw;
+    position: relative;
+    top: 45%;
+}
+
+
+.square:hover .pick {
+    color: orangered;
+    font-family: ara;
+    transform: translate( 12%, -50%);
+    text-decoration: none;
+}
+.circle:hover .pick-two {
+    color: orangered;
+    font-family: ara;
+    transform: translate( 12%, -50%);
+    text-decoration: none;
+}
+.pick:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: orangered;
+    transform-origin: bottom right;
+    transition: transform 1s ease-out;
+}
+  
+.pick:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+  
+.pick-two:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: orangered;
+    transform-origin: bottom right;
+    transition: transform 1s ease-out;
+}
+  
+.pick-two:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+  

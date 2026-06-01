@@ -1,0 +1,995 @@
+/* Design & Developed by - Chaniru Sethum
+ - 2022 - 06 - DEC - SRI LANKA
+ - CHANIRU.LK 
+ All rights reserved 2022 ©*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    cursor: none;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #23211E;
+    color: white;
+}
+.cursor { 
+   width: 5rem;
+   height: 5rem;
+   position: fixed;
+   border-radius: 100%;
+   z-index: 99;
+   pointer-events: none;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.cursor-inner {
+   top: 0;
+   left: 0;
+   background: #FF6759;
+}
+.cursor-inner.hover { 
+   mix-blend-mode: difference;
+}
+.cursor-outer {
+   top: 0;
+   left: 0;
+   border: 1px solid #FF6759;
+}
+#loader{
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+	background: #FF6759;
+	z-index: 999;
+}
+#loader-img{
+  height: 50px;
+  width: auto;
+  position: absolute;
+  top: 50%;
+  left: 48%;
+  transform: translate(-50%, -50%);
+  -webkit-animation: animateHeart 2.5s infinite;
+  animation: animateHeart 2.5s infinite;
+}
+#loader-img:before,
+#loader-img:after {
+  -webkit-transform: rotate(-45deg) translateZ(0);
+  transform: rotate(-45deg) translateZ(0);
+  -webkit-transform-origin: 0 100%;
+  transform-origin: 0 100%;
+}
+.heart:after {
+  -webkit-transform: rotate(45deg) translateZ(0);
+  transform: rotate(45deg) translateZ(0);
+  -webkit-transform-origin: 100% 100%;
+  transform-origin: 100% 100%;
+}
+@-webkit-keyframes animateHeart {
+  0% {
+    -webkit-transform: scale(0.8);
+  }
+  5% {
+    -webkit-transform: scale(0.9);
+  }
+  10% {
+    -webkit-transform: scale(0.8);
+  }
+  15% {
+    -webkit-transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(0.8);
+  }
+  100% {
+    -webkit-transform: scale(0.8);
+  }
+}
+@keyframes animateHeart {
+  0% {
+    transform: scale(0.8);
+  }
+  5% {
+    transform: scale(0.9);
+  }
+  10% {
+    transform: scale(0.8);
+  }
+  15% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(0.8);
+  }
+}
+.logo-head{
+    position: fixed;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: white;
+    justify-content: flex-start;
+    left: 1%;
+    top: 1%;
+    z-index: 2;
+}
+.navbar {
+    overflow: hidden; 
+    position: fixed;
+    width: 100%;
+    height: 40px;
+    z-index: 1;
+    background-color: #23211E;
+    border-bottom:  1px solid rgb(255, 255, 255);
+}
+.links { 
+  font-weight: bold;
+  float: right;
+  color: white;
+  justify-content: flex-end;
+  display: block;
+  text-align: center; 
+  text-decoration: none;
+  font-size: 1em; 
+  padding: 10px 15px;
+  text-transform: uppercase;
+}
+.links:hover{
+  color: white;
+  text-shadow: 0 0 10px #000000; 
+}
+.lanka{
+    font-size: 0.5em;
+}
+.about-home{
+  height: 170vh;
+}
+.about-home-one{
+  position: relative;
+  font-size: 5em;
+  text-align: left;
+  justify-content: flex-end;
+  top: 23%;
+  left: 2%;
+}
+.about-circle-one{
+  position: absolute;
+  top: 34%;
+  left: 2%;
+  background-color: #FF6759;
+  height: 60px;
+  width: 60px;
+  border-radius: 50px;
+}
+.about-home-two{
+  position: relative;
+  font-size: 5em;
+  text-align: left;
+  justify-content: flex-end;
+  top: 22%;
+  left: 20%;
+}
+.about-sub-text-one{
+  position: absolute;
+  top: 55%;
+  left: 2%;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+.about-side-text-one{
+  position: absolute;
+  top: 55%;
+  right: 33%;
+  text-align: left;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+.about-side-text-two{
+  position: absolute;
+  top: 55%;
+  right: 5%;
+  text-align: left;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+.about-bottom{
+  height: 230vh;
+}
+.filler-bot-about{
+  position: relative;
+  height: 130vh;
+  width: 100%;
+  top: 10%;
+}
+.bot-box-filler{
+  height: 100%;
+  width: 100%;
+  object-fit: fill;
+}
+.about-circle-two{
+  position: absolute;
+  top: 68%;
+  left: 2%;
+  background-color: #FF6759;
+  height: 60px;
+  width: 60px;
+  border-radius: 50px;
+}
+.bot-title-one{
+  position: absolute;
+  font-size: 3.8em;
+  text-align: left;
+  top: 67.5%;
+  left: 2%;
+}
+.start-about{
+  position: absolute;
+  top: 85%;
+  left: 2%;
+  height: 30px;
+  width: auto;
+}
+.start-mean-text-one{
+  position: absolute;
+  top: 85%;
+  font-weight: bold;
+  left: 6%;
+  text-align: left;
+  font-size: 1.2em;
+}
+.start-mean-text-two{
+  position: absolute;
+  top: 85%;
+  font-weight: bold;
+  right: 6%;
+  text-align: left;
+  font-size: 1.2em;
+}
+.about-bottom-two{
+  height: 160vh;
+}
+.bot-two-star{
+  position: absolute;
+  top: 10%;
+  left: 2%;
+  height: 30px;
+  width: auto;
+}
+.start-bot-text-one{
+  position: absolute;
+  font-weight: bold;
+  text-align: left;
+  font-size: 1.2em;
+  top: 10%;
+  left: 6%;
+}
+.list-text-one{
+  position: absolute;
+  text-align: left;
+  font-size: 1.2em;
+  top: 10%;
+  right: 37%;
+}
+
+.list-text-two{
+  position: absolute;
+  text-align: left;
+  font-size: 1.2em;
+  top: 10%;
+  right: 19%;
+}
+.list-text-three{
+  position: absolute;
+  text-align: left;
+  font-size: 1.2em;
+  top: 10%;
+  right: 5%;
+}
+.drift-pic-one{
+  position: relative;
+  height: auto;
+  width: 800px;
+  top: 50%;
+  left: 2%;
+}
+.drift-pic-two{
+  position: absolute;
+  height: auto;
+  width: 300px;
+  top: 53%;
+  right: 2%;
+}
+.about-bottom-three{
+  height: 160vh;
+}
+.sub-tree-text{
+  position: absolute;
+  font-size: 1.5em;
+  font-weight: bold;
+  top: 13%;
+  left: 2%;
+}
+.circle-tree{
+  position: absolute;
+  top: 25%;
+  left: 2%;
+  background-color: #FF6759;
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+}
+.tree-text-comp{
+  position: absolute;
+  top: 24%;
+  left: 2%;
+  font-size: 4em;
+  text-align: left;
+}
+.pick-one{
+  position: absolute;
+  height: 30px;
+  width: auto;
+  top: 70%;
+  left: 2%;
+}
+.pick-text-one{
+  position: absolute;
+  top: 70.5%;
+  left: 6%;
+  font-size: 1em;
+  font-weight: bold;
+}
+.pick-main-one{
+  position: absolute;
+  top: 70.5%;
+  left: 28%;
+  font-size: 1em;
+}
+.pick-two{
+  position: absolute;
+  height: 30px;
+  width: auto;
+  top: 70%;
+  left: 53%;
+}
+.pick-text-two{
+  position: absolute;
+  top: 70.5%;
+  left: 57%;
+  font-size: 1em;
+  font-weight: bold;
+}
+.pick-main-two{
+  position: absolute;
+  top: 70.5%;
+  left: 74%;
+  font-size: 1em;
+}
+.about-bottom-four{
+  height: 200vh;
+}
+.circle-tree-two{
+  position: absolute;
+  background-color: #FF6759;
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+  top: 10%;
+  left: 2%;
+}
+.title-one-tree{
+  position: absolute;
+  top: 10%;
+  left: 2%;
+  font-size: 4em;
+}
+.tree-sub-one{
+  position: absolute;
+  font-size: 1.2em;
+  font-weight: bold;
+  top: 36%;
+  left: 2%;
+}
+.tree-sub-text-one{
+  position: absolute;
+  top: 36%;
+  font-size: 1.2em;
+  text-align: left;
+  right: 33%;
+}
+.tree-sub-text-two{
+  position: absolute;
+  top: 36%;
+  font-size: 1.2em;
+  text-align: left;
+  right: 5%;
+}
+.testi-one-text{
+  position: relative;
+  font-size: 2.5em;
+  top: 60%;
+  left: 2%;
+}
+.test-mean{
+  position: absolute;
+  right: 2%;
+  top: 96%;
+  font-size: 1.2em;
+}
+.about-bottom-five{
+  height: 300vh;
+}
+.star-five-one{
+  position: absolute;
+  height: 20px;
+  width: auto;
+  top: 10%;
+  left: 2%;
+}
+.base-text{
+  position: absolute;
+  top: 10%;
+  left: 6%;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.base-main-text{
+  position: absolute;
+  top: 15%;
+  left: 2%;
+  font-size: 3em;
+  text-align: left;
+}
+.circle-talk{
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  background-color: #FF6759;
+  border-radius: 50px;
+  top: 51.5%;
+  left: 2%;
+}
+.get-in-text-one{
+  position: absolute;
+  top: 45%;
+  left: 2%;
+  font-size: 5em;
+}
+.get-in-text-two{
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  font-size: 5em;
+}
+.get-in-sub-one{
+  position: absolute;
+  font-size: 1.2em;
+  left: 2%;
+  top: 60%;
+  font-weight: bold;
+}
+.get-in-side-text-one{
+  position: absolute;
+  font-size: 1.2em;
+  right: 33%;
+  top: 60%;
+}
+.get-in-side-text-two{
+  position: absolute;
+  font-size: 1.2em;
+  right: 5%;
+  top: 60%;
+}
+.box-piller-one{
+  position: relative;
+  height: 500px;
+  width: auto;
+  top: 72%;
+  left: 2%;
+}
+.box-piller-two{
+  position: absolute;
+  height: 300px;
+  width: auto;
+  top: 74%;
+  right: 2%;
+}
+.about-bottom-six{
+  height: 200vh;
+  border-bottom: 1px solid #F9F2ED;
+}
+.circle-six-one{
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  background-color: #FF6759;
+  border-radius: 50px;
+  top: 10%;
+  left: 2%;
+}
+.six-title-one{
+  position: absolute;
+  font-size: 4em;
+  left: 8%;
+  top: 9%;
+}
+.six-sub-text-one{
+  position: absolute;
+  top: 25%;
+  font-size: 1.2em;
+  font-weight: bold;
+  left: 2%;
+}
+.six-side-text-one{
+  position: absolute;
+  font-size: 1.2em;
+  font-weight: bold;
+  right: 33%;
+  top: 25%;
+}
+.six-side-text-two{
+  position: absolute;
+  font-size: 1.2em;
+  font-weight: bold;
+  right: 5%;
+  top: 25%;
+}
+.liner-end{
+  height: 1px;
+  width: 100%;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+}
+.circle-job{
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  background-color: #FF6759;
+  border-radius: 50px;
+  top: 55%;
+  left: 2%;
+}
+.job-title-one{
+  position: absolute;
+  font-size: 4em;
+  top: 54%;
+  left: 8%;
+}
+.job-sub-text-one{
+  position: absolute;
+  top: 67%;
+  left: 2%;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.job-sub-text-two{
+  position: absolute;
+  top: 67%;
+  right: 28%;
+  font-size: 1.2em;
+}
+.resume-mail{
+  transition:  2s ease-in-out;
+  color: #FF6759;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.resume-mail:hover{
+  transition: 2s ease-in-out;
+  color: white;
+}
+.job-sub-text-three{
+  position: absolute;
+  top: 67%;
+  right: 5%;
+  font-size: 1.2em;
+}
+.bottom-seven{
+  height: 40vh;
+  border-bottom: 1px solid #F9F2ED;
+}
+.contact-ques{
+  position: absolute;
+  font-size: 1.4em;
+  font-weight: bold;
+  top: 3%;
+  left: 2%;
+}
+.contact-btn{
+  position: absolute;
+  color: white;
+  background-color: #5651ED;
+  font-size: 2em;
+  left: 2%;
+  padding: 6px 95px;
+  border-radius: 50px;
+  text-decoration: none;
+  top: 40%;
+  transition: 2s ease-in-out;
+}
+.contact-btn:hover{
+  background-color: #FF6759;
+  transition: 2s ease-in-out;
+}
+.goBtnCentre {
+  width: 100%;
+  clear: both;
+  height: 80px;
+}
+.goButton {
+  position: absolute;
+  left: 2%;
+  top: 71%; 
+  border: 1px solid red;
+  background-color: #F9F2ED;
+  border-radius: 50px;
+  height: 50px;
+  width: 300px;
+  transition: 2s ease-in-out;
+}
+.goButton:hover{
+  background-color: red;
+  transition: 2s ease-in-out;
+}
+.goButton:hover h2{
+  color: white;
+  transition: 2s ease-in-out;
+}
+.goButton h2 {
+  text-align: center;
+  font-size: 1.5em;
+  color: red;  
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+} 
+.box-warn-foot{
+  position: absolute;
+  height: 70px;
+  width: 210px;
+  border-radius: 10px;
+  top: 70%;
+  right: 2%;
+  background-color: red;
+  display: none;
+  transition: 2s ease-in-out;
+  animation: border-flicker 5s linear infinite;
+}
+.goButton:hover + .box-warn-foot{
+  display: block;
+  transition: 2s ease-in-out;
+}
+.warn-text-foot{
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1em;
+}
+@keyframes border-flicker {
+  0% {
+    opacity:0.1;
+    -webkit-box-shadow: 0px 0px 78px 4px rgba(232, 16, 16, 0.73);
+    -moz-box-shadow: 0px 0px 78px 4px rgba(232, 16, 16, 0.73);
+    box-shadow: 0px 0px 78px 4px rgba(232, 16, 16, 0.73);
+  }
+  2% {
+    opacity:1;
+    -webkit-box-shadow: 0px 0px 78px 4px rgba(232, 16, 16, 0.73);
+    -moz-box-shadow: 0px 0px 78px 4px rgba(232, 16, 16, 0.73);
+    box-shadow: 0px 0px 78px 4px rgba(232, 16, 16, 0.73);
+  }
+  4% {
+    opacity:0.1;
+    -webkit-box-shadow: 0px 0px 78px 4px rgba(232, 16, 16, 0.73);
+    -moz-box-shadow: 0px 0px 78px 4px rgba(232, 16, 16, 0.73);
+    box-shadow: 0px 0px 78px 4px rgba(232, 16, 16, 0.73);
+  }
+  
+  8% {
+    opacity:1;
+    -webkit-box-shadow: 0px 0px 78px 4px rgba(232, 16, 16, 0.73);
+    -moz-box-shadow: 0px 0px 78px 4px rgba(232, 16, 16, 0.73);
+    box-shadow: 0px 0px 78px 4px rgba(232, 16, 16, 0.73);
+  }
+  70% {
+    opacity:0.7;
+    -webkit-box-shadow: 0px 0px 78px 4px rgba(232, 16, 16, 0.73);
+    -moz-box-shadow: 0px 0px 78px 4px rgba(232, 16, 16, 0.73);
+    box-shadow: 0px 0px 78px 4px rgba(232, 16, 16, 0.73);
+  }
+  100% {
+    opacity:1;
+    -webkit-box-shadow: 0px 0px 78px 4px rgba(232, 16, 16, 0.73);
+    -moz-box-shadow: 0px 0px 78px 4px rgba(232, 16, 16, 0.73);
+    box-shadow: 0px 0px 78px 4px rgba(232, 16, 16, 0.73);
+  }
+}
+.bottom-eight{
+  height: 70vh;
+}
+.linkin{
+  position: absolute;
+  text-decoration: none;
+  color: white;
+  font-size: 1.3em;
+  left: 3%;
+}
+.link-one{
+  top: 10%;
+}
+.link-two{
+  top: 20%;
+}
+.link-three{
+  top: 30%;
+}
+.link-four{
+  top: 40%;
+}
+.link-five{
+  top: 50%;
+}
+.linkin:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+.linkin:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+.location{
+  position: absolute;
+  font-size: 1.3em;
+  color: white;
+  top: 10%;
+  left: 15%;
+}
+#ct{
+  position: absolute;
+  font-size: 1.3em;
+  color: white;
+  top: 30%;
+  left: 15%;
+}
+.mail-just{
+  position: absolute;
+  text-decoration: none;
+  font-size: 1.3em;
+  color: white;
+  top: 50%;
+  left: 15%;
+  transition: 2s ease-in-out;
+}
+.mail-just:hover{
+  color: #FF6759;
+  transition: 2s ease-in-out;
+}
+.logo-foot{
+  position: absolute;
+  font-size: 8em;
+  text-align: center;
+  top: 55%;
+}
+.redder{
+  color: #FF6759;
+}
+.privacy-btn{
+  position: absolute;
+  color: black;
+  background-color: white;
+  font-size: 1em;
+  padding: 6px 50px;
+  border-radius: 50px;
+  text-decoration: none;
+  top: 90%;
+  right: 5%;
+  transition: 2s ease-in-out;
+  z-index: 2;
+}
+.privacy-btn:hover{
+  background-color: #FF6759;
+  color: white;
+  transition: 2s ease-in-out;
+}
+.terms-btn{
+  position: absolute;
+  color: black;
+  background-color: white;
+  font-size: 1em;
+  padding: 6px 50px;
+  border-radius: 50px;
+  text-decoration: none;
+  top: 90%;
+  right: 30%;
+  transition: 2s ease-in-out;
+  z-index: 2;
+}
+.terms-btn:hover{
+  background-color: #FF6759;
+  color: white;
+  transition: 2s ease-in-out;
+}
+.chaniru-btn{
+  position: absolute;
+  color: black;
+  background-color: white;
+  font-size: 1em;
+  padding: 6px 50px;
+  border-radius: 50px;
+  text-decoration: none;
+  top: 90%;
+  left: 3%;
+  transition: 2s ease-in-out;
+  z-index: 2;
+}
+.chaniru-btn:hover{
+  background-color: #FF6759;
+  color: white;
+  transition: 2s ease-in-out;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*! locomotive-scroll v3.1.7 | MIT License | https://github.com/locomotivemtl/locomotive-scroll */
+html.has-scroll-smooth {
+  overflow: hidden;
+}
+html.has-scroll-dragging,
+html.has-scroll-dragging * {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.has-scroll-smooth body {
+  overflow: hidden;
+}
+.c-scrollbar {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 11px;
+  height: 100vh;
+  transform-origin: center right;
+  transition: transform 0.3s, opacity 0.3s;
+  opacity: 0;
+}
+.c-scrollbar:hover {
+  transform: scaleX(1.45);
+}
+.c-scrollbar:hover,
+.has-scroll-dragging .c-scrollbar,
+.has-scroll-scrolling .c-scrollbar {
+  opacity: 1;
+}
+.c-scrollbar_thumb {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #e27c7c;
+  width: 2px;
+  margin: 2px;
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+.has-scroll-dragging .c-scrollbar_thumb {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}

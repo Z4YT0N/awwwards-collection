@@ -1,0 +1,54 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"eyebrow": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Fragrance Quiz"
+			},
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "The Cote Royal Fragrance Finder",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"body": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Quis aute excepteur minim culpa magna anim deserunt. Aliquip incididunt incididunt cupidatat ex adipisicing Lorem. Nisi elit adipisicing sunt incididunt voluptate veniam et duis nostrud non incididunt aliquip aliquip commodo velit."
+						}
+					}
+				]
+			},
+			"button": {
+				"__TYPE__": "RepeatableContent",
+				"type": "Link",
+				"value": [
+					{
+						"key": "49162f17-e801-4778-b903-3c8e8af15bbb",
+						"__TYPE__": "LinkContent",
+						"value": {
+							"__TYPE__": "ExternalLink",
+							"url": "https://prismic.io",
+							"text": "See the quiz",
+							"variant": "Secondary"
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

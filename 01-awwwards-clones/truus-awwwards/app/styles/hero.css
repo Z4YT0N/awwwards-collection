@@ -1,0 +1,41 @@
+/* ─── Hero / Content Section ─────────────────────────────────────────────── */
+.content-section {
+    padding: 200px 20px 0px;
+    text-align: center;
+}
+
+.title-container {
+    margin-bottom: 80px;
+    position: relative;
+    display: inline-block;
+}
+
+.main-title {
+    font-size: 6rem;
+    font-family: 'Epilogue', sans-serif;
+    font-weight: 800;
+    letter-spacing: -4px;
+    color: var(--color-black);
+    cursor: url("/assets/Cursor SVG/cursor-text.svg") 12 12, auto;
+}
+
+.italic-text {
+    font-family: 'Times New Roman', serif;
+    font-style: italic;
+    font-weight: 400;
+    margin-left: -5px;
+}
+
+.title-underline-svg {
+    position: absolute;
+    bottom: -15px;
+    right: 0;
+    width: 160px;
+    height: auto;
+    color: var(--color-black);
+}
+
+.title-underline-svg path {
+    stroke-dasharray: 200;
+    stroke-dashoffset: 200;
+}

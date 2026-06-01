@@ -1,0 +1,53 @@
+<nav class='nav'>
+	<header class='nav-header f-c-r'>
+		<h2>Caroselling</h2>
+		<ul class='f-c-r'>
+			<li><span>brand design</span></li>
+			<li><span>web design</span></li>
+			<li><span>copyright</span></li>
+		</ul>
+	</header>
+	<span>menu</span>
+</nav>
+
+<style>
+	.f-c-r {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
+	nav {
+		position: sticky;
+		top: 0;
+		left: 0;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		& span {
+			padding-bottom: 3px;
+			cursor: pointer;
+			border-bottom: 1px solid var(--caro-primary);
+			&:hover {
+				color: var(--caro-secondary);
+				border-color: var(--caro-secondary);
+				transition: all 0.3s ease-in-out;
+			}
+		}
+	}
+	.nav-header {
+		display: flex;
+		flex-direction: row;
+		gap: 85px;
+		& h2 {
+			font-size: var(--text-3xl);
+			cursor: pointer;
+			&:hover {
+				color: var(--caro-effect);
+				transition: all 0.3s ease-in-out;
+			}
+		}
+		& ul {
+			gap: 1rem;
+		}
+	}
+</style>

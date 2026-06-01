@@ -1,0 +1,82 @@
+.second{
+    height: 100vh;
+    font-family: time;
+    background-color: #f3ebe3;
+}
+.tagline{
+    position: absolute;
+    color: black;
+    font-size: 0.8vw;
+    text-transform: uppercase;
+    margin-top: 6%;
+    left: 44.5%;
+}
+.about-head{
+    position: absolute;
+    font-size: 5.3vw;
+    margin-top: 8%;
+    left: 39%;
+    line-height: 70px;
+}
+.face-one{
+    position: absolute;
+    height: auto;
+    width: 200px;
+    border-radius: 10px;
+    margin-top: 3%;
+    left: 17%;
+    animation: move 10s ease-in infinite alternate;
+}
+.face-two{
+    position: absolute;
+    height: auto;
+    width: 150px;
+    border-radius: 10px;
+    margin-top: 10%;
+    left: 70%;
+    animation: move 10s ease-in infinite alternate;
+}
+.face-three{
+    position: absolute;
+    height: auto;
+    width: 450px;
+    border-radius: 10px;
+    margin-top: 27%;
+    left: 2%;
+    animation: move 10s ease-in infinite alternate;
+}
+.face-four{
+    position: absolute;
+    height: auto;
+    width: 320px;
+    border-radius: 10px;
+    margin-top: 2%;
+    left: 75%;
+    animation: move 10s ease-in infinite alternate;
+}
+.about-des{
+    position: absolute;
+    font-size: 1vw;
+    font-family: ara;
+    margin-top: 20%;
+    left: 41.5%;
+}
+@keyframes move {
+     
+    25% {
+        transform: translateY(-2px);
+    }
+
+    50% {
+        transform: translateY(3px);
+    }
+    
+
+    75% {
+        transform: translateY(3px);
+    }
+   
+    100% {
+        transform: translateY(2px);
+    }
+}

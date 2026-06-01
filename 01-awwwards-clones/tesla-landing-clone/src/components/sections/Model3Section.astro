@@ -1,0 +1,22 @@
+---
+import Section from "../../layouts/Section.astro";
+import Button from "../commons/Button.astro";
+import FooterThree from "../../layouts/footers/FooterThree.astro";
+import Picture from "../commons/Picture.astro";
+import Title from "../commons/Title.astro";
+import Anchor from "../commons/Anchor.astro";
+---
+
+<Section>
+    <Picture slot="background" name="Model-3" breakpoint="xs" />
+
+    <Title slot="title" text="Model 3" />
+
+    <Anchor slot="subtitle" text="Concertar una prueba de conducción" />
+
+    <FooterThree slot="footer">
+        <Button slot="button" text="Explorar inventario" flavour="neutral" />
+        <Button slot="button2" text="Pedido personalizado" flavour="white" />
+        <Anchor slot="content" text="Disponible con Moves III" theme="light" />
+    </FooterThree>
+</Section>

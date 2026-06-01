@@ -1,0 +1,110 @@
+---
+import Brand from "./commons/Brand.astro";
+import List from "./commons/List.astro";
+
+const items = [
+    "Model S",
+    "Model 3",
+    "Model X",
+    "Model Y",
+    "Inventario disponible",
+    "Inventario de usados",
+    "Tasación",
+    "Prueba de conducción",
+    "Coches de empresa",
+    "Powerwall",
+    "Energía",
+    "Energía para uso comercial",
+    "Utilities",
+    "Carga",
+    "Empleo",
+    "Dónde estamos",
+    "Eventos",
+    "Soporte",
+    "Relaciones con los inversores",
+    "Tienda",
+    "Cuenta",
+    "Cybertruck",
+    "Roadster",
+    "Noticias",
+];
+---
+
+<div
+    id="background"
+    class="drawer-toggler absolute left-0 top-0 backdrop-blur-sm backdrop-brightness-75 opacity-0 transition-opacity ease-in-out duration-500"
+>
+</div>
+
+<aside
+    id="drawer"
+    class="fixed z-30 right-0 top-0 w-4/5 2xs:w-80 h-screen pl-7 pr-5 bg-white overflow-y-scroll transform translate-x-full opacity-0 transition-all ease-in-out duration-500"
+>
+    <header
+        class="sticky top-0 right-0 py-5 flex justify-between items-center bg-white"
+    >
+        <a href="#" class="inline-block mt-[2.4px]" aria-label="Tesla Logo">
+            <Brand classes="scale-90" />
+        </a>
+
+        <button
+            class="drawer-toggler p-2 rounded hover:bg-gray-100 transition duration-100"
+        >
+            <img
+                loading="lazy"
+                src="/x.svg"
+                alt="Close"
+                width="23"
+                height="23"
+                alt="Cerrar"
+            />
+        </button>
+    </header>
+
+    <nav class="pb-40">
+        <ul class="flex flex-col gap-1">
+            <List
+                items={items}
+                classes="block mr-2 pl-3 py-2 text-sm font-medium text-black rounded-[5px] hover:bg-gray-100 transition duration-100"
+            />
+            <li
+                class="mr-2 pl-3 py-3 rounded-[5px] hover:bg-gray-100 transition duration-100"
+            >
+                <button class="flex gap-2">
+                    <div>
+                        <img
+                            loading="lazy"
+                            src="/language.svg"
+                            alt="Language"
+                            width="30"
+                            height="30"
+                            class="mt-1"
+                            alt="Idioma"
+                        />
+                    </div>
+                    <div class="flex flex-col gap-[2px] items-start">
+                        <p class="text-sm font-medium">Español</p>
+                        <p class="text-sm font-medium text-gray-500">España</p>
+                    </div>
+                </button>
+            </li>
+        </ul>
+    </nav>
+</aside>
+
+<script>
+    const toggleButton = document.querySelectorAll(".drawer-toggler");
+    const drawer = document.querySelector("#drawer");
+    const background = document.querySelector("#background");
+
+    toggleButton.forEach((button) => {
+        button.addEventListener("click", () => {
+            background.classList.toggle("w-screen");
+            background.classList.toggle("h-screen");
+            background.classList.toggle("z-20");
+            background.classList.toggle("opacity-0");
+            drawer.classList.toggle("opacity-0");
+            drawer.classList.toggle("translate-x-full");
+        });
+    });
+</script>

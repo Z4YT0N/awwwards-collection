@@ -1,0 +1,96 @@
+.six{
+    height: 240vh;
+    background-color: #e3e3e3;
+    font-family: Formular;
+}
+.why{
+    position: absolute;
+    color: rgb(7, 7, 7);
+    font-size: 5vw;
+    font-weight: lighter;
+    text-transform: uppercase;
+    left: 20px;
+    margin-top: 40px;
+    text-align: left;
+}
+.phase-img-one{
+    height: auto;
+    width: 300px;
+    position: absolute;
+    margin-top: 20%;
+    left: 33%;
+}
+.phase-text{
+    font-size: 3vw;
+    text-transform: uppercase;
+    color:  black;
+    text-align: left;
+    position: absolute;
+    margin-top: 23%;
+    left: 57%;
+}
+.phase-des{
+    font-size: 1.4vw;
+    font-weight: lighter;
+    font-family: Formular-Light;
+    text-transform: uppercase;
+    color:  black;
+    text-align: left;
+    position: absolute;
+    margin-top: 32%;
+    left: 57%;
+}
+.phase-img-two{
+    height: auto;
+    width: 300px;
+    position: absolute;
+    margin-top: 50%;
+    left: 57%;
+}
+.phase-text-two{
+    font-size: 3vw;
+    text-transform: uppercase;
+    color:  black;
+    text-align: left;
+    position: absolute;
+    margin-top: 56%;
+    left: 33%;
+}
+.phase-des-two{
+    font-size: 1.4vw;
+    font-weight: lighter;
+    font-family: Formular-Light;
+    text-transform: uppercase;
+    color:  black;
+    text-align: left;
+    position: absolute;
+    margin-top: 65%;
+    left: 33%;
+}
+.phase-img-three{
+    height: auto;
+    width: 300px;
+    position: absolute;
+    margin-top: 79%;
+    left: 33%;
+}
+.phase-text-three{
+    font-size: 3vw;
+    text-transform: uppercase;
+    color:  black;
+    text-align: left;
+    position: absolute;
+    margin-top: 82%;
+    left: 57%;
+}
+.phase-des-three{
+    font-size: 1.4vw;
+    font-weight: lighter;
+    font-family: Formular-Light;
+    text-transform: uppercase;
+    color:  black;
+    text-align: left;
+    position: absolute;
+    margin-top: 88%;
+    left: 57%;
+}

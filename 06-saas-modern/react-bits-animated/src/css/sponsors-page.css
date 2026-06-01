@@ -1,0 +1,436 @@
+/* ─── Sponsors page ────────────────────────────────────────────────────────── */
+.sponsors-dotfield {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.sponsors-page {
+  position: relative;
+  z-index: 1;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 180px 2em 4em;
+  min-height: 100vh;
+}
+
+/* ─── Header ───────────────────────────────────────────────────────────────── */
+.sponsors-page-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 3em;
+}
+
+.sponsors-page-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sponsors-page-title {
+  font-family: 'Geist Pixel Line', sans-serif;
+  font-size: clamp(36px, 5vw, 100px);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin: 0;
+  line-height: 1.1;
+}
+
+.sponsors-page-subtitle {
+  font-family: 'Geist', sans-serif;
+  font-size: 16px;
+  max-width: 36ch;
+  font-weight: 400;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+}
+
+.sponsors-page-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Geist Mono', monospace;
+  font-size: 13px;
+  font-weight: 500;
+  color: #fff;
+  height: 42px;
+  padding: 0 24px;
+  width: fit-content;
+  flex-shrink: 0;
+  margin-top: 16px;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 50%, #6d28d9 100%);
+  box-shadow: 0 2px 16px rgba(139, 92, 246, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  text-decoration: none;
+}
+
+.sponsors-page-cta:hover {
+  box-shadow: 0 4px 24px rgba(139, 92, 246, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transform: translateY(-1px);
+}
+
+/* ─── Stats row ────────────────────────────────────────────────────────────── */
+.sponsors-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 1.5em;
+}
+
+/* ─── Divider ──────────────────────────────────────────────────────────────── */
+.sponsors-divider {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  margin: 6.5em 0 3em;
+}
+
+.sponsors-section-title {
+  font-family: 'Geist Pixel Line', sans-serif;
+  font-size: clamp(22px, 3vw, 46px);
+  font-weight: 500;
+  color: #fff;
+  letter-spacing: -0.02em;
+  text-align: left;
+  margin: 2em 0 .6em 0;
+}
+
+.sponsors-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 28px 16px;
+  background: var(--bg-elevated, #1a1625);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 16px;
+  transition: border-color 0.2s ease;
+}
+
+.sponsors-stat:hover {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.sponsors-stat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #a855f7;
+  margin-bottom: 4px;
+}
+
+.sponsors-stat-value {
+  font-family: 'Geist', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -1px;
+  line-height: 1;
+}
+
+.sponsors-stat-label {
+  font-family: 'Geist', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+/* ─── Tier section ─────────────────────────────────────────────────────────── */
+.sponsors-tier-section {
+  margin-bottom: 3em;
+}
+
+.sponsors-tier-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.sponsors-tier-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 8px;
+  font-family: 'Geist Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.sponsors-tier-badge--diamond {
+  background: rgba(168, 85, 247, 0.12);
+  border: 1px solid rgba(168, 85, 247, 0.25);
+  color: #c084fc;
+}
+
+.sponsors-tier-badge--platinum {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.sponsors-tier-badge--silver {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* ─── Sponsor card ─────────────────────────────────────────────────────────── */
+.sponsors-tier-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.sponsors-tier-grid--diamond {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.sponsors-tier-grid--platinum {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.sponsors-tier-grid--silver {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.sponsors-page-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-elevated, #1a1625);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 16px;
+  padding: 6px;
+  text-decoration: none;
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+
+.sponsors-page-card:hover {
+  border-color: rgba(255, 255, 255, 0.1);
+  text-decoration: none;
+}
+
+/* Banner area inside card */
+.sponsors-card-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.sponsors-card-banner--diamond {
+  height: 140px;
+  background: linear-gradient(145deg, rgba(168, 85, 247, 0.08) 0%, rgba(124, 58, 237, 0.04) 100%);
+}
+
+.sponsors-card-banner--platinum {
+  height: 110px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.02) 100%);
+}
+
+.sponsors-card-banner--silver {
+  height: 90px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.02) 100%);
+}
+
+.sponsors-card-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.sponsors-card-banner--diamond::before {
+  background: radial-gradient(circle at 50% 80%, rgba(168, 85, 247, 0.12) 0%, transparent 60%);
+}
+
+.sponsors-card-banner--platinum::before {
+  background: radial-gradient(circle at 50% 80%, rgba(255, 255, 255, 0.04) 0%, transparent 60%);
+}
+
+.sponsors-card-banner--silver::before {
+  background: radial-gradient(circle at 50% 80%, rgba(255, 255, 255, 0.04) 0%, transparent 60%);
+}
+
+.sponsors-card-logo {
+  height: 40%;
+  max-height: 48px;
+  width: auto;
+  max-width: 70%;
+  object-fit: contain;
+  opacity: 0.85;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.sponsors-card-banner--diamond .sponsors-card-logo {
+  max-height: 56px;
+}
+
+.sponsors-page-card:hover .sponsors-card-logo {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* Card body */
+.sponsors-card-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 14px 10px;
+}
+
+.sponsors-card-name {
+  font-family: 'Geist', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  letter-spacing: -0.2px;
+}
+
+.sponsors-card-arrow {
+  display: flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.3);
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.sponsors-page-card:hover .sponsors-card-arrow {
+  color: #a855f7;
+  transform: translateX(2px);
+}
+
+/* ─── Empty tier placeholder ───────────────────────────────────────────────── */
+.sponsors-tier-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  border: 1px dashed rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  font-family: 'Geist', sans-serif;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* ─── Bottom CTA ───────────────────────────────────────────────────────────── */
+.sponsors-bottom-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 1em;
+  padding: 24px 28px;
+  background: var(--bg-elevated, #1a1625);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 16px;
+  transition: border-color 0.2s ease;
+}
+
+.sponsors-bottom-cta:hover {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.sponsors-bottom-cta-text {
+  font-family: 'Geist', sans-serif;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.4);
+  margin: 0;
+}
+
+.sponsors-bottom-cta-text strong {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.sponsors-bottom-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Geist Mono', monospace;
+  font-size: 13px;
+  font-weight: 500;
+  color: #fff;
+  height: 38px;
+  padding: 0 20px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 50%, #6d28d9 100%);
+  box-shadow: 0 2px 12px rgba(139, 92, 246, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  text-decoration: none;
+}
+
+.sponsors-bottom-cta-btn:hover {
+  box-shadow: 0 4px 20px rgba(139, 92, 246, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transform: translateY(-1px);
+}
+
+/* ─── Responsive ───────────────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .sponsors-tier-grid--diamond {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sponsors-tier-grid--platinum {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sponsors-tier-grid--silver {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .sponsors-stats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .sponsors-page-header {
+    flex-direction: column;
+  }
+
+  .sponsors-stats {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .sponsors-stat {
+    flex-direction: row;
+    gap: 14px;
+    padding: 18px 22px;
+  }
+
+  .sponsors-stat-icon {
+    margin-bottom: 0;
+  }
+
+  .sponsors-tier-grid--diamond,
+  .sponsors-tier-grid--platinum {
+    grid-template-columns: 1fr;
+  }
+
+  .sponsors-tier-grid--silver {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .sponsors-page {
+    padding: 100px 1em 3em;
+  }
+
+  .sponsors-tier-grid--silver {
+    grid-template-columns: 1fr;
+  }
+}

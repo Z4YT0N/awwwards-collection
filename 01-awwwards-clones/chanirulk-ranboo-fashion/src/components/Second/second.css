@@ -1,0 +1,75 @@
+.second{
+    background-color: black;
+    font-family: rabo;
+    height: 150vh;
+}
+.stat{
+    width: auto;
+    height: 100%;
+    position: absolute;
+    left: 3%;
+    margin-top: 10%;
+    border-radius: 20px;
+    animation: move 10s ease-in infinite alternate;
+}
+@keyframes move {
+     
+    25% {
+        transform: translateY(-2px);
+    }
+
+    50% {
+        transform: translateY(3px);
+    }
+    
+
+    75% {
+        transform: translateY(3px);
+    }
+   
+    100% {
+        transform: translateY(2px);
+    }
+}
+.in-el{
+    height: 300px;
+    width: 40%;
+    position: absolute;
+    margin-top: 23%;
+    left: 35%;
+    background-color: white;
+    border-radius: 20px;
+}
+.sade{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    opacity: 0.5;
+}
+.clip-hover{
+    position: absolute;
+    height: auto;
+    width: 40%;
+    margin-top: 18%;
+    left: 35%;
+}
+.clip-hover-two{
+    height: auto;
+    width: 44%;
+    position: absolute;
+    margin-top: 18%;
+    left: 35%;
+    animation: blink-animation 1s steps(5, start) infinite;
+    -webkit-animation: blink-animation 1s steps(5, start) infinite;
+}
+@keyframes blink-animation {
+    to {
+      visibility: hidden;
+    }
+  }
+  @-webkit-keyframes blink-animation {
+    to {
+      visibility: hidden;
+    }
+}

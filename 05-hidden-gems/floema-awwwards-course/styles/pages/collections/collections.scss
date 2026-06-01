@@ -1,0 +1,144 @@
+.collections {
+  @extend %cover;
+  @extend %page;
+
+  z-index: 0;
+  // background-color: $color-quicksand;
+  // color: $color-quarter-spanish-white;
+}
+
+.collections__wrapper {
+  @extend %cover;
+
+  overflow: hidden;
+}
+
+.collections__titles {
+  @extend %vertical-titles;
+
+  transform: translate(-50%,-50%) rotate(90deg);
+  transition: transform 1s ease;
+
+  @include media('<=phone') {
+    display: none;
+  }
+}
+
+.collections__titles__label {
+  @extend %vertical-titles__label;
+}
+
+.collections__titles__title {
+  @extend %vertical-titles__title;
+
+}
+
+.collections__gallery {
+  @extend %cover;
+  z-index: 1;
+}
+
+.collections__gallery__wrapper {
+  position: absolute;
+  transform: translate(-44.7rem * 0.5,-50%);
+  top: 50%;
+  left:50%;
+
+  display: flex;
+  align-items: center;
+}
+
+.collections__gallery__link {
+  display: block;
+  margin: 0 5.3rem;
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.collections__gallery__media {
+  position: relative;
+  width: 44.7rem;
+  height: 63.1rem;
+
+  visibility: hidden;
+}
+
+.collections__gallery__media__image {
+  @extend %cover;
+  visibility: hidden !important;
+
+}
+
+.collections__content {
+  @extend %cover;
+
+  @include media('<=phone') {
+    display: none;
+  }
+}
+
+.collections__article {
+  position: absolute;
+  left:8rem;
+  bottom: 8rem;
+
+  opacity: 0;
+  transition: opacity 0.4s ease;
+
+  &--active {
+    opacity: 1;
+    transition-delay: 0.4s;
+  }
+}
+
+.collections__title {
+  @extend %title-60;
+}
+
+.collections__description {
+  @extend %description-16;
+
+  max-width: 54ch;
+}
+
+.collections__mobile {
+  display: none;
+
+  @include media('<=phone') {
+    display: flex;
+    position: absolute;
+    bottom: 5rem;
+  }
+}
+
+.collections__mobile__item {
+  width: 100vw;
+  padding-left: 5rem;
+}
+
+.collections__mobile__item__label {
+  font-size: 2rem;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+}
+
+.collections__mobile__item__title {
+  font-family: $font-george-x;
+  font-size: 12rem;
+}
+
+// .collections__button {
+//   position: absolute;
+//   left: 50%;
+//   top: 50%;
+//   transform: translate(-50%, -50%);
+
+//   width: 44.7rem;
+//   height: 63.1rem;
+// }

@@ -1,0 +1,128 @@
+%title-10 {
+  font-size: 2.5rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 1px;
+}
+
+%small-paragraph {
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.small-paragraph {
+  @extend %small-paragraph;
+}
+
+%paragraph {
+  font-size: 2.4rem;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.paragraph {
+  @extend %paragraph;
+}
+
+%big-paragraph {
+  font-size: 3.4rem;
+  font-family: 500;
+  line-height: 1.5;
+}
+
+.big__paragraph {
+  @extend %big-paragraph;
+}
+
+%big-title {
+  font-size: 25rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  line-height: 1;
+}
+
+.title {
+  @extend %big-title;
+}
+
+%big-title-2 {
+  font-size: 18rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  line-height: 1.2;
+}
+
+.title_2 {
+  @extend %big-title-2;
+}
+
+%title-two {
+  font-size: 15rem;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.title_two {
+  @extend %title-two;
+}
+
+%heading {
+  width: fit-content;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.2;
+  position: relative;
+  overflow: visible hidden !important;
+  padding-left: 2rem;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    transform: translateY(-50%);
+    background: currentColor;
+    // border-radius: 50%;
+    clip-path: polygon(
+      50% 0%,
+      61% 35%,
+      98% 35%,
+      68% 57%,
+      79% 91%,
+      50% 70%,
+      21% 91%,
+      32% 57%,
+      2% 35%,
+      39% 35%
+    );
+    z-index: 1;
+  }
+}
+
+.heading {
+  @extend %heading;
+}
+
+%sub-title {
+  font-size: 14rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 1px;
+}
+
+.sub-title {
+  @extend %sub-title;
+}
+
+%mini-title {
+  font-size: 7.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.mini-title {
+  @extend %mini-title;
+}

@@ -1,0 +1,179 @@
+.second{
+    overflow-x: hidden;
+    height: 110vh;
+    font-family: gara;
+}
+.cate-links a{
+    color: orangered;
+    font-size: 6vw;
+    text-decoration: none;
+    padding: 50px;
+    margin-top: 10px;
+}
+
+.link:after{
+    width: 0%;
+    transform: scaleX(0);
+    height: 0px;
+    background-color: orangered;
+    transform-origin: none;
+    transition: none;
+}
+
+.link:hover:after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+sup{
+    font-size: 2vw;
+}
+
+.link-1{
+    opacity: 0.2;
+}
+
+.container {
+	position: relative;
+	width: 100%;
+	overflow-x: hidden;
+}
+
+.faders {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+        overflow-x: hidden;
+}
+.left,
+.right {
+		position: absolute;
+		z-index: 2;
+		width: 20%;
+		height: 100%;
+        overflow-x: hidden;
+}
+		
+.left {
+	background: linear-gradient(to right, #f7f6f2) 0%, rgba(255,255,255,0) 100%);
+}
+		
+.right {
+	right: 0;
+	background: linear-gradient(to left, #f7f6f2, rgba(255,255,255,0) 100%);
+}
+
+.items {
+    overflow-x: hidden;
+	display: flex;
+	align-items: center;
+	width: fit-content;
+	animation: carouselAnim 60s infinite alternate linear;
+}		
+.entry {
+    overflow-x: hidden;
+    display: flex;
+    align-items: center;
+	flex-direction: column;
+	position: relative;
+	width: 300px;
+	background-color: #f7f6f2;
+	margin: 1em;
+	padding: .5em;
+	border-radius: 5px;
+	box-shadow: 4px 4px 5px 0px rgba(0,0,0,.05);
+}			
+p {
+    padding: 1em;
+    font-family: ara;
+    text-align: left;
+    color: orangered;
+}
+			
+			
+.name {
+	font-weight: 700;
+}
+			
+img {
+	display: block;
+	width: auto;
+	height: 350px;
+	margin: 0 auto;
+	border-radius: 5px;
+}
+
+
+@keyframes carouselAnim {
+	from { transform: translate(0,0); }
+	to { transform: translate(calc(-100% + (5 * 300px))) }
+}
+
+.tags {
+    position: relative;
+    left: 50px;
+	border-radius: 28px;
+	border: 1px solid orangered;
+	display: inline-block;
+	cursor: pointer;
+	color: orangered;
+    font-family: ara;
+	font-size: 17px;
+	padding: 10px 31px;
+	text-decoration:none;
+}
+
+.tags:hover {
+	background-color: orangered;
+    color: #f7f6f2;
+    font-family: ara;
+}
+
+
+.tags-two {
+    position: absolute;
+    top: 90.5%;
+    left: 20px;
+	border-radius: 28px;
+	border: 1px solid orangered;
+	display: inline-block;
+	cursor: pointer;
+	color: orangered;
+    font-family: ara;
+	font-size: 17px;
+	padding: 10px 31px;
+	text-decoration:none;
+}
+
+.tags-two:hover {
+	background-color: orangered;
+    color: #f7f6f2;
+    font-family: ara;
+}
+.tags:after{
+    width: 0%;
+    transform: scaleX(0);
+    height: 0px;
+    background-color: orangered;
+    transform-origin: none;
+    transition: none;
+}
+
+.tags:hover:after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+        
+.tags-two:after{
+    width: 0%;
+    transform: scaleX(0);
+    height: 0px;
+    background-color: orangered;
+    transform-origin: none;
+    transition: none;
+}
+
+.tags-two:hover:after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}

@@ -1,0 +1,258 @@
+.b{
+    overflow: hidden;
+    height: 310vh;
+    border-bottom: 2px  solid #236bf3;
+}
+
+
+.column {
+    justify-content: center;
+    float: left;
+    width: 30%;
+    padding: 10px;
+    height: 300px; 
+    margin-top: 25px;
+    margin-left: 20px;
+}
+  
+
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.b-c{
+    color: #236bf3;
+    font-size: 22px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+
+.b-d{
+    color: #236bf3;
+    font-size: 22px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+
+.b-e{
+    color: #236bf3;
+    font-size: 22px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.b-c1{
+    color: #236bf3;
+    font-size: 22px;
+    font-weight: 700;
+    text-transform: uppercase;
+    justify-content: center;
+    text-align: center;
+}
+
+.b-c2{
+    color: #236bf3;
+    font-size: 22px;
+    font-weight: 700;
+    text-transform: uppercase;
+    justify-content: center;
+    text-align: center;
+}
+
+
+.b-c3{
+    color: #236bf3;
+    font-size: 22px;
+    font-weight: 700;
+    text-transform: uppercase;
+    justify-content: center;
+    text-align: center;
+}
+
+
+
+.myButton-b {
+    position: relative;
+    margin-top: 10px;
+	background-color:transparent;
+	border-radius:28px;
+	border:1px solid #236bf3;
+	cursor:pointer;
+	color: #236bf3;
+	font-size:20px;
+	font-weight: bolder;
+    text-transform: uppercase;
+	padding:10px 10px;
+	text-decoration:none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.myButton-b:hover {
+    font-family: Arial, Helvetica, sans-serif;
+	background-color:#236bf3;
+    color: white;
+    border: 1px solid white;
+}
+.myButton-b:active {
+	position:relative;
+	top:1px;
+}
+
+
+.myButton-bd {
+    position: relative;
+    margin-top: 10px;
+	background-color:transparent;
+	border-radius:28px;
+	border:1px solid #236bf3;
+	cursor:pointer;
+	color: #236bf3;
+	font-size:20px;
+	font-weight: bolder;
+    text-transform: uppercase;
+	padding:10px 10px;
+	text-decoration:none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.myButton-bd:hover {
+    font-family: Arial, Helvetica, sans-serif;
+	background-color:#236bf3;
+    color: white;
+    border: 1px solid white;
+}
+.myButton-bd {
+	position:relative;
+	top:1px;
+}
+
+
+
+.myButton-be {
+    position: relative;
+    margin-top: 10px;
+	background-color:transparent;
+	border-radius:28px;
+	border:1px solid #236bf3;
+	cursor:pointer;
+	color: #236bf3;
+	font-size:20px;
+	font-weight: bolder;
+    text-transform: uppercase;
+	padding:10px 10px;
+	text-decoration:none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.myButton-be:hover {
+    font-family: Arial, Helvetica, sans-serif;
+	background-color:#236bf3;
+    color: white;
+    border: 1px solid white;
+}
+.myButton-be:active {
+	position:relative;
+	top:1px;
+}
+
+.b-img{
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: auto;
+    width: 98%;
+    left: 1%;
+    mix-blend-mode: difference;
+}
+
+
+
+.b-img {
+    animation: move 5s ease-in infinite alternate;
+    mix-blend-mode: difference;
+}
+
+@keyframes move {
+     
+    25% {
+        transform: translateY(10px);
+    }
+
+    50% {
+        transform: translateY(20px);
+    }
+    
+
+    75% {
+        transform: translateY(30px);
+    }
+   
+    100% {
+        transform: translateY(40px);
+    }
+}
+
+
+.b-fin{
+    color: #236bf3;
+    font-size: 9rem;
+    font-family: 'Times New Roman', Times, serif;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.b-fin-2{
+    color: #236bf3;
+    font-size: 9rem;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.b-right{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.b-left{
+    flex: 1;
+    position: relative;
+}
+
+.b-address{
+    color: #236bf3;
+    font-size: 22px;
+    font-weight: 700;
+    position: relative;
+    text-transform: uppercase;
+    margin-top: 20px;
+    mix-blend-mode: difference;
+    left: 1%;
+}
+
+.b-address-two{
+    color: #236bf3;
+    font-size: 22px;
+    font-weight: 700;
+    position: relative;
+    text-transform: uppercase;
+    mix-blend-mode: difference;
+    margin-top: -340px;
+    left: 110%;
+}

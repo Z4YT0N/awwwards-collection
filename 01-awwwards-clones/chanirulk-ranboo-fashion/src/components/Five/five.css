@@ -1,0 +1,106 @@
+.five{
+    height: 138vh;
+    background-color: black;
+    font-family: rabo;
+}
+.shop{
+    font-size: 21vw;
+    position: absolute;
+    color: rgb(252, 27, 27);
+    text-transform: uppercase;
+    left: 4px;
+    letter-spacing: -1px;
+    text-decoration: none;
+}
+.shop:after {
+    content: '';
+    position: absolute;
+    top: 75%;
+    width: 100%;
+    transform: scaleX(0);
+    height: 10px;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(252, 27, 27);
+    transform-origin: bottom right;
+    transition: transform 1s ease-out;
+}
+.shop:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+lottie-player{
+    position: absolute;
+    height: 600px;
+    width: auto;
+    transform: rotate(-80deg);
+    opacity: 0.08;
+    left: 30%;
+    margin-top: -6.5%;
+}
+.end-logo{
+    color: white;
+    font-size: 3vw;
+    position: absolute;
+    margin-top: 30%;
+    left: 20px;
+}
+.link-foot{
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    color: white;
+    font-family: araz;
+    font-size: 1.1vw;
+    position: absolute;
+    margin-top: 33%;
+    left: 33%;
+    text-align: left;
+}
+
+.link-foot:after {
+    content: '';
+    position: absolute;
+ 
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transform-origin: bottom right;
+    transition: transform 1s ease-out;
+}
+.link-foot:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+.credit-hover{
+    font-size: 9vw;
+    text-decoration: none;
+    color: white;
+    position: absolute;
+    margin-top: 35%;
+    left: 5%;
+}
+.credit-hover:hover{
+    color: rgb(252, 27, 27);
+}
+.credit-hover:after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transform-origin: bottom right;
+    transition: transform 1s ease-out;
+}
+.credit-hover:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}

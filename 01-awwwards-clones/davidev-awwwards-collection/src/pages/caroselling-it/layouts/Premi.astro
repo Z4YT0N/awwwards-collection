@@ -1,0 +1,76 @@
+<section class='container-premi'>
+	<span class='premi'> Premi</span>
+	<div class='grid-premi'>
+		<div class='item-presi f-c-c-c'>
+			<img src='/public/caroselling-it/awwards-lg.png' alt='' />
+			<div>
+				<p>3 honorable mentions</p>
+				<p>3 mobile excellence</p>
+			</div>
+		</div>
+		<div class='item-presi f-c-c-c'>
+			<img src='/public/caroselling-it/m.png' alt='' />
+			<div>
+				<p>5 site of the day</p>
+			</div>
+		</div>
+		<div class='item-presi f-c-c-c'>
+			<img src='/public/caroselling-it/iduloMMvGF.png' alt='' />
+			<div>
+				<p>5 site of the day</p>
+				<p>4 Special Judge Kudos Award</p>
+				<p>6 Best Innovation</p>
+				<p>6 best Ul design</p>
+				<p>6 best UX design</p>
+				<p>2 Site of the dav</p>
+			</div>
+		</div>
+		<div class='item-presi f-c-c-c'>
+			<img src='/public/caroselling-it/bestcss.png' alt='bestcss' />
+			<div>
+				<p>2 site of the day</p>
+			</div>
+		</div>
+		<div class='item-presi f-c-c-c'>
+			<img src='/public/caroselling-it/csslight.png' alt='bestcss' />
+			<div>
+				<p>2 featured of the day</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.container-premi {
+		/* --primary: var(--caro-primary); */
+		margin-top: var(--divider-top);
+		display: flex;
+		flex-direction: row;
+		gap: 4rem;
+		padding-top: 3rem;
+		border-top: var(--bt-primary);
+		& .premi {
+			font-size: 2rem;
+			font-weight: 700;
+			color: var(--caro-secondary);
+			cursor: pointer;
+			&:hover {
+				color: var(--caro-primary);
+				transition: color 0.3s ease-in-out;
+			}
+		}
+		& .grid-premi {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			gap: 1rem 3rem;
+			& .item-presi {
+				gap: 1rem;
+				justify-content: flex-start !important;
+				& img {
+					max-height: 3rem;
+					object-fit: cover;
+				}
+			}
+		}
+	}
+</style>

@@ -1,0 +1,66 @@
+/* ══════════════════════════════════════════════
+   Landing Loader
+   ══════════════════════════════════════════════ */
+
+.ln-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #120F17;
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+              visibility 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ln-loader--hide {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.ln-loader-logo {
+  animation: ln-loader-pulse 1.8s ease-in-out infinite;
+  opacity: 0.6;
+}
+
+@keyframes ln-loader-pulse {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50%      { opacity: 0.7; transform: scale(1.08); }
+}
+
+/* ─── Page reveal ─── */
+
+.landing-wrapper.ln-loading {
+  opacity: 0;
+}
+
+.landing-wrapper.ln-loaded {
+  opacity: 1;
+}
+
+/* navbar fades in */
+.landing-wrapper > header {
+  opacity: 0;
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.landing-wrapper.ln-loaded > header {
+  opacity: 1;
+}
+
+/* hero fades in */
+.landing-wrapper > .ln-hero {
+  opacity: 0;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s;
+}
+
+.landing-wrapper.ln-loaded > .ln-hero {
+  opacity: 1;
+}
+
+@keyframes ln-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}

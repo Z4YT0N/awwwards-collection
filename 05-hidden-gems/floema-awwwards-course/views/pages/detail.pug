@@ -1,0 +1,43 @@
+extends ../base.pug
+
+block variables
+  - var template = "detail"
+
+block content
+  .detail(data-background="#bc978c" data-color="#f9f1e7")
+    .detail__wrapper
+      figure.detail__media
+        img.detail__media__image(alt=product.data.image.alt data-src=product.data.image.url)
+
+      .detail__information
+        p.detail__information__collection=product.data.collection.data.title
+
+        h1.detail__information__title=product.data.title
+
+        .detail__information__content
+          .detail__information__highlights
+            each highlight in product.data.highlights
+              .detail__information__highlight
+                .detail__information__highlight__icon
+                  if (highlight.highlights_icon === 'Arrow')
+                    svg(viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg")
+                      path(fill="currentColor" d="M20.6268 0.12151L19.9671 2.4783L19.9197 5.07126L17.9872 2.76114L15.6771 0.828618L18.27 0.781242L20.6268 0.12151Z M0.120712 20.6276L0.780443 18.2708L0.827819 15.6779L2.76034 17.988L5.07046 19.9205L2.4775 19.9679L0.120712 20.6276Z M4.00981 15.3239C3.61929 15.7144 3.61929 16.3476 4.00981 16.7381C4.40033 17.1286 5.0335 17.1286 5.42402 16.7381L16.7377 5.4244C17.1283 5.03388 17.1283 4.40071 16.7377 4.01019C16.3472 3.61967 15.714 3.61967 15.3235 4.01019L4.00981 15.3239Z")
+                  else
+                    svg(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 21")
+                      path(fill="currentColor" transform="translate(-26.267 161.384)" d="M40.755-161.2,38-152.6l8.718-2.634L38.56-151.1l8.154,4.265L38-149.654l2.822,8.906-4.265-8.342-4.139,8.154,2.634-8.718L26.455-146.9l8.154-4.2-8.342-4.328,8.78,2.823-2.822-8.781,4.327,8.342Z")
+
+
+                span.detail__information__highlight__text!=highlight.highlights_text.replace(/\n/, '<br/>')
+
+          .detail__information__list
+            each item in product.data.informations
+              p.detail__information__item
+                strong.detail__information__item__title=item.informations_label
+                span.detail__information__item__description=item.informations_description
+
+          a.detail__information__link(href=product.data.link_url.url target="_blank")=product.data.link_text
+
+    a.detail__button(href=Link(home.data.collection)) Close
+      svg.detail__button__icon(viewBox="0 0 124 60"  xmlns="http://www.w3.org/2000/svg")
+        path(stroke="currentColor" fill="none" d="M62 59.5C95.9655 59.5 123.5 46.2924 123.5 30C123.5 13.7076 95.9655 0.5 62 0.5C28.0345 0.5 0.5 13.7076 0.5 30C0.5 46.2924 28.0345 59.5 62 59.5Z" )
+        path.detail__link__icon__path(stroke="#ffc400" fill="none" d="M62 59.5C95.9655 59.5 123.5 46.2924 123.5 30C123.5 13.7076 95.9655 0.5 62 0.5C28.0345 0.5 0.5 13.7076 0.5 30C0.5 46.2924 28.0345 59.5 62 59.5Z" )

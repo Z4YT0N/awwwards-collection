@@ -1,0 +1,8 @@
+# idea files
+/.idea/*
+!/.idea/google-java-format.xml
+
+# gradle
+/build
+/.gradle
+/out

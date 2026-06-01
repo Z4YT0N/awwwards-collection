@@ -1,0 +1,10 @@
+.third{
+    height: 100vh;
+    font-family: time;
+    background-color: #f3ebe3;
+}
+.drop{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}

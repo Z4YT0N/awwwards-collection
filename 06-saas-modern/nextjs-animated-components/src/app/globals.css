@@ -1,0 +1,709 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =============================================================================
+   Direction: Luxury (Rolex / Apple / Celine)
+   Palette: Black, warm ivory, gold accent. Ultra-restrained.
+   Layout: Massive whitespace, ultra-thin type, letter-spacing, no noise.
+   ============================================================================= */
+
+[data-direction="luxury"] {
+  --background: 40 20% 98%;
+  --foreground: 30 5% 8%;
+  --primary: 30 5% 8%;
+  --primary-foreground: 40 20% 98%;
+  --secondary: 40 10% 95%;
+  --secondary-foreground: 30 5% 15%;
+  --muted: 40 8% 95%;
+  --muted-foreground: 30 3% 50%;
+  --accent: 40 60% 52%;
+  --accent-foreground: 30 5% 8%;
+  --border: 40 8% 90%;
+  --surface: 40 15% 97%;
+  --glow: 40 60% 52%;
+  --selection: 40 60% 52%;
+
+  /* Layout DNA — Luxury (Pagani / Richard Mille / Hermès) */
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-full: 0px;
+  --space-section: 16rem;
+  --space-block: 6rem;
+  --heading-weight: 100;
+  --heading-tracking: 0.15em;
+  --heading-transform: uppercase;
+  --body-weight: 200;
+  --body-tracking: 0.04em;
+  --button-radius: 0px;
+  --button-padding: 2rem 4rem;
+  --button-weight: 200;
+  --button-tracking: 0.3em;
+  --button-transform: uppercase;
+  --card-radius: 0px;
+  --card-border-width: 0.5px;
+  --nav-height: 6rem;
+  --container-max: 900px;
+  --transition-duration: 1200ms;
+  --transition-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-direction="luxury"].dark {
+  --background: 30 8% 2%;
+  --foreground: 40 12% 88%;
+  --primary: 40 12% 88%;
+  --primary-foreground: 30 8% 2%;
+  --secondary: 30 5% 6%;
+  --secondary-foreground: 40 8% 80%;
+  --muted: 30 5% 7%;
+  --muted-foreground: 40 5% 40%;
+  --accent: 40 55% 55%;
+  --accent-foreground: 30 8% 2%;
+  --border: 30 5% 12%;
+  --surface: 30 5% 4%;
+  --glow: 40 55% 55%;
+  --selection: 40 55% 55%;
+}
+
+/* =============================================================================
+   Direction: Cyberpunk (Blade Runner / Ghost in the Shell / HUD)
+   Palette: Deep void black, cyan neon, magenta secondary. Angular. Industrial.
+   Layout: Hard edges, clip-paths, monospace, scanlines, dense info.
+   ============================================================================= */
+
+[data-direction="cyberpunk"] {
+  --background: 230 15% 4%;
+  --foreground: 180 80% 85%;
+  --primary: 174 100% 50%;
+  --primary-foreground: 230 15% 4%;
+  --secondary: 320 80% 55%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 230 15% 12%;
+  --muted-foreground: 180 30% 45%;
+  --accent: 320 80% 55%;
+  --accent-foreground: 0 0% 100%;
+  --border: 174 60% 20%;
+  --surface: 230 18% 7%;
+  --glow: 174 100% 50%;
+  --selection: 174 100% 50%;
+
+  /* Layout DNA — Cyberpunk */
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-full: 0px;
+  --space-section: 6rem;
+  --space-block: 2rem;
+  --heading-weight: 700;
+  --heading-tracking: 0.08em;
+  --heading-transform: uppercase;
+  --body-weight: 400;
+  --body-tracking: 0.03em;
+  --button-radius: 0px;
+  --button-padding: 0.75rem 2rem;
+  --button-weight: 600;
+  --button-tracking: 0.15em;
+  --button-transform: uppercase;
+  --card-radius: 0px;
+  --card-border-width: 1px;
+  --nav-height: 3rem;
+  --container-max: 1400px;
+  --transition-duration: 150ms;
+  --transition-ease: cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+[data-direction="cyberpunk"].dark {
+  --background: 230 20% 2%;
+  --foreground: 180 90% 88%;
+  --primary: 174 100% 50%;
+  --primary-foreground: 230 20% 2%;
+  --secondary: 320 85% 60%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 230 18% 10%;
+  --muted-foreground: 180 25% 40%;
+  --accent: 320 85% 60%;
+  --accent-foreground: 0 0% 100%;
+  --border: 174 50% 18%;
+  --surface: 230 20% 5%;
+  --glow: 174 100% 50%;
+  --selection: 174 100% 50%;
+}
+
+/* =============================================================================
+   Direction: Kinetic (Stripe / Linear / Vercel)
+   Palette: Clean surfaces, vibrant violet/teal. Energetic, bouncy, rounded.
+   Layout: Generous padding, pill shapes, large text, gradient fills, spring motion.
+   ============================================================================= */
+
+[data-direction="kinetic"] {
+  --background: 0 0% 100%;
+  --foreground: 240 10% 12%;
+  --primary: 263 70% 50%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 240 5% 96%;
+  --secondary-foreground: 240 10% 20%;
+  --muted: 240 5% 96%;
+  --muted-foreground: 240 5% 45%;
+  --accent: 172 66% 50%;
+  --accent-foreground: 0 0% 100%;
+  --border: 240 5% 90%;
+  --surface: 0 0% 100%;
+  --glow: 263 70% 50%;
+  --selection: 263 70% 50%;
+
+  /* Layout DNA — Kinetic */
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 32px;
+  --radius-full: 999px;
+  --space-section: 10rem;
+  --space-block: 3rem;
+  --heading-weight: 800;
+  --heading-tracking: -0.04em;
+  --heading-transform: none;
+  --body-weight: 400;
+  --body-tracking: 0em;
+  --button-radius: 999px;
+  --button-padding: 1rem 2.5rem;
+  --button-weight: 600;
+  --button-tracking: -0.01em;
+  --button-transform: none;
+  --card-radius: 24px;
+  --card-border-width: 1px;
+  --nav-height: 4rem;
+  --container-max: 1200px;
+  --transition-duration: 400ms;
+  --transition-ease: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+[data-direction="kinetic"].dark {
+  --background: 240 10% 4%;
+  --foreground: 0 0% 93%;
+  --primary: 263 80% 65%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 240 10% 12%;
+  --secondary-foreground: 0 0% 85%;
+  --muted: 240 10% 14%;
+  --muted-foreground: 240 5% 55%;
+  --accent: 172 70% 55%;
+  --accent-foreground: 240 10% 4%;
+  --border: 240 10% 18%;
+  --surface: 240 10% 7%;
+  --glow: 263 80% 65%;
+  --selection: 263 80% 65%;
+}
+
+/* =============================================================================
+   Direction: Freestyle (Brutalist / Anti-Design / David Carson)
+   Palette: Raw, high-contrast, unexpected color clashes. Rules don't apply.
+   Layout: Broken grids, overlapping layers, rotated text, asymmetric, LOUD.
+   ============================================================================= */
+
+[data-direction="freestyle"] {
+  --background: 60 5% 7%;
+  --foreground: 60 5% 95%;
+  --primary: 16 95% 55%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 150 80% 45%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 60 5% 14%;
+  --muted-foreground: 60 5% 55%;
+  --accent: 280 70% 60%;
+  --accent-foreground: 0 0% 100%;
+  --border: 60 5% 22%;
+  --surface: 60 5% 10%;
+  --glow: 16 95% 55%;
+  --selection: 150 80% 45%;
+
+  /* Layout DNA — Freestyle */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-full: 4px;
+  --space-section: 4rem;
+  --space-block: 1.5rem;
+  --heading-weight: 900;
+  --heading-tracking: -0.06em;
+  --heading-transform: none;
+  --body-weight: 400;
+  --body-tracking: 0em;
+  --button-radius: 4px;
+  --button-padding: 1rem 1.5rem;
+  --button-weight: 800;
+  --button-tracking: -0.02em;
+  --button-transform: none;
+  --card-radius: 2px;
+  --card-border-width: 3px;
+  --nav-height: 3.5rem;
+  --container-max: 100%;
+  --transition-duration: 200ms;
+  --transition-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+[data-direction="freestyle"].dark {
+  --background: 60 5% 4%;
+  --foreground: 60 5% 96%;
+  --primary: 16 95% 58%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 150 85% 48%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 60 5% 10%;
+  --muted-foreground: 60 5% 50%;
+  --accent: 280 75% 62%;
+  --accent-foreground: 0 0% 100%;
+  --border: 60 5% 20%;
+  --surface: 60 5% 7%;
+  --glow: 16 95% 58%;
+  --selection: 150 85% 48%;
+}
+
+/* =============================================================================
+   Fallback (no direction set - defaults to freestyle dark)
+   ============================================================================= */
+
+:root {
+  --background: 30 6% 4%;
+  --foreground: 30 12% 92%;
+  --primary: 16 90% 58%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 160 55% 45%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 30 6% 12%;
+  --muted-foreground: 30 8% 50%;
+  --accent: 160 55% 45%;
+  --accent-foreground: 0 0% 100%;
+  --border: 30 8% 18%;
+  --surface: 30 6% 8%;
+  --glow: 16 90% 58%;
+  --selection: 16 90% 58%;
+
+  /* Aurora colors (preserved for existing components) */
+  --white: rgba(255, 255, 255, 0.1);
+  --black: #000;
+  --transparent: transparent;
+  --blue-300: #93c5fd;
+  --blue-400: #60a5fa;
+  --blue-500: #3b82f6;
+  --indigo-300: #a5b4fc;
+  --violet-200: #ddd6fe;
+}
+
+/* =============================================================================
+   Typography - Direction-aware font families
+   ============================================================================= */
+
+[data-direction="luxury"] {
+  --font-heading: var(--font-luxury-heading), "Space Grotesk", system-ui, sans-serif;
+  --font-body: var(--font-luxury-body), "Inter", system-ui, sans-serif;
+}
+
+[data-direction="cyberpunk"] {
+  --font-heading: var(--font-cyber-heading), "JetBrains Mono", monospace;
+  --font-body: var(--font-cyber-body), "IBM Plex Mono", monospace;
+}
+
+[data-direction="kinetic"] {
+  --font-heading: var(--font-kinetic-heading), "Outfit", system-ui, sans-serif;
+  --font-body: var(--font-kinetic-body), "DM Sans", system-ui, sans-serif;
+}
+
+[data-direction="freestyle"] {
+  --font-heading: var(--font-free-heading), "Syne", system-ui, sans-serif;
+  --font-body: var(--font-free-body), "Manrope", system-ui, sans-serif;
+}
+
+/* =============================================================================
+   Base Styles
+   ============================================================================= */
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: var(--font-body), system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading), system-ui, sans-serif;
+}
+
+/* =============================================================================
+   Lenis Smooth Scroll
+   ============================================================================= */
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* =============================================================================
+   Custom Cursor
+   ============================================================================= */
+
+body.custom-cursor {
+  cursor: none;
+}
+
+body.custom-cursor a,
+body.custom-cursor button {
+  cursor: none;
+}
+
+/* =============================================================================
+   Selection - Direction aware
+   ============================================================================= */
+
+::selection {
+  background: hsla(var(--selection), 0.3);
+  color: hsl(var(--foreground));
+}
+
+/* =============================================================================
+   Focus Styles
+   ============================================================================= */
+
+:focus-visible {
+  outline: 2px solid hsl(var(--primary));
+  outline-offset: 2px;
+}
+
+/* =============================================================================
+   Scrollbar
+   ============================================================================= */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.4);
+}
+
+/* =============================================================================
+   Utility Classes
+   ============================================================================= */
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+/* =============================================================================
+   Direction-specific Glow Effects
+   ============================================================================= */
+
+.glow {
+  filter: drop-shadow(0 0 20px hsl(var(--glow)));
+}
+
+.glow-sm {
+  filter: drop-shadow(0 0 8px hsl(var(--glow) / 0.5));
+}
+
+.glow-lg {
+  filter: drop-shadow(0 0 40px hsl(var(--glow) / 0.6));
+}
+
+/* Glass effect - adapts to direction */
+.glass {
+  background: hsl(var(--surface) / 0.6);
+  backdrop-filter: blur(20px);
+  border: 1px solid hsl(var(--border) / 0.5);
+}
+
+/* =============================================================================
+   Cyberpunk-specific Utilities
+   ============================================================================= */
+
+[data-direction="cyberpunk"] .scanline {
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    hsl(var(--primary) / 0.03) 2px,
+    hsl(var(--primary) / 0.03) 4px
+  );
+  pointer-events: none;
+}
+
+[data-direction="cyberpunk"] .neon-border {
+  box-shadow:
+    0 0 5px hsl(var(--primary) / 0.5),
+    0 0 20px hsl(var(--primary) / 0.2),
+    inset 0 0 5px hsl(var(--primary) / 0.1);
+}
+
+[data-direction="cyberpunk"] .neon-text {
+  text-shadow:
+    0 0 7px hsl(var(--primary) / 0.8),
+    0 0 20px hsl(var(--primary) / 0.4),
+    0 0 40px hsl(var(--primary) / 0.2);
+}
+
+/* =============================================================================
+   Luxury-specific Utilities
+   Ultra-thin borders, generous whitespace, fine lines
+   ============================================================================= */
+
+[data-direction="luxury"] .luxury-divider {
+  height: 0.5px;
+  background: linear-gradient(to right, transparent, hsl(var(--accent) / 0.3), transparent);
+}
+
+[data-direction="luxury"] h1,
+[data-direction="luxury"] h2,
+[data-direction="luxury"] h3 {
+  font-weight: var(--heading-weight);
+  letter-spacing: var(--heading-tracking);
+  text-transform: var(--heading-transform);
+}
+
+[data-direction="luxury"] p,
+[data-direction="luxury"] span,
+[data-direction="luxury"] a {
+  font-weight: var(--body-weight);
+  letter-spacing: var(--body-tracking);
+}
+
+[data-direction="luxury"] .luxury-fade {
+  opacity: 0.5;
+  transition: opacity var(--transition-duration) var(--transition-ease);
+}
+
+[data-direction="luxury"] .luxury-fade:hover {
+  opacity: 1;
+}
+
+/* Everything in luxury mode transitions slowly — money doesn't rush */
+[data-direction="luxury"] * {
+  transition-duration: var(--transition-duration);
+  transition-timing-function: var(--transition-ease);
+}
+
+/* Links barely exist until hovered */
+[data-direction="luxury"] a {
+  opacity: 0.6;
+  transition: opacity var(--transition-duration) var(--transition-ease);
+}
+
+[data-direction="luxury"] a:hover {
+  opacity: 1;
+}
+
+/* =============================================================================
+   Cyberpunk-specific Utilities (extended)
+   Angular clips, terminal aesthetics, HUD frames
+   ============================================================================= */
+
+[data-direction="cyberpunk"] .cyber-clip {
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+}
+
+[data-direction="cyberpunk"] .cyber-clip-sm {
+  clip-path: polygon(0 0, calc(100% - 6px) 0, 100% 6px, 100% 100%, 6px 100%, 0 calc(100% - 6px));
+}
+
+[data-direction="cyberpunk"] .hud-frame {
+  border: 1px solid hsl(var(--primary) / 0.3);
+  position: relative;
+}
+
+[data-direction="cyberpunk"] .hud-frame::before,
+[data-direction="cyberpunk"] .hud-frame::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border: 1px solid hsl(var(--primary));
+}
+
+[data-direction="cyberpunk"] .hud-frame::before {
+  top: -1px;
+  left: -1px;
+  border-right: none;
+  border-bottom: none;
+}
+
+[data-direction="cyberpunk"] .hud-frame::after {
+  bottom: -1px;
+  right: -1px;
+  border-left: none;
+  border-top: none;
+}
+
+[data-direction="cyberpunk"] h1,
+[data-direction="cyberpunk"] h2,
+[data-direction="cyberpunk"] h3 {
+  font-weight: var(--heading-weight);
+  letter-spacing: var(--heading-tracking);
+  text-transform: var(--heading-transform);
+}
+
+[data-direction="cyberpunk"] .cyber-flicker {
+  animation: cyber-flicker 4s linear infinite;
+}
+
+@keyframes cyber-flicker {
+  0%, 97%, 100% { opacity: 1; }
+  98% { opacity: 0.7; }
+  99% { opacity: 0.9; }
+}
+
+/* =============================================================================
+   Kinetic-specific Utilities
+   Pill shapes, bouncy reveals, gradient surfaces
+   ============================================================================= */
+
+[data-direction="kinetic"] h1,
+[data-direction="kinetic"] h2,
+[data-direction="kinetic"] h3 {
+  font-weight: var(--heading-weight);
+  letter-spacing: var(--heading-tracking);
+}
+
+[data-direction="kinetic"] .kinetic-gradient {
+  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+[data-direction="kinetic"] .kinetic-surface {
+  background: linear-gradient(145deg, hsl(var(--surface)), hsl(var(--muted)));
+  border-radius: var(--card-radius);
+  border: var(--card-border-width) solid hsl(var(--border));
+}
+
+/* =============================================================================
+   Freestyle-specific Utilities
+   Broken grid, overlaps, rotations, raw energy
+   ============================================================================= */
+
+[data-direction="freestyle"] h1,
+[data-direction="freestyle"] h2,
+[data-direction="freestyle"] h3 {
+  font-weight: var(--heading-weight);
+  letter-spacing: var(--heading-tracking);
+}
+
+[data-direction="freestyle"] .freestyle-tilt {
+  transform: rotate(-2deg);
+}
+
+[data-direction="freestyle"] .freestyle-tilt-r {
+  transform: rotate(2deg);
+}
+
+[data-direction="freestyle"] .freestyle-overlap {
+  margin-top: -2rem;
+  position: relative;
+  z-index: 1;
+}
+
+[data-direction="freestyle"] .freestyle-stripe {
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 4px,
+    hsl(var(--primary) / 0.1) 4px,
+    hsl(var(--primary) / 0.1) 8px
+  );
+}
+
+[data-direction="freestyle"] .freestyle-sticker {
+  border: var(--card-border-width) solid hsl(var(--foreground));
+  transform: rotate(-1deg);
+  box-shadow: 4px 4px 0 hsl(var(--foreground) / 0.15);
+}
+
+[data-direction="freestyle"] .freestyle-marker {
+  background: linear-gradient(transparent 60%, hsl(var(--primary) / 0.3) 60%);
+  display: inline;
+  padding: 0 4px;
+}
+
+/* =============================================================================
+   Keyframe Animations (preserved + new)
+   ============================================================================= */
+
+@keyframes text-gradient {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-text-gradient {
+  background-size: 200% auto;
+  animation: text-gradient 4s ease infinite;
+}
+
+@keyframes glitch-1 {
+  0%, 100% { clip-path: inset(0 0 90% 0); transform: translate(-2px, 0); }
+  20% { clip-path: inset(30% 0 40% 0); transform: translate(2px, 0); }
+  40% { clip-path: inset(60% 0 10% 0); transform: translate(-1px, 0); }
+  60% { clip-path: inset(10% 0 60% 0); transform: translate(1px, 0); }
+  80% { clip-path: inset(80% 0 5% 0); transform: translate(-2px, 0); }
+}
+
+@keyframes glitch-2 {
+  0%, 100% { clip-path: inset(90% 0 0 0); transform: translate(2px, 0); }
+  20% { clip-path: inset(40% 0 30% 0); transform: translate(-2px, 0); }
+  40% { clip-path: inset(10% 0 60% 0); transform: translate(1px, 0); }
+  60% { clip-path: inset(60% 0 10% 0); transform: translate(-1px, 0); }
+  80% { clip-path: inset(5% 0 80% 0); transform: translate(2px, 0); }
+}
+
+@keyframes float-rotate {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-10px) rotate(2deg); }
+  50% { transform: translateY(-20px) rotate(0deg); }
+  75% { transform: translateY(-10px) rotate(-2deg); }
+}

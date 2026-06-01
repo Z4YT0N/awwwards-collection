@@ -1,0 +1,138 @@
+{
+  "format": "page",
+  "id": "quiz",
+  "label": "Quiz",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "eyebrow": {
+        "type": "Text",
+        "config": {
+          "label": "Eyebrow",
+          "placeholder": ""
+        }
+      },
+      "title": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Title",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "heading1"
+        }
+      },
+      "body": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Body",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,strong,em"
+        }
+      },
+      "start_button_text": {
+        "type": "Text",
+        "config": {
+          "label": "Start Button Text",
+          "placeholder": ""
+        }
+      },
+      "questions": {
+        "type": "Group",
+        "config": {
+          "label": "Questions",
+          "repeat": true,
+          "fields": {
+            "question_text": {
+              "type": "Text",
+              "config": {
+                "label": "Question Text",
+                "placeholder": ""
+              }
+            },
+            "image_terra": {
+              "type": "Image",
+              "config": {
+                "label": "Image Terra",
+                "constraint": {},
+                "thumbnails": []
+              }
+            },
+            "answer_terra": {
+              "type": "Text",
+              "config": {
+                "label": "Answer Terra",
+                "placeholder": ""
+              }
+            },
+            "image_ignis": {
+              "type": "Image",
+              "config": {
+                "label": "Image Ignis",
+                "constraint": {},
+                "thumbnails": []
+              }
+            },
+            "answer_ignis": {
+              "type": "Text",
+              "config": {
+                "label": "Answer Ignis",
+                "placeholder": ""
+              }
+            },
+            "image_aqua": {
+              "type": "Image",
+              "config": {
+                "label": "Image Aqua",
+                "constraint": {},
+                "thumbnails": []
+              }
+            },
+            "answer_aqua": {
+              "type": "Text",
+              "config": {
+                "label": "Answer Aqua",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {}
+        }
+      }
+    },
+    "SEO & Metadata": {
+      "meta_title": {
+        "config": {
+          "label": "Meta Title",
+          "placeholder": "A title of the page used for social media and search engines"
+        },
+        "type": "Text"
+      },
+      "meta_description": {
+        "config": {
+          "label": "Meta Description",
+          "placeholder": "A brief summary of the page"
+        },
+        "type": "Text"
+      },
+      "meta_image": {
+        "config": {
+          "constraint": {
+            "height": 1260,
+            "width": 2400
+          },
+          "label": "Meta Image",
+          "thumbnails": []
+        },
+        "type": "Image"
+      }
+    }
+  }
+}

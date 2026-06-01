@@ -1,0 +1,225 @@
+@property --announcement-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.announcement-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(8, 6, 12, 0.72);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 1rem;
+}
+
+.announcement-modal {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  border-radius: 22px;
+  outline: none;
+}
+
+/* Rotating conic-gradient border (matches landing page CTA card) */
+.announcement-modal-border {
+  position: absolute;
+  inset: -1px;
+  border-radius: 22px;
+  padding: 1px;
+  background: conic-gradient(
+    from var(--announcement-angle),
+    transparent 0%,
+    #a955f751 10%,
+    transparent 20%,
+    transparent 50%,
+    #a955f794 60%,
+    transparent 70%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  animation: announcement-modal-spin 8s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes announcement-modal-spin {
+  to {
+    --announcement-angle: 360deg;
+  }
+}
+
+.announcement-modal-card {
+  position: relative;
+  z-index: 1;
+  border-radius: 22px;
+  background: #0e0b13;
+  overflow: hidden;
+  box-shadow:
+    0 4px 32px rgba(0, 0, 0, 0.4),
+    0 0 80px rgba(82, 39, 255, 0.15),
+    inset 0 0.5px 0 rgba(255, 255, 255, 0.06);
+}
+
+.announcement-modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background: rgba(14, 11, 19, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.announcement-modal-close:hover {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.25);
+  background: rgba(14, 11, 19, 0.8);
+}
+
+.announcement-modal-close:focus-visible {
+  outline: 2px solid #a78bfa;
+  outline-offset: 2px;
+}
+
+.announcement-modal-image {
+  position: relative;
+  width: calc(100% - 16px);
+  margin: 8px 8px 0;
+  line-height: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  isolation: isolate;
+  transform: translateZ(0);
+}
+
+.announcement-modal-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+}
+
+.announcement-modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 22px 24px 24px;
+  text-align: left;
+}
+
+.announcement-modal-title {
+  margin: 0 0 8px;
+  font-family: 'Geist', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: #fff;
+}
+
+.announcement-modal-description {
+  margin: 0 0 18px;
+  font-family: 'Geist', sans-serif;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.announcement-modal-description strong {
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #fff;
+  padding: 2px 7px;
+  margin: 0 1px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.announcement-modal-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 11px 18px;
+  border-radius: 10px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: filter 0.2s ease, transform 0.2s ease;
+  white-space: nowrap;
+}
+
+.announcement-modal-btn--primary {
+  background: #fff;
+  color: #120f17;
+  border: 1px solid #fff;
+  width: 100%;
+}
+
+.announcement-modal-btn--primary:hover {
+  filter: brightness(0.88);
+  transform: translateY(-1px);
+}
+
+.announcement-modal-btn:focus-visible {
+  outline: 2px solid #a78bfa;
+  outline-offset: 2px;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 480px) {
+  .announcement-modal {
+    max-width: 100%;
+    border-radius: 18px;
+  }
+
+  .announcement-modal-border,
+  .announcement-modal-card {
+    border-radius: 18px;
+  }
+
+  .announcement-modal-image {
+    width: calc(100% - 12px);
+    margin: 6px 6px 0;
+  }
+
+  .announcement-modal-image img {
+    border-radius: 11px;
+  }
+
+  .announcement-modal-content {
+    padding: 18px 20px 20px;
+  }
+
+  .announcement-modal-title {
+    font-size: 22px;
+  }
+
+  .announcement-modal-description {
+    font-size: 13px;
+  }
+}
+
+

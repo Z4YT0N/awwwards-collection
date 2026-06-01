@@ -1,0 +1,136 @@
+.fo{
+    height: 60vh; 
+    border-bottom: 2px  solid #236bf3;
+    overflow-x: hidden;
+}
+
+
+.fo-loc{
+    margin-top: 10px;
+    left: 20px;
+    color: #236bf3;
+    font-size: 40px;
+    font-weight: 700;
+    text-transform: capitalize;
+    position: absolute;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.fo-loc-s{
+    margin-top: 12px;
+    left: 10%;
+    color: #236bf3;
+    font-size: 40px;
+    font-weight: 700;
+    text-transform: capitalize;
+    position: absolute;
+}
+
+
+.myButton-fot {
+    position: relative;
+    margin-top: 10px;
+    left: 64%;
+	background-color:transparent;
+	border-radius:28px;
+	border:1px solid #236bf3;
+	display:inline-block;
+	cursor:pointer;
+	color: #236bf3;
+    font-family: 'Times New Roman', Times, serif;
+	font-size: 20px;
+	font-weight: bolder;
+    text-transform: uppercase;
+	padding:10px 33px;
+	text-decoration:none;
+}
+.myButton-fot:hover {
+    font-family: Arial, Helvetica, sans-serif;
+	background-color:#236bf3;
+    color: white;
+    border: 1px solid white;
+}
+.myButton-fot:active {
+	position:relative;
+	top:1px;
+}
+
+
+.myButton-got {
+    position: relative;
+    margin-top: 10px;
+    left: 65%;
+	background-color:transparent;
+	border-radius:28px;
+	border:1px solid #236bf3;
+	display:inline-block;
+	cursor:pointer;
+	color: #236bf3;
+    font-family: 'Times New Roman', Times, serif;
+	font-size: 20px;
+	font-weight: bolder;
+    text-transform: uppercase;
+	padding:10px 33px;
+	text-decoration:none;
+}
+.myButton-got:hover {
+    font-family: Arial, Helvetica, sans-serif;
+	background-color:#236bf3;
+    color: white;
+    border: 1px solid white;
+}
+.myButton-got:active {
+	position:relative;
+	top:1px;
+}
+
+
+.myButton-hot {
+    position: relative;
+    margin-top: 10px;
+    left: 66%;
+	background-color:transparent;
+	border-radius:28px;
+	border:1px solid #236bf3;
+	display:inline-block;
+	cursor:pointer;
+	color: #236bf3;
+    font-family: 'Times New Roman', Times, serif;
+	font-size: 20px;
+	font-weight: bolder;
+    text-transform: uppercase;
+	padding:10px 33px;
+	text-decoration:none;
+}
+.myButton-hot:hover {
+    font-family: Arial, Helvetica, sans-serif;
+	background-color:#236bf3;
+    color: white;
+    border: 1px solid white;
+}
+.myButton-hot:active {
+	position:relative;
+	top:1px;
+}
+
+.fo-price{
+    position: relative;
+    color: #236bf3;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 700;
+    font-size: 70px;
+    text-transform: uppercase;
+    left: 1%;
+    top: 30px;
+}
+
+
+.fo-sub{
+    margin-top: 30px;
+    left: 1%;
+    color: #236bf3;
+    font-weight: 700;
+    font-size: 20px;
+    position: relative;
+    text-transform: uppercase;
+}

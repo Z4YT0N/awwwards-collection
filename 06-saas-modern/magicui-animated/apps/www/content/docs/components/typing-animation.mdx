@@ -1,0 +1,104 @@
+---
+title: Typing Animation
+date: 2024-05-22
+description: Characters appearing in typed animation
+author: imanubhardwaj
+published: true
+---
+
+<ComponentPreview name="typing-animation-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @magicui/typing-animation
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="typing-animation" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Examples
+
+### Basic Usage
+
+<ComponentPreview name="typing-animation-demo" />
+
+### Multiple Words with Loop
+
+<ComponentPreview name="typing-animation-demo-2" />
+
+### Custom Speed
+
+<ComponentPreview name="typing-animation-demo-3" />
+
+### Start on View
+
+<ComponentPreview name="typing-animation-demo-4" />
+
+### Without Cursor
+
+<ComponentPreview name="typing-animation-demo-5" />
+
+### Single Play (No Loop)
+
+<ComponentPreview name="typing-animation-demo-6" />
+
+### Cursor Blinking
+
+<ComponentPreview name="typing-animation-demo-7" />
+
+### Cursor Styles
+
+<ComponentPreview name="typing-animation-demo-8" />
+
+## Usage
+
+```tsx showLineNumbers
+import { TypingAnimation } from "@/components/ui/typing-animation"
+```
+
+```tsx showLineNumbers
+<TypingAnimation>Hello World! 👋</TypingAnimation>
+```
+
+## Props
+
+| Prop          | Type                                                                                                       | Default  | Description                                     |
+| ------------- | ---------------------------------------------------------------------------------------------------------- | -------- | ----------------------------------------------- |
+| `children`    | `string`                                                                                                   | `-`      | Single string to animate                        |
+| `words`       | `string[]`                                                                                                 | `-`      | Array of strings to type and delete in sequence |
+| `className`   | `string`                                                                                                   | `-`      | The class name to be applied to the component   |
+| `duration`    | `number`                                                                                                   | `100`    | Duration for each character                     |
+| `typeSpeed`   | `number`                                                                                                   | `100`    | Speed of typing animation (ms per character)    |
+| `deleteSpeed` | `number`                                                                                                   | `50`     | Speed of deleting animation (ms per character)  |
+| `delay`       | `number`                                                                                                   | `0`      | Delay before animation starts (in ms)           |
+| `pauseDelay`  | `number`                                                                                                   | `1000`   | Pause duration between words (in ms)            |
+| `loop`        | `boolean`                                                                                                  | `false`  | Whether to loop the animation                   |
+| `as`          | `"article" \| "div" \| "h1" \| "h2" \| "h3" \| "h4" \| "h5" \| "h6" \| "li" \| "p" \| "section" \| "span"` | `"span"` | Component to render as                          |
+| `startOnView` | `boolean`                                                                                                  | `true`   | Start animation when component is in view       |
+| `showCursor`  | `boolean`                                                                                                  | `true`   | Whether to show the typing cursor               |
+| `blinkCursor` | `boolean`                                                                                                  | `true`   | Whether the cursor should blink                 |
+| `cursorStyle` | `"line" \| "block" \| "underscore"`                                                                        | `"line"` | Style of the cursor (like VSCode)               |

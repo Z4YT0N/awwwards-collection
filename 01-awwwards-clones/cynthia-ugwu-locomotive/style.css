@@ -1,0 +1,359 @@
+/* BoilerPlate Code */
+
+@font-face {
+    font-family: GeneralSansReg;
+    src: url(fonts/GeneralSans-Regular.otf);
+}
+
+@font-face {
+    font-family: GeneralSansMed;
+    src: url(fonts/GeneralSans-Medium.otf);
+}
+
+/*HIDING MOBILE CODE ON DESKTOP*/
+@media (min-width:766.9999px){
+    #mainmobile{
+        display:none;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'GeneralSansReg';
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+}
+
+#second a{
+    text-decoration: none;
+    color: white;
+}
+
+#minicircle {
+    display: flex;
+    align-items: center;
+    vertical-align: center;
+    text-align: center;
+    justify-content: center;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.8s;
+    width: 15px;
+    height: 15px;   
+    background-color: #fff;
+    opacity: 0.5;
+    position: absolute;
+    border-radius: 50%;
+    z-index: 1000;
+}
+
+#minicircle-text{
+    display: none;
+}
+
+#main {
+    width: 100%;
+    height: auto;
+}
+
+#mainmobile{
+    width: 100%;
+    height: auto;
+}
+
+#hero {
+    color: white;
+    width: 100%;
+    height: 100dvh;
+    background-color: black;
+    position: relative;
+}
+
+#nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px 40px;
+    /* TOP AND BOTTOM = 20 px; RIGHT AND LEFT = 40 px */
+    color: white;
+}
+
+#nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+#heading {
+    margin-top: 90px;
+
+}
+
+
+#heading #secondh1 {
+    margin-left: 230px;
+}
+
+#heading h1 {
+    margin-left: 30px;
+    line-height: 1;
+    opacity: 0.6;
+    font-family: 'GeneralSansReg';
+    font-size: 10vw;
+    text-transform: uppercase;
+    /* font-weight: 900; */
+}
+
+.blocktext {
+    flex-direction: column;
+    align-items: end;
+    display: flex;
+    width: fit-content;
+}
+
+.blocktext h5 {
+    text-transform: uppercase;
+    font-size: 15px;
+    text-align: right;
+}
+
+#chhoti-headings {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    margin-top: 100px;
+    padding-right: 30px;
+    text-transform: uppercase;
+}
+
+#chhoti-headings h5 {
+    text-align: right;
+    margin-top: 10px;
+    font-size: 1vw;
+}
+
+#herofooter {
+    padding: 0px 2vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    width: 100%;
+    bottom: 3%;
+}
+
+#herofooter a {
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+#herofooter #icon-set {
+    color: black !important; 
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 5px !important;
+    font-weight: bold !important;
+}
+
+#herofooter a #circle{
+    color:black !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 25px !important;
+    height: 25px !important;
+    border-radius: 50% !important;
+    background-color: #aaaaaa !important;
+}
+
+#second {
+    color: #fff;
+    padding-right: 10vw;
+    padding-top: 200px;
+    background-color: black;
+    width: 100%;
+    height: auto;
+}
+
+.elem {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 3.5vw 3vw;
+    padding-right: 0;
+    border-top: 1px solid #888;
+}
+
+
+.elem h1 {
+    text-transform: uppercase;
+    font-size: 7.6vw;
+    opacity: 0.7;
+}
+
+.elem:hover h1{
+    opacity: 0.4;
+    padding-left: 30px;
+    transition: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+
+.elem:hover #minicircle{
+    display: none;
+    /* align-items: center; */
+    vertical-align: center;
+    text-align: center;
+}
+
+.elemlast {
+    border-bottom: 1px solid #888;
+}
+
+.elem img {
+    opacity: 0;
+    pointer-events: none;
+    height: 140%;
+    z-index: 999;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.about {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    gap: 50px;
+    padding: 10vw 5vw;
+    padding-left: 40vw;
+    width: 100%;
+    background-color: black;
+}
+
+.about img {
+    width: 200px;
+}
+
+#textabout {
+    width: 30rem;
+}
+
+#textabout h5 {
+    text-transform: uppercase;
+    opacity: 0.6;
+    margin-bottom: 10px;
+}
+
+#textabout p {
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+#about img {
+    width: 200px;
+}
+
+#textabout a {
+    padding: 12px 22px;
+    border: 1px solid #fff;
+    border-radius: 100px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 12px;
+    /* background-color: white; */
+}
+
+#textabout a:hover{
+    background-color: white;
+    color:black;
+    transition: 0.5s;
+}
+
+.subscribe {
+    color: #fff;
+    padding: 20px 30px;
+    padding-bottom: 7vw;
+    background-color: black;
+}
+
+.subscribe h5 {
+    text-transform: uppercase;
+    opacity: 0.6;
+}
+
+.subscribe h3 {
+    text-transform: uppercase;
+    font-size: 14px;
+    margin-top: 10px
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 30px;
+    color: white;
+    background-color: black;
+}
+
+.footer a {
+    font-size: 14px;
+    color: white;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.footer-left {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-right {
+    display: flex;
+    gap: 30px;
+}
+
+.bounding {
+    width: fit-content;
+    overflow: hidden;
+}
+
+.bounding .boundingtext {
+    transform: translateY(100%)
+}
+
+/* HOVER ANIMATION UNDERLINE */
+.hover-underline-animation {
+    display: inline-block;
+    position: relative;
+    color: #ffffff;
+  }
+  
+  .hover-underline-animation::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #ffffff;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  
+  .hover-underline-animation:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+

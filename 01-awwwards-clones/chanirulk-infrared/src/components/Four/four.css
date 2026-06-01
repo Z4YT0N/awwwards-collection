@@ -1,0 +1,113 @@
+.four{
+    height: 250vh;
+    background-color: orangered;
+}
+.ben-one{
+    position: absolute;
+    font-family: zuz;
+    font-size: 20vw;
+    color: rgb(255, 122, 228);  
+    margin-top: 30%;
+    left: 2%;
+}
+.ben-two{
+    position: absolute;
+    font-family: zuz;
+    font-size: 20vw;
+    color: rgb(255, 122, 228);  
+    margin-top: 50%;
+    left: 25%;
+}
+.start-two{
+    position: absolute;
+    margin-top: 28%;
+    height: auto;
+    width: 20%;
+    right: 20%;
+    animation: spin infinite 20s linear;
+}
+@keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(-360deg);
+    }
+}
+.svg-two{
+    position: absolute;
+    margin-top: 60%;
+    left: 1%;
+    height: 90%;
+    width: 40%;
+    animation: tilt infinite 20s linear;
+}
+@keyframes tilt {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(5deg);
+    }
+}
+.column-two {
+  float: left;
+  width: 30%;
+  padding: 10px;
+  height: 300px;
+  margin-top: 90%;
+  right: 1%;
+  position: absolute;
+}
+.column-three {
+  float: left;
+  width: 30%;
+  padding: 10px;
+  height: 300px;
+  margin-top: 90%;
+  right: 29%;
+  position: absolute;
+}
+.row-two:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.list-thing{
+    color: white;
+    font-family: ara;
+    font-size: 3vw;
+    text-align: left;
+    line-height: 20px;
+}
+.clap{
+    height: 30px;
+    width: 30px;
+}
+.list-thing-tag{
+    text-decoration: none;
+    color: white;
+    font-family: ara;
+    font-size: 3vw;
+    text-align: left;
+}
+.list-thing-tag:hover{
+    color: black;
+}
+.list-thing-tag:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transform-origin: bottom right;
+    transition: transform 1s ease-out;
+}
+.list-thing-tag:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+  

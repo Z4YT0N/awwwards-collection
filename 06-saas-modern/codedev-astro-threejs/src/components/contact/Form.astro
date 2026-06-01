@@ -1,0 +1,45 @@
+---
+import { getLangFromUrl, useTranslations } from '@/i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<section class='flex gap-10 justify-center appear rounded-xl'>
+	<form class='flex flex-col gap-4'>
+		<div class='flex gap-4'>
+			<input
+				type='text'
+				name='name'
+				required
+				placeholder={t('contact.form.name')}
+				class='px-4 py-2 rounded-xl outline outline-1 w-full'
+			/>
+			<input
+				type='email'
+				name='email'
+				required
+				class='px-4 py-2 rounded-xl outline outline-1 w-full'
+				placeholder={t('contact.form.email')}
+			/>
+		</div>
+		<input
+			type='text'
+			name='subject'
+			required
+			placeholder={t('contact.form.subject')}
+			class='px-4 py-2 rounded-xl outline outline-1'
+		/>
+		<textarea
+			name='message'
+			required
+			placeholder={t('contact.form.message')}
+			required
+			class='px-4 py-2 rounded-xl outline outline-1 resize-none min-h-40'
+		></textarea>
+
+		<button
+			class='px-3 py-2 rounded-full transition-colors hover:bg-white font-medium border border-indigo-600 outline-1 bg-indigo-600 text-white hover:text-slate-900'>
+			{t('contact.form.send')}
+		</button>
+	</form>
+</section>

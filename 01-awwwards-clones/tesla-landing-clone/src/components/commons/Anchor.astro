@@ -1,0 +1,22 @@
+---
+const { text, href = "#", theme = "default", classes } = Astro.props;
+
+const base =
+    "shadow-[0_1px_0_0_currentColor] hover:shadow-[0_2.5px_0_0_currentColor] transition-shadow duration-200";
+
+const themes = {
+    default: "text-sm text-black",
+    light: "text-xs text-default",
+}
+
+const themeClasses = themes[theme] ?? themes.default;
+
+let classesForSubtitle = `${base} ${themeClasses}`;
+if (classes) {
+    classesForSubtitle += ` ${classes}`;
+}
+---
+
+<a href={href} class={classesForSubtitle}>
+    {text}
+</a>

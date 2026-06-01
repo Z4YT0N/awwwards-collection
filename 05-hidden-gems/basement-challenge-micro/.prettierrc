@@ -1,0 +1,13 @@
+{
+    "arrowParens": "always",
+    "bracketSameLine": true,
+    "singleQuote": true,
+    "tabWidth": 4,
+    "trailingComma": "none",
+    "htmlWhitespaceSensitivity": "css",
+    "bracketSpacing": true,
+    "proseWrap": "preserve",
+    "singleAttributePerLine": false,
+    "semi": true,
+    "printWidth": 120
+}

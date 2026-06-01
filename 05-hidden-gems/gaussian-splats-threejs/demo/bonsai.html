@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>3D Gaussian Splat Demo - Truck</title>
+  <script type="text/javascript" src="js/util.js"></script>
+  <script type="importmap">
+    {
+        "imports": {
+            "three": "./lib/three.module.js",
+            "@mkkellogg/gaussian-splats-3d": "./lib/gaussian-splats-3d.module.js"
+        }
+    }
+  </script>
+  <style>
+
+    body {
+      background-color: #000000;
+      height: 100vh;
+      margin: 0px;
+    }
+
+  </style>
+
+</head>
+
+<body>
+  <script type="module">
+    import * as GaussianSplats3D from '@mkkellogg/gaussian-splats-3d';
+    import * as THREE from 'three';
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const mode = parseInt(urlParams.get('mode')) || 0;
+
+    const viewer = new GaussianSplats3D.Viewer({
+        'cameraUp': [0.01933, -0.75830, -0.65161],
+        'initialCameraPosition': [1.54163, 2.68515, -6.37228],
+        'initialCameraLookAt': [0.45622, 1.95338, 1.51278],
+        'sphericalHarmonicsDegree': 2
+    });
+    let path = 'assets/data/bonsai/bonsai' + (mode ? '_high' : '') + '.ksplat';
+    viewer.addSplatScene(path, {
+      'progressiveLoad': false
+    })
+    .then(() => {
+        viewer.start();
+    });
+  </script>
+</body>
+
+</html>

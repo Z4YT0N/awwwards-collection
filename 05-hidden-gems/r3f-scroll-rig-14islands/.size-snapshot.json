@@ -1,0 +1,131 @@
+{
+  "web.js": {
+    "bundled": 48006,
+    "minified": 21335,
+    "gzipped": 6733,
+    "treeshaked": {
+      "rollup": {
+        "code": 3379,
+        "import_statements": 514
+      },
+      "webpack": {
+        "code": 12370
+      }
+    }
+  },
+  "web.cjs.js": {
+    "bundled": 73487,
+    "minified": 36727,
+    "gzipped": 8653
+  },
+  "vscroll.js": {
+    "bundled": 12612,
+    "minified": 5447,
+    "gzipped": 2205,
+    "treeshaked": {
+      "rollup": {
+        "code": 1496,
+        "import_statements": 158
+      },
+      "webpack": {
+        "code": 3013
+      }
+    }
+  },
+  "vscroll.cjs.js": {
+    "bundled": 15673,
+    "minified": 6575,
+    "gzipped": 2419
+  },
+  "scrollbar.js": {
+    "bundled": 17599,
+    "minified": 7326,
+    "gzipped": 2609,
+    "treeshaked": {
+      "rollup": {
+        "code": 1654,
+        "import_statements": 204
+      },
+      "webpack": {
+        "code": 2971
+      }
+    }
+  },
+  "scrollbar.cjs.js": {
+    "bundled": 26250,
+    "minified": 12495,
+    "gzipped": 3474
+  },
+  "examples.js": {
+    "bundled": 2866,
+    "minified": 1792,
+    "gzipped": 822,
+    "treeshaked": {
+      "rollup": {
+        "code": 221,
+        "import_statements": 221
+      },
+      "webpack": {
+        "code": 1403
+      }
+    }
+  },
+  "examples.cjs.js": {
+    "bundled": 3788,
+    "minified": 2231,
+    "gzipped": 973
+  },
+  "stdlib.js": {
+    "bundled": 9462,
+    "minified": 4571,
+    "gzipped": 1790,
+    "treeshaked": {
+      "rollup": {
+        "code": 175,
+        "import_statements": 175
+      },
+      "webpack": {
+        "code": 1357
+      }
+    }
+  },
+  "stdlib.cjs.js": {
+    "bundled": 17078,
+    "minified": 9402,
+    "gzipped": 2603
+  },
+  "powerups.js": {
+    "bundled": 10268,
+    "minified": 5103,
+    "gzipped": 1946,
+    "treeshaked": {
+      "rollup": {
+        "code": 203,
+        "import_statements": 203
+      },
+      "webpack": {
+        "code": 1418
+      }
+    }
+  },
+  "powerups.cjs.js": {
+    "bundled": 17718,
+    "minified": 9735,
+    "gzipped": 2710
+  },
+  "web.cjs": {
+    "bundled": 73494,
+    "minified": 36736,
+    "gzipped": 8651
+  },
+  "scrollbar.cjs": {
+    "bundled": 26257,
+    "minified": 12504,
+    "gzipped": 3476
+  },
+  "powerups.cjs": {
+    "bundled": 17718,
+    "minified": 9735,
+    "gzipped": 2710
+  }
+}

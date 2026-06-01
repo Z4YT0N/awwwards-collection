@@ -1,0 +1,100 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Worse"
+						}
+					}
+				]
+			},
+			"subheading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Labore fugiat pariatur ex ipsum eiusmod irure."
+						}
+					}
+				]
+			},
+			"body": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Elit ex et labore pariatur excepteur exercitation in non duis exercitation dolore fugiat mollit laborum. Anim fugiat eiusmod eiusmod id aliqua anim."
+						}
+					}
+				]
+			},
+			"button_text": {
+				"__TYPE__": "FieldContent",
+				"value": "goes",
+				"type": "Text"
+			},
+			"cans_image": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1586952518485-11b180e92764",
+					"width": 4172,
+					"height": 4000
+				},
+				"url": "https://images.unsplash.com/photo-1586952518485-11b180e92764",
+				"width": 4172,
+				"height": 4000,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"second_heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Quiet"
+						}
+					}
+				]
+			},
+			"second_body": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Cupidatat esse ea consectetur consequat deserunt enim id."
+						}
+					}
+				]
+			},
+			"button_link": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://slicemachine.dev",
+					"text": "cook"
+				}
+			}
+		},
+		"items": []
+	}
+]

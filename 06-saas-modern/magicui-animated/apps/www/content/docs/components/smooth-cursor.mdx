@@ -1,0 +1,153 @@
+---
+title: Smooth Cursor
+date: 2024-04-17
+description: A customizable, physics-based smooth cursor animation component for React applications.
+author: magicui
+published: true
+---
+
+<ComponentPreview name="smooth-cursor-demo" />
+
+## Features
+
+- 🎯 Smooth physics-based cursor animations
+- 🔄 Rotation effects based on movement direction
+- ⚡ Performance optimized with RAF
+- 🎨 Fully customizable cursor design
+- 📦 Lightweight and easy to implement
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @magicui/smooth-cursor
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="smooth-cursor" />
+
+<Step>Add the component to your page or layout.</Step>
+
+```tsx showLineNumbers
+import { SmoothCursor } from "@/components/ui/smooth-cursor"
+
+export default function Page() {
+  return (
+    <>
+      <SmoothCursor />
+      {/* Your page content */}
+    </>
+  )
+}
+```
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Usage
+
+```tsx showLineNumbers
+import { SmoothCursor } from "@/components/ui/smooth-cursor"
+```
+
+```tsx showLineNumbers
+<SmoothCursor />
+```
+
+## Hiding Default Browser Cursor
+
+To prevent the default browser cursor from overlapping with the custom cursor, add the following CSS globally:
+
+```css showLineNumbers
+* {
+  cursor: none !important;
+}
+```
+
+### Optional: Keep text cursor for inputs
+
+```css showLineNumbers
+input,
+textarea,
+select {
+  cursor: text !important;
+}
+```
+
+💡 If you're using Tailwind CSS, you can add cursor-none to your layout wrapper:
+
+```tsx showLineNumbers
+<div className="cursor-none">
+  <SmoothCursor />
+  {/* your app */}
+</div>
+```
+
+## Props
+
+| Prop           | Type              | Default                | Description                                            |
+| -------------- | ----------------- | ---------------------- | ------------------------------------------------------ |
+| `cursor`       | `React.ReactNode` | `<DefaultCursorSVG />` | Custom cursor component to replace the default cursor  |
+| `springConfig` | `SpringConfig`    | See below              | Configuration object for the spring animation behavior |
+
+### SpringConfig Type
+
+```typescript showLineNumbers
+interface SpringConfig {
+  damping: number // Controls how quickly the animation settles
+  stiffness: number // Controls the spring stiffness
+  mass: number // Controls the virtual mass of the animated object
+  restDelta: number // Controls the threshold at which animation is considered complete
+}
+```
+
+### Default Spring Configuration
+
+```typescript showLineNumbers
+const defaultSpringConfig = {
+  damping: 45,
+  stiffness: 400,
+  mass: 1,
+  restDelta: 0.001,
+}
+```
+
+## Browser Support
+
+Compatible with all modern browsers that support:
+
+- `requestAnimationFrame`
+- CSS transforms
+- Pointer events
+- Hover-capable fine pointers (mouse or trackpad)
+
+Touch-first devices are ignored automatically to prevent the custom cursor from appearing after taps.
+
+## Accessibility
+
+When using this component, consider that:
+
+- Users navigating via keyboard will not see the custom cursor
+- You may want to provide alternative visual cues for interactive elements
+- Some users may have motion sensitivity, so consider providing a way to disable the animation
+
+## Credits
+
+- Credit to [@Code_Parth](https://twitter.com/Code_Parth) for the original concept and implementation

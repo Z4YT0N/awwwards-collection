@@ -1,0 +1,6 @@
+.DS_Store
+.env
+Course-Documentation-Part-1
+node_modules/
+yarn-error.log
+public/

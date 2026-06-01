@@ -1,0 +1,149 @@
+extends ../base.pug
+
+block variables
+    - var template = 'about'
+
+block body
+    .about(data-background="" data-color="")
+        canvas
+            canvas(data-cursor-view)
+            canvas(data-cursor-view)
+        //- Scroll wrapper
+        .about__wrapper
+            .about__banner(data-cursor-scroll)
+                .about__banner__inner
+                    .about__content__wrapper
+                        h1.title_two.splitter!=about.data.banner[0].title.replace(/\n/g,"</br>")
+                        p.paragraph.para(data-animation="paragraph")!=about.data.banner[0].sub_title.replace(/\n/g,"</br>")
+                        .about__mini__content__wrapper
+                            p.paragraph.big__paragraph(data-animation="paragraph")!=about.data.banner[0].paragraph.replace(/\n/g,"</br>")
+                            p.paragraph(data-animation="paragraph")!=about.data.banner[0].paragraph_2.replace(/\n/g,"</br>")
+                            .btn__wrapper
+                                a.btn_1.main__btn(href="/")!=about.data.banner[0].btn_1.replace(/\n/g,"</br>")
+                    //- bg
+                .about__banner__bg
+                    figure.about__banner__bg__wrapper
+                        img.about__banner__bg__pic.parallax__image.slide_1.active(data-src="/heroes/about-hero.jpg", alt="banner picture" data-slide="1")
+                        img.about__banner__bg__pic.parallax__image.slide_2(data-src="/heroes/about-hero-2.jpg", alt="banner picture" data-slide="2")
+                //- bg logo
+                .about__banner__logo(data-cursor-play)
+                    h1.text EXORSE
+
+            //- service
+            .about__service
+                .about__service__inner
+                    .about__service__gallery
+                        figure.about__service__pic__wrapper(data-scroll data-scroll-speed="2")
+                            img.about__service__gallery__pic(data-src="/about-1.webp", alt="error")
+                        figure.about__service__pic__wrapper(data-scroll data-scroll-speed="-1")
+                            img.about__service__gallery__pic(data-src="/about-2.webp", alt="error")
+                        figure.about__service__pic__wrapper(data-scroll data-scroll-speed="1")
+                            img.about__service__gallery__pic(data-src="/about-3.webp", alt="error")
+                    .about__service__content__wrapper
+                        .about__service__content__left
+                            h6.heading!=about.data.service[0].heading.replace(/\n/g,"</br>")
+                        .about__service__content__right
+                            h1.title_2(data-animation="paragraph")!=about.data.service[0].title.replace(/\n/g,"</br>")
+                            ul.service__list
+                                each service_item in about.data.service[0].list
+                                    li.service__item__wrapper
+                                        p.small-paragraph(data-animation="paragraph")=service_item.text
+
+            //- work
+            .about__work
+                .about__work__inner
+                    .about__work__content__wrapper
+                        .about__work__title__wrapper
+                            h6.heading(data-animation="paragraph")!=about.data.work[0].heading.replace(/\n/g,"</br>")
+                            p.big__paragraph(data-animation="paragraph")!=about.data.work[0].paragraph.replace(/\n/g,"</br>")
+                        .about__work__content__one
+                            .about__work__box
+                                h1.mini-title(data-animation="paragraph" data-number="01")!=about.data.work[0].title_1.replace(/\n/g,"</br>")
+                                p.small-paragraph(data-animation="paragraph")!=about.data.work[0].paragraph_1.replace(/\n/g,"</br>")
+                            .about__work__box
+                                h1.mini-title(data-animation="paragraph" data-number="02")!=about.data.work[0].title_2.replace(/\n/g,"</br>")
+                                p.small-paragraph(data-animation="paragraph")!=about.data.work[0].paragraph_2.replace(/\n/g,"</br>")
+                        .about__work__infinite__wrapper
+                            .about__work__infinite__text__wrapper
+                                h1.title *** Forever Upwards
+                        .about__work__content__one
+                            .about__work__box
+                                h1.mini-title(data-animation="paragraph" data-number="03")!=about.data.work[0].title_3.replace(/\n/g,"</br>")
+                                p.small-paragraph(data-animation="paragraph")!=about.data.work[0].paragraph_3.replace(/\n/g,"</br>")
+                            .about__work__box
+                                h1.mini-title(data-animation="paragraph" data-number="04")!=about.data.work[0].title_4.replace(/\n/g,"</br>")
+                                p.small-paragraph(data-animation="paragraph")!=about.data.work[0].paragraph_4.replace(/\n/g,"</br>")
+
+            //- belive
+            .about__believe
+                .about__believe__inner
+                    .about__believe__content__wrapper
+                        .about__believe__content__left
+                            h6.heading(data-animation="paragraph")!=about.data.believe[0].heading.replace(/\n/g,"</br>")
+                        .about__believe__content__right
+                            h1.title_2(data-animation="paragraph")!=about.data.believe[0].title.replace(/\n/g,"</br>")
+                            p.paragraph(data-animation="paragraph")!=about.data.believe[0].paragraph.replace(/\n/g,"</br>")
+                            p.paragraph(data-animation="paragraph")!=about.data.believe[0].paragraph_2.replace(/\n/g,"</br>")
+                            blockquote.small-text(data-animation="paragraph")!=about.data.believe[0].paragraph_3.replace(/\n/g,"</br>")
+
+            //- screen
+            .about__screen
+                figure.about__screen__wrapper
+                    img.about__screen__pic.parallax__image__slow(data-src="/about-screen.jpg", alt="screen Picture")
+
+            //- exorse
+            .about__exorse
+                .about__exorse__inner
+                    .about__exorse__content__wrapper
+                        .about__exorse__left
+                            h6.heading(data-animation="paragraph")!=about.data.apes[0].heading.replace(/\n/g,"</br>")
+                        .about__exorse__right
+                            h1.title_2(data-animation="paragraph")!=about.data.apes[0].title.replace(/\n/g,"</br>")
+                            p.paragraph(data-animation="paragraph")!=about.data.apes[0].paragraph.replace(/\n/g,"</br>")
+                    .about__exorse__gallery
+                        .about__exorse__pic__box(data-scroll data-scroll-speed="-1")
+                            figure.about__exorse__pic__wrapper
+                                img.about__exorse__img(data-src="/exorse-1.webp", alt="picture")
+                        .about__exorse__pic__box(data-scroll data-scroll-speed="2")
+                            figure.about__exorse__pic__wrapper
+                                img.about__exorse__img(data-src="/exorse-2.webp", alt="picture")
+                            blockquote.small-text(data-animation="paragraph")!=about.data.apes[0].paragraph_2.replace(/\n/g,"</br>")
+
+            //- recognition
+            .about__recognition
+                .about__recognition__inner
+                    .about__recognition__content__wrapper
+                        .about__recognition__left
+                            h6.heading(data-animation="paragraph")!=about.data.recognition[0].heading.replace(/\n/g,"</br>")
+                        .about__recognition__right
+                            h1.title_2(data-animation="paragraph")!=about.data.recognition[0].title.replace(/\n/g,"</br>")
+                            .awards__wrapper
+                                ul.win__list
+                                    li.win__item
+                                        p.paragraph(data-animation="paragraph") Studio of the year
+                                        p.paragraph(data-animation="paragraph") Nominee '20
+                                        a.btn_1.main__btn.no-transition(href="https://www.awwwards.com/" target="blank" data-animation="paragraph") Awwwards
+                                    li.win__item
+                                        p.paragraph(data-animation="paragraph") Ali Ali
+                                        p.paragraph(data-animation="paragraph") Site of the Month
+                                        a.btn_1.main__btn.no-transition(href="https://www.awwwards.com/" target="blank" data-animation="paragraph") Awwwards
+                                    li.win__item
+                                        p.paragraph(data-animation="paragraph") Ottografie
+                                        p.paragraph(data-animation="paragraph") Photography site of the Year
+                                        a.btn_1.main__btn.no-transition(href="https://www.cssdesignawards.com/" target="blank" data-animation="paragraph") CSSDA
+                                ul.awards__list
+                                    li.awards__item
+                                        p.text Awwwards #[span.number x15]
+                                    li.awards__item
+                                        p.text The FWA #[span.number x06]
+                                    li.awards__item
+                                        p.text CSSDA #[span.number x06]
+                                    li.awards__item
+                                        p.text Behance #[span.number x21]
+                                    li.awards__item
+                                        p.text Commarts #[span.number x03]
+                                    li.awards__item
+                                        p.text Typewolf #[span.number x02]
+
+            //- footer
+            include ../partials/footer

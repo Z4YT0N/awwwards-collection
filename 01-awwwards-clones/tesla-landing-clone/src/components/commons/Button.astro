@@ -1,0 +1,22 @@
+---
+const { text, flavour = "black", classes } = Astro.props;
+
+const bases =
+    "w-full max-w-anchor block py-2.5 text-center text-sm font-medium rounded-[5px] hover:scale-105 duration-200";
+
+const flavours = {
+    black: "text-white bg-black",
+    white: "text-black bg-white",
+    neutral: "text-white bg-neutral",
+    glass: "text-white bg-white/5 backdrop-blur-sm border-[3px] border-white",
+};
+
+const flavourClasses = flavours[flavour] ?? flavours.black;
+
+let classesForButton = `${bases} ${flavourClasses}`;
+if (classes) {
+    classesForButton += ` ${classes}`;
+}
+---
+
+<a href="#" class={classesForButton}>{text}</a>

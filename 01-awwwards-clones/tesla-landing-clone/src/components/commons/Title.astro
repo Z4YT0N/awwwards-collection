@@ -1,0 +1,14 @@
+---
+const { text, color = "black", classes } = Astro.props;
+
+const textColor = `text-${color ?? "black"}`
+
+const base = `text-4xl xs:text-[2.5em] font-medium ${textColor}`;
+
+let classesForTitle = base;
+if (classes) {
+    classesForTitle += ` ${classes}`;
+}
+---
+
+<h2 class={classesForTitle}>{text}</h2>

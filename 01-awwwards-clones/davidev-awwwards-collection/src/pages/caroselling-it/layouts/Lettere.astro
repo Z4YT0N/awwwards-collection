@@ -1,0 +1,111 @@
+---
+import ButtonMore from '../components/ButtonMore.astro';
+
+// cosole.log(Array.from({ length: 4 }).fill('null'));
+const itemsCount = Array.from({ length: 4 }).fill('null');
+---
+
+<section class='container-lettere'>
+	<header class='header-lettere'>
+		<span class='title-header'>lettere</span>
+		<div class='description-header'>
+			lettere perché sono fotografie pensate, lettere perché fanno succedere
+			cose incredibili, lettere perché puoi prenderci alla lettera
+		</div>
+	</header>
+	<div class='grid-letter'>
+		{
+			itemsCount.map((item, index) => {
+				return (
+					<article class='item-letter'>
+						<header class='header ani-header-lettere'>
+							<img src='/public/caroselling-it/letterer.png' alt='' />
+						</header>
+						<footer>
+							<h3>Siate creativi, siate originali, distinguetevi. Come?</h3>
+							<div>
+								<p>
+									Siamo alla ricerca di qualcosa di interessante e le persone
+									originali e creative ci aiutano a trovare queste cose. Come
+									imparare queste preziose qualità?
+								</p>
+							</div>
+							<div class='plus'>
+								<span>+</span>
+							</div>
+						</footer>
+					</article>
+				);
+			})
+		}
+	</div>
+	<footer>
+		<ButtonMore />
+	</footer>
+</section>
+
+<style>
+	.container-lettere {
+		margin-top: var(--divider-top);
+		border-top: var(--bt-primary);
+		padding-top: 3rem;
+		& .header-lettere {
+			display: flex;
+			flex-direction: row;
+			gap: 5rem;
+			& .title-header {
+				font-size: 2rem;
+				font-weight: 700;
+				color: var(--caro-secondary);
+				cursor: pointer;
+				&:hover {
+					color: var(--caro-primary);
+					transition: color 0.3s ease-in-out;
+				}
+			}
+			& .description-header {
+				max-width: 400px;
+			}
+		}
+		& .grid-letter {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			margin-top: 5rem;
+			gap: 4rem;
+			& .item-letter {
+				& img {
+					border-radius: 1rem;
+					overflow: hidden;
+				}
+				width: 100%;
+				height: 100%;
+				display: flex;
+				flex-direction: column;
+				gap: 1.5rem;
+				& header {
+					height: 100%;
+					width: 100%;
+					background-color: var(--caro-secondary);
+					border-radius: 1rem;
+				}
+				& footer {
+					display: flex;
+					flex-direction: row;
+					gap: 2rem;
+					& div {
+						height: 100%;
+						display: inline-flex;
+						& span {
+							font-size: var(--title);
+							margin: auto;
+						}
+					}
+				}
+			}
+		}
+	}
+	footer {
+		display: flex;
+		justify-content: center;
+	}
+</style>

@@ -1,0 +1,200 @@
+.a{
+    height: 98vh;
+    font-family: 'Tenor Sans', sans-serif;
+    text-transform: uppercase;
+    align-items: center;
+    overflow-x: hidden;
+    background-color: black;
+}
+
+
+
+.a-main{
+    height: 540px;
+    border-radius: 30px;
+    margin-left: 5px;
+    margin-right: 5px;
+    position: relative;
+    overflow: auto;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+.a-main::-webkit-scrollbar {
+    width: 1px;
+}
+
+.a-main::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.144); 
+    border-radius: 10px;
+}
+
+.a-main::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.075); 
+}
+
+
+.a-main-i{
+    animation: move 10s ease-in infinite alternate;
+}
+
+
+@keyframes move {
+     
+    25% {
+        transform: translateY(-20px);
+    }
+
+    50% {
+        transform: translateY(-25px);
+    }
+    
+
+    75% {
+        transform: translateY(-30px);
+    }
+   
+    100% {
+        transform: translateY(-35px);
+    }
+}
+
+.h-about{
+    justify-content: center;
+    text-align: center;
+    position: absolute;
+    font-weight: 400;
+    font-size: 60px;
+    z-index: 1;
+    top: 7%;
+    left: 4%;
+    animation: move 10s ease  infinite alternate;
+}
+
+
+
+@keyframes move {
+     
+
+    10% {
+        transform: translateY(10px);
+    }
+
+    100% {
+        transform: translateY(-100px);
+    }
+   
+     
+}
+
+
+.h-img{
+    position: relative;
+    padding: 14px 0px 0px;
+    height: auto;
+    width: 100px;
+    transform: rotate(-10deg);
+}
+
+.h-img-two{
+    height: 100px;
+    padding: 0px 0px 0px;
+    position: relative;
+    top: 20px;
+    width: auto;
+    transform: rotate(10deg);
+}
+
+.myButton {
+    margin-top: 70px;
+    font-weight: 400;
+	border-radius: 50%;
+	border:1px solid rgb(168, 148, 116);
+	display:inline-block;
+	cursor:pointer;
+	color:#000000;
+	font-family:Arial;
+	font-size: 17px;
+	padding:25px 31px;
+	text-decoration:none;
+}
+.myButton:hover {
+	background-color:#000000;
+    color: white;
+    border: 0px solid white;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+
+.h-head{
+    font-size: 150px;
+    margin-top: 20%;
+    font-weight: 400;
+}
+
+
+.a-main-it{
+    margin-top: -5%;
+    height: auto;
+    width: 160px;
+    animation: move 5s ease-in-out infinite alternate;
+}
+
+
+@keyframes move {
+     
+    25% {
+        transform: translateY(-20px);
+    }
+
+    50% {
+        transform: translateY(-25px);
+    }
+    
+
+    75% {
+        transform: translateY(-30px);
+    }
+   
+    100% {
+        transform: translateY(-35px);
+    }
+}
+       
+
+
+
+.myButton-oil {
+    position: absolute;
+    margin-top: 55%;
+    left: 42.7%;
+    font-weight: 400;
+	border-radius: 50%;
+	border:1px solid rgb(168, 148, 116);
+	display:inline-block;
+	cursor:pointer;
+	color:#000000;
+	font-family:Arial;
+	font-size: 17px;
+	padding:25px 31px;
+	text-decoration:none;
+}
+.myButton-oil:hover {
+	background-color:#000000;
+    color: white;
+    border: 0px solid white;
+}
+.myButton-oil:active {
+	position:relative;
+	top:1px;
+}
+
+
+
+
+
+

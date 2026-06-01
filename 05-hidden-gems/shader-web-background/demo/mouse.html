@@ -1,0 +1,110 @@
+<!--
+  ~ Copyright 2020  Kazimierz Pogoda
+  ~
+  ~ This file is part of shader-web-background.
+  ~
+  ~ shader-web-background is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU General Public License as published by
+  ~ the Free Software Foundation, either version 3 of the License, or
+  ~ (at your option) any later version.
+  ~
+  ~ shader-web-background is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with shader-web-background.  If not, see <https://www.gnu.org/licenses/>.
+  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>How to add mouse support?</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="demo.css"/>
+  <script src="../src/test/js/show-demo-source.js"></script>
+
+  <script src="../dist/shader-web-background.min.js"></script>
+
+  <script type="x-shader/x-fragment" id="image">
+    precision highp float;
+
+    uniform float iTime;
+    uniform vec2  iResolution;
+    uniform float iMinDimension;
+    uniform vec2  iMouse;
+
+    const float SPEED = 4.;
+    const float LENGTH = 10.;
+
+    void main() {
+      vec2 st = (gl_FragCoord.xy * 2. - iResolution) / iMinDimension;
+      vec2 mouse = (iMouse * 2. - iResolution) / iMinDimension;
+      float dist = distance(st, mouse);
+      float luma = (sin(dist * LENGTH - iTime * SPEED) + 1.) / 2.;
+      gl_FragColor = vec4(vec3(luma), 1.0);
+    }
+  </script>
+  <script>
+    var minDimension;
+    var time;
+
+    // mouse coordinates taken from from the mousemove event
+    var mouseX;
+    var mouseY;
+    document.addEventListener("mousemove", (event) => {
+       mouseX = event.clientX;
+       mouseY = event.clientY;
+    });
+
+    // mouse coordinates relative to the shader, see below
+    var shaderMouseX;
+    var shaderMouseY;
+
+    shaderWebBackground.shade({
+      onResize: (width, height) => {
+        minDimension = Math.min(width, height);
+      },
+      onInit: (ctx) => {
+
+        // initially let's put mouse it in the center of the screen
+        // as long as the shader covers the whole screen it will work
+        mouseX = ctx.cssWidth / 2.;
+        mouseY = ctx.cssHeight / 2.;
+      },
+      onBeforeFrame: (ctx) => {
+        time = performance.now() / 1000;
+
+        // Note: shader (0, 0) pixel coordinates are actually (.5, .5)
+        // and they are located at the bottom-left corner of the canvas.
+        // Also the actual pixel-perfect resolution might differ from so
+        // called CSS pixels depending on the device or zoom level. See:
+        //
+        // https://developer.mozilla.org/en-US/docs/Web/API/Window/devicePixelRatio
+        //
+        // therefore we need to translate to shader coordinates through the context
+        shaderMouseX = ctx.toShaderX(mouseX);
+        shaderMouseY = ctx.toShaderY(mouseY);
+      },
+      shaders: {
+        image: {
+          uniforms: {
+            iResolution:   (gl, loc, ctx) => gl.uniform2f(loc, ctx.width, ctx.height),
+            iTime:         (gl, loc) => gl.uniform1f(loc, time),
+            iMinDimension: (gl, loc) => gl.uniform1f(loc, minDimension),
+            iMouse:        (gl, loc) => gl.uniform2f(loc, shaderMouseX, shaderMouseY)
+          }
+        }
+      }
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <h1><a href="#source">How to add mouse support ?</a></h1>
+  </header>
+</body>
+</html>

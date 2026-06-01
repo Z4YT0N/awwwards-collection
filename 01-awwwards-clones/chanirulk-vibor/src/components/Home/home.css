@@ -1,0 +1,76 @@
+.home{
+    background-color: rgb(7, 7, 7);
+    height: 165vh;
+    overflow-x: hidden;
+    font-family: Formular;
+}
+ul {
+  top: 5px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgb(7, 7, 7);
+  font-family: Suisse;
+}
+li {
+  float: right
+}
+a {
+  display: flex;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+a:after {
+    top: 32px;
+    content: '';
+    position: absolute;
+    width: 4.4%;
+    transform: scaleX(0);
+    height: 1px;
+    background-color: rgb(218, 69, 69);
+    transform-origin: bottom right;
+    transition: transform 1s ease-out;
+}
+
+a:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.logo{
+    font-size: 2vw;
+    color: white;
+    letter-spacing: 2px;
+    position: absolute;
+    top: 7px;
+    left: 10px;
+    font-family: Formular-Bold;
+}
+
+.hero-logo{
+    color: white;
+    position: relative;
+    font-size: 26vw;
+    font-display: smooth;
+    letter-spacing: 25px;
+    left: 5px;
+    top: -20px;
+}
+
+.video{
+    position: absolute;
+    left: 20px;
+    height: 600px;
+    width: 97%;
+}
+
+.hero{
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+}

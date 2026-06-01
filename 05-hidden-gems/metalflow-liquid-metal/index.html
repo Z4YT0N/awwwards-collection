@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MetalFlow</title>
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/MetalFlow/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/MetalFlow/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/MetalFlow/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/MetalFlow/favicon/manifest.json">
+    <link rel="shortcut icon" href="/MetalFlow/favicon/favicon.ico">
+    <meta name="theme-color" content="#000000">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="MetalFlow - Liquid Metal Logo Effects">
+    <meta property="og:description" content="Create stunning liquid metal effects for your logos">
+    <meta property="og:image" content="https://i.ibb.co/R4391hjG/og-mf.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="628">
+    <meta property="og:url" content="https://saganaki22.github.io/MetalFlow/">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MetalFlow - Liquid Metal Logo Effects">
+    <meta name="twitter:description" content="Create stunning liquid metal effects for your logos">
+    <meta name="twitter:image" content="https://i.ibb.co/R4391hjG/og-mf.jpg">
+    <meta name="twitter:image:width" content="1200">
+    <meta name="twitter:image:height" content="628">
+
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: #000;
+            color: #fff;
+            overflow: hidden;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            max-width: 1400px;
+            display: flex;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        #canvas-container {
+            flex: 1;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        #canvas-container.drag-over::after {
+            content: 'Drop image here';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            pointer-events: none;
+        }
+
+        @media (max-width: 1023px) {
+            #canvas-container.drag-over::after {
+                content: 'Tap to select image';
+            }
+        }
+
+        canvas {
+            max-width: 90vh;
+            max-height: 90vh;
+            width: 100%;
+            aspect-ratio: 1;
+            background: transparent;
+        }
+
+        .controls-panel {
+            width: 400px;
+            height: 100%;
+            max-height: 90vh;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            margin-left: 2rem;
+        }
+
+        .background-options {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            justify-content: flex-end;
+        }
+
+        .background-option {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 2px solid #404040;
+            cursor: pointer;
+        }
+
+        .background-option:hover {
+            border-color: #606060;
+        }
+
+        .background-option.active {
+            border-color: #fff;
+        }
+
+        .background-option.metal { background: linear-gradient(135deg, #888, #eee); }
+        .background-option.white { background: #fff; }
+        .background-option.light-grey { background: #E5E5E5; }
+        .background-option.black { background: #000; }
+        .background-option.rainbow {
+            background: linear-gradient(45deg, #ff0000, #ff8000, #ffff00, #00ff00, #00ffff, #0000ff, #8000ff, #ff00ff);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .background-option.rainbow input[type="color"] {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .control-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .control-label {
+            font-size: 0.875rem;
+            color: #fff;
+            font-weight: 500;
+        }
+
+        .slider-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        input[type="range"] {
+            flex: 1;
+            height: 2px;
+            background: #2563eb;
+            border-radius: 2px;
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 12px;
+            height: 12px;
+            background: #fff;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        input[type="range"]::-webkit-slider-thumb:hover {
+            background: #f0f0f0;
+        }
+
+        .upload-button {
+            background: #2563eb;
+            color: #fff;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+            text-align: center;
+            transition: background 0.2s;
+            margin: 1rem 0;
+            width: 100%;
+        }
+
+        .upload-button:hover {
+            background: #1d4ed8;
+        }
+
+        .controls-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        @media (min-width: 768px) {
+            .controls-container {
+                flex-direction: column-reverse;
+            }
+
+            .upload-button {
+                margin: 1.5rem 0 0 2rem;
+                width: 400px;
+            }
+        }
+
+        .logo-samples {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .logo-sample {
+            cursor: pointer;
+            width: 64px;
+            height: 64px;
+            padding: 0.5rem;
+            background: #000000;
+            border-radius: 8px;
+            transition: background 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .logo-sample:hover {
+            background: #111111;
+        }
+
+        .logo-sample img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: brightness(0.4) invert(0.4);
+        }
+
+        .logo-sample svg {
+            width: 100%;
+            height: 100%;
+            fill: #666666;
+        }
+
+        .logo-sample.active {
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: rgba(128, 128, 128, 0.2);
+            padding: 8px;
+        }
+
+        .logo-container svg {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        @media (min-width: 768px) {
+            .logo-container {
+                background: none;
+                padding: 0;
+                width: auto;
+                height: auto;
+            }
+        }
+
+        .help-text {
+            display: none;
+        }
+
+        #drbaph-logo {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            width: 32px;
+            height: 32px;
+            z-index: 200;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        #drbaph-logo:hover {
+            transform: rotate(35deg);
+        }
+
+        @media (max-width: 768px) {
+            body {
+                height: auto;
+                overflow-y: auto;
+            }
+
+            #container {
+                flex-direction: column;
+                padding: 1rem;
+                height: auto;
+            }
+
+            #canvas-container {
+                position: sticky;
+                top: 0;
+                z-index: 100;
+                background: #000;
+                padding: 1rem 0;
+                width: 100%;
+            }
+
+            .controls-container {
+                margin-top: 1rem;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+
+            .controls-panel {
+                width: 100%;
+                height: auto;
+                max-height: none;
+                margin: 0;
+                padding: 1rem;
+                background: none;
+                backdrop-filter: none;
+            }
+
+            .upload-button {
+                width: 100%;
+                margin: 1rem auto;
+                order: -1;
+            }
+
+            .logo-samples {
+                flex-wrap: wrap;
+                justify-content: center;
+                padding: 0.5rem;
+                width: 95%;
+                margin: 1rem auto;
+                gap: 1rem;
+            }
+
+            .logo-sample {
+                width: calc(33.33% - 1rem);
+                max-width: 64px;
+                height: 64px;
+                padding: 0.5rem;
+            }
+
+            .control-group {
+                width: 100%;
+            }
+
+            #drbaph-logo {
+                position: fixed;
+                top: 1rem;
+                right: 1rem;
+                z-index: 200;
+            }
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 0.5rem;
+            position: absolute;
+            bottom: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 101;
+        }
+
+        .action-button {
+            position: relative;
+            width: 40px;
+            height: 40px;
+            border: none;
+            border-radius: 8px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            margin: 0 4px;
+        }
+
+        .action-button i {
+            font-size: 20px;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .action-button:hover {
+            background: rgba(0, 0, 0, 0.9);
+        }
+
+        .action-button.recording {
+            animation: redGlowPulse 1.5s ease-in-out infinite;
+            background: rgba(244, 67, 54, 0.3);
+            transform: scale(0.95);
+        }
+
+        .action-button.recording i {
+            color: #F44336;
+            transform: scale(0.8);
+        }
+
+        .action-button .stop-recording {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 4px;
+            padding: 2px;
+        }
+
+        .action-button.recording .stop-recording {
+            opacity: 1;
+        }
+
+        .action-button.recording .stop-recording:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        @keyframes redGlowPulse {
+            0% {
+                box-shadow: 0 0 5px #F44336,
+                           0 0 10px #F44336,
+                           0 0 15px #F44336;
+            }
+            50% {
+                box-shadow: 0 0 10px #F44336,
+                           0 0 20px #F44336,
+                           0 0 30px #F44336;
+            }
+            100% {
+                box-shadow: 0 0 5px #F44336,
+                           0 0 10px #F44336,
+                           0 0 15px #F44336;
+            }
+        }
+
+        .action-button.gif-download {
+            display: none;
+        }
+
+        .recent-exports {
+            position: fixed;
+            left: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            display: none;
+            flex-direction: column;
+            gap: 1rem;
+            z-index: 100;
+            max-height: 80vh;
+            overflow-y: auto;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.084);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            transition: background 0.3s ease;
+        }
+
+        .recent-exports:hover {
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        .export-item {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .export-item:hover {
+            transform: scale(1.05);
+        }
+
+        .export-item img,
+        .export-item video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            opacity: 0.12;
+            transition: opacity 0.3s ease;
+        }
+
+        .export-item:hover img,
+        .export-item:hover video {
+            opacity: 0.85;
+        }
+
+        .recent-exports:not(:hover) .export-item:not(:hover) img,
+        .recent-exports:not(:hover) .export-item:not(:hover) video {
+            opacity: 0.12;
+        }
+
+        .export-item .download-button {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            width: 24px;
+            height: 24px;
+            border: none;
+            border-radius: 4px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .export-item:hover .download-button {
+            opacity: 1;
+        }
+
+        .export-item .download-button:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        @media (max-width: 767px) {
+            .recent-exports {
+                display: none !important;
+            }
+        }
+
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(8px);
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .lightbox.active {
+            display: flex;
+            opacity: 1;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 90vw;
+            max-height: 90vh;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 40px;
+            height: 40px;
+            border: none;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 1001;
+        }
+
+        .lightbox-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.1);
+        }
+
+        .lightbox-close i {
+            font-size: 24px;
+        }
+
+        .lightbox-media {
+            max-width: 100%;
+            max-height: 90vh;
+            object-fit: contain;
+            padding: 2px;
+        }
+
+        .lightbox-media img,
+        .lightbox-media video {
+            max-width: 100%;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: 8px;
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+        }
+
+        @media (max-width: 767px) {
+            .lightbox {
+                display: none !important;
+            }
+            .lightbox-media img,
+            .lightbox-media video {
+                border: none;
+                box-shadow: none;
+            }
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+        }
+
+        .footer a {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer a:hover {
+            opacity: 1;
+        }
+
+        .footer i {
+            font-size: 20px;
+        }
+
+        @media (max-width: 767px) {
+            .drbaph-logo {
+                display: none;
+            }
+            .footer {
+                background: rgba(0, 0, 0, 0.7);
+                backdrop-filter: blur(10px);
+            }
+        }
+
+        .canvas-container {
+            position: relative;
+            width: 512px;
+            height: 512px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 767px) {
+            .canvas-container {
+                position: sticky;
+                top: 0;
+                width: 100vw !important;
+                height: 100vw !important;
+                aspect-ratio: 1;
+                z-index: 10;
+                background: black;
+                max-width: 100%;
+                overflow: hidden;
+            }
+            
+            .canvas-container canvas {
+                width: 100% !important;
+                height: 100% !important;
+                transform: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="lightbox">
+        <button class="lightbox-close">
+            <i class="ph ph-x"></i>
+        </button>
+        <div class="lightbox-content">
+            <div class="lightbox-media"></div>
+        </div>
+    </div>
+
+    <div class="recent-exports">
+        <!-- Recent exports will be added here dynamically -->
+    </div>
+    <div id="container">
+        <div id="canvas-container" class="canvas-container">
+            <canvas id="canvas"></canvas>
+            <div class="action-buttons">
+                <button class="action-button" id="download-png" title="Download PNG">
+                    <i class="ph ph-download-simple"></i>
+                </button>
+                <button class="action-button" id="download-video" title="Record Video">
+                    <i class="ph ph-video-camera"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="controls-container">
+            <button class="upload-button">Upload image</button>
+            <div class="controls-panel">
+                <div>
+                    <div class="control-label">Background</div>
+                    <div class="background-options">
+                        <div class="background-option metal active" data-bg="metal" data-color="#666666"></div>
+                        <div class="background-option white" data-bg="white" data-color="#FFFFFF"></div>
+                        <div class="background-option light-grey" data-bg="light" data-color="#E5E5E5"></div>
+                        <div class="background-option black" data-bg="black" data-color="#000000"></div>
+                        <div class="background-option rainbow" data-bg="custom">
+                            <input type="color" id="bgColorPicker" value="#FFFFFF">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label">Refraction</label>
+                    <div class="slider-container">
+                        <input type="range" id="refraction" min="0" max="0.03" step="0.001" value="0.015">
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label">Edge</label>
+                    <div class="slider-container">
+                        <input type="range" id="edge" min="0" max="1" step="0.01" value="0">
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label">Pattern Blur</label>
+                    <div class="slider-container">
+                        <input type="range" id="patternBlur" min="0" max="0.02" step="0.001" value="0.005">
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label">Liquify</label>
+                    <div class="slider-container">
+                        <input type="range" id="liquid" min="0" max="0.2" step="0.001" value="0.07">
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label">Speed</label>
+                    <div class="slider-container">
+                        <input type="range" id="speed" min="0" max="0.5" step="0.01" value="0.3">
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label">Pattern Scale</label>
+                    <div class="slider-container">
+                        <input type="range" id="patternScale" min="0.5" max="5" step="0.1" value="2">
+                    </div>
+                </div>
+
+                <div class="logo-samples">
+                    <div class="logo-sample" onclick="handleLogoClick('/MetalFlow/logos/punisher.svg')">
+                        <img src="/MetalFlow/logos/punisher.svg" alt="Punisher Logo">
+                    </div>
+                    <div class="logo-sample" onclick="handleLogoClick('/MetalFlow/logos/dcshoes.svg')">
+                        <img src="/MetalFlow/logos/dcshoes.svg" alt="DC Shoes Logo">
+                    </div>
+                    <div class="logo-sample" onclick="handleLogoClick('/MetalFlow/logos/github.svg')">
+                        <img src="/MetalFlow/logos/github.svg" alt="GitHub Repository">
+                    </div>
+                    <div class="logo-sample" onclick="handleLogoClick('/MetalFlow/logos/linux.svg')">
+                        <img src="/MetalFlow/logos/linux.svg" alt="Linux Logo">
+                    </div>
+                    <div class="logo-sample" onclick="handleLogoClick('/MetalFlow/logos/huggingface.svg')">
+                        <img src="/MetalFlow/logos/huggingface.svg" alt="Hugging Face Logo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="drbaph-logo">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- ... svg content ... -->
+        </svg>
+    </div>
+
+    <footer class="footer">
+        <a href="https://github.com/Saganaki22/MetalFlow" target="_blank" rel="noopener noreferrer">
+            <i class="ph ph-github-logo"></i>
+            <span>GitHub</span>
+        </a>
+    </footer>
+
+    <input type="file" id="file-input" style="display: none" accept="image/*">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

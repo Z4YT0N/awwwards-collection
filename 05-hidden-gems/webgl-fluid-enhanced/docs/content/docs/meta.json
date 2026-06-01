@@ -1,0 +1,18 @@
+{
+  "root": true,
+  "pages": [
+    "---Guides---",
+    "index",
+    "frameworks",
+    "background",
+    "examples",
+    "---API---",
+    "config",
+    "splats",
+    "pause",
+    "screenshot",
+    "---Links---",
+    "[npm](https://www.npmjs.com/package/webgl-fluid-enhanced)",
+    "references"
+  ]
+}

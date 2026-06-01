@@ -1,0 +1,126 @@
+.third{
+    overflow-x: hidden;
+    height: 170vh;
+    font-family: gara;
+}
+.marquee {
+    position: relative;
+    overflow: hidden;
+    --offset: 20vw;
+    --move-initial: calc(-25% + var(--offset));
+    --move-final: calc(-50% + var(--offset));
+}
+
+.marquee__inner {
+    width: fit-content;
+    display: flex;
+    position: relative;
+    transform: translate3d(var(--move-initial), 0, 0);
+    animation: marquee 5s linear infinite;
+}
+
+.marquee span {
+    font-size: 10vw;
+    padding: 0 2vw;
+    font-family: ara;
+    color: orangered;
+}
+
+.marquee:hover .marquee__inner {
+    animation-play-state: running;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translate3d(var(--move-initial), 0, 0);
+    }
+
+    100% {
+        transform: translate3d(var(--move-final), 0, 0);
+    }
+}
+
+
+.column {
+    float: left;
+    width: 40%;
+    padding: 10px;
+    height: 300px;
+    margin-left: 80px;
+    margin-top: 20%;
+}
+  
+
+.column-two {
+    float: left;
+    width: 40%;
+    padding: 10px;
+    height: 700px;
+    background-color: red;
+    border-radius: 300px;
+    margin-left: 80px;
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden
+}
+  
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.next{
+    color: orangered;
+    font-size: 6vw;
+}
+
+.next-ext{
+    color: orangered;
+    font-size: 1.7vw;
+    text-align: center;
+    font-family: ara;
+}
+
+.order {
+    background-color: orangered;
+    left: 20px;
+	border-radius: 28px;
+	display: inline-block;
+	cursor: pointer;
+	color: #f7f6f2;
+    font-family: ara;
+	font-size: 22px;
+	padding: 15px 33px;
+	text-decoration:none;
+}
+
+.order:hover {
+    border: 1px solid orangered;
+    background-color: #f7f6f2;
+    color: orangered;
+    font-family: ara;
+}
+
+.order:after{
+    width: 0%;
+    transform: scaleX(0);
+    height: 0px;
+    background-color: orangered;
+    transform-origin: none;
+    transition: none;
+}
+
+.order:hover:after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.oval{
+    flex-shrink: 0;
+    min-width: 110%;
+    min-height: 110%
+}

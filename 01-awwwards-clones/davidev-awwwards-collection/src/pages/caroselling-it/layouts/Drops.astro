@@ -1,0 +1,133 @@
+---
+import ButtonMore from '../components/ButtonMore.astro';
+---
+
+<section class='container-drops'>
+	<span class='client'>Clienti</span>
+	<div class='grid-drops'>
+		<div class='item-drop'>
+			<h3>APT Dolomiti Paganella</h3>
+			<div>
+				BRAND, COPYWRITING, POSIZIONAMENTO SEO, SOCIAL MEDIA, TRADUZIONI, WEB
+				DESIGN
+			</div>
+			<span class='plus-icon'>+</span>
+			<img
+				src='/public/caroselling-it/img-parrallax.webp'
+				alt='img-hover'
+				class='drop-image'
+			/>
+		</div>
+		<div class='item-drop'>
+			<h3>APT Dolomiti Paganella</h3>
+			<div>
+				BRAND, COPYWRITING, POSIZIONAMENTO SEO, SOCIAL MEDIA, TRADUZIONI, WEB
+				DESIGN
+			</div>
+			<span class='plus-icon'>+</span>
+			<img
+				src='/public/caroselling-it/img-parrallax.webp'
+				alt='img-hover'
+				class='drop-image'
+			/>
+		</div>
+		<div class='item-drop'>
+			<h3>APT Dolomiti Paganella</h3>
+			<div>
+				BRAND, COPYWRITING, POSIZIONAMENTO SEO, SOCIAL MEDIA, TRADUZIONI, WEB
+				DESIGN
+			</div>
+			<span class='plus-icon'>+</span>
+			<img
+				src='/public/caroselling-it/img-parrallax.webp'
+				alt='img-hover'
+				class='drop-image'
+			/>
+		</div>
+		<div class='item-drop'>
+			<h3>APT Dolomiti Paganella</h3>
+			<div>
+				BRAND, COPYWRITING, POSIZIONAMENTO SEO, SOCIAL MEDIA, TRADUZIONI, WEB
+				DESIGN
+			</div>
+			<span class='plus-icon'>+</span>
+			<img
+				src='/public/caroselling-it/img-parrallax.webp'
+				alt='img-hover'
+				class='drop-image'
+			/>
+		</div>
+		<!-- <button class='btn-more-drop'>+</button> -->
+		<ButtonMore />
+	</div>
+</section>
+
+<style>
+	.container-drops {
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: flex-start;
+		border-top: 1px solid var(--caro-primary);
+		padding-top: 3rem;
+		margin-top: var(--divider-top);
+		& .client {
+			font-size: var(--text-3xl);
+			font-weight: 700;
+			min-width: 25%;
+		}
+		& .item-drop {
+			position: relative;
+			cursor: pointer;
+			padding: 3rem 0;
+			font-size: var(--text);
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-between;
+			gap: 6rem;
+			border-bottom: 1px solid var(--caro-primary);
+			& .plus-icon {
+				font-size: var(--title);
+				transform: rotate(0deg);
+			}
+			&:hover {
+				transition: all 1s ease-in-out;
+				& .plus-icon {
+					font-weight: 700;
+					transform: rotate(-45deg);
+					transition: transform 1s ease-in-out;
+				}
+				& .drop-image {
+					opacity: 1;
+					transition: opacity 1s ease-in-out;
+				}
+			}
+			& .drop-image {
+				position: absolute;
+				top: 0rem;
+				right: 5rem;
+				width: 480px;
+				height: 320px;
+				object-fit: cover;
+				border-radius: 1rem;
+				opacity: 0;
+			}
+		}
+	}
+	.btn-more-drop {
+		font-size: var(--title);
+		line-height: 1;
+		margin-top: 2rem;
+		padding: 0.4rem 10rem;
+		border: 1px solid var(--caro-primary);
+		background-color: transparent;
+		border-radius: 4rem;
+		&:hover {
+			background-color: var(--caro-secondary);
+			border-color: var(--caro-secondary);
+			transition: all 1s ease-in-out;
+		}
+	}
+</style>

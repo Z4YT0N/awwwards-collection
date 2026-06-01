@@ -1,0 +1,54 @@
+:root {
+  /* Background colors */
+  --bg-body: #120F17;
+  --bg-card: #1B1722;
+  --bg-elevated: #1B1722;
+  --bg-hover: #373044;
+
+  /* Border colors */
+  --border-primary: #2F293A;
+  --border-secondary: #2F293A;
+  --border-subtle: #2F293A;
+
+  /* Brand colors */
+  --color-primary: #A855F7;
+  --color-accent: #B497CF;
+  --color-accent-muted: #B497CF;
+
+  /* Text colors */
+  --text-primary: #fff;
+  --text-secondary: #f5f5f5;
+  --text-muted: #aaaaaa;
+  --text-dimmed: #a1a1aa;
+  --text-link: #ffffff;
+
+  /* Radii */
+  --radius-sm: 10px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 50px;
+
+  /* Shadows */
+  --shadow-dropdown: 0 8px 32px rgba(0, 0, 0, 0.4);
+  --shadow-primary: 0 2px 8px rgba(82, 39, 255, 0.4);
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.2s ease;
+  --transition-slow: 0.3s ease;
+
+  /* Shared gradient for section titles */
+  --gradient-title: linear-gradient(135deg, #fff 0%, #8660fa 20%, #a855f7 40%, #8400ff 60%, #a855f7 80%, #fff 100%);
+}
+
+/* Shared keyframes — used by section titles across multiple components */
+@keyframes gradientShift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}

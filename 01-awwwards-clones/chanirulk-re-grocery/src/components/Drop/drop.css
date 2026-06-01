@@ -1,0 +1,26 @@
+.drop{
+    overflow-x: hidden;
+    height: 100vh;
+    font-family: gara;
+}
+
+
+.back-pic {
+  background-image: url("/src/components/Img/bg.png");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+}
+
+.head{
+    font-size: 50vw;
+    font-weight: 700;
+    position: absolute;
+    color: #f7f6f2;
+    top: 0;
+    left: 0;
+    transform: translate( 95%, -15%);
+    text-decoration: underline;
+}

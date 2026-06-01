@@ -1,0 +1,55 @@
+@use "../util" as u;
+
+.whatInfo {
+	display: flex;
+	flex-direction: column;
+	gap: 3rem;
+
+	@include u.breakpoint-up(large) {
+		flex-direction: row;
+	}
+
+	&__title {
+		width: 70%;
+	}
+
+	&__info {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 4rem;
+	}
+
+	&__image {
+		background: url("https://thisismagma.com/wp-content/uploads/2023/04/magma.wp2.cubdev.com-home-1.jpeg");
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		width: 100%;
+		border-radius: 15px;
+		margin-inline: auto;
+		min-height: 12.5rem;
+
+		@include u.breakpoint-up(medium) {
+			min-height: 18.75rem;
+		}
+
+		@include u.breakpoint-up(large) {
+			min-height: 25rem;
+		}
+	}
+
+	&__subInfo {
+		h2 {
+			font-weight: bold;
+			margin-bottom: 1rem;
+			letter-spacing: 1pt;
+		}
+
+		p {
+			@include u.breakpoint-up(large) {
+				font-size: 1.375rem;
+			}
+		}
+	}
+}

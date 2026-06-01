@@ -1,0 +1,109 @@
+
+.h{
+    height: 100vh;
+    align-items: center;
+    overflow-x: hidden;
+    border-bottom: 2px solid #236bf3;
+}
+
+.h-loc{
+    left: 20px;
+    top: 3px;
+    color: #236bf3;
+    font-size: 15px;
+    font-weight: 700;
+    position: absolute;
+}
+
+.h-links a{
+    top: 3px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #236bf3;
+    font-size: 15px;
+    font-weight: 700;
+    text-align: center;
+    padding: 55px;
+    position: relative;
+    left: 60%;
+}
+
+
+ 
+
+
+.h-links a:hover{
+    text-shadow:  -100px 0px  2px  #f10000;
+    color: #236bf3;
+    font-size: 20px;
+}
+
+.h-sub{
+    margin: 0;
+    padding: 0;
+    position: relative;
+    margin-top: 15px;
+    text-transform: uppercase;
+    align-items: center;
+    color: #236bf3;
+    font-weight: 700;
+    font-size: 20px;
+    left: 1.5%;
+}
+
+.h-img img{
+    height: auto;
+    width: 35%;
+    border-radius: 50px;
+}
+
+.h-img{
+    position: relative;
+    justify-content: center;
+    left: 0.5%;
+}
+
+.h-img{
+    animation: move 5s ease-in-out infinite alternate;
+    mix-blend-mode: difference;
+}
+
+@keyframes move {
+     
+    25% {
+        transform: translateY(20px);
+    }
+   
+    100% {
+        transform: translateY(-100px);
+    }
+}
+
+.h-main{
+    color: #236bf3;
+    font-family: 'Times New Roman', Times, serif;
+    position: absolute;
+    font-weight: 700;
+    font-size: 175px;
+    text-transform: uppercase;
+    bottom: 1%;
+    z-index: -1;
+}
+
+.h-studio{
+    left: 50%;
+    color: #236bf3;
+    position: absolute;
+    font-weight: 700;
+    font-size: 175px;
+    text-transform: uppercase;
+    bottom: 1%;
+}
+
+
+.h-studio:hover{
+    color: red;
+    cursor: not-allowed;
+}
+
+
