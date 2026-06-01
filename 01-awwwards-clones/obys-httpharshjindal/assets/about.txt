@@ -1,0 +1,6 @@
+This favicon was generated using the following font:
+
+- Font Title: Uncial Antiqua
+- Font Author: Copyright (c) 2011 by Brian J. Bonislawsky DBA Astigmatic (AOETI) (astigma@astigmatic.com), with Reserved Font Name "Uncial Antiqua"
+- Font Source: https://fonts.gstatic.com/s/uncialantiqua/v20/N0bM2S5WOex4OUbESzoESK-i-PfRS5VBBSSF.ttf
+- Font License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL))

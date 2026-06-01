@@ -1,0 +1,79 @@
+---
+title: Striped Pattern
+date: 2025-09-01
+description: A background striped pattern made with SVGs, fully customizable using Tailwind CSS.
+author: matheusfigueiredo
+published: true
+---
+
+<ComponentPreview name="striped-pattern-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @magicui/striped-pattern
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="striped-pattern" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Examples
+
+### Striped Pattern with a dashed stroke
+
+<ComponentPreview name="striped-pattern-dashed" />
+
+### Striped Pattern To Right
+
+<ComponentPreview name="striped-pattern-right" />
+
+### Usage
+
+```tsx
+import { StripedPattern } from "@/components/ui/striped-pattern"
+```
+
+```tsx
+<div className="relative h-[500px] w-full overflow-hidden">
+  <StripedPattern />
+</div>
+```
+
+## Props
+
+### StripedPattern
+
+| Prop        | Type                  | Default  | Description             |
+| ----------- | --------------------- | -------- | ----------------------- |
+| `width`     | `number`              | `40`     | Width of the pattern    |
+| `height`    | `number`              | `40`     | Height of the pattern   |
+| `x`         | `number`              | `-1`     | X offset of the pattern |
+| `y`         | `number`              | `-1`     | Y offset of the pattern |
+| `direction` | `"left"` \| `"right"` | `"left"` | Line direction          |
+
+## Credits
+
+- Credit to [@chishiyac](https://github.com/chishiyac)

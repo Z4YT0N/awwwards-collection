@@ -1,0 +1,135 @@
+.i{
+    height: 150vh;
+    font-family: 'Tenor Sans', sans-serif;
+    text-transform: uppercase;
+    align-items: center;
+    overflow-x: hidden;
+    background-color: black;
+}
+
+
+
+.i-main{
+    height: 770px;
+    border-radius: 30px;
+    top: 10%;
+    margin-left: 5px;
+    margin-right: 5px;
+    position: relative;
+    overflow: auto;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.i-main::-webkit-scrollbar {
+    width: 1px;
+}
+
+.i-main::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.144); 
+    border-radius: 10px;
+}
+
+.i-main::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.075); 
+}
+
+.i-main-title{
+    position: absolute;
+    font-weight: 400;
+    font-size: 160px;
+    color: rgb(255, 247, 234);
+    text-align: center;
+    left: 5%;
+}
+
+.i-main-title-fork{
+    position: relative;
+    width: auto;
+    height: 120px;
+    -webkit-animation:pulse 4s linear infinite;
+    -moz-animation:pulse 4s linear infinite;
+    animation:pulse 4s linear infinite;
+}
+
+@keyframes pulse {
+ 0% {
+   opacity: 1.0;
+   -webkit-transform: scale(1.0) rotate(0deg);
+ }
+ 33% {
+    opacity: 1.0;
+   -webkit-transform: scale(1.0) rotate(-8deg);
+ }
+ 67% {
+    opacity: 1.0;
+   -webkit-transform: scale(1.0) rotate(8deg);
+ }
+ 100% {
+    opacity: 1.0;
+   -webkit-transform: scale(1.0) rotate(0deg);
+ }
+}
+
+
+
+.scroll-i{
+    width: 330px;
+    top: -50%;
+    margin: 0px, 0px;
+    padding: 0px;
+    height: 1800px;
+    position: absolute;
+    overflow-y: scroll;
+    left: 44%;
+    transform: rotate(-90deg);
+}
+
+.scroll-i::-webkit-scrollbar {
+    width: 1px;
+}
+
+
+.scroll-i::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0); 
+    border-radius: 1px;
+}
+
+
+.scroll-i::-webkit-scrollbar-thumb {
+    border-radius: 1px;
+    -webkit-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0); 
+}
+
+
+
+.i-pic-one{
+    width: auto;
+    height: 330px;
+    margin: 55px;
+    transform: rotate(90deg);
+}
+
+.i-pic-one:hover{
+    transform: rotate(100deg);
+}
+
+
+.hover-pc{
+    position: relative;
+    top: 90%;
+    z-index: 1;
+    left: 1%;
+    font-weight: 400;
+    font-size: 70px;
+    color: rgb(131, 119, 14) ;
+    display: none;
+}
+ 
+
+.scroll-i:hover + .hover-pc{
+    display: block;
+}
+

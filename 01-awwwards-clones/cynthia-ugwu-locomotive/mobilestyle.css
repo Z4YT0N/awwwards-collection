@@ -1,0 +1,108 @@
+/*HIDING THE DESKTOP CODE ON MOBILE*/
+@media (max-width: 767px) {
+    #main {
+        display: none;
+    }
+
+    #mainmobile {
+        display: revert;
+    }
+
+    #minicircle {
+        display: none;
+    }
+
+    .elem img {
+        display: none;
+    }
+
+    .hidemobile{
+        display: none;
+    }
+}
+
+/*MODIFYING THE DESKTOP ELEMENTS*/
+@media (max-width: 767px) {
+    .menu {
+        font-size: 14px !important;
+    }
+
+    #nav {
+        padding: 8px 20px;
+    }
+
+
+    #heading {
+        margin-top: 100px;
+
+    }
+
+
+    #heading #secondh1 {
+        margin-left: 80px;
+    }
+
+    #heading h1 {
+        font-size: 14vw;
+        text-transform: uppercase;
+    }
+
+    #chhoti-headings h5 {
+        margin-top: 10px;
+        font-size: 2.5vw;
+    }
+
+
+    .about{
+        flex-direction: column !important;
+        align-items: start !important;
+        gap: 50px;
+        padding-left: 30px;
+        padding: 10vw 5vw;
+    }
+
+    #textabout {
+        width: revert;
+        
+    }
+
+    .footer{
+        flex-direction: column;
+        align-items: center;
+        line-height: 2;
+        padding-top: 100px;
+    }
+
+    .footer img{
+        width: 0px;
+    }
+
+    #herofooter {
+        font-size: 2.5vw;
+        padding: 0px 20px;
+    }
+    
+    #second {
+        color: #fff;
+        padding-right: 4vw;
+        padding-top: 100px;
+        padding-bottom: 80px;
+        background-color: black;
+    }
+
+    .elem {
+        padding: 10vw 3vw;
+    }
+
+}
+
+/* CSS FOR MOBILE ONLY ELEMENTS */
+
+.mobile-banner {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+    text-align: center;
+    padding: 12px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}

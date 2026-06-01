@@ -1,0 +1,41 @@
+---
+import { getLangFromUrl } from '@/i18n/utils';
+import arrowIcon from '@/assets/icons/arrow-big.svg';
+import { projects } from '@/scripts/consts';
+
+const lang = getLangFromUrl(Astro.url);
+---
+
+<section class='md:grid grid-cols-2 flex flex-col gap-5 mt-5'>
+	{
+		projects[lang].map((project, i) => (
+			<a
+				target='_blank'
+				rel='noopener noreferrer'
+				href={project.link}
+				class={`inline-block h-full group ${i === 0 ? 'row-span-2' : ''} ${i === 3 ? 'col-span-2' : ''} appear-siblings`}>
+				<article
+					class={`p-5 items-start h-full min-h-72 rounded-xl overflow-hidden relative w-full bg-cover after:w-full after:h-full after:absolute after:top-0 after:left-0 hover:after:bg-black/60 after:transition-all after:bg-black/80 after:-z-10 text-white flex flex-col justify-end`}>
+					<img
+						src={project.img}
+						alt={project.alt ?? project.name + ' preview'}
+						class='absolute w-full h-full top-0 left-0 object-cover -z-20 group-hover:scale-[1.04] transition-transform'
+					/>
+
+					<h4>{project.tag}</h4>
+					<h3 class='text-3xl group relative inline-block'>
+						{project.name}
+						<img
+							src={arrowIcon.src}
+							alt=''
+							class='w-7 invert top-0 bottom-0 -rotate-45 my-auto absolute right-0 translate-x-2 group-hover:translate-x-8 transition-all opacity-0 group-hover:opacity-100'
+						/>
+					</h3>
+					<p class='text-base opacity-85 mt-2 max-w-[30rem]'>
+						{project.description}
+					</p>
+				</article>
+			</a>
+		))
+	}
+</section>

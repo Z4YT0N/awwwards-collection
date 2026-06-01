@@ -1,0 +1,30 @@
+---
+import { getLangFromUrl, useTranslatedPath } from '@/i18n/utils';
+import { languages } from '../i18n/ui';
+import worldIcon from '@/assets/icons/world.svg';
+
+const language = getLangFromUrl(Astro.url);
+const translatePath = useTranslatedPath(language);
+const currentPath = Astro.url.pathname;
+---
+
+<div class='relative'>
+	<img src={worldIcon.src} alt='' class='w-7 peer' />
+	<ul
+		class='flex absolute hover:opacity-100 hover:translate-y-0 peer-hover:opacity-100 opacity-0 transition-all -translate-y-4 peer-hover:translate-y-0 right-0 top-8 flex-col overflow-hidden rounded bg-indigo-50 bg-slate'>
+		{
+			Object.entries(languages).map(([lang, label]) => {
+				return (
+					<li>
+						<a
+							style={`${lang === language ? 'background: var(--main-color); color:white' : ''}`}
+							class='px-4 py-2 w-full inline-block transition-all hover:opacity-90'
+							href={translatePath(currentPath, lang)}>
+							{label}
+						</a>
+					</li>
+				);
+			})
+		}
+	</ul>
+</div>

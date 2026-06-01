@@ -1,0 +1,27 @@
+/* ─────────────────────────────────────────────────────────────────────────────
+   globals.css — Entry point. Imports all partial stylesheets.
+   Edit individual files in app/styles/ for section-specific changes.
+───────────────────────────────────────────────────────────────────────────── */
+
+@import './styles/base.css';
+/* Fonts, CSS variables, reset, body/html  */
+@import './styles/navbar.css';
+/* Navbar, logos, header hero               */
+@import './styles/hero.css';
+/* Content section title + underline SVG    */
+@import './styles/motion-cards.css';
+/* MotionCard section (heading + cards + text)  */
+@import './styles/showreel.css';
+/* Showreel section placeholder                 */
+@import './styles/cards.css';
+/* Service cards, stickers                  */
+@import './styles/marquee.css';
+/* Double marquee section + animations      */
+@import './styles/footer.css';
+/* Footer layout, credits, stickers         */
+@import './styles/vimeo-hero.css';
+/* Vimeo hero video player + headline       */
+@import './styles/cursor.css';
+/* Custom cursor bubble + scribble overlay  */
+@import './styles/responsive.css';
+/* All media queries (tablet + mobile)      */

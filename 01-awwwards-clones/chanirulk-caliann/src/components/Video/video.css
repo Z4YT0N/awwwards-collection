@@ -1,0 +1,268 @@
+.v{
+    height: 100vh;
+    font-family: 'Tenor Sans', sans-serif;
+    text-transform: uppercase;
+    align-items: center;
+    overflow-x: hidden;
+    background-color: black;
+    margin-top: -55px;
+}
+
+
+.v-main{
+    height: 620px;
+    border-radius: 30px;
+    margin-left: 5px;
+    margin-right: 5px;
+    position: relative;
+    overflow: auto;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+.v-main::-webkit-scrollbar {
+    width: 1px;
+}
+
+.v-main::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.144); 
+    border-radius: 10px;
+}
+
+.v-main::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.075); 
+}
+
+
+
+.v-main-i{
+    animation: move 10s ease-in infinite alternate;
+
+}
+
+@keyframes move {
+     
+    25% {
+        transform: translateY(-20px);
+    }
+
+    50% {
+        transform: translateY(-25px);
+    }
+    
+
+    75% {
+        transform: translateY(-30px);
+    }
+   
+    100% {
+        transform: translateY(-35px);
+    }
+}
+
+
+.v-play{
+    position: relative;
+    top: -337%;
+    left: 2.5%;
+    border-radius: 20px;
+}
+
+.v-about{
+    text-transform: uppercase;
+    font-weight: 400;
+    color: black;
+    font-size: 18px;
+    position: absolute;
+    z-index: 1;
+    top: 150%;
+    left: 45%;
+}
+
+
+.v-des{
+    font-weight: 400;
+    color: black;
+    font-size: 50px;
+    position: absolute;
+    z-index: 1;
+    top: 160%;
+    left: 18%;
+    text-align: center;
+}
+.v-sal{
+    position: absolute;
+    height: auto;
+    width: 6%;
+    transform: rotate(-30deg);
+}
+
+.v-title{
+    position: absolute;
+    font-size: 210px;
+    font-weight: 400;
+    top: 250%;
+    left: 10%;
+    z-index: 1;
+    text-align: center;
+}
+
+
+.v-title-img{
+    position: absolute;
+    top: 330%;
+    z-index: 1;
+    animation: move 10s ease-in infinite alternate;
+}
+
+ 
+@keyframes move {
+     
+    25% {
+        transform: translateY(-20px);
+    }
+
+    50% {
+        transform: translateY(-25px);
+    }
+    
+
+    75% {
+        transform: translateY(-30px);
+    }
+   
+    100% {
+        transform: translateY(-35px);
+    }
+}
+
+.scroll{
+  width: 300px;
+  top: 155%;
+  margin: 4px, 4px;
+  padding: 4px;
+  z-index: 2;
+  height: 1500px;
+  position: absolute;
+  overflow-y: scroll;
+  left: 44%;
+  transform: rotate(-90deg);
+}
+
+.scroll::-webkit-scrollbar {
+    width: 1px;
+}
+
+
+.scroll::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0); 
+    border-radius: 1px;
+}
+
+
+.scroll::-webkit-scrollbar-thumb {
+    border-radius: 1px;
+    -webkit-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0); 
+}
+
+
+
+.s-pic-one{
+    width: 140px;
+    height: 140px;
+    margin: 10px;
+    transform: rotate(90deg);
+}
+
+.hover-p{
+    position: absolute;
+    z-index: 1;
+    top: 300%;
+    left: 1%;
+    font-weight: 400;
+    font-size: 70px;
+    color: rgb(131, 119, 14) ;
+    display: none;
+}
+ 
+
+.scroll:hover + .hover-p{
+    display: block;
+}
+
+
+
+
+.myButton-a {
+    position: absolute;
+    z-index: 2;
+    top: 330%;
+    left: 44%;
+    font-weight: 400;
+	border-radius: 50%;
+	border:1px solid rgb(168, 148, 116);
+	display:inline-block;
+	cursor:pointer;
+	color:#000000;
+	font-family:Arial;
+	font-size: 17px;
+	padding:25px 31px;
+	text-decoration:none;
+}
+.myButton-a:hover {
+	background-color:#000000;
+    color: white;
+    border: 0px solid white;
+}
+.myButton-a:active {
+	position:relative;
+	top:1px;
+}
+
+
+.v-head{
+    position: absolute;
+    z-index: 2;
+    top: 405%;
+    font-weight: 400;
+    font-size: 160px;
+    left: 7%;
+    text-align: center;
+}
+
+.v-abt{
+    position: absolute;
+    z-index: 2;
+    top: 480%;
+    font-weight: 400;
+    font-size: 43px;
+    text-align: center;
+}
+
+.myButton-c {
+    position: absolute;
+    z-index: 2;
+    top: 630%;
+    left: 44%;
+    font-weight: 400;
+	border-radius: 50%;
+	border:1px solid rgb(168, 148, 116);
+	display:inline-block;
+	cursor:pointer;
+	color:#000000;
+	font-family:Arial;
+	font-size: 17px;
+	padding:25px 31px;
+	text-decoration:none;
+}
+.myButton-c:hover {
+	background-color:#000000;
+    color: white;
+    border: 0px solid white;
+}
+.myButton-c:active {
+	position:relative;
+	top:1px;
+}
+

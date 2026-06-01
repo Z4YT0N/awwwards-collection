@@ -1,0 +1,705 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+    font-family: "Montserrat", serif;
+}
+
+/* body{
+    perspective: 800px;
+} */
+
+#nav{
+    height: 145px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0px 150px;
+    position: fixed;
+    z-index: 101;
+    background: transparent;
+    transition-property: all;
+    transition-duration: 0.3s;
+}
+
+#nav img{
+    height: 75px;
+}
+
+#nav h4{
+    text-transform: uppercase;
+    font-weight: 500;
+    height: 50%;
+    align-content: center;
+    cursor: pointer;
+    text-wrap: nowrap;
+}
+
+video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: fixed;
+}
+
+#main{
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.45);
+}
+
+#page1{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 89;
+}
+
+#page1 h1{
+    font-size: 10vw;
+    font-weight: 900;
+    position: relative;
+    z-index: 89;
+    text-wrap: nowrap;
+   
+}
+
+#page1 h1::before{
+    content: 'Eat. Drink. Play';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    color: black;
+    z-index: -1;
+    -webkit-text-stroke: 1px #95c11e;
+}
+
+#page1 h2{
+    font-size: 30px;
+    font-weight: 900;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    z-index: 89;
+    text-align: center;
+}
+
+#page1 p{
+    font-size: 20px;
+    font-weight: 500;
+    width: 50%;
+    text-align: center;
+    z-index: 89;
+}
+
+#page2{
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    z-index: 100;
+}
+
+#cursor{
+    height: 25px;
+    width: 25px;
+    background-color: #95c11e;
+    border-radius: 50%;
+    z-index: 105;
+    position: fixed;
+    pointer-events: none;
+    transition-property: width height border background;
+    transition-duration: 0.1s;
+}
+
+#cursor-blur{
+    height: 250px;
+    width: 250px;
+    background-color: #96c11e4e;
+    border-radius: 50%;
+    z-index: 105;
+    position: fixed;
+    filter: blur(30px);
+    pointer-events: none;
+}
+
+#scroller h4{
+    display: inline-block;
+    font-size: 6rem;
+    margin-right: 50px;
+    text-transform: uppercase;
+    color: black;
+    text-shadow: 2px 2px 0px #95c11e, -2px -2px 0px #95c11e, 2px -2px 0px #95c11e, -2px 2px 0px #95c11e;
+    letter-spacing: 5px;
+    transition-property: all;
+    transition-duration: 0.3s;
+}
+
+#scroller h4:hover{
+    color: #95c11e;
+}
+
+#scroller{
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 50px;
+    position: relative;
+    z-index: -2;
+
+}
+
+#scroller::-webkit-scrollbar{
+    display: none;
+}
+
+#scroll-in{
+    animation-name: scroll;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+}
+
+@keyframes scroll{
+
+    from{
+        transform: translateX(50%);
+    }
+
+    to{
+        transform: translateX(-220%);
+    }
+}
+
+#about-us{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    place-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 11;
+    opacity: 0;
+    position: relative;
+    top: 30px;
+}
+
+#about-img-1{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    border-radius: 20px;
+    width: 200px;
+    object-fit: cover;
+}
+
+#about-us-in{
+    grid-column-start: 2;
+    grid-column-end: 4;
+    text-align: center;
+}
+
+#about-us-in h1{
+    margin: 10px;
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+#about-img-2{
+    grid-column-start: 4;
+    grid-column-end: 5;
+    border-radius: 20px;
+    width: 200px;
+    object-fit: cover;
+}
+
+#about-us-in p{
+    line-height: 30px;
+    font-size: 1rem;
+}
+
+#cards-conatiner{
+    height: 500px;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    perspective: 1200px;
+    position: relative;
+    z-index: 108;
+}
+
+.cards{
+    height: 85%;
+    width: 30%;
+    margin: 10px;
+    border-radius: 20px;
+    background-position: center;
+    background-size: cover;
+    text-align: start;
+    align-content: end;
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 900;
+    padding: 10px;
+    position: relative;
+    transition-property: all;
+    transition-duration: 1s;
+    z-index: 109;
+}
+
+#card1{
+    background-image: url(./assets/card1.avif);
+}
+
+#card2{
+    background-image: url(./assets/card2.avif);
+}
+
+#card3{
+    background-image: url(./assets/card3.avif);
+}
+
+.overlay{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    background-color: #95c11e;
+    padding-top: 120px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    border-radius: inherit;
+    opacity: 0;
+    transition-property: all;
+    transition-duration: 0.5s;
+    z-index: 110;
+    overflow: hidden;
+}
+
+.overlay:hover{
+    opacity: 1;
+}
+
+.overlay h3{
+    color: black;
+    font-size: 2.5vw;
+    font-weight: 900;
+    white-space: nowrap;
+    margin-bottom: 20px;
+}
+
+
+.fa-arrow-right-long{
+    position: absolute;
+    right: -40px;
+    top: -52px;
+    color: black;
+    border: 2px solid black;
+    padding: 50px;
+    border-radius: 50%;
+}
+
+.overlay p{
+    font-size: 1rem;
+    color: black;
+    font-weight: 500;
+    line-height: 30px;
+    margin-top: 40px;
+}
+
+.cards:hover{
+    transform: rotate3d(1,1,0,10deg);
+}
+
+#CTA{
+    height: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    overflow: hidden;
+    background-image: linear-gradient(red -40%, #95c11e 40% );
+}
+
+#CTA p{
+    width: 620px;
+    text-align: center;
+    color: black;
+    font-weight: 900;
+    z-index: 10;
+}
+
+#CTA img:first-child{
+    transform: rotateY(180deg);
+}
+
+#CTA img{
+    height: inherit;
+    scale: 2;
+}
+
+#quote1{
+    height: 100px;
+    z-index: 50;
+    position: relative;
+}
+
+#quote2{
+    height: 100px;
+    z-index: 50;
+    position: relative;
+}
+#page3{
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#quote-para{
+    position: relative;
+    text-align: center;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    width: 60%;
+    line-height: 45px;
+}
+
+#quote1{
+    position: absolute;
+    left: 7%;
+    top: 15%;
+    width: 5%;
+    
+}
+
+#quote2{
+    position: absolute;
+    right:7%;
+    bottom: 10%;
+    width: 5%;
+    rotate: 180deg;
+}
+
+#page4{
+    height: auto;
+    width: 100%;
+    background-color: black;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+#page4 > h1{
+    font-size: 5vw;
+    font-weight: 900;
+    text-align: center;
+    text-transform: uppercase;
+    color: black;
+    text-shadow: 2px 2px 0px #95c11e, -2px -2px 0px #95c11e, 2px -2px 0px #95c11e, -2px 2px 0px #95c11e;
+    position: relative;
+    letter-spacing: 5px;
+    top: 22px;
+}
+
+#page4-child{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+#ToptraceRange, #GolfLessons, #AdventureGolf {
+    width: 28%;
+    height: 200px;
+    border-radius: 20px;
+    position: relative;
+    background-color: #95c11e;
+}
+
+#ToptraceRange h1, #GolfLessons h1, #AdventureGolf h1{
+    color: black;
+    transition-property: all;
+    transition-duration: 0.3s;
+    background-color: rgba(0, 0, 0, 0.1);
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    z-index: 99;
+}
+
+#ToptraceRange img, #GolfLessons img, #AdventureGolf img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 20px;
+    opacity: 0;
+    transition-property: all;
+    transition-duration: 1s;
+    scale: 1.1;
+    overflow: hi;
+}
+
+#ToptraceRange h1, #GolfLessons h1, #AdventureGolf h1{
+    font-size: 2rem;
+    font-weight: 900;
+    text-align: center;
+    align-content: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    left: 50%;
+    text-wrap: wrap;
+    text-transform: uppercase;
+}
+#ToptraceRange h1:hover + img, #GolfLessons h1:hover + img, #AdventureGolf h1:hover + img{
+    opacity: 1;
+    scale: 1;
+}
+
+#ToptraceRange img:hover, #GolfLessons img:hover, #AdventureGolf img:hover{
+    opacity: 1;
+    scale: 1;
+}
+
+#ToptraceRange h1:hover, #GolfLessons h1:hover, #AdventureGolf h1:hover{
+    color: white;
+}
+
+#ToptraceRange:hover > h1, #GolfLessons:hover > h1 , #AdventureGolf:hover > h1{
+    color: white;
+}
+
+footer{
+    height: 300px;
+    position: relative;
+    background-color: #95c11e;
+    overflow: hidden;
+}
+
+/* footer img{
+    width: 150px;
+    object-position: center;
+} */
+
+#f1 img{
+    width: 150px;
+}
+
+.fa-brands{
+    display: block;
+}  
+
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    flex-wrap: wrap;
+}
+
+#f1 img{
+    margin: 10px;
+}
+
+#f1 div i{
+    margin-left: 10px;
+    font-size: 2rem;
+    color: black;
+}
+
+#f1{
+    color: black;
+    position: relative;
+    z-index: 2;
+}
+
+#f2 h1 , #f3 h1, #f4 p, #f4 h6{
+    color: black;
+    text-transform: uppercase;
+}
+
+/* #f2 h1 , #f3 h1{
+    font-size: 2vw;
+} */
+#f4 h6{
+    font-size: 1.5vw;
+}
+
+#f4 p{
+    font-weight: 500;
+}
+
+#f2 h1{
+    font-size: 2vw;
+}
+
+#f3 h1{
+    font-size: 2vw;
+}
+
+footer::before{
+    content: '';
+    background-image: url(./assets/dots-footer.svg);
+    height: 100%;
+    width: 350px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    background-repeat: none;
+    background-position: center;
+    z-index: 1;
+}
+
+.fa-circle-chevron-down{
+    font-size: 2rem;
+    color: white;
+    position: absolute !important;
+    z-index: 2;
+    margin-top: 20px;
+    cursor: pointer;
+    transition-property: all;
+    transition-duration: 0.3s;
+    right: 24px;
+    top: 18px;
+    display: none !important;
+}
+
+@media (max-width: 1207px){
+
+    #nav{
+        padding: 0px 0px;
+    }
+
+    
+}
+
+@media (max-width: 1020px){
+
+    #f4 h6{
+        font-size: 15.3px;
+    }
+    
+    #f4 p{
+        font-weight: 500;
+    }
+    
+    #f2 h1{
+        font-size: 20.4px;
+    }
+    
+    #f3 h1{
+        font-size: 20.4px;
+    }
+
+    footer{
+        height: auto;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+        padding: 20px;
+    }
+
+    footer::before{
+        display: none;
+    }
+}
+
+@media (max-width: 975px){
+
+    #cards-conatiner{
+        flex-direction: column;
+        height: auto;
+    }
+
+    .cards{
+        width: 80%;
+        height: 470px;
+    }
+
+    #nav{
+        flex-direction: column;
+        height: 108px !important;
+        align-items: flex-start;
+        padding: 20px;
+        overflow: hidden;
+        background-color: black !important;
+        gap: 20px;
+    }
+
+    .fa-circle-chevron-down{
+        display: block !important;
+    }
+}
+
+@media (max-width: 850px) {
+    
+
+    #about-img-1{
+        display: none;
+    }
+
+    #about-img-2{
+        display: none;
+    }
+
+    #about-us-in{
+        grid-column-start: 1;
+        grid-column-end: 5;
+    }
+
+    #page4-child{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #ToptraceRange, #GolfLessons, #AdventureGolf{
+        width: 80%;
+    }
+
+
+}
+
+@media (max-width: 790px){
+
+    #page4 > h1{
+        top: 0px;
+    }
+
+    #scroller h4{
+        font-size: 3rem;
+    }
+
+    #page1 p {
+        width: 90%;
+    }
+}
+
+@media (max-width: 530px){
+
+    #page3{
+        padding: 20px;
+        height: auto;
+    }
+
+    *{
+        height: auto;
+    }
+}
+
+@media (pointer: coarse){
+
+    #cursor{
+        display: none;
+    }
+}

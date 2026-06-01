@@ -1,0 +1,182 @@
+#footer{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    background: #000;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    overflow: hidden;
+    padding: 40px;
+
+}
+
+#footer #part1 {
+    height: 30%;
+    width: 100%;
+    position: relative;
+
+    display: flex;
+    justify-content: space-between;
+
+    /* background: #4d328b; */
+
+    
+}
+
+#footer #part1 #left {
+    
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    
+
+    /* background: #7d2c2c; */
+}
+
+#footer #part1 #left h3{
+    font-size: 25px;
+    font-weight: 300;
+    
+}
+
+#footer #part1 #left a{
+    width: fit-content;
+    padding: 17px 30px;
+    border-radius: 30px;
+    border: 1px solid white;
+    margin-top: 20px;
+    color: white;
+}
+
+
+#footer #part1 #right {
+    
+    /* background: #d47878; */
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+
+    gap: 20px;
+}
+
+#footer #part1 #right  #section1 , #footer #part1 #right  #section2{
+    height: 100%;
+    
+    position: relative;
+    /* background: #5f2a9b; */
+    
+    /* padding: 40px; */
+}
+
+#footer #part1 #right  #section1 a ,#footer #part1 #right  #section2 a{
+    display: block;
+    color: white;
+    margin: 5px;
+}
+
+
+
+#footer #part2 {
+    height: 60%;
+    width: 100%;
+    position: relative;
+
+    
+    
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+#footer #part2 #copyright {
+    height: 30%;
+    width: 100%;
+    /* background-color: #1e0e79; */
+    display: flex;
+    justify-content: space-between;
+}
+
+#footer #part2 #copyright #section2{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 20px;
+}
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+    #footer{
+        padding: 10px;
+        height: 100vh;
+    
+    }
+
+    #footer #part1 #left a{
+        
+        padding: 10px 20px;
+        
+    }
+
+    #footer #part1 #left h3{
+        font-size: 20px;
+        
+        
+    }
+
+
+
+    #footer #part2 #copyright h1 {
+        font-size: 20px;
+    }
+
+    #footer #part2 #copyright h3 {
+        font-size: 10px;
+    }
+    
+
+    #footer #part2 #copyright p {
+        font-size: 10px;
+    }
+    #footer #part2 #copyright #section2{
+       
+        gap: 10px;
+    }
+
+
+
+
+
+
+
+    
+    
+}
+
+
+@media (max-width: 450px) {
+    #footer #part2 {
+        height: 50%;
+        
+    }  
+
+    #footer{
+        height: 90vh;
+       
+    
+    }
+    
+
+}

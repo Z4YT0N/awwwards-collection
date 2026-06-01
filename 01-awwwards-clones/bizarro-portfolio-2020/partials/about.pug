@@ -1,0 +1,229 @@
+mixin award(link, date, title, description, project)
+  li.about__section__list__item
+    span.about__section__list__dash(data-animation="line" data-animation-threshold="1" data-animation-target=".about__section__list__item")
+
+    a.about__section__list__link(
+      data-animation="y"
+      data-animation-threshold="1"
+      data-animation-target=".about__section__list__item"
+      href=link target="_blank"
+      rel="noreferrer noopener"
+    )
+      span.about__section__list__column=date
+      span.about__section__list__column=title
+      span.about__section__list__column=description
+      span.about__section__list__column=project
+
+mixin press(link, title, description)
+  li.about__section__list__item
+    span.about__section__list__dash(data-animation="line" data-animation-threshold="1" data-animation-target=".about__section__list__item")
+
+    a.about__section__list__link.about__section__list__link--article(
+      data-animation="y"
+      data-animation-threshold="1"
+      data-animation-target=".about__section__list__item"
+      href=link target="_blank"
+      rel="noreferrer noopener"
+    )
+      span.about__section__list__column=title
+      span.about__section__list__column=description
+
+section.about
+  .about__content
+    .about__wrapper
+      header.about__header
+        h1.about__header__title
+          span.about__header__title__text
+            | #[span LUIS]
+            | #[span BIZARRØ]
+
+          span.about__header__title__text
+            | #[span 18/SEP ’95] #[span  -] #[span SP]
+
+          span.about__header__title__text
+            | #[span CREATIVE]
+
+          span.about__header__title__text
+            | #[span +]
+            | #[span DEVELOPER]
+
+      .about__gallery(data-src="/about.webp")
+        each _, index in Array(24)
+          .about__gallery__media(class=[1, 2, 8, 9, 11, 12, 13, 15, 16, 19, 21, 23].indexOf(index) > -1 ? "about__gallery__media--transparent" : "" data-index=index)
+
+        a.about__gallery__text(
+          href="https://www.nationalgallery.org.uk/paintings/ignace-henri-theodore-fantin-latour-a-basket-of-roses"
+          rel="noreferrer noopener"
+          target="_blank"
+        )
+          | #[strong A Basket of Roses]
+          | Ignace-Henri-Théodore Fantin-Latour
+
+      .about__sections
+        .about__section
+          h2.about__section__title About
+
+          .about__section__content
+            p.about__section__description(data-animation="paragraph")
+              | Creative Technologist specialized in crafting cutting-edge real-time 3D&nbsp;experiences using WebGL, Shaders, JavaScript and TypeScript.
+
+            p.about__section__description(data-animation="paragraph")
+              | Over a decade of experience in the industries of creative technology and web development, working with projects across diverse mediums, including websites, games, interactive&nbsp;installations and apps.
+
+            p.about__section__description(data-animation="paragraph")
+              | Collaborations include leading brands and clients such as Airbnb, Apple, Ambush, Peggy&nbsp;Gou, Xbox, Nike, YouTube, Google, Microsoft, Samsung, Anduril, Expa, One&nbsp;Plus, Lufthansa, Corvette, HBO, Shell, Cartoon&nbsp;Network and Discovery&nbsp;Kids.
+
+        .about__section
+          h2.about__section__title Awards #[br] & Honors
+
+          .about__section__content
+            p.about__section__number 110+
+
+            ul.about__section__list
+              +award("https://vote.webbyawards.com/PublicVoting#/2022/websites-and-mobile-sites/general-websites-and-mobile-sites/entertainment", "2022", "The Webby Awards", "Entertainment Nominee", "Xbox Museum")
+              +award("https://vote.webbyawards.com/PublicVoting#/2022/virtual-remote/general/media-entertainment", "2022", "The Webby Awards", "Media & Entertainment Nominee", "The Game Awards Microverse")
+              +award("https://vote.webbyawards.com/PublicVoting#/2022/websites-and-mobile-sites/features-design/best-user-interface", "2022", "The Webby Awards", "Best User Interface Honoree", "Google Marketing Live")
+              +award("https://www.awwwards.com/sites/the-game-awards-microverse", "Feb 5, 2022", "Awwwards", "Site of The Day", "The Game Awards Microverse")
+              +award("https://www.awwwards.com/annual-awards-2021/independent-of-the-year", "2021", "Awwwards", "Independent of The Year")
+              +award("https://annual.awwwards.com/independent-nominees/bizarro", "2021", "Awwwards", "Independent of The Year Nominee")
+              +award("https://annual.awwwards.com/siteoftheyear-nominees/20-years-of-xbox-museum", "2021", "Awwwards", "Site of The Year Nominee", "Xbox Museum")
+              +award("https://annual.awwwards.com/developer-nominees/kacper-chlebowicz-2021", "2021", "Awwwards", "Developer Site of The Year Nominee", "Kacper Chlebowicz")
+              +award("https://annual.awwwards.com/developer-nominees/impermanence", "2021", "Awwwards", "Developer Site of The Year Nominee", "Impermanence")
+              +award("https://annual.awwwards.com/developer-nominees/isabel-moranta", "2021", "Awwwards", "Developer Site of The Year Nominee", "Isabel Moranta")
+              +award("https://annual.awwwards.com/developer-nominees/floema-jewelry", "2021", "Awwwards", "Developer Site of The Year Nominee", "Floema Jewelry")
+              +award("https://annual.awwwards.com/ecommerce-nominees/garoa-skincare", "2021", "Awwwards", "eCommerce Site of The Year Nominee", "Garoa Skincare")
+              +award("https://annual.awwwards.com/ecommerce-nominees/sal-parasuco", "2021", "Awwwards", "eCommerce Site of The Year Nominee", "Sal Parasuco")
+              +award("https://annual.awwwards.com/mobile-nominees/impermanence", "2021", "Awwwards", "Mobile Site of The Year Nominee", "Impermanence")
+              +award("https://award.ddd.it/annual_nominee/2021", "2021", "Digital Design Award", "Annual Navigation Design", "Floema Jewelry")
+              +award("https://award.ddd.it/annual_nominee/2021", "2021", "Digital Design Award", "Annual Navigation Design Nominee", "Floema Jewelry")
+              +award("https://award.ddd.it/annual_nominee/2021", "2021", "Digital Design Award", "Annual Use of Photography Nominee", "Floema Jewelry")
+              +award("https://award.ddd.it/annual_nominee/2021", "2021", "Digital Design Award", "Annual Use of Photography Nominee", "Sal Parasuco")
+              +award("https://award.ddd.it/annual_nominee/2021", "2021", "Digital Design Award", "Annual eCommece Nominee", "Sal Parasuco")
+              +award("https://www.awwwards.com/sites/20-years-of-xbox-museum", "Dec 2021", "Awwwards", "Site of The Month", "Xbox Museum")
+              +award("https://thefwa.com/cases/20-years-of-xbox-museum", "Dec 2021", "FWA", "FWA of The Month", "Xbox Museum")
+              +award("https://www.awwwards.com/vote-for-site-of-the-month-december-2021-and-win-a-free-professional-profile-in-our-designers-directory.html", "Dec 2021", "Awwwards", "Site of The Month Nominee", "Xbox Museum")
+              +award("https://www.awwwards.com/sites/20-years-of-xbox-museum", "Dec 28, 2021", "Awwwards", "Developer Award", "Xbox Museum")
+              +award("https://www.awwwards.com/sites/20-years-of-xbox-museum", "Dec 28, 2021", "Awwwards", "Site of The Day", "Xbox Museum")
+              +award("https://www.awwwards.com/sites/bbdo-creative-agency-portfolio", "Dec 26, 2021", "Awwwards", "Developer Award", "BBDO")
+              +award("https://www.awwwards.com/sites/bbdo-creative-agency-portfolio", "Dec 26, 2021", "Awwwards", "Site of The Day", "BBDO")
+              +award("https://www.cssdesignawards.com/sites/20-years-of-xbox-museum/40236/", "Dec 17, 2021", "CSS Design Awards", "Site of The Day", "Xbox Museum")
+              +award("https://thefwa.com/cases/20-years-of-xbox-museum", "Nov 26, 2021", "FWA", "FWA of The Day", "Xbox Museum")
+              +award("https://www.awwwards.com/sites/sal-parasuco", "Oct 14, 2021", "Awwwards", "Developer Award", "Sal Parasuco")
+              +award("https://www.awwwards.com/sites/sal-parasuco", "Oct 14, 2021", "Awwwards", "Site of The Day", "Sal Parasuco")
+              +award("https://award.ddd.it/project/progetti-ecommerce/sal-parasuco", "Oct 11, 2021", "Digital Design Award", "Project of The Week", "Sal Parasuco")
+              +award("https://www.awwwards.com/sites/floema-jewelry", "July 30, 2021", "Awwwards", "Developer Award", "Floema Jewelry")
+              +award("https://www.awwwards.com/sites/floema-jewelry", "July 30, 2021", "Awwwards", "Site of The Day", "Floema Jewelry")
+              +award("https://www.cssdesignawards.com/sites/isabel-moranta/39295/", "July 25, 2021", "CSS Design Awards", "Site of The Day", "Isabel Moranta")
+              +award("https://award.ddd.it/project/siti-web/floema-jewelry", "July 12, 2021", "Digital Design Award", "Project of The Week", "Floema Jewelry")
+              +award("https://www.awwwards.com/sites/isabel-moranta", "Apr 6, 2021", "Awwwards", "Developer Award", "Isabel Moranta")
+              +award("https://www.awwwards.com/sites/isabel-moranta", "Apr 6, 2021", "Awwwards", "Site of The Day", "Isabel Moranta")
+              +award("https://www.cssdesignawards.com/sites/floema-jewelry/39362/", "Jul 4, 2021", "CSS Design Awards", "Site of The Day", "Floema Jewelry")
+              +award("https://www.awwwards.com/vote-for-site-of-the-month-april-2021-and-win-a-free-profile-in-our-designers-directory.html", "Apr 2021", "Awwwards", "Site of The Month Nominee", "Garoa Skincare")
+              +award("https://www.awwwards.com/sites/garoa-skincare", "Apr 6, 2021", "Awwwards", "Developer Award", "Garoa Skincare")
+              +award("https://www.awwwards.com/sites/garoa-skincare", "Apr 6, 2021", "Awwwards", "Site of The Day", "Garoa Skincare")
+              +award("https://thefwa.com/cases/sundance-new-frontier", "Apr 3, 2021", "FWA", "FWA of The Day", "Sundance: New Frontier")
+              +award("https://www.awwwards.com/vote-for-site-of-the-month-march-2021-and-win-a-free-profile-in-our-designers-directory.html", "Mar 2020", "Awwwards", "Site of The Month Nominee", "Design Embraced")
+              +award("https://www.awwwards.com/sites/design-embraced-3", "Mar 8, 2021", "Awwwards", "Developer Award", "Design Embraced")
+              +award("https://www.awwwards.com/sites/design-embraced-3", "Mar 8, 2021", "Awwwards", "Site of The Day", "Design Embraced")
+              +award("https://www.awwwards.com/sites/kacper-chlebowicz-2021", "Feb 20, 2021", "Awwwards", "Developer Award", "Kacper Chlebowicz")
+              +award("https://www.awwwards.com/sites/kacper-chlebowicz-2021", "Feb 20, 2021", "Awwwards", "Site of The Day", "Kacper Chlebowicz")
+              +award("https://www.behance.net/gallery/110071971/BIZARROE-Personal-Portfolio-Website", "Jan 14, 2021", "Behance", "UI/UX Feature", "BIZARRØ")
+              +award("https://www.cssdesignawards.com/woty2020", "2020", "CSS Design Awards", "Site of The Year Nominee", "Deliciously Dark Escape")
+              +award("https://annual.awwwards.com/categories/independent-of-the-year/luis-henrique-bizarro", "2020", "Awwwards", "Independent of The Year Nominee")
+              +award("https://annual.awwwards.com/categories/site-of-the-year/adventure-time-distant-lands", "2020", "Awwwards", "Site of The Year Nominee", "Adventure Time")
+              +award("https://annual.awwwards.com/categories/site-of-the-year/deliciously-dark-escape", "2020", "Awwwards", "Site of The Year Nominee", "Deliciously Dark Escape")
+              +award("https://annual.awwwards.com/categories/site-of-the-year/studio-mrtens", "2020", "Awwwards", "Site of The Year Nominee", "Studio Mærtens")
+              +award("https://annual.awwwards.com/categories/developer-site-of-the-year/deliciously-dark-escape", "2020", "Awwwards", "Developer Site of The Year Nominee", "Deliciously Dark Escape")
+              +award("https://annual.awwwards.com/categories/mobile-site-of-the-year/kaleidoz-design-website", "2020", "Awwwards", "Mobile Site of The Year Nominee", "Kaleidoz")
+              +award("https://www.cssdesignawards.com/blog/website-of-the-month-2020-december/341/", "Dec 2020", "CSS Design Awards", "Site of The Month Nominee", "Deliciously Dark Escape")
+              +award("https://www.awwwards.com/vote-for-site-of-the-month-december-2020-and-win-a-free-profile-in-our-designers-directory.html", "Dec 2020", "Awwwards", "Site of The Month Nominee", "Deliciously Dark Escape")
+              +award("https://www.cssdesignawards.com/sites/deliciously-dark-escape/38266/", "Dec 25, 2020", "CSS Design Awards", "Site of The Day", "Deliciously Dark Escape")
+              +award("https://www.awwwards.com/sites/deliciously-dark-escape", "Dec 16, 2020", "Awwwards", "Developer Award", "Deliciously Dark Escape")
+              +award("https://www.awwwards.com/sites/deliciously-dark-escape", "Dec 16, 2020", "Awwwards", "Site of The Day", "Deliciously Dark Escape")
+              +award("https://thefwa.com/cases/deliciously-dark-escape", "Dec 02, 2020", "FWA", "FWA of The Day", "Deliciously Dark Escape")
+              +award("https://thefwa.com/cases/inbound-2020", "Oct 28, 2020", "FWA", "FWA of The Day", "INBOUND 2020")
+              +award("https://www.cssdesignawards.com/sites/duall-studio/37667/", "Oct 12, 2020", "CSS Design Awards", "Site of The Day", "Duall")
+              +award("https://www.awwwards.com/sites/duallstudio/", "Sep 26, 2020", "Awwwards", "Developer Award", "Duall")
+              +award("https://www.awwwards.com/sites/duallstudio/", "Sep 26, 2020", "Awwwards", "Site of The Day", "Duall")
+              +award("https://thefwa.com/cases/hulu-pridefest", "Sep 17, 2020", "FWA", "FWA of The Day", "Hulu Pride Fest")
+              +award("https://thefwa.com/cases/oneplus-crackables-20-p2", "Aug 13, 2020", "FWA", "FWA of The Day", "Crackables 2.0")
+              +award("https://www.awwwards.com/vote-now-for-julys-site-of-the-month-and-win-a-years-free-pro-plan-in-the-awwwards-directory-1.html", "Jul 2020", "Awwwards", "Site of The Month Nominee", "Adventure Time Distant Lands")
+              +award("https://www.awwwards.com/sites/kaleidoztm-design-website", "Jul 24, 2020", "Awwwards", "Developer Award", "Kaleidoz")
+              +award("https://www.awwwards.com/sites/kaleidoztm-design-website", "Jul 24, 2020", "Awwwards", "Site of The Day", "Kaleidoz")
+              +award("https://thefwa.com/cases/kaleidoztm-design-website-p2", "Jul 22, 2020", "FWA", "FWA of The Day", "Kaleidoz")
+              +award("https://www.cssdesignawards.com/sites/adventure-time-distant-lands/37288/", "Jul 12, 2020", "CSS Design Awards", "Site of The Day", "Adventure Time Distant Lands")
+              +award("https://www.awwwards.com/sites/adventure-time-distant-lands", "Jul 10, 2020", "Awwwards", "Developer Award", "Adventure Time Distant Lands")
+              +award("https://www.awwwards.com/sites/adventure-time-distant-lands", "Jul 10, 2020", "Awwwards", "Site of The Day", "Adventure Time Distant Lands")
+              +award("https://thefwa.com/cases/redisconf20/", "Jul 02, 2020", "FWA", "FWA of The Day", "RedisConf 2020")
+              +award("https://www.awwwards.com/vote-now-for-junes-site-of-the-month-and-win-a-years-free-pro-plan-in-the-awwwards-directory-3.html", "Jun 2020", "Awwwards", "Site of The Month Nominee", "Studio Mærtens")
+              +award("https://www.cssdesignawards.com/blog/website-of-the-month-2020-june/335/", "Jun 2020", "CSS Design Awards", "Site of The Month Nominee", "Studio Mærtens")
+              +award("https://thefwa.com/cases/adventure-time-distant-lands-bmo", "Jun 18, 2020", "FWA", "FWA of The Day", "Adventure Time Distant Lands")
+              +award("https://cssdesignawards.com/sites/studio-maertens/37148/", "Jun 07, 2020", "CSS Design Awards", "Site of The Day", "Studio Mærtens")
+              +award("https://thefwa.com/cases/studio-maertensr-industrial-design-studio-p3", "Jun 07, 2020", "FWA", "FWA of The Day", "Studio Mærtens")
+              +award("https://www.awwwards.com/sites/studio-maertens", "Jun 05, 2020", "Awwwards", "Developer Award", "Studio Mærtens")
+              +award("https://www.awwwards.com/sites/studio-maertens", "Jun 05, 2020", "Awwwards", "Site of The Day", "Studio Mærtens")
+              +award("https://www.behance.net/gallery/97244173/Studio-Maertens-Industrial-Design-Studio-Website", "Jun 05, 2020", "Behance", "UI/UX Feature", "Studio Mærtens")
+              +award("https://www.behance.net/gallery/97244173/Studio-Maertens-Industrial-Design-Studio-Website", "May 22, 2020", "Behance", "AIGA Feature", "Studio Mærtens")
+              +award("https://www.behance.net/gallery/89455165/Bruno-Arizio-Portfolio", "Apr 13, 2020", "Behance", "AIGA Feature", "Bruno Arizio")
+              +award("https://www.behance.net/gallery/93147167/Erika-Moreira-Portfolio", "Apr 03, 2020", "Behance", "AIGA Feature", "Erika Moreira")
+              +award("https://www.behance.net/gallery/89455165/Bruno-Arizio-Portfolio", "Apr 03, 2020", "Behance", "UI/UX Feature", "Bruno Arizio")
+              +award("https://www.behance.net/gallery/93147167/Erika-Moreira-Portfolio", "Mar 23, 2020", "Behance", "AIGA Feature", "Erika Moreira")
+              +award("https://thefwa.com/cases/bruno-arizio", "Mar 23, 2020", "FWA", "FWA of The Day", "Bruno Arizio")
+              +award("https://www.cssdesignawards.com/sites/erika-moreira-portfolio/36741/", "Mar 21, 2020", "CSS Design Awards", "Site of The Day", "Erika Moreira")
+              +award("https://www.awwwards.com/sites/erika-moreira-portfolio", "Mar 16, 2020", "Awwwards", "Developer Award", "Erika Moreira")
+              +award("https://www.awwwards.com/sites/erika-moreira-portfolio", "Mar 16, 2020", "Awwwards", "Site of The Day", "Erika Moreira")
+              +award("https://thefwa.com/cases/johnnie-walker-dragon-glass", "Feb 09, 2020", "FWA", "FWA of The Day", "Johnnie Walker: Dragon Glass")
+              +award("https://annual.awwwards.com/categories/independent-of-the-year/luis-henrique-bizarro", "2019", "Awwwards", "Independent of The Year Nominee")
+              +award("https://annual.awwwards.com/categories/site-of-the-year/dominic-berzins", "2019", "Awwwards", "Site of The Year Nominee", "Dominic Berzins")
+              +award("https://www.awwwards.com/sites/bruno-arizio-portfolio", "Nov 25, 2019", "Awwwards", "Developer Award", "Bruno Arizio")
+              +award("https://www.awwwards.com/sites/bruno-arizio-portfolio", "Nov 25, 2019", "Awwwards", "Site of The Day", "Bruno Arizio")
+              +award("https://thefwa.com/cases/samsung-spaceselfie", "Nov 22, 2019", "FWA", "FWA of The Day", "Samsung SpaceSelfie")
+              +award("https://www.awwwards.com/vote-now-for-marchs-site-of-the-month-and-win-a-years-free-pro-plan-in-the-awwwards-directory.html", "Mar 2019", "Awwwards", "Site of The Month Nominee", "Dominic Berzins")
+              +award("https://www.cssdesignawards.com/blog/website-of-the-month-2019-march/314/", "Mar 2019", "CSS Design Awards", "Site of The Month Nominee", "Dominic Berzins")
+              +award("https://www.cssdesignawards.com/sites/dominic-berzins/34803/", "Mar 19, 2019", "CSS Design Awards", "Site of The Day", "Dominic Berzins")
+              +award("https://thefwa.com/cases/tiaa-difference-maker", "Mar 26, 2019", "FWA", "FWA of The Day", "TIAA: The Difference Maker")
+              +award("https://thefwa.com/cases/giant-ar-screen-p2", "Mar 24, 2019", "FWA", "FWA of The Day", "EMAAR’s VR Park")
+              +award("https://thefwa.com/cases/dominic-berzins", "Mar 11, 2019", "FWA", "FWA of The Day", "Dominic Berzins")
+              +award("https://www.awwwards.com/sites/dominic-berzins", "Mar 07, 2019", "Awwwards", "Developer Award", "Dominic Berzins")
+              +award("https://www.awwwards.com/sites/dominic-berzins", "Mar 07, 2019", "Awwwards", "Site of The Day", "Dominic Berzins")
+              +award("https://thefwa.com/cases/google-pixel-holidays", "Mar 06, 2019", "FWA", "FWA of The Day", "Google Pixel Holidays")
+              +award("https://www.awwwards.com/mobile-sites/dominic-berzins", "Mar 01, 2019", "Awwwards", "Mobile of The Week", "Dominic Berzins")
+              +award("https://www.awwwards.com/sites/cult", "Dec 12, 2018", "Awards", "Developer Award", "Cult")
+              +award("https://www.awwwards.com/sites/cult", "Dec 12, 2018", "Awards", "Site of The Day", "Cult")
+              +award("https://thefwa.com/cases/stubhub-gift-rapper", "Dec 10, 2018", "FWA", "FWA of The Day", "Stubhub Gift Rapper")
+              +award("https://thefwa.com/cases/samsung-augmented-reality-spacesuit", "May 18, 2018", "FWA", "FWA of The Day", "Samsung AR Supersuit")
+              +award("https://thefwa.com/cases/shell-make-the-future", "Feb 20, 2018", "FWA", "FWA of The Day", "Shell Make The Future")
+              +award("http://winners.lovieawards.eu/share/?y=2018&a=201", "2018", "The Lovie Awards", "Best Visual Design", "Silver: Shell Make The Future")
+              +award("https://thefwa.com/cases/nike-city-fast", "Dec 12, 2017", "FWA", "FWA of The Day", "Nike City Fast")
+              +award("https://experiments.withgoogle.com/naturally-bizarre", "Oct 2016", "Google", "Chrome Experiments", "Naturally Bizarre")
+              +award("https://experiments.withgoogle.com/triangles", "Dec 2015", "Google", "Chrome Experiments", "Triangles")
+
+        .about__section
+          h2.about__section__title PRESS
+
+          .about__section__content
+            p.about__section__number 10+
+
+            ul.about__section__list
+              +press("https://www.commarts.com/webpicks/20-years-of-xbox-museum", "Communication Arts", "Xbox Museum")
+              +press("https://www.awwwards.com/academy/course/building-an-immersive-creative-website-from-scratch-without-frameworks", "Awwwards", "Building an immersive creative website from scratch without frameworks")
+              +press("https://www.commarts.com/webpicks/kacper-chlebowicz", "Communication Arts", "Kacper Chlebowicz")
+              +press("https://www.awwwards.com/30-experimental-webgl-websites.html", "Awwwards", "30 Experimental WebGL Websites")
+              +press("https://tympanus.net/codrops/2021/02/23/creating-an-infinite-circular-gallery-using-webgl-with-ogl-and-glsl-shaders/", "Codrops", "Creating an Infinite Circular Gallery using WebGL with OGL and GLSL Shaders")
+              +press("https://tympanus.net/codrops/2021/01/05/creating-an-infinite-auto-scrolling-gallery-using-webgl-with-ogl-and-glsl-shaders/", "Codrops", "Creating an Infinite Auto-Scrolling Gallery using WebGL with OGL and GLSL Shaders")
+              +press("https://www.commarts.com/webpicks/studio-m-rtens", "Communication Arts", "Studio Mærtens")
+              +press("https://tympanus.net/codrops/2019/12/18/case-study-portfolio-of-bruno-arizio/", "Codrops", "Case Study: Bruno Arizio")
+              +press("https://www.awwwards.com/case-study-dominic-berzins-single-page-portfolio-site.html", "Awwwards", "Case Study: Dominic Berzins")
+              +press("https://www.awwwards.com/50-beautifully-designed-black-websites.html", "Awwwards", "50 Beautifully Designed Black Websites")
+              +press("https://pocketmags.com/us/net-magazine/april-2019", "net Magazine", "April 2019 Profile Interview")
+
+        .about__section
+          h2.about__section__title(data-animation="paragraph" data-animation-threshold="1") DETAILS
+
+          .about__section__content
+            p.about__section__description(data-animation="paragraph" data-animation-threshold="1")
+              | #[a(href="https://hardalstudio.com/ampersand/" rel="noreferrer noopener" target="_blank") Ampersand] by #[a(href="https://hardalstudio.com/" rel="noreferrer noopener" target="_blank") Fatih Hardal] #[br]
+              | #[a(href="https://pangrampangram.com/products/neue-montreal?variant=32840647966774" rel="noreferrer noopener" target="_blank") Neue Montreal] by #[a(href="https://pangrampangram.com/" rel="noreferrer noopener" target="_blank") Pangram Pangram]
+
+            p.about__section__description(data-animation="paragraph" data-animation-threshold="1")
+              | You can reach me out at the email #[a(href="mailto:luis@bizar.ro") luis@bizar.ro].

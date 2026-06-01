@@ -1,0 +1,100 @@
+---
+import CoinItem from '../components/CoinItem.svelte';
+
+const base_url = 'https://api.coingecko.com/api/v3/';
+
+const vs_currency = 'usd';
+const order = 'market_cap_desc';
+const per_page = 32;
+const page = 1;
+const sparkline = false;
+const options = `coins/markets?vs_currency=${vs_currency}&order${order}&per_page=${per_page}&page=${page}&sparkline=${sparkline}`;
+
+const url = base_url + options;
+
+async function getCoins() {
+	const response = await fetch(url);
+	return response.json();
+}
+const coins = await getCoins();
+---
+
+<link
+	rel='stylesheet'
+	href='https://unpkg.com/flickity@2/dist/flickity.min.css'
+/>
+<script src='https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js'></script>
+
+<div class='container'>
+	<div class='trading'>
+		<span> Tranding</span>
+	</div>
+	<ul
+		class='main-carousel w-full list-coins'
+		data-flickity='{ 
+           "cellAlign": "left",
+              "contain": true,
+                "pageDots": false,
+                "prevNextButtons": false,
+                "wrapAround": true,
+                "freeScroll": true,
+                "autoPlay": 1000,
+				"draggable": false,
+				"pauseAutoPlayOnHover": false
+                
+        }'
+	>
+		{
+			coins &&
+				coins.map((coin: any) => {
+					return (
+						<li>
+							<CoinItem
+								name={coin.name}
+								image={coin.image}
+								current_price={coin.current_price}
+							/>
+						</li>
+					);
+				})
+		}
+	</ul>
+</div>
+
+<style>
+	.container {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		margin: 0;
+		margin-top: 5rem;
+		justify-content: center;
+		align-items: center;
+	}
+	.list-coins {
+		max-height: 120px;
+		overflow: hidden;
+		width: 100%;
+		overflow: hidden;
+		padding: 0.5rem 0;
+		position: relative;
+	}
+
+	.list-coins li {
+		width: 160px;
+		margin: 0rem 0.5rem;
+	}
+	.trading {
+		height: 100%;
+		background-color: var(--gravity-text);
+		padding: 1rem 1.5rem;
+		text-align: center;
+		text-transform: uppercase;
+		border-radius: 0.5rem;
+		& span {
+			color: var(--gravity-bg);
+			font-weight: var(--bold);
+			font-size: 1.5rem;
+		}
+	}
+</style>

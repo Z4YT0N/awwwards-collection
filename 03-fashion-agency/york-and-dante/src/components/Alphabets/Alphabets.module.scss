@@ -1,0 +1,30 @@
+@import "../../common/include-media";
+
+.alphabets {
+	height: fit-content;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	@include media(">mobile") {
+		padding: 0.77vh 0;
+	}
+	@include media("<=mobile") {
+		padding: 0.1875rem 0;
+	}
+}
+
+.alphabet {
+	color: #000000;
+	font: 600 5.33vh/7.2267vh "Neue Haas Grotesk Display Pro", Arial, Helvetica,
+		sans-serif;
+
+	@include media(">mobile") {
+		height: 7.2267vh;
+	}
+	@include media("<=mobile") {
+		height: 1.626rem;
+		font-size: 1.2rem;
+		line-height: 1.626rem;
+	}
+}

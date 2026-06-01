@@ -1,0 +1,69 @@
+---
+title: Globe
+date: 2023-08-02
+description: An autorotating, interactive, and highly performant globe made using WebGL.
+author: dillionverma
+published: true
+video: https://cdn.magicui.design/globe.mp4
+---
+
+<ComponentPreview name="globe-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @magicui/globe
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Install the following dependencies:</Step>
+
+```bash
+npm install cobe@0.6.4 motion
+```
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="globe" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Usage
+
+```tsx showLineNumbers
+import { Globe } from "@/components/ui/globe"
+```
+
+```tsx showLineNumbers
+<Globe />
+```
+
+## Props
+
+| Prop        | Type          | Default | Description                                                                           |
+| ----------- | ------------- | ------- | ------------------------------------------------------------------------------------- |
+| `className` | `string`      | `-`     | The css classes for the component                                                     |
+| `config`    | `COBEOptions` | `{}`    | The configuration options for the globe. More details [here](https://cobe.vercel.app) |
+
+## Credits
+
+This component is built on top of [Cobe](https://cobe.vercel.app).

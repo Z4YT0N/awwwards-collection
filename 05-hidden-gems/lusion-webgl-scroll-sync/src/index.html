@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html class="no-fix" lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Lusion Demo -WebGL Scroll Sync</title>
+
+		<!-- Favicon -->
+		<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png" />
+		<link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
+		<link rel="manifest" href="site.webmanifest" />
+		<link rel="mask-icon" href="images/safari-pinned-tab.svg" color="#490700" />
+		<meta name="msapplication-TileColor" content="#490700" />
+		<meta name="theme-color" content="#490700" />
+
+		<!-- SEO Meta Tags -->
+		<meta name="title" content="Lusion - WebGL Scroll Sync" />
+		<meta name="description" content="A demo showing how to sync WebGL visuals with DOM elements for smooth scrolling experiences." />
+		<meta name="keywords" content="WebGL, scroll sync, Lusion, creative studio, web experience" />
+		<meta name="author" content="Lusion" />
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://webgl-scroll-sync.lusion.co/" />
+		<meta property="og:title" content="Lusion - WebGL Scroll Sync" />
+		<meta property="og:description" content="A demo showing how to sync WebGL visuals with DOM elements for smooth scrolling experiences." />
+		<meta property="og:image" content="https://webgl-scroll-sync.lusion.co/images/cover.png" />
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content="https://webgl-scroll-sync.lusion.co/" />
+		<meta property="twitter:title" content="Lusion - WebGL Scroll Sync" />
+		<meta property="twitter:description" content="A demo showing how to sync WebGL visuals with DOM elements for smooth scrolling experiences." />
+		<meta property="twitter:image" content="https://webgl-scroll-sync.lusion.co/images/cover.png" />
+
+		<!-- Stylesheets -->
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+		<!-- Overlay Toggle Button -->
+		<span id="overlay-open">
+			<span>about</span>
+		</span>
+
+		<!-- Header -->
+		<header>
+			<span id="header__made-by">made by Lusion</span>
+		</header>
+
+		<!-- Overlay -->
+		<div id="overlay">
+			<div id="overlay__content">
+				<div id="overlay__content-inner">
+					<span id="overlay-close">
+						<span>close</span>
+					</span>
+
+					<div id="overlay__content-inner-inner">
+						<h2 id="overlay__content-title">This is a demo we made to show how to synchronize the WebGL visuals with the DOM elements.</h2>
+						<ul id="overlay__content-list">
+							<li data-index="01."><a href="https://x.com/lusionltd/" target="_blank">Twitter / X</a></li>
+							<li data-index="02."><a href="https://www.instagram.com/lusionltd/" target="_blank">Instagram</a></li>
+							<li data-index="03."><a href="https://www.linkedin.com/company/lusionltd/" target="_blank">Linkedin</a></li>
+							<li data-index="04."><a href="mailto:hello@lusion.co">hello@lusion.co</a></li>
+						</ul>
+						<p id="overlay__content-description"><a href="https://lusion.co" target="_blank">Lusion</a> is an award-winning creative studio that specializes in creating unique and engaging web experiences.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Settings -->
+		<div id="settings">
+			<div id="settings__button">
+				<span>Filter</span>
+				<span></span>
+			</div>
+
+			<ul id="settings__items">
+				<li class="settings__item" data-no-fix="0" data-fixed-with-padding="1">fixed with padding</li>
+				<li class="settings__item" data-no-fix="0" data-fixed-with-padding="0">fixed without padding</li>
+				<li class="settings__item" data-no-fix="1" data-fixed-with-padding="0">no fix</li>
+			</ul>
+		</div>
+
+		<!-- Main Content -->
+		<div id="wrapper">
+			<canvas id="canvas"></canvas>
+
+			<!-- Header Section -->
+			<div id="header">
+				<h1 id="header__title01">WebGL<br />Scroll Sync</h1>
+				<p id="header__description">A Little Demo to show how to sync the WebGL visual with the DOM elements. Learn more on our <a href="https://github.com/lusionltd/WebGL-Scroll-Sync" target="_blank">GitHub</a> repo.</p>
+				<h2 id="header__title02">WebGL<br />Scroll Sync</h2>
+			</div>
+
+			<!-- Section 1 -->
+			<div id="section01">
+				<div id="section01__img01" class="image">
+					<noscript><img src="images/0.webp" alt="image 0" /></noscript>
+				</div>
+			</div>
+
+			<!-- Section 2 -->
+			<div id="section02">
+				<div id="section02__top-content">
+					<span>WebGL Scroll Sync</span>
+					<span>01</span>
+				</div>
+
+				<div id="section02__images-wrapper">
+					<div id="section02__img01" class="image">
+						<noscript><img src="images/1.webp" alt="image 1" /></noscript>
+					</div>
+
+					<div id="section02__img02" class="image">
+						<div></div>
+						<noscript><img src="images/2.webp" alt="image 2" /></noscript>
+					</div>
+
+					<div id="section02__img03" class="image">
+						<noscript><img src="images/3.webp" alt="image 3" /></noscript>
+					</div>
+				</div>
+
+				<div id="section02__bottom-content">
+					<span>WebGL Scroll Sync</span>
+					<span>01</span>
+				</div>
+			</div>
+
+			<!-- Section 3 -->
+			<div id="section03">
+				<div id="section03__img01" class="image">
+					<div></div>
+					<noscript><img src="images/4.webp" alt="image 4" /></noscript>
+				</div>
+			</div>
+
+			<!-- Section 4 -->
+			<div id="section04">
+				<div id="section04__top-content">
+					<span>WebGL Scroll Sync</span>
+					<span>01</span>
+				</div>
+
+				<div id="section04__images-wrapper">
+					<div id="section04__img01" class="image">
+						<noscript><img src="images/5.webp" alt="image 5" /></noscript>
+					</div>
+
+					<div id="section04__img02" class="image">
+						<div></div>
+						<noscript><img src="images/6.webp" alt="image 6" /></noscript>
+					</div>
+
+					<div id="section04__img03" class="image">
+						<noscript><img src="images/7.webp" alt="image 7" /></noscript>
+					</div>
+				</div>
+
+				<div id="section04__bottom-content">
+					<span>WebGL Scroll Sync</span>
+					<span>01</span>
+				</div>
+			</div>
+
+			<!-- Footer -->
+			<footer id="footer">
+				<div id="footer-top">
+					<span>made</span>
+					<span>by</span>
+				</div>
+
+				<div id="footer-bottom">
+					<div>lusion</div>
+				</div>
+			</footer>
+		</div>
+
+		<!-- Scripts -->
+		<script type="module" src="js/main.js"></script>
+	</body>
+</html>

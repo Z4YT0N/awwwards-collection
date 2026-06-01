@@ -1,0 +1,634 @@
+/* Design & Developed by - Chaniru Sethum
+ - 2022 - 06 - DEC - SRI LANKA
+ - CHANIRU.LK 
+ All rights reserved 2022 ©*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    cursor: none;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #23211E;
+    color: white;
+}
+.cursor { 
+   width: 5rem;
+   height: 5rem;
+   position: fixed;
+   border-radius: 100%;
+   z-index: 99;
+   pointer-events: none;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.cursor-inner {
+   top: 0;
+   left: 0;
+   background: #FF6759;
+}
+.cursor-inner.hover { 
+   mix-blend-mode: color-burn;
+}
+.cursor-outer {
+   top: 0;
+   left: 0;
+   border: 1px solid #FF6759;
+}
+#loader{
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+	background: #FF6759;
+	z-index: 999;
+}
+#loader-img{
+  height: 50px;
+  width: auto;
+  position: absolute;
+  top: 50%;
+  left: 48%;
+  transform: translate(-50%, -50%);
+  -webkit-animation: animateHeart 2.5s infinite;
+  animation: animateHeart 2.5s infinite;
+}
+#loader-img:before,
+#loader-img:after {
+  -webkit-transform: rotate(-45deg) translateZ(0);
+  transform: rotate(-45deg) translateZ(0);
+  -webkit-transform-origin: 0 100%;
+  transform-origin: 0 100%;
+}
+.heart:after {
+  -webkit-transform: rotate(45deg) translateZ(0);
+  transform: rotate(45deg) translateZ(0);
+  -webkit-transform-origin: 100% 100%;
+  transform-origin: 100% 100%;
+}
+@-webkit-keyframes animateHeart {
+  0% {
+    -webkit-transform: scale(0.8);
+  }
+  5% {
+    -webkit-transform: scale(0.9);
+  }
+  10% {
+    -webkit-transform: scale(0.8);
+  }
+  15% {
+    -webkit-transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(0.8);
+  }
+  100% {
+    -webkit-transform: scale(0.8);
+  }
+}
+@keyframes animateHeart {
+  0% {
+    transform: scale(0.8);
+  }
+  5% {
+    transform: scale(0.9);
+  }
+  10% {
+    transform: scale(0.8);
+  }
+  15% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(0.8);
+  }
+}
+.logo-head{
+    position: fixed;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: white;
+    justify-content: flex-start;
+    left: 1%;
+    top: 1%;
+    z-index: 2;
+}
+.navbar {
+    overflow: hidden; 
+    position: fixed;
+    width: 100%;
+    height: 40px;
+    z-index: 1;
+    background-color: #23211E;
+    border-bottom:  1px solid rgb(255, 255, 255);
+}
+.links { 
+  font-weight: bold;
+  float: right;
+  color: white;
+  justify-content: flex-end;
+  display: block;
+  text-align: center; 
+  text-decoration: none;
+  font-size: 1em; 
+  padding: 10px 15px;
+  text-transform: uppercase;
+}
+.links:hover{
+  color: white;
+  text-shadow: 0 0 10px #000000; 
+}
+.lanka{
+    font-size: 0.5em;
+}
+.work-home{
+    height: 120vh;
+}
+.circle-work-one{
+    position: absolute;
+    background-color: #FF6759;
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    top: 15%;
+    left: 2%;
+}
+.work-title-one{
+    position: absolute;
+    top: 14%;
+    left: 8%;
+    font-size: 4em;
+    color: white;
+}
+.work-year{
+    position: absolute;
+    top: 19%;
+    left: 50%;
+    color: white;
+}
+.column {
+  float: left;
+  width: 48%;
+  padding: 10px;
+  height: 500px; 
+}
+.row{
+  position: relative;
+  top: 30%;
+  left: 2%;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.col-box{
+  height: 400px;
+  overflow: hidden;
+}
+.col-text-lef{
+  position: absolute;
+  font-size: 1.5em;
+  top: 83%;
+}
+.col-text-rig{
+  position: absolute;
+  font-size: 1.3em;
+  left: 29%;
+  top: 83%;
+  color: gray;
+}
+.col-text-rig-ali{
+  position: absolute;
+  font-size: 1.3em;
+  right: 4.7%;
+  top: 83%;
+  color: gray;
+}
+.col-fill{
+  height: 100%;
+  width: 100%;
+  object-fit: fill;
+  transition: 2s ease-in-out;
+}
+.col-box:hover img{
+  transform: scale(1.2);
+  overflow: hidden;
+}
+.work-home-two{
+  height: 180vh;  
+  border-bottom: 1px solid #F9F2ED;
+}
+.circle-home-two{
+  position: absolute;
+  background-color: #FF6759;
+  border-radius: 50px;
+  height: 40px;
+  width: 40px;
+  top: 11%;
+  left: 2%;
+}
+.work-two-title-two{
+  position: absolute;
+  font-size: 2.5em;
+  text-align: left;
+  top: 10%;
+  left: 2%;
+}
+.row-two{
+  position: relative;
+  top: 35%;
+  left: 2%;
+}
+.row-two:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.client-circle{
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+  background-color: #FF6759;
+  top: 84%;
+  left: 2%;
+}
+.client-text-one{
+  position: absolute;
+  font-size: 2.5em;
+  text-align: left;
+  top: 84%;
+  left: 2%;
+}
+.bottom-seven{
+  height: 40vh;
+  border-bottom: 1px solid #F9F2ED;
+}
+.contact-ques{
+  position: absolute;
+  font-size: 1.4em;
+  font-weight: bold;
+  top: 3%;
+  left: 2%;
+}
+.contact-btn{
+  position: absolute;
+  color: white;
+  background-color: #5651ED;
+  font-size: 2em;
+  left: 2%;
+  padding: 6px 95px;
+  border-radius: 50px;
+  text-decoration: none;
+  top: 40%;
+  transition: 2s ease-in-out;
+}
+.contact-btn:hover{
+  background-color: #FF6759;
+  transition: 2s ease-in-out;
+}
+.goBtnCentre {
+  width: 100%;
+  clear: both;
+  height: 80px;
+}
+.goButton {
+  position: absolute;
+  left: 2%;
+  top: 71%; 
+  border: 1px solid red;
+  background-color: #F9F2ED;
+  border-radius: 50px;
+  height: 50px;
+  width: 300px;
+  transition: 2s ease-in-out;
+}
+.goButton:hover{
+  background-color: red;
+  transition: 2s ease-in-out;
+}
+.goButton:hover h2{
+  color: white;
+  transition: 2s ease-in-out;
+}
+.goButton h2 {
+  text-align: center;
+  font-size: 1.5em;
+  color: red;  
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+} 
+.box-warn-foot{
+  position: absolute;
+  height: 70px;
+  width: 210px;
+  border-radius: 10px;
+  top: 70%;
+  right: 2%;
+  background-color: red;
+  display: none;
+  transition: 2s ease-in-out;
+  animation: border-flicker 5s linear infinite;
+}
+.goButton:hover + .box-warn-foot{
+  display: block;
+  transition: 2s ease-in-out;
+}
+.warn-text-foot{
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1em;
+}
+@keyframes border-flicker {
+  0% {
+    opacity:0.1;
+    -webkit-box-shadow: 0px 0px 78px 4px rgba(232, 16, 16, 0.73);
+    -moz-box-shadow: 0px 0px 78px 4px rgba(232, 16, 16, 0.73);
+    box-shadow: 0px 0px 78px 4px rgba(232, 16, 16, 0.73);
+  }
+  2% {
+    opacity:1;
+    -webkit-box-shadow: 0px 0px 78px 4px rgba(232, 16, 16, 0.73);
+    -moz-box-shadow: 0px 0px 78px 4px rgba(232, 16, 16, 0.73);
+    box-shadow: 0px 0px 78px 4px rgba(232, 16, 16, 0.73);
+  }
+  4% {
+    opacity:0.1;
+    -webkit-box-shadow: 0px 0px 78px 4px rgba(232, 16, 16, 0.73);
+    -moz-box-shadow: 0px 0px 78px 4px rgba(232, 16, 16, 0.73);
+    box-shadow: 0px 0px 78px 4px rgba(232, 16, 16, 0.73);
+  }
+  
+  8% {
+    opacity:1;
+    -webkit-box-shadow: 0px 0px 78px 4px rgba(232, 16, 16, 0.73);
+    -moz-box-shadow: 0px 0px 78px 4px rgba(232, 16, 16, 0.73);
+    box-shadow: 0px 0px 78px 4px rgba(232, 16, 16, 0.73);
+  }
+  70% {
+    opacity:0.7;
+    -webkit-box-shadow: 0px 0px 78px 4px rgba(232, 16, 16, 0.73);
+    -moz-box-shadow: 0px 0px 78px 4px rgba(232, 16, 16, 0.73);
+    box-shadow: 0px 0px 78px 4px rgba(232, 16, 16, 0.73);
+  }
+  100% {
+    opacity:1;
+    -webkit-box-shadow: 0px 0px 78px 4px rgba(232, 16, 16, 0.73);
+    -moz-box-shadow: 0px 0px 78px 4px rgba(232, 16, 16, 0.73);
+    box-shadow: 0px 0px 78px 4px rgba(232, 16, 16, 0.73);
+  }
+}
+.bottom-eight{
+  height: 70vh;
+}
+.linkin{
+  position: absolute;
+  text-decoration: none;
+  color: white;
+  font-size: 1.3em;
+  left: 3%;
+}
+.link-one{
+  top: 10%;
+}
+.link-two{
+  top: 20%;
+}
+.link-three{
+  top: 30%;
+}
+.link-four{
+  top: 40%;
+}
+.link-five{
+  top: 50%;
+}
+.linkin:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+.linkin:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+.location{
+  position: absolute;
+  font-size: 1.3em;
+  color: white;
+  top: 10%;
+  left: 15%;
+}
+#ct{
+  position: absolute;
+  font-size: 1.3em;
+  color: white;
+  top: 30%;
+  left: 15%;
+}
+.mail-just{
+  position: absolute;
+  text-decoration: none;
+  font-size: 1.3em;
+  color: white;
+  top: 50%;
+  left: 15%;
+  transition: 2s ease-in-out;
+}
+.mail-just:hover{
+  color: #FF6759;
+  transition: 2s ease-in-out;
+}
+.logo-foot{
+  position: absolute;
+  font-size: 8em;
+  text-align: center;
+  top: 55%;
+}
+.redder{
+  color: #FF6759;
+}
+.privacy-btn{
+  position: absolute;
+  color: black;
+  background-color: white;
+  font-size: 1em;
+  padding: 6px 50px;
+  border-radius: 50px;
+  text-decoration: none;
+  top: 90%;
+  right: 5%;
+  transition: 2s ease-in-out;
+  z-index: 2;
+}
+.privacy-btn:hover{
+  background-color: #FF6759;
+  color: white;
+  transition: 2s ease-in-out;
+}
+.terms-btn{
+  position: absolute;
+  color: black;
+  background-color: white;
+  font-size: 1em;
+  padding: 6px 50px;
+  border-radius: 50px;
+  text-decoration: none;
+  top: 90%;
+  right: 30%;
+  transition: 2s ease-in-out;
+  z-index: 2;
+}
+.terms-btn:hover{
+  background-color: #FF6759;
+  color: white;
+  transition: 2s ease-in-out;
+}
+.chaniru-btn{
+  position: absolute;
+  color: black;
+  background-color: white;
+  font-size: 1em;
+  padding: 6px 50px;
+  border-radius: 50px;
+  text-decoration: none;
+  top: 90%;
+  left: 3%;
+  transition: 2s ease-in-out;
+  z-index: 2;
+}
+.chaniru-btn:hover{
+  background-color: #FF6759;
+  color: white;
+  transition: 2s ease-in-out;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*! locomotive-scroll v3.1.7 | MIT License | https://github.com/locomotivemtl/locomotive-scroll */
+html.has-scroll-smooth {
+  overflow: hidden;
+}
+html.has-scroll-dragging,
+html.has-scroll-dragging * {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.has-scroll-smooth body {
+  overflow: hidden;
+}
+.c-scrollbar {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 11px;
+  height: 100vh;
+  transform-origin: center right;
+  transition: transform 0.3s, opacity 0.3s;
+  opacity: 0;
+}
+.c-scrollbar:hover {
+  transform: scaleX(1.45);
+}
+.c-scrollbar:hover,
+.has-scroll-dragging .c-scrollbar,
+.has-scroll-scrolling .c-scrollbar {
+  opacity: 1;
+}
+.c-scrollbar_thumb {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #e27c7c;
+  width: 2px;
+  margin: 2px;
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+.has-scroll-dragging .c-scrollbar_thumb {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}

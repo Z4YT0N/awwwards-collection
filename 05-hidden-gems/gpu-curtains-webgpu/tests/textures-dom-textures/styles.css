@@ -1,0 +1,46 @@
+@media screen {
+  .meshes-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2.5rem 0;
+  }
+
+  .meshes-container .mesh-container {
+    flex-basis: calc(100% / 3);
+    padding: 0 7.5%;
+    box-sizing: border-box;
+  }
+
+  .mesh {
+    aspect-ratio: 1;
+  }
+
+  .mesh img,
+  .mesh video,
+  .mesh canvas {
+    display: none;
+  }
+
+  #slideshow {
+    width: 75%;
+    margin: 0 auto;
+    aspect-ratio: 2;
+  }
+
+  #slideshow.is-waiting {
+    cursor: wait;
+  }
+
+  .container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  #large-canvas {
+    width: 100%;
+    height: 80vh;
+  }
+}
+
+@media screen and (orientation: portrait) {
+}

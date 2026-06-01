@@ -1,0 +1,65 @@
+{
+  "name": "r3f-starter",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@babel/core": "^7.12.10",
+    "@craco/craco": "^6.1.0",
+    "@react-spring/three": "^9.0.0-rc.3",
+    "@react-three/drei": "^3.1.0",
+    "babel-plugin-glsl": "^1.0.0",
+    "craco-glslify-loader": "^1.0.2",
+    "glsl-easings": "^1.0.0",
+    "glsl-noise": "^0.0.0",
+    "merge-refs": "^1.0.0",
+    "ombra": "^0.2.0",
+    "postprocessing": "^6.20.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-helmet": "^6.1.0",
+    "react-postprocessing": "^1.4.0",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^4.0.1",
+    "react-three-fiber": "5.3.18",
+    "react-use-gesture": "^9.0.0",
+    "styled-components": "^5.2.1",
+    "three": "^0.125.2",
+    "tweakpane": "^1.5.8",
+    "use-capture": "^0.4.0",
+    "use-tweaks": "^0.3.1"
+  },
+  "scripts": {
+    "start": "craco start",
+    "build": "craco build",
+    "eject": "craco eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "prettier": {
+    "tabWidth": 2
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged --pattern \"**/*.*(js)\""
+    }
+  },
+  "devDependencies": {
+    "husky": "^4.3.8",
+    "prettier": "^2.2.1",
+    "pretty-quick": "^3.1.0"
+  }
+}

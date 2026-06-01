@@ -1,0 +1,23 @@
+---
+import Calendly from '@/components/contact/Calendly.astro';
+import Layout from '@/layouts/Layout.astro';
+import { getLangFromUrl, useTranslations } from '@/i18n/utils';
+import Hero from '@/components/contact/Hero.astro';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Layout title='CodeDev - Contact'>
+	<main class='section min-h-screen'>
+		<Hero />
+
+		<section class='mt-20 mb-10'>
+			<h3 class='text-3xl appear mb-1 font-medium left-0'>
+				{t('contact.cale.subtitle')}
+			</h3>
+			<p class='max-w-[56ch] appear'>
+				{t('contact.cale.description')}
+			</p>
+		</section>
+	</main>
+</Layout>

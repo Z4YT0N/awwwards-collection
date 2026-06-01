@@ -1,0 +1,414 @@
+/* ==============================================
+   FONTS
+=============================================== */
+@font-face {
+  font-family: "CM Geom";
+  src: url("/fonts/cmgeom-regular.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Beausite";
+  src: url("/fonts/Beausite-Regular.otf") format("opentype");
+  font-display: swap;
+}
+
+/* ==============================================
+   RESET & BASE
+=============================================== */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --ta-bg: #f4f3ef;
+  --ta-fg: #141414;
+  --ta-accent: #e3f794;
+  --sp-bg: #0f0f0f;
+  --sp-fg: #ffffff;
+  --bn-bg: #e3e3db;
+  --bn-fg: #141414;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: var(--bn-bg);
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ==============================================
+   SECTION 1: ProjectBanner
+=============================================== */
+.project-banner-hero,
+.project-banner-outro {
+  position: relative;
+  width: 100vw;
+  height: 100svh;
+  background-color: var(--bn-bg);
+  color: var(--bn-fg);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Beausite", sans-serif;
+}
+
+.project-banner-hero h1,
+.project-banner-outro h1 {
+  width: 50%;
+  text-align: center;
+  font-size: 4rem;
+  line-height: 1.1;
+}
+
+.project-banner-scroll {
+  position: relative;
+  width: 100vw;
+  height: 100svh;
+  background-color: var(--bn-bg);
+  color: var(--bn-fg);
+  overflow: hidden;
+  font-family: "Beausite", sans-serif;
+}
+
+.project-banner-img-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  will-change: transform;
+}
+
+.project-banner-img-container .img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  will-change: transform;
+}
+
+.project-banner-img-container .img.mask {
+  -webkit-mask-image: url("/assets/telescope-ii/banner-img-mask.png");
+  mask-image: url("/assets/telescope-ii/banner-img-mask.png");
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  -webkit-mask-position: center;
+  mask-position: center;
+}
+
+.project-banner-header {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 75%;
+  text-align: center;
+  color: var(--bn-bg);
+  z-index: 2;
+  font-size: 4rem;
+  line-height: 1.1;
+}
+
+.project-banner-intro-text-container {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  display: flex;
+  gap: 0.5rem;
+  z-index: 10;
+}
+
+.project-banner-word {
+  flex: 1;
+  position: relative;
+  will-change: transform;
+}
+
+.project-banner-word:nth-child(1) {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.project-banner-word h1 {
+  font-size: 4rem;
+  line-height: 1.1;
+  color: var(--bn-fg);
+}
+
+/* ==============================================
+   SECTION 2: TextRevel (VerticalTitleRevel)
+=============================================== */
+.text-reveal-intro,
+.text-reveal-container,
+.text-reveal-item {
+  font-family: "CM Geom", sans-serif;
+  background-color: var(--ta-bg);
+  color: var(--ta-fg);
+}
+
+.text-reveal-intro {
+  width: 100%;
+  height: 100svh;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+
+.text-reveal-intro h1 {
+  font-size: 10rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.25rem;
+}
+
+.text-reveal-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.text-reveal-item {
+  height: 85svh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.text-reveal-content-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  will-change: transform;
+}
+
+.text-reveal-item h1 {
+  font-size: 10rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.25rem;
+}
+
+.text-reveal-item:nth-child(1),
+.text-reveal-item:nth-child(3) {
+  background-color: var(--ta-accent);
+}
+
+.text-reveal-item:nth-child(2) {
+  background-color: var(--ta-bg);
+}
+
+.ta-char {
+  display: inline-block;
+  will-change: transform;
+}
+
+/* ==============================================
+   SECTION 3: SpotlightArc (ProjectGallery)
+=============================================== */
+.spotlight-arc-intro,
+.spotlight-arc-outro {
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--sp-bg);
+  color: var(--sp-fg);
+  font-family: "Beausite", sans-serif;
+}
+
+.spotlight-arc-intro h1,
+.spotlight-arc-outro {
+  font-size: 4rem;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.spotlight-arc-section {
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  overflow: hidden;
+  font-family: "Beausite", sans-serif;
+  background-color: var(--sp-bg);
+}
+
+.spotlight-arc-intro-text-wrapper {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 0.5rem;
+  z-index: 5;
+}
+
+.spotlight-arc-intro-text {
+  flex: 1;
+  position: relative;
+  will-change: transform;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--sp-fg);
+}
+
+.spotlight-arc-intro-text:nth-child(1) {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.spotlight-arc-bg-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  transform: scale(0);
+  will-change: transform;
+}
+
+.spotlight-arc-bg-img img {
+  transform: scale(1.5);
+  will-change: transform;
+}
+
+.spotlight-arc-titles-container {
+  position: absolute;
+  top: 0;
+  left: 15vw;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  clip-path: polygon(
+    50svh 0px,
+    0px 50%,
+    50svh 100%,
+    100% calc(100% + 100svh),
+    100% -100svh
+  );
+  --before-opacity: 0;
+  --after-opacity: 0;
+}
+
+.spotlight-arc-titles-container::before,
+.spotlight-arc-titles-container::after {
+  content: "";
+  position: absolute;
+  width: 100svh;
+  height: 2.5px;
+  background: #fff;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+.spotlight-arc-titles-container::before {
+  top: 0;
+  left: 0;
+  transform: rotate(-45deg) translate(-7rem);
+  opacity: var(--before-opacity);
+}
+
+.spotlight-arc-titles-container::after {
+  bottom: 0;
+  left: 0;
+  transform: rotate(45deg) translate(-7rem);
+  opacity: var(--after-opacity);
+}
+
+.spotlight-arc-titles {
+  position: relative;
+  left: 15%;
+  width: 75%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  transform: translateY(100%);
+  z-index: 2;
+}
+
+.spotlight-arc-titles h1 {
+  color: #fff;
+  opacity: 0.25;
+  transition: opacity 0.3s ease;
+  font-family: "CM Geom", sans-serif;
+  font-size: 4rem;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.spotlight-arc-images {
+  position: absolute;
+  top: 0;
+  left: 40rem;
+  width: 50%;
+  min-width: 300px;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.spotlight-arc-img {
+  position: absolute;
+  width: 200px;
+  height: 160px;
+  will-change: transform;
+}
+
+.spotlight-arc-header {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+  opacity: 0;
+}
+
+/* ==============================================
+   RESPONSIVE
+=============================================== */
+@media (max-width: 1000px) {
+  .text-reveal-intro h1,
+  .text-reveal-item h1 {
+    font-size: 3rem;
+    letter-spacing: 0;
+  }
+
+  .spotlight-arc-titles-container {
+    clip-path: none;
+  }
+
+  .spotlight-arc-titles-container::before,
+  .spotlight-arc-titles-container::after {
+    display: none;
+  }
+
+  .spotlight-arc-titles {
+    left: 0;
+  }
+
+  .spotlight-arc-header {
+    display: none;
+  }
+
+  .project-banner-hero h1,
+  .project-banner-outro h1,
+  .project-banner-header {
+    width: calc(100% - 4rem);
+  }
+}

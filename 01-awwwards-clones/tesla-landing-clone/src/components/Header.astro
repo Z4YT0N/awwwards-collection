@@ -1,0 +1,85 @@
+---
+import Brand from "./commons/Brand.astro";
+import List from "./commons/List.astro";
+
+const items = [
+    "Model S",
+    "Model 3",
+    "Model X",
+    "Model Y",
+    "Powerwall",
+    "Carga",
+];
+
+const items2 = ["Soporte", "Tienda", "Cuenta"];
+---
+
+<header
+    id="landing-header"
+    class="fixed z-10 top-0 w-screen px-8 py-3 grid grid-cols-2 2.5xl:grid-cols-[1fr_auto_1fr] items-center animate-fade"
+>
+    <h1 class="justify-self-start">
+        <a href="#" class="inline-block mt-1" aria-label="Tesla Logo">
+            <Brand classes="transition-colors duration-100" />
+        </a>
+    </h1>
+
+    <nav class="hidden 2.5xl:block">
+        <ul class="flex">
+            <List
+                items={items}
+                classes="hover-overlay px-4 py-1 text-sm font-medium text-current transition-colors duration-200"
+            />
+        </ul>
+    </nav>
+
+    <nav class="justify-self-end">
+        <ul class="flex">
+            <List
+                items={items2}
+                classes="hover-overlay hidden 2.5xl:block px-4 py-1 text-sm font-medium text-current transition-colors duration-200"
+            />
+            <li>
+                <button
+                    class="hover-overlay drawer-toggler px-4 py-1 text-sm font-medium text-current rounded-[5px] bg-white/5 backdrop-blur-lg 2.5xl:rounded-none 2.5xl:bg-transparent 2.5xl:backdrop-blur-none transition-colors duration-200"
+                    >Menú</button
+                >
+            </li>
+        </ul>
+        
+    </nav>
+</header>
+
+<script>
+    /**
+     * Sets up an Intersection Observer to change the color of the header depending on the color of the section which it intersects with.
+     */
+
+    const header = document.querySelector("#landing-header") as HTMLElement;
+    const sections = document.querySelectorAll(".landing-section");
+
+    const callback = (entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                const color = entry.target.getAttribute("data-header-color");
+                header.style.color = color;
+            }
+        });
+    };
+
+    /**
+     * @typedef {Object} ObserverOptions - Default options for the intersection observer.
+     * @property {?Element} root - The root element to use as the visibility area. null implies the entire viewport.
+     * @property {string} rootMargin - Margin applied to the visibility area. Specified in pixels or percentage.
+     * @property {number} threshold - Intersection threshold required to trigger the callback. A value between 0 and 1.
+     */
+    const observerOptions = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.9,
+    };
+
+    const observer = new IntersectionObserver(callback, observerOptions);
+
+    sections.forEach((section) => observer.observe(section));
+</script>

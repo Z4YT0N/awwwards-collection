@@ -1,0 +1,64 @@
+.l{
+    height: 150vh;
+    font-family: 'Tenor Sans', sans-serif;
+    text-transform: uppercase;
+    align-items: center;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background-color: black;
+}
+
+
+.bg-container{
+    height: 540px;
+    border-radius: 30px;
+    margin-left: 5px;
+    margin-right: 5px;
+    position: relative;
+    overflow: auto;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background-image: url(/src//components//img/bi.png);
+    width:99%;
+    height:100%; 
+}
+
+
+.l-title{
+    font-weight: 400;
+    font-size: 77px;
+    position: absolute;
+    color: rgb(255, 247, 234);
+    text-align: center;
+    top: 44%;
+    left: 18%;
+}
+
+
+
+.myButton-yt {
+    position: absolute;
+    margin-top: 55%;
+    left: 45%;
+    font-weight: 400;
+	border-radius: 50%;
+	border:1px solid rgb(168, 148, 116);
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size: 17px;
+	padding:25px 31px;
+	text-decoration:none;
+}
+.myButton-yt:hover {
+	background-color:#000000;
+    color: white;
+    border: 0px solid white;
+}
+.myButton-yt:active {
+	position:relative;
+	top:1px;
+}
+

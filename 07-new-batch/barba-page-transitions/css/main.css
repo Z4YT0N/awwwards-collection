@@ -1,0 +1,163 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;1,400&display=swap");
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  height: 100vh;
+  color: white;
+  background: #161616;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: auto;
+  height: 100vh;
+  position: relative;
+  padding: 0 20px;
+}
+
+ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+  margin-right: auto;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+li a {
+  margin-right: 2em;
+  padding: 8px 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+li a:hover {
+  color: #5a82f1;
+}
+
+h1 {
+  font-size: 4em;
+  margin: 1em 0 0.4em 0;
+  font-family: none;
+}
+
+p {
+  font-size: 1em;
+  color: #cacaca;
+}
+
+img {
+  width: 100%;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+          clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+}
+
+ul.transition {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  z-index: 10;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+}
+
+ul.transition li {
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  background: #5a82f1;
+  width: 20%;
+}
+
+header {
+  padding: 20px 0;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 6em;
+  z-index: 3;
+}
+
+.left {
+  padding-right: 2em;
+}
+
+img {
+  width: 500px;
+}
+
+.cta {
+  display: block;
+  padding: 2em 2em 2em 0;
+  font-size: 1.4em;
+}
+
+.cta {
+  padding: 1em;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  color: #5a82f1;
+  border: 1px solid #5a82f1;
+  padding: 18px 30px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 12px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  border-radius: 4px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  -webkit-animation-fill-mode: initial;
+          animation-fill-mode: initial;
+}
+
+.cta:hover {
+  background: #5a82f1;
+  color: white;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+@media (max-width: 764px) {
+  main {
+    margin-top: 3em;
+    display: block;
+  }
+  .left {
+    margin-bottom: 2em;
+    padding: 0;
+  }
+  img {
+    width: 100%;
+  }
+  h1 {
+    margin-top: 0;
+    font-size: 3.2em;
+  }
+  p {
+    font-size: 0.9em;
+  }
+}
+/*# sourceMappingURL=main.css.map */

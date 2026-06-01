@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "cool-mode-custom",
+  "type": "registry:example",
+  "title": "Cool Mode Custom",
+  "description": "Example showing customized cool mode effects.",
+  "registryDependencies": [
+    "@magicui/cool-mode"
+  ],
+  "files": [
+    {
+      "path": "registry/example/cool-mode-custom.tsx",
+      "content": "import { Button } from \"@/components/ui/button\"\nimport { CoolMode } from \"@/registry/magicui/cool-mode\"\n\nexport default function CoolModeCustom() {\n  return (\n    <div className=\"relative justify-center\">\n      <CoolMode\n        options={{\n          particle: \"https://avatars.githubusercontent.com/u/81306489\",\n        }}\n      >\n        <Button>Click Me!</Button>\n      </CoolMode>\n    </div>\n  )\n}\n",
+      "type": "registry:example"
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+---
+import { getLangFromUrl, useTranslations } from '@/i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+import { process } from '@/scripts/consts';
+---
+
+<script>
+	const progressBar = document.getElementById('progress');
+	const totalCards = 4;
+
+	document.querySelectorAll('.card-progress').forEach((card) => {
+		card.addEventListener('mouseover', () => {
+			progressBar.style.setProperty(
+				'--progress',
+				(100 / totalCards) * card.dataset.index + '%'
+			);
+		});
+	});
+</script>
+
+<section class='section mt-32 mb-20'>
+	<h2 class='appear text-3xl font-medium'>{t('process')}</h2>
+	<p class='mb-8 appear'>{t('process.description')}</p>
+
+	<div class='md:grid grid-cols-4'>
+		{
+			process[lang].map((proces, i) => {
+				if (i % 2 == 0)
+					return (
+						<article
+							data-index={i + 1}
+							class='rounded-xl group card-progress hover:border-indigo-600 transition-colors md:rounded-b-none md:border-b-0 appear-top flex flex-col justify-between gap-2 w-full mb-4 md:mb-0 mx-auto max-w-[28rem] border-2 border-slate-700/25 px-8 py-7 relative'
+							style={`grid-column-start: ${i + 1}`}>
+							<div class='absolute opacity-10 group-hover:scale-105 transition-transform inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,var(--main-color)_1px,transparent_1px),linear-gradient(to_bottom,var(--main-color)_1px,transparent_1px)] bg-[size:2rem_1.8rem]' />
+
+							<span class='text-2xl font-medium'>
+								{(i + 1).toString().padStart(2, '0')}
+							</span>
+							<h4 class='text-3xl'>{proces.title}</h4>
+							<p>{proces.description}</p>
+						</article>
+					);
+			})
+		}
+	</div>
+
+	<div
+		id='progress'
+		class='hidden md:block h-2 rounded-full w-full relative bg-slate-400 after:rounded-full after:absolute after:top-0 after:h-full after:w-[var(--progress)] after:transition-all after:left-0 after:bg-indigo-600'
+		style='--progress: 100%'>
+	</div>
+
+	<div class='md:grid grid-cols-4'>
+		{
+			process[lang].map((proces, i) => {
+				if (i % 2 !== 0)
+					return (
+						<article
+							data-index={i + 1}
+							class='rounded-xl group card-progress hover:border-indigo-600 transition-colors md:rounded-t-none md:border-t-0 appear flex flex-col justify-between gap-2 w-full mb-4 md:mb-0 mx-auto max-w-[28rem] border-2 border-slate-700/25 px-8 py-7 relative'
+							style={`grid-column-start: ${i + 1}`}>
+							<div class='absolute opacity-10 group-hover:scale-105 transition-transform inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,var(--main-color)_1px,transparent_1px),linear-gradient(to_bottom,var(--main-color)_1px,transparent_1px)] bg-[size:2rem_1.8rem]' />
+
+							<span class='text-2xl font-medium'>
+								{(i + 1).toString().padStart(2, '0')}
+							</span>
+							<h4 class='text-3xl'>{proces.title}</h4>
+							<p>{proces.description}</p>
+						</article>
+					);
+			})
+		}
+	</div>
+</section>
+
+<style>
+	progress[value]::-webkit-progress-value {
+		background-image: red;
+		border-radius: 100px;
+	}
+</style>

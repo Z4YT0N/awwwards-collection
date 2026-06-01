@@ -1,0 +1,113 @@
+import { TypedArray, WGSLBaseVariableType } from '../core/bindings/utils'
+import { Buffer } from '../core/buffers/Buffer'
+
+/**
+ * Parameters used to create a {@link VertexBufferAttribute}.
+ */
+export interface VertexBufferAttributeParams {
+  /** The {@link VertexBuffer} to add this {@link VertexBufferAttribute} to. */
+  vertexBuffer?: VertexBuffer
+  /** The name of the {@link VertexBufferAttribute}. */
+  name: string
+  /** The WGSL type of the {@link VertexBufferAttribute}, i.e. `"f32"`, `"vec2f"`, `"vec3f"`, etc. */
+  type?: WGSLBaseVariableType
+  /** The buffer format of the {@link VertexBufferAttribute}, i.e. `"float32"`, `"float32x2"`, `"float32x3"`, etc. */
+  bufferFormat?: GPUVertexFormat
+  /** The size of the {@link VertexBufferAttribute}. A `"f32"` is of size `1`, a `"vec2f"` of size `2`, a `"vec3f"` of size `3`, etc. */
+  size?: number
+  /** {@link VertexBufferAttribute} array that will be used by the {@link VertexBuffer}. */
+  array?: TypedArray
+  /** Use this {@link VertexBufferAttribute} for every X vertices. Useful for vertex/face color, etc. */
+  verticesStride?: number
+  /** Whether this attribute should be normalized from [0, 255] range to [0, 1] range. */
+  normalized?: boolean
+}
+
+/**
+ * A {@link VertexBufferAttribute} holds geometry data to be sent to the vertex shader. Most common geometry attributes are 'position' and 'uv'.
+ */
+export interface VertexBufferAttribute extends VertexBufferAttributeParams {
+  /** The WGSL type of the {@link VertexBufferAttribute}, i.e. `"f32"`, `"vec2f"`, `"vec3f"`, etc. */
+  type: WGSLBaseVariableType
+  /** The buffer format of the {@link VertexBufferAttribute}, i.e. `"float32"`, `"float32x2"`, `"float32x3"`, etc. */
+  bufferFormat: GPUVertexFormat
+  /** The size of the {@link VertexBufferAttribute}. A `"f32"` is of size `1`, a `"vec2f"` of size `2`, a `"vec3f"` of size `3`, etc. */
+  size: number
+  /** Bytes offset of the {@link array} inside the {@link VertexBuffer#array | VertexBuffer array}. */
+  bufferOffset: GPUSize64
+  /** Use this {@link VertexBufferAttribute} for every X vertices. Useful for vertex/face color, etc. */
+  verticesStride: number
+}
+
+/**
+ * Describe the base of a geometry buffer, which is made of a {@link core/buffers/Buffer.Buffer | Buffer} and a typed array.
+ */
+export interface GeometryBuffer {
+  /** {@link VertexBuffer} data array with already interleaved values to be used to fill the {@link ArrayBuffer}. */
+  array?: TypedArray
+  /** {@link VertexBuffer} data {@link ArrayBuffer} to be used by the {@link GPUBuffer}. */
+  arrayBuffer?: null | ArrayBuffer
+  /** {@link GPUBuffer} sent to the {@link core/pipelines/RenderPipelineEntry.RenderPipelineEntry#pipeline | render pipeline}. */
+  buffer: Buffer
+  /** Number representing the offset at which the data begins in the {@link GPUBuffer}. */
+  bufferOffset: number
+  /** Size in bytes of the data contained in the {@link GPUBuffer}. */
+  bufferSize: number | null
+}
+
+/**
+ * A {@link VertexBuffer} is an object regrouping one or multiple {@link VertexBufferAttribute} into a single array and its associated {@link GPUBuffer}.
+ */
+export interface VertexBuffer extends GeometryBuffer {
+  /** The name of the {@link VertexBuffer}. */
+  name: string
+  /** Whether this {@link VertexBuffer} holds data relative to vertices or instances. */
+  stepMode: GPUVertexStepMode
+  /** Total {@link VertexBufferAttribute#size | VertexBufferAttribute size} in bytes. */
+  arrayStride: number
+  /** Total buffer length in bytes. */
+  bufferLength: number
+  /** Array of {@link VertexBufferAttribute} used by this {@link VertexBuffer}. */
+  attributes: VertexBufferAttribute[]
+}
+
+/**
+ * Parameters used to create a {@link VertexBuffer}.
+ */
+export interface VertexBufferParams extends Partial<GeometryBuffer> {
+  /** Whether this {@link VertexBuffer} should hold data relative to vertices or instances. */
+  stepMode?: GPUVertexStepMode
+  /** The name of the {@link VertexBuffer}. */
+  name?: string
+  /** Array of {@link VertexBufferAttribute} to be used by this {@link VertexBuffer}. */
+  attributes?: VertexBufferAttributeParams[]
+}
+
+/** Parameters used to draw a {@link core/geometries/Geometry.Geometry | Geometry} with an {@link extras/buffers/IndirectBuffer.IndirectBuffer | IndirectBuffer}. */
+export interface IndirectDrawParams {
+  /** {@link Buffer} to use. Should come from an {@link extras/buffers/IndirectBuffer.IndirectBuffer | IndirectBuffer}. */
+  buffer: Buffer
+  /** Offset in the {@link Buffer}. */
+  offset?: number
+}
+
+/**
+ * Options used to create a geometry.
+ */
+export interface GeometryOptions {
+  /** Number of geometry instances to draw. */
+  instancesCount: number
+  /** Vertices order sent to the {@link core/pipelines/RenderPipelineEntry.RenderPipelineEntry#pipeline | render pipeline}. */
+  verticesOrder?: GPUFrontFace
+  /** Topology to use with this {@link core/geometries/Geometry.Geometry | Geometry}, sent to the {@link core/pipelines/RenderPipelineEntry.RenderPipelineEntry#pipeline | render pipeline}. Whether to draw triangles, lines or points (see https://www.w3.org/TR/webgpu/#enumdef-gpuprimitivetopology). */
+  topology: GPUPrimitiveTopology
+  /** Array of {@link VertexBufferParams} used to create {@link VertexBuffer} on geometry creation. */
+  vertexBuffers: VertexBufferParams[]
+  /** Whether to map the {@link VertexBuffer#buffer | vertex buffers} at creation. */
+  mapBuffersAtCreation: boolean
+}
+
+/** Parameters used to create a geometry. */
+export type GeometryParams = Partial<GeometryOptions>
+/** Base parameters used to create a geometry. */
+export type GeometryBaseParams = Omit<GeometryParams, 'verticesOrder'>

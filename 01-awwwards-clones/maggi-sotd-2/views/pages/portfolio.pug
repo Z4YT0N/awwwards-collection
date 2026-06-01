@@ -1,0 +1,133 @@
+extends ../base.pug
+
+block variables
+    - var template = 'portfolio'
+
+block body
+    .portfolio(data-background="" data-color="")
+        //- canvas
+        canvas
+            canvas(data-cursor-play)
+            canvas(data-cursor-scroll)
+        //- Scroll wrapper
+        .portfolio__wrapper
+            //- bg logo
+            .portfolio__banner__logo
+                h1.text EXORSE
+            //- layer changer
+            .layer__changer__wrapper
+                button.layer__changer All Projects
+            .portfolio__banner
+                //- slider
+                .portfolio__banner__inner.slider__wrapper
+                    ul.portfolio__list
+                        li.portfolio__item
+                            a.portfolio__link(href="/work/ali-ali" data-link="1" data-cursor-view)
+                                figure.portfolio__item__pic__wrapper
+                                    img.portfolio__item__pic(data-src="/heroes/1-hero.webp", alt="Work Picture")
+                        li.portfolio__item
+                            a.portfolio__link.delay(href="/work/stock" data-link="2" data-cursor-view)
+                                figure.portfolio__item__pic__wrapper
+                                    img.portfolio__item__pic(data-src="/heroes/6-hero.webp", alt="Work Picture")
+                        li.portfolio__item
+                            a.portfolio__link(href="/work/venice" data-link="3" data-cursor-view)
+                                figure.portfolio__item__pic__wrapper
+                                    img.portfolio__item__pic(data-src="/heroes/5-hero.webp", alt="Work Picture")
+                        li.portfolio__item
+                            a.portfolio__link.delay(href="/work/rino" data-link="4" data-cursor-view)
+                                figure.portfolio__item__pic__wrapper
+                                    img.portfolio__item__pic(data-src="/heroes/3-hero.webp", alt="Work Picture")
+                        li.portfolio__item
+                            a.portfolio__link(href="/work/aebele" data-link="5" data-cursor-view)
+                                figure.portfolio__item__pic__wrapper
+                                    img.portfolio__item__pic(data-src="/heroes/4-hero.webp", alt="Work Picture")
+                        li.portfolio__item
+                            a.portfolio__link.delay(href="/work/ottografie" data-link="6" data-cursor-view)
+                                figure.portfolio__item__pic__wrapper
+                                    img.portfolio__item__pic(data-src="/heroes/2-hero.webp", alt="Work Picture")
+
+                    //- sliders title
+                    .slides__titles__wrapper
+                        .slides__title__wrapper(data-hover="1")
+                            h1.mini-title.splitter!=portfolio.data.work_1[0].title.replace(/\n/g,"</br>")
+                            p.small-paragraph.splitter!=portfolio.data.work_1[0].paragraph.replace(/\n/g,"</br>")
+                        .slides__title__wrapper(data-hover="2")
+                            h1.mini-title.splitter!=portfolio.data.work_2[0].title.replace(/\n/g,"</br>")
+                            p.small-paragraph.splitter!=portfolio.data.work_2[0].paragraph.replace(/\n/g,"</br>")
+                        .slides__title__wrapper(data-hover="3")
+                            h1.mini-title.splitter!=portfolio.data.work_3[0].title.replace(/\n/g,"</br>")
+                            p.small-paragraph.splitter!=portfolio.data.work_3[0].paragraph.replace(/\n/g,"</br>")
+                        .slides__title__wrapper(data-hover="4")
+                            h1.mini-title.splitter!=portfolio.data.work_4[0].title.replace(/\n/g,"</br>")
+                            p.small-paragraph.splitter!=portfolio.data.work_4[0].paragraph.replace(/\n/g,"</br>")
+                        .slides__title__wrapper(data-hover="5")
+                            h1.mini-title.splitter!=portfolio.data.work_5[0].title.replace(/\n/g,"</br>")
+                            p.small-paragraph.splitter!=portfolio.data.work_5[0].paragraph.replace(/\n/g,"</br>")
+                        .slides__title__wrapper(data-hover="6")
+                            h1.mini-title.splitter!=portfolio.data.work_6[0].title.replace(/\n/g,"</br>")
+                            p.small-paragraph.splitter!=portfolio.data.work_6[0].paragraph.replace(/\n/g,"</br>")
+                //- infinite list
+                .portfolio__banner__list.infinite__list__wrapper
+                    .portfolio__banner__list__inner
+                        ul.infinite__list.infinite__drive__list
+                            li.infinite__list__item
+                                a.infinite__list__text.splitter(href="/work/ali-ali" data-number="1")=portfolio.data.list[0].one
+                            li.infinite__list__item
+                                a.infinite__list__text.splitter(href="/work/stock" data-number="2")=portfolio.data.list[0].two
+                            li.infinite__list__item
+                                a.infinite__list__text.splitter(href="/work/venice" data-number="3")=portfolio.data.list[0].three
+                            li.infinite__list__item
+                                a.infinite__list__text.splitter(href="/work/rino" data-number="4")=portfolio.data.list[0].four
+                            li.infinite__list__item
+                                a.infinite__list__text.splitter(href="/work/aebele" data-number="5")=portfolio.data.list[0].five
+                            li.infinite__list__item
+                                a.infinite__list__text.splitter(href="/work/ottografie" data-number="6")=portfolio.data.list[0].six
+                            li.infinite__list__item
+                                a.infinite__list__text.splitter(href="/work/ali-ali" data-number="1")=portfolio.data.list[0].one
+                            li.infinite__list__item
+                                a.infinite__list__text.splitter(href="/work/stock" data-number="2")=portfolio.data.list[0].two
+                            li.infinite__list__item
+                                a.infinite__list__text.splitter(href="/work/venice" data-number="3")=portfolio.data.list[0].three
+                            li.infinite__list__item
+                                a.infinite__list__text.splitter(href="/work/rino" data-number="4")=portfolio.data.list[0].four
+                            li.infinite__list__item
+                                a.infinite__list__text.splitter(href="/work/aebele" data-number="5")=portfolio.data.list[0].five
+                            li.infinite__list__item
+                                a.infinite__list__text.splitter(href="/work/ottografie" data-number="6")=portfolio.data.list[0].six
+                        ul.infinite__list.infinite__reverse__list
+                            li.infinite__reversed__list__item
+                                figure.list__pic__wrapper
+                                    img.list__pic(data-src="/heroes/1-hero.webp", alt="errror")
+                            li.infinite__reversed__list__item.center
+                                figure.list__pic__wrapper
+                                    img.list__pic(data-src="/heroes/2-hero.webp", alt="errror")
+                            li.infinite__reversed__list__item.end
+                                figure.list__pic__wrapper
+                                    img.list__pic(data-src="/heroes/3-hero.webp", alt="errror")
+                            li.infinite__reversed__list__item.center
+                                figure.list__pic__wrapper
+                                    img.list__pic(data-src="/heroes/4-hero.webp", alt="errror")
+                            li.infinite__reversed__list__item.end
+                                figure.list__pic__wrapper
+                                    img.list__pic(data-src="/heroes/5-hero.webp", alt="errror")
+                            li.infinite__reversed__list__item.center
+                                figure.list__pic__wrapper
+                                    img.list__pic(data-src="/heroes/6-hero.webp", alt="errror")
+                            li.infinite__reversed__list__item
+                                figure.list__pic__wrapper
+                                    img.list__pic(data-src="/heroes/1-hero.webp", alt="errror")
+                            li.infinite__reversed__list__item.end
+                                figure.list__pic__wrapper
+                                    img.list__pic(data-src="/heroes/2-hero.webp", alt="errror")
+                            li.infinite__reversed__list__item.center
+                                figure.list__pic__wrapper
+                                    img.list__pic(data-src="/heroes/3-hero.webp", alt="errror")
+                            li.infinite__reversed__list__item
+                                figure.list__pic__wrapper
+                                    img.list__pic(data-src="/heroes/4-hero.webp", alt="errror")
+                            li.infinite__reversed__list__item.end
+                                figure.list__pic__wrapper
+                                    img.list__pic(data-src="/heroes/5-hero.webp", alt="errror")
+                            li.infinite__reversed__list__item.center
+                                figure.list__pic__wrapper
+                                    img.list__pic(data-src="/heroes/6-hero.webp", alt="errror")

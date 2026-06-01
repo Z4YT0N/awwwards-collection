@@ -1,0 +1,14 @@
+%section {
+  width: 100vw;
+  height: fit-content;
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+%innerSection {
+  max-width: 90%;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}

@@ -1,0 +1,39 @@
+.seven{
+    height: 50vh;
+    background-color: #645832;
+}
+.insta{
+    color: whitesmoke;
+    font-family: ara;
+    position: absolute;
+    font-weight: lighter;
+    font-size: 8vw;
+    left: 5%;
+    margin-top: 10%;
+}
+.last-crd{
+    font-size: 9vw;
+    font-family: nue;
+    font-weight: lighter;
+    position: absolute;
+    text-decoration: none;
+    color: white;
+    margin-top: 10%;
+}
+.last-crd:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transform-origin: bottom right;
+    transition: transform 1s ease-out;
+}
+.last-crd:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+  

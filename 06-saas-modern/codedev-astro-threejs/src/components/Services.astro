@@ -1,0 +1,37 @@
+---
+import { getLangFromUrl, useTranslations } from '@/i18n/utils';
+import { services } from '@/scripts/consts';
+const { className } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<section class={`mb-32 ${className}`}>
+	<h2 class='text-3xl font-medium appear'>{t('services')}</h2>
+	<p class='appear'>{t('services.description')}</p>
+
+	<article
+		class='grid sm:grid-cols-2 md:grid-cols-3 text-center gap-6 justify-center my-8'>
+		{
+			services[lang].map((section) => (
+				<section class='py-7 justify-center max-w-[28rem] md:max-w-none mx-auto flex flex-col items-center px-9 appear-siblings w-full rounded-xl border-2 outline-slate-700/25 hover:border-indigo-600 transition-colors group overflow-hidden relative'>
+					<div class='absolute opacity-10 group-hover:scale-105 transition-transform inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,var(--main-color)_1px,transparent_1px),linear-gradient(to_bottom,var(--main-color)_1px,transparent_1px)] bg-[size:3rem_2.2rem]' />
+
+					<img
+						src={section.icon}
+						alt=''
+						class='w-52 mx-auto group-hover:scale-105 transition-transform'
+					/>
+					<h4 class='lg:text-2xl text-xl my-4 font-medium mb-2'>
+						{section.title}
+					</h4>
+					<ul class='text-left list-disc pl-4'>
+						{section.items.map((item) => (
+							<li>{item}</li>
+						))}
+					</ul>
+				</section>
+			))
+		}
+	</article>
+</section>

@@ -1,0 +1,58 @@
+#page3 {
+    height: 50vh;
+    width: 100vw;
+    color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background: #9c6262; */
+    overflow: hidden;
+}
+
+
+#page3 h3{
+    font-size: 20px;
+    font-weight:400;
+    margin-bottom: 20px;
+}
+
+
+
+#page3 h3 span {
+    font-size: 13px;
+    background-color: black;
+    color: #fff6f6;
+    border-radius: 10px;
+    padding: 4px 9px;
+}
+
+
+#page3 h1{
+    font-size:6vw;
+    font-weight: 300;
+    text-decoration:4px underline;
+}
+
+
+
+@media (max-width: 768px) {
+    #page3 h1{
+        font-size:7vw;
+        text-decoration:2px underline;
+        
+    }
+
+    #page3 h3{
+        font-size: 15px;
+        font-weight:400;
+        margin-bottom: 20px;
+    }
+    
+
+    #page3 {
+        height: 30vh;
+        
+    }
+    
+}

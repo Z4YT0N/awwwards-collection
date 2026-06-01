@@ -1,0 +1,192 @@
+.sidebar,
+.sidebar-mobile {
+  background-color: var(--bg-body) !important;
+}
+
+.sidebar::before {
+  content: '';
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  pointer-events: none;
+  background: linear-gradient(to top, var(--bg-body), transparent);
+  z-index: 4;
+  transition: opacity 0.3s ease;
+}
+
+.sidebar.sidebar-no-fade::before {
+  opacity: 0;
+}
+
+.sidebar {
+  min-width: fit-content;
+  max-width: 160px;
+  padding: 92px 0 6em 0 !important;
+}
+
+@media only screen and (max-width: 967px) {
+  .sidebar {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .sidebar {
+    padding: 4.5rem 0 6em 0 !important;
+  }
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 10px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  display: none;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: var(--bg-body);
+  border-radius: var(--radius-full);
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background: var(--border-primary);
+}
+
+.sidebar-logo {
+  padding: 2em calc(1em + 2px) !important;
+  border-bottom: none;
+  width: 100%;
+}
+
+.sidebar-logo img {
+  position: relative;
+  height: 32px;
+}
+
+.sidebar-item {
+  position: relative;
+  font-size: 0.85rem;
+  color: var(--text-link);
+  padding: 0.15em 0;
+  display: flex;
+  align-items: center;
+  transition:
+    color var(--transition-base),
+    transform var(--transition-base);
+}
+
+.sidebar-item:hover {
+  color: var(--color-accent);
+  transform: translateX(2px);
+}
+
+.active-sidebar-item {
+  width: fit-content;
+  padding: 0.15em 0.15em 0.15em 0;
+  color: var(--color-accent);
+  position: relative;
+  transition: color var(--transition-slow);
+}
+
+.active-sidebar-item:hover {
+  text-decoration: none;
+}
+
+.sidebar-item .new-tag,
+.sidebar-item .updated-tag {
+  margin-left: 0.6em;
+  font-size: 10px;
+  line-height: 0;
+  border-radius: 6px;
+  font-weight: 600;
+  padding: 0.8em 0.6em;
+  opacity: 1;
+  font-family: 'Geist Mono', monospace;
+  text-transform: uppercase;
+  text-decoration: none !important;
+}
+
+.sidebar-item .new-tag {
+  color: #d8aeff;
+  border: 1px solid var(--color-primary);
+  background-color: rgba(169, 85, 247, 0.4);
+}
+
+.sidebar-item .updated-tag {
+  color: #cdcdcd;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.github-button {
+  border: 1px solid transparent;
+  transition: var(--transition-slow);
+}
+
+.github-button img {
+  transition: filter 0.3s ease;
+}
+
+.github-button:hover {
+  border-color: #ffffff1c;
+  background-color: var(--bg-body) !important;
+  color: var(--text-primary);
+}
+
+.github-button:hover img {
+  filter: invert(100%);
+}
+
+.cta-button-docs {
+  font-weight: 600;
+  font-size: 12px;
+  padding: 0 0 0 1rem;
+  height: 40px;
+  background: var(--color-primary);
+  background-size: 200% 200%;
+  border: none;
+  color: var(--text-primary);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  justify-content: space-between;
+  transition: all var(--transition-base);
+}
+
+.cta-button-docs:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(82, 39, 255, 0.4);
+}
+
+.cta-button-docs:hover span img {
+  transform: scale(1.15);
+}
+
+.cta-button-docs span {
+  background-color: var(--bg-body);
+  margin-left: 1em;
+  margin-right: calc(1em - 6px);
+  padding-top: 0.1em;
+  height: 30px;
+  border-radius: 50px;
+  width: 75px;
+  font-weight: 600;
+  font-size: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cta-button-docs span img {
+  margin-right: 4px;
+  width: 12px;
+  height: 12px;
+  transition: 0.3s ease;
+}

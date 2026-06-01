@@ -1,0 +1,81 @@
+<div
+    id="overlay"
+    class={` 
+    absolute z-[var(--z-index)] left-0 top-0 w-[var(--width)] h-[var(--height)] 
+    rounded-[5px] opacity-0 bg-black/5 backdrop-blur-2xl
+    translate-x-[var(--left)] translate-y-[var(--top)] transition-all ease-in-out duration-300
+    `}
+>
+</div>
+
+<script>
+    /**
+     * Adds a hover effect with a smooth transition to elements on the page with the class "hover-overlay".
+     *
+     * * Uses a separate element with an id of "overlay" to display the effect.
+     * * This overlay element is resized matching the hovered element and positioned below it. The hovered element background must be transparent to achieve the desired effect.
+     * * To achieve the transition, its position is not cleared, but rather updated continuously.
+     * * To prevent issues related to the responsiveness of the page, whenever the viewport is resized, the overlay element will be reset clearing its previous position.
+     */
+
+    const overlay = document.querySelector("#overlay") as HTMLElement;
+    const elements = document.querySelectorAll(".hover-overlay");
+
+    const getElementZIndex = (element) =>
+        window.getComputedStyle(element).getPropertyValue("z-index");
+
+    const getOverlayZIndex = (element) => {
+        let zIndex = getElementZIndex(element);
+        const body = document.body;
+
+        while (zIndex === "auto" && element !== body) {
+            element = element.parentElement;
+            zIndex = getElementZIndex(element);
+        }
+
+        if (zIndex === "auto" || element === body) {
+            return 0;
+        }
+        return parseInt(zIndex) - 1;
+    };
+
+    const getPosition = (element) => {
+        let { left, top, width, height } = element.getBoundingClientRect();
+        let zIndex = getOverlayZIndex(element);
+        return { zIndex, left, top, width, height };
+    };
+
+    const setPosition = (overlay, { zIndex, left, top, width, height }) => {
+        overlay.style.setProperty("--z-index", zIndex);
+        overlay.style.setProperty("--left", `${left}px`);
+        overlay.style.setProperty("--top", `${top}px`);
+        overlay.style.setProperty("--width", `${width}px`);
+        overlay.style.setProperty("--height", `${height}px`);
+    };
+
+    elements.forEach((element) => {
+        element.addEventListener("mouseover", (e) => {
+            let targetElement = e.target as HTMLElement;
+            if (targetElement.classList.contains("hover-overlay")) {
+                setPosition(overlay, getPosition(targetElement));
+                overlay.style.opacity = "1";
+                overlay.style.visibility = "visible";
+            }
+        });
+
+        element.addEventListener("mouseleave", () => {
+            overlay.style.opacity = "0";
+            overlay.style.visibility = "hidden";
+        });
+    });
+
+    window.addEventListener("resize", () => {
+        setPosition(overlay, {
+            zIndex: 0,
+            left: 0,
+            top: 0,
+            width: 0,
+            height: 0,
+        });
+    });
+</script>

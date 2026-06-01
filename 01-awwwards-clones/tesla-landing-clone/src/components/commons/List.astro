@@ -1,0 +1,13 @@
+---
+const { items, classes } = Astro.props;
+---
+
+{
+    items.map((item) => (
+        <li>
+            <a href="#" class={classes}>
+                {item}
+            </a>
+        </li>
+    ))
+}

@@ -1,0 +1,108 @@
+---
+interface Props {
+	sub: string;
+	title: string;
+}
+
+const { sub, title } = Astro.props as Props;
+---
+
+<section class='container-des f-s-r'>
+	<header class='header f-s-r'>
+		<span class='sub'>
+			{sub}
+		</span>
+		<div class='container-data'>
+			<h2 class='title'>
+				{title}
+			</h2>
+			<div class='description'>
+				<div>
+					<p>ogni giorno nutriamo l’ambizione di</p>
+					<p class='e-blue'><span>semplificare la complessità.</span></p>
+				</div>
+				<p>
+					non amiamo i compromessi, le risposte standard per qualsiasi problema,
+					ma solo la soluzione studiata e giusta per te.
+				</p>
+				<p>
+					crediamo nelle idee che sappiano abbracciare una visione strategica.
+				</p>
+				<div>
+					<p>ti diremo che faremo delle cose,</p>
+					<p class='e-blue'>
+						<span> e poi le faremo davvero.</span>
+					</p>
+				</div>
+			</div>
+		</div>
+	</header>
+	<img src='/caroselling-it/line-h.png' alt='line-h' class='mt-4' />
+
+	<style>
+		.f-s-r {
+			display: flex;
+			align-items: flex-start;
+			flex-direction: row;
+		}
+		.container-des {
+			opacity: 0;
+			gap: 1rem;
+			justify-content: space-between;
+			margin-top: var(--divider-top);
+		}
+		.header {
+			gap: 4rem;
+			& .sub {
+				&:hover {
+					color: var(--caro-secondary);
+					transform: scale(1.1);
+					transition: all 0.5s ease;
+				}
+			}
+		}
+		.container-data {
+			& h2 {
+				font-size: var(--text-3xl);
+				font-weight: var(--bold);
+				margin-bottom: 4rem;
+			}
+			& div p {
+				max-width: 442px;
+				& span {
+					background-size: 100% 14px;
+					width: auto;
+					position: relative;
+					z-index: 12;
+					/* background-color: var(--caro-secondary); */
+				}
+			}
+		}
+
+		.description {
+			font-size: var(--text-lg);
+			font-weight: var(--medium);
+			& p {
+				margin-bottom: 0.5rem;
+			}
+		}
+		.e-blue {
+			display: block;
+			position: relative;
+			&::after {
+				position: absolute;
+				bottom: 0;
+				z-index: 10;
+				left: 0;
+				content: '';
+				width: 180px;
+				height: 50%;
+				background-color: var(--caro-secondary);
+			}
+			& span {
+				position: relative;
+				z-index: 12;
+			}
+		}
+	</style>
+</section>

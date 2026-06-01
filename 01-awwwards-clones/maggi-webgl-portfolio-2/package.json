@@ -1,0 +1,51 @@
+{
+  "name": "work-1",
+  "version": "1.0.0",
+  "description": "hello this is portfolio.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack.prod.js --mode production",
+    "start": "webpack serve --config webpack.dev.js --mode development --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MAGGIx1404/Maro-portfolio.git"
+  },
+  "author": "Jeet",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MAGGIx1404/Maro-portfolio/issues"
+  },
+  "homepage": "https://github.com/MAGGIx1404/Maro-portfolio#readme",
+  "devDependencies": {
+    "@babel/core": "^7.16.5",
+    "@babel/preset-env": "^7.16.5",
+    "babel-loader": "^8.2.3",
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^6.5.1",
+    "file-loader": "^6.2.0",
+    "html-loader": "^3.0.1",
+    "html-webpack-plugin": "^5.5.0",
+    "http-server": "^14.0.0",
+    "mini-css-extract-plugin": "^2.4.5",
+    "optimize-css-assets-webpack-plugin": "^6.0.1",
+    "style-loader": "^3.3.1",
+    "terser-webpack-plugin": "^5.3.0",
+    "webpack": "^5.65.0",
+    "webpack-bundle-analyzer": "^4.5.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.7.1"
+  },
+  "dependencies": {
+    "dat.gui": "^0.7.7",
+    "glslify-loader": "^2.0.0",
+    "gsap": "^3.9.1",
+    "lodash": "^4.17.21",
+    "parallax-js": "^3.1.0",
+    "raw-loader": "^4.0.2",
+    "stats.js": "^0.17.0",
+    "three": "^0.136.0",
+    "tweakpane": "^3.0.7"
+  }
+}

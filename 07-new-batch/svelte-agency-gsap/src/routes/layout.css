@@ -1,0 +1,58 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+
+/* --- GLOBAL TASARIM SİSTEMİ (Design Tokens) - DARK AGENCY THEME --- */
+:root {
+    /* Font Paleti */
+    --font-serif: 'Instrument Serif', serif;
+    --font-sans: 'Inter', sans-serif;
+
+    /* Renk Paleti (Elite Dark Theme) */
+    --color-bg-base: #050505;       /* Zifiri karanlık, sinematik */
+    --color-bg-surface: #0A0A0A;    /* Kartlar için bir tık açık */
+    --color-bg-glass: rgba(5, 5, 5, 0.6); /* Header/Blur için */
+
+    --color-text-primary: #FFFFFF;  /* Net beyaz okuma */
+    --color-text-secondary: #A3A3A3;
+    --color-text-muted: #525252;
+
+    --color-border: rgba(255, 255, 255, 0.1);
+    --color-accent: #3B82F6;
+    --color-hover-bg: #111111;
+}
+
+/* --- TEMEL SAYFA SIFIRLAMASI VE DİNAMİK YAPI --- */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+body {
+    font-family: var(--font-sans);
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-base);
+    margin: 0;
+    padding: 0;
+
+    /* Apple arayüzlerindeki cam gibi yazı render kalitesi için: */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- TİPOGRAFİ HİYERARŞİSİ --- */
+h1, h2, h3, .serif-text {
+    font-family: var(--font-serif);
+    font-weight: 400; /* Serif'te bold çirkin durur, 400 en premium olanıdır */
+    letter-spacing: -0.02em; /* Modern his için harfleri çok hafif sıkıştırıyoruz */
+    margin-top: 0;
+}
+
+button, input, textarea {
+    font-family: var(--font-sans);
+}
+
+.app-wrapper {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+}

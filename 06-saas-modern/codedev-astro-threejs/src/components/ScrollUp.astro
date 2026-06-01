@@ -1,0 +1,56 @@
+---
+import arrowIcon from '@/assets/icons/arrow.svg';
+---
+
+<script is:inline data-astro-rerun>
+	document.addEventListener('astro:page-load', () => {
+		const btn = document.querySelector('#scrollup');
+		const img = btn.querySelector('img');
+
+		const updateButtonFill = () => {
+			const scrollPosition = window.scrollY;
+			const documentHeight =
+				document.documentElement.scrollHeight - window.innerHeight;
+			btn.style.setProperty(
+				'--fill-amount',
+				`${(scrollPosition / documentHeight) * 100}%`
+			);
+
+			img.style.transform = `rotate(${scrollPosition / documentHeight > 0.5 ? '0' : '180'}deg)`;
+		};
+
+		window.addEventListener('scroll', updateButtonFill);
+		updateButtonFill();
+
+		btn.addEventListener('click', () => {
+			const scrollPosition = window.scrollY;
+			if (scrollPosition > window.innerHeight / 2)
+				window.scrollTo({ top: 0 });
+			else
+				window.scrollTo({ top: document.documentElement.scrollHeight });
+		});
+	});
+</script>
+
+<button
+	id='scrollup'
+	class='rounded-full after:w-full after:h-full after:absolute after:top-0 after:right-0 after:rounded-full after:scale-110 aspect-square fixed bottom-10 right-10 w-9 z-10'>
+	<img
+		src={arrowIcon.src}
+		alt='arrow icon'
+		class='w-full transition-transform duration-300 rounded-full bg-white'
+		style='transform: rotate(180deg)'
+	/>
+</button>
+
+<style>
+	#scrollup::after {
+		background: conic-gradient(
+			from 90deg,
+			var(--main-color) var(--fill-amount),
+			rgba(255, 255, 255, 0) var(--fill-amount)
+		);
+		z-index: -1;
+		rotate: -90deg;
+	}
+</style>

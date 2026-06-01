@@ -1,0 +1,57 @@
+
+.content{
+    font-size: 16px;
+    line-height: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: #37352F;
+}
+
+.content > h1{
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.content > h2{
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+.content > h3{
+    font-size: 1.25em;
+    font-weight: 600;
+}
+
+.content a{
+    color: #82817f;
+    text-decoration: underline;
+}
+
+.content ul, .content ol{
+    margin-left: 15px;
+}
+
+.content ul{
+    list-style-type: disc;
+}   
+
+
+.content ol{
+    list-style-type: decimal;
+}   
+
+.content blockquote{
+    padding: 4px 8px;
+    border-left: 3px solid #37352f;
+}   
+
+
+.content pre{
+    padding: 10px;
+    background-color: #f7f6f3;
+}  
+
+.content code{
+    background-color: transparent !important;
+}   

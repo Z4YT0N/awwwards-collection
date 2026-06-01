@@ -1,0 +1,233 @@
+/* ─── MotionCard Section ─────────────────────────────────────────────────── */
+.motion-card-section {
+    position: relative;
+    width: 100%;
+    padding: 120px 60px 100px;
+    text-align: center;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* ─── Part 1: Heading ────────────────────────────────────────────────────── */
+.motion-card__heading {
+    max-width: 900px;
+    margin: 0 auto 60px;
+    position: relative;
+}
+
+.motion-card__title {
+    font-family: 'Epilogue', sans-serif;
+    font-size: 7rem;
+    font-weight: 750;
+    line-height: 0.9;
+    letter-spacing: -5px;
+    color: var(--color-dark);
+    margin-bottom: 0;
+    cursor: url("/assets/Cursor SVG/cursor-text.svg") 12 12, auto;
+}
+
+.motion-card__subtitle {
+    font-family: 'Times New Roman', 'Georgia', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 7.5rem;
+    line-height: 1.15;
+    letter-spacing: -2px;
+    color: var(--color-dark);
+    position: relative;
+    display: inline-block;
+    top: -30px;
+}
+
+/* SVG sticker placeholder (top-right of subtitle) */
+.motion-card__sticker {
+    position: absolute;
+    display: inline-block;
+    pointer-events: none;
+}
+
+.motion-card__sticker--top {
+    top: -15px;
+    right: -25px;
+    width: 150px;
+    height: 80px;
+    rotate: calc(-10deg);
+    /* placeholder outline – remove once real SVG is inserted */
+}
+
+/* SVG underline under "from TV to TikTok." */
+.motion-card__underline-svg {
+    display: block;
+    max-width: 720px;
+    margin: -45px auto 0;
+    color: var(--color-dark);
+    height: auto;
+
+}
+
+/* ─── Part 2: Cards Area ─────────────────────────────────────────────────── */
+.motion-card__cards-area {
+    position: relative;
+    width: 100%;
+    max-width: 1100px;
+    height: 550px;
+    margin: 40px auto 80px;
+}
+
+/* Blue blob behind cards */
+.motion-card__blob {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-116.5%, -45%);
+    width: 580px;
+    height: 500px;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.motion-card__blob-svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* ─── Individual Cards ───────────────────────────────────────────────────── */
+.motion-card__cards {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.motion-card__card {
+    position: relative;
+    width: 17vw;
+    height: 22vw;
+    border-radius: 0.375rem;
+    overflow: clip;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    flex-shrink: 0;
+}
+
+.motion-card__card-image {
+    width: 100%;
+    height: 100%;
+    background-color: #d9d2cb;
+    border-radius: 0.375rem;
+    overflow: hidden;
+}
+
+.motion-card__card-image .cover-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Card 1 — far left, tilted */
+.motion-card__card--1 {
+    transform: rotate(-6deg);
+    margin-right: -2vw;
+    z-index: 1;
+}
+
+/* Card 2 — second from left */
+.motion-card__card--2 {
+    transform: rotate(6deg);
+    margin-right: -2vw;
+    left: -2rem;
+    bottom: -3rem;
+    z-index: 2;
+}
+
+/* Card 3 — third, slightly bigger */
+.motion-card__card--3 {
+    transform: rotate(-6deg);
+    margin-right: -2vw;
+    left: -3rem;
+    z-index: 3;
+}
+
+/* Card 4 — far right, tilted */
+.motion-card__card--4 {
+    transform: rotate(4deg);
+    margin-right: -2vw;
+    z-index: 4;
+    bottom: -2rem;
+    left: -3.5rem;
+}
+
+/* ─── Floating Labels ────────────────────────────────────────────────────── */
+.motion-card__floating-labels {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.motion-card__floating-labels .motion-card__floating-label {
+    pointer-events: auto;
+}
+
+.motion-card__floating-label {
+    position: absolute;
+    padding: 0.1vw 0.5vw;
+    border-radius: 9999px;
+    border-bottom-left-radius: 0;
+    z-index: 10;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+}
+
+.motion-card__floating-text {
+    pointer-events: none;
+    margin: 0;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 450;
+    color: var(--color-dark);
+}
+
+/* Card 1 label — pink, center-left area */
+.motion-card__floating-label--pink {
+    background-color: #efbbd8;
+    top: 31%;
+    left: 30%;
+}
+
+/* Card 3 label — orange, bottom area */
+.motion-card__floating-label--orange {
+    background-color: #f4825c;
+    top: 69%;
+    left: 48%;
+}
+
+
+/* Card 4 label — green, top-right area */
+.motion-card__floating-label--red {
+    background-color: #dcec9d;
+    top: 46%;
+    left: 89%;
+}
+
+/* ─── Part 3: Bottom Text ────────────────────────────────────────────────── */
+.motion-card__footer-text {
+    max-width: 550px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.motion-card__description {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 1.7;
+    color: var(--color-dark);
+    letter-spacing: -0.2px;
+    cursor: url("/assets/Cursor SVG/cursor-text.svg") 12 12, auto;
+}

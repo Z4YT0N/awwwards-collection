@@ -1,0 +1,121 @@
+@import "../../common/include-media";
+
+.section {
+	position: relative;
+	display: flex;
+
+	@include media(">mobile") {
+		height: 100vh;
+		width: 150vh;
+	}
+	@include media("<=mobile") {
+		flex-direction: column;
+	}
+}
+
+.textWrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	background-color: #fff;
+
+	@include media(">mobile") {
+		height: 100%;
+		width: 45%;
+		padding: 0 13.3vh;
+	}
+	@include media("<=mobile") {
+		padding: 3.625rem 1.5rem 3.25rem;
+	}
+}
+
+.title {
+	font: 500 5.33vh/98.49% "New York Extra Large", serif;
+	letter-spacing: -0.06em;
+	white-space: pre-wrap;
+
+	@include media(">mobile") {
+		margin-bottom: 7.3vh;
+	}
+	@include media("<=mobile") {
+		font-size: 2.25rem;
+		margin-bottom: 2rem;
+	}
+}
+
+.text {
+	font: 500 2.35vh/150% "Neue Haas Grotesk Display Pro", Arial, Helvetica,
+		sans-serif;
+	white-space: pre-wrap;
+
+	@include media(">mobile") {
+		margin-bottom: 3vh;
+	}
+	@include media("<=mobile") {
+		font-size: 1rem;
+		margin-bottom: 1.5rem;
+	}
+}
+
+.signature {
+	align-self: flex-start;
+
+	@include media(">mobile") {
+		margin-top: 0.556vh;
+	}
+}
+
+.person {
+	font: 500 1.56vh/150% "Neue Haas Grotesk Display Pro", Arial, Helvetica,
+		sans-serif;
+	align-self: flex-start;
+
+	@include media(">mobile") {
+		margin-top: 0.77vh;
+	}
+	@include media("<=mobile") {
+		font-size: 0.8125rem;
+		margin-top: 0.433rem;
+	}
+}
+
+.imageWrapper {
+	overflow: hidden;
+
+	@include media(">mobile") {
+		height: 100%;
+		width: 55%;
+	}
+	@include media("<=mobile") {
+		height: 125vw;
+	}
+}
+
+.imageContainer {
+	width: 100%;
+	height: 100%;
+
+	@include media(">mobile") {
+		transform: translateX(-2.1vw);
+	}
+	@include media("<=mobile") {
+		transform: translateY(-2vh);
+	}
+}
+
+.image {
+	background-image: url("https://res.cloudinary.com/tobijudah/image/upload/q_auto,f_auto/v1637486753/it/1_qteks0.png");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+
+	@include media(">mobile") {
+		width: 120%;
+		height: 100%;
+	}
+	@include media("<=mobile") {
+		width: 100%;
+		height: 110%;
+	}
+}

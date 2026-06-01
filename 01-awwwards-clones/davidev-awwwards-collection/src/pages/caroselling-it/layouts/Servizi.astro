@@ -1,0 +1,108 @@
+<section class='container ani-servizi'>
+	<div class='top-divider container-data'>
+		<span class='title'>servizi</span>
+		<div>
+			<h2>brand design</h2>
+			<ul>
+				<li>consulenza generale</li>
+				<li>brand strategy</li>
+				<li>brand & rebranding</li>
+				<li>logo design</li>
+				<li>visual identity</li>
+				<li>packaging design</li>
+				<li>corporate identity</li>
+			</ul>
+		</div>
+		<div>
+			<h2>web design</h2>
+			<ul>
+				<li>UX/UI design</li>
+				<li>art direction</li>
+				<li>siti web</li>
+				<li>development</li>
+				<li>microinteractions</li>
+				<li>ecommerce</li>
+				<li>content design</li>
+				<li>manutenzione e sicurezza</li>
+				<li>hosting e privacy consultant</li>
+				<li>video e photo shooting</li>
+				<li>audit SEO</li>
+				<li>SEO strategy & positioning</li>
+				<li>check-up per il tuo sito web</li>
+			</ul>
+		</div>
+		<div>
+			<h2>copywriting</h2>
+			<ul>
+				<li>testi SEO e piani editoriali</li>
+				<li>revisioni</li>
+				<li>landing pages</li>
+				<li>brochure e company profile</li>
+				<li>creatività e slogan</li>
+				<li>testi per siti web & ecommerce</li>
+				<li>naming & payoff</li>
+				<li>microcopy</li>
+				<li>testi company profile</li>
+				<li>traduzioni</li>
+			</ul>
+		</div>
+	</div>
+	<style>
+		.ani-servizi {
+			opacity: 0;
+		}
+		.container {
+			margin-top: var(--divider-top);
+		}
+		.top-divider {
+			border-top: 1px solid #fff;
+			padding-top: 2rem;
+		}
+		.title {
+			font-size: var(--text-3xl);
+			color: var(--caro-primary);
+			cursor: pointer;
+			margin-right: 196px;
+			&:hover {
+				color: var(--caro-secondary);
+				transform: scale(1.1);
+				transition: all 0.5s ease-in-out;
+			}
+		}
+		.container-data {
+			display: flex;
+			flex-direction: row;
+			align-items: flex-start;
+			& div {
+				margin: 1rem 2.5rem;
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-start;
+				align-items: flex-start;
+				gap: 0.5rem;
+			}
+			& h2 {
+				font-size: var(--text-xl);
+				padding-bottom: 0.5rem;
+				cursor: pointer;
+				border-bottom: 1px solid var(--caro-primary);
+				margin-bottom: 1rem;
+				&:hover {
+					color: var(--caro-secondary);
+					border-color: var(--caro-secondary);
+					transition: all 0.8s ease-in-out;
+				}
+			}
+			& ul {
+				display: flex;
+				flex-direction: column;
+				gap: 0.4rem;
+				& li {
+					font-size: var(--text-lg);
+					display: block;
+					min-width: max-content;
+				}
+			}
+		}
+	</style>
+</section>

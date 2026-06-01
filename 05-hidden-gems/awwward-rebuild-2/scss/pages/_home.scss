@@ -1,0 +1,468 @@
+// banner
+
+.banner {
+  overflow: hidden;
+
+  .bg-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    transform: scale(1.3);
+    z-index: 1;
+
+    .parallax-container {
+      background-size: cover !important;
+      background-position: center !important;
+      transform-origin: top;
+    }
+  }
+
+  h1 {
+    position: relative;
+    z-index: 2;
+    color: $white;
+  }
+}
+
+.about {
+  .container {
+    .text-box {
+      text-align: center;
+      position: relative;
+
+      &:nth-of-type(2) {
+        margin-top: 2rem;
+      }
+
+      h6 {
+        font-size: $small-font;
+        font-family: $pop-font;
+        font-weight: 600;
+        color: $color;
+        letter-spacing: 4px;
+        line-height: $h4-font;
+
+        span {
+          padding: $small-font;
+          border: 2px solid $color;
+          line-height: $a-font;
+          border-radius: 50%;
+          font-family: $can-font;
+        }
+      }
+
+      h1 {
+        font-weight: 500;
+        line-height: 1.5;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        word-spacing: 4px;
+
+        div {
+          width: 13rem;
+          height: 8rem;
+          overflow: hidden;
+          margin: 0 0.5rem;
+
+          @media only screen and (max-width: 1060px) {
+            width: 10rem;
+            height: 6rem;
+          }
+
+          img {
+            transition: all 0.5s ease;
+            transform-origin: center;
+          }
+
+          &:hover img {
+            transform: scale(1.2);
+          }
+        }
+      }
+    }
+  }
+}
+
+.intro {
+  max-height: 100vh;
+
+  .mini-container {
+    height: 800px;
+    align-items: flex-end;
+    justify-content: flex-end;
+
+    @media only screen and (max-width: 1060px) {
+      padding: 0 2rem;
+    }
+
+    .intro-content {
+      flex: 0 0 45%;
+      max-width: 45%;
+      position: relative;
+      justify-content: flex-end;
+      padding: 5rem 0;
+
+      .text-box:not(.parallax-box) {
+        padding: 1.2rem 0;
+        border-top: 1px solid $line;
+
+        &:nth-of-type(1) {
+          margin-top: 2rem;
+        }
+
+        &:nth-of-type(3) {
+          border-bottom: 1px solid $line;
+        }
+
+        .text-box p {
+          font-size: $a-font;
+        }
+      }
+      .parallax-box {
+        position: absolute;
+        top: 10vh;
+        left: -20rem;
+        width: 40rem;
+        height: fit-content;
+        z-index: 4;
+        pointer-events: none;
+
+        h1 {
+          line-height: 1.2;
+          color: $color;
+          font-weight: 500;
+        }
+      }
+    }
+
+    .intro-pic {
+      position: absolute;
+      top: 0;
+      left: 0;
+      flex: 0 0 50%;
+      max-width: 50%;
+      height: 100%;
+
+      .img-box {
+        position: absolute;
+        z-index: 2;
+        height: 80%;
+        width: 30rem;
+        top: 2rem;
+
+        img {
+          transform-origin: top;
+          transform: scale(1.4, 1);
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .bg-container {
+        width: 100%;
+        height: 60%;
+        position: absolute;
+        bottom: 0;
+        background-color: $decor;
+      }
+    }
+  }
+}
+
+.news {
+  max-height: 100vh;
+  overflow: hidden;
+
+  .bg-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scale(1.2, 1.4);
+    z-index: 1;
+
+    .parallax-container {
+      background-position: top !important;
+      background-size: cover !important;
+      transform-origin: top;
+    }
+  }
+
+  .text-box {
+    z-index: 3;
+    width: 215rem;
+
+    h1 {
+      font-weight: 600;
+      font-style: italic;
+      color: $white;
+      animation: roll 15s linear infinite;
+      width: 215rem;
+      text-shadow: 215rem 0 $white, calc(215rem * 2) 0 $white,
+        calc(215rem * 3) 0 $white;
+    }
+  }
+
+  .mini-container {
+    position: absolute;
+    height: 100vh;
+
+    .img-box {
+      position: absolute;
+      right: 0;
+      width: 24rem;
+      height: 35rem;
+      z-index: 5;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+
+      @media only screen and (max-width: 1060px) {
+        right: 2rem;
+      }
+
+      &:hover img {
+        filter: grayscale(0.4);
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        transform: scale(1.8, 1);
+        align-tracks: center;
+        transition: all 0.5s ease;
+      }
+    }
+  }
+}
+
+@keyframes roll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.challange {
+  .container {
+    h1 {
+      font-weight: 500;
+      font-style: italic;
+      text-align: center;
+      line-height: 1.2;
+    }
+  }
+}
+
+.contact {
+  max-height: 100vh;
+
+  .left-contact {
+    flex: 0 0 50%;
+    max-width: 50%;
+    height: 100vh;
+    background-color: $black;
+    text-align: center;
+
+    p {
+      font-size: $a-font;
+      font-weight: 600;
+      color: $white;
+      letter-spacing: 2px;
+    }
+
+    h4 {
+      font-style: italic;
+      color: $color;
+      font-weight: 500;
+      line-height: 1.3;
+      width: 30rem;
+      margin: 2rem 0 3rem 0;
+    }
+
+    form {
+      width: 60%;
+
+      input[type="email"] {
+        border: 1px solid $color;
+        padding: 1.5rem 1rem;
+        background-color: transparent;
+        font-size: $a-font;
+        font-weight: 500;
+        color: $white;
+        width: 100%;
+        height: fit-content;
+      }
+
+      input[type="submit"] {
+        border: 1px solid $color;
+        color: $strong;
+        padding: 1.5rem 1rem;
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        font-size: $a-font;
+        text-transform: uppercase;
+        font-weight: 300;
+
+        &:hover {
+          color: $white;
+          background-color: $strong;
+          border: 1px solid $strong;
+        }
+      }
+    }
+  }
+
+  .right-contact {
+    flex: 0 0 50%;
+    max-width: 50%;
+    height: 100vh;
+    position: relative;
+    background-color: $line;
+
+    h1 {
+      font-weight: 500;
+      line-height: 1.2;
+    }
+
+    .img-box {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 24rem;
+      height: 32rem;
+      opacity: 0.9;
+
+      img {
+        transform: center;
+        transform: scale(1.4, 1.7);
+      }
+    }
+  }
+}
+
+.oth {
+  background-color: $white;
+
+  .mini-container {
+    p.p-one {
+      font-size: $a-font;
+      font-weight: 600;
+    }
+
+    h1 {
+      font-weight: 600;
+      color: $color;
+      letter-spacing: 5px;
+      margin-top: 2rem;
+    }
+
+    .oth-content {
+      margin-top: 3rem;
+      align-items: flex-start;
+      position: relative;
+      margin-bottom: 5rem;
+
+      @media only screen and (max-width: 1060px) {
+        padding: 0 2rem;
+      }
+
+      :after {
+        content: "";
+        height: 100%;
+        width: 1px;
+        background-color: $line;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        position: absolute;
+        z-index: 2;
+      }
+
+      .left-oth {
+        flex: 0 0 50%;
+        max-width: 50%;
+
+        p {
+          width: 90%;
+        }
+
+        p.thin-p {
+          font-weight: 600;
+          margin-bottom: 2rem;
+        }
+      }
+
+      .right-oth {
+        flex: 0 0 50%;
+        max-width: 50%;
+
+        p {
+          width: 90%;
+
+          &:nth-last-of-type(2) {
+            margin-bottom: 2rem;
+          }
+        }
+      }
+    }
+
+    a.btn {
+      font-size: $small-font;
+      font-weight: 600;
+      color: $dark;
+      background-color: $decor;
+      width: 14rem;
+      height: 4rem;
+      position: relative;
+      overflow: hidden;
+
+      &::after {
+        content: attr(data-name);
+        font-size: $small-font;
+        font-weight: 500;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background-color: $black;
+        color: $white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 0;
+        left: 0;
+        transform: translateY(100%);
+      }
+
+      span {
+        position: absolute;
+        transition: all 0.5s ease;
+      }
+
+      &:hover span {
+        transform: translateY(5rem);
+      }
+
+      &:hover::after {
+        transform: translateY(0);
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1060px) {
+  .title-2 {
+    font-size: 6vw;
+  }
+  .title-3 {
+    font-size: 6vw;
+  }
+  .sub-title {
+    font-size: 3vw;
+  }
+}

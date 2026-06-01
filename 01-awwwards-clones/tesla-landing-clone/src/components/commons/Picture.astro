@@ -1,0 +1,30 @@
+---
+const { name, breakpoint = "xs" } = Astro.props;
+
+const breakpoints = {
+    "2xs": ["400px", "2xs:object-center"],
+    "1.5xs": ["475px", "1.5xs:object-center"],
+    "1.25xs": ["500px", "1.25xs:object-center"],
+    xs: ["550px", "xs:object-center"],
+    "2md": ["807px", "2md:object-center"],
+    "2.5xl": ["1375px", "2.5xl:object-center"],
+};
+
+const width = breakpoints[breakpoint][0] ?? breakpoints["xs"][0];
+
+const objectCenter = breakpoints[breakpoint][1] ?? breakpoints["xs"][1];
+
+const classesForImage = `object-cover object-mobile ${objectCenter} w-full h-full`;
+
+const alt = name.includes("-") ? name.replace("-", " ") : name;
+---
+
+<picture>
+    <source srcset=`/${name}-Desktop.webp` media=`(min-width: ${width})` />
+    <img
+        loading="lazy"
+        src=`/${name}-Mobile.webp`
+        class={classesForImage}
+        alt={alt}
+    />
+</picture>

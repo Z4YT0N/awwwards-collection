@@ -1,0 +1,36 @@
+// sass-map
+
+// 700px, 900px, 1440px
+$breakpoint-up: (
+	"small": 31.25em,
+	// 500px
+	"medium": 43.75em,
+	//700px
+	"large": 56.25em,
+	// 900px
+	"xlarge": 90em,
+	// 1440px
+);
+
+$breakpoint-down: (
+	"verysmall": 20em,
+	// 320px
+	"small": 43.7488em,
+	// 699.98px
+	"medium": 56.2488em,
+	// 899.98px
+	"large": 89.9988em,
+	//1439.98px
+);
+
+@mixin breakpoint-up($size) {
+	@media (min-width: map-get($breakpoint-up, $size)) {
+		@content;
+	}
+}
+
+@mixin breakpoint-down($size) {
+	@media (max-width: map-get($breakpoint-down, $size)) {
+		@content;
+	}
+}

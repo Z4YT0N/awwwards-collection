@@ -1,0 +1,103 @@
+.five{
+    overflow-x: hidden;
+    height: 100vh;
+    font-family: gara;
+}
+.cate{
+    color: orangered;
+}
+.cate-text{
+    font-size: 1.5vw;
+    font-family: ara;
+    position: absolute;
+    left: 47%;
+}
+.list-cate{
+    position: absolute;
+    font-size: 7vw;
+    list-style: none;
+    left: 26%;
+    margin-top: 10%;
+}
+
+.cate-link:after{
+    width: 0%;
+    transform: scaleX(0);
+    height: 0px;
+    background-color: orangered;
+    transform-origin: none;
+    transition: none;
+}
+
+
+.list-cate a{
+    color: orangered;
+    text-decoration: none;
+}
+
+
+.list-image{
+    position: absolute;
+    z-index: -1;
+}
+
+.list{
+    width: auto;
+    height: 100px;
+    margin-left: 300%;
+    margin-top: 70%;
+}
+.list-two{
+    width: auto;
+    height: 100px;
+    margin-left: 600%;
+    margin-top: 40%;
+    transform: rotate(20deg);
+}
+.list-three{
+    width: auto;
+    height: 100px;
+    margin-left: 260%;
+    margin-top: 80%;
+    transform: rotate(20deg);
+}
+.list-four{
+    width: auto;
+    height: 100px;
+    margin-left: 600%;
+    margin-top: 80%;
+    transform: rotate(20deg);
+}
+
+.more {
+    background-color: #f7f6f2;
+    border:  1px solid orangered;
+    left: 20px;
+	border-radius: 28px;
+	display: inline-block;
+	cursor: pointer;
+	color: #f7f6f2;
+    font-family: ara;
+	font-size: 22px;
+	padding: 15px 33px;
+	text-decoration:none;
+}
+
+.more:hover {
+    background-color: orangered;
+    color: #f7f6f2;
+    font-family: ara;
+}
+
+.more:after{
+    width: 0%;
+    transform: scaleX(0);
+    height: 0px;
+    transform-origin: none;
+    transition: none;
+}
+
+.more:hover:after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}

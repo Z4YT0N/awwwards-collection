@@ -1,0 +1,145 @@
+.six{
+    height: 270vh;
+    background-color: blanchedalmond;
+}
+.join-head{
+    position: absolute;
+    color: orangered;
+    font-size: 14vw;
+    font-family: zuz;
+    margin-top: 10%;
+    text-align: left;
+    left: 20px;
+}
+.spiner{
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    margin-top: 10%;
+    right: 30%;
+    animation: spin infinite 20s linear;
+}
+@keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+}
+.pic-right{
+    position: absolute;
+    height: 500px;
+    width: 350px;
+    right: 0%;
+    margin-top: 5%;
+}
+.sunner{
+    position: absolute;
+    height: auto;
+    width: 550px;
+    margin-top: 40%;
+    right: 0%;
+}
+.member {
+    text-transform: uppercase;
+	border: 1px solid rgb(255, 122, 228);
+	background: whitesmoke;
+	padding: 10px;
+    position: absolute;
+	box-sizing: border-box;
+	transition: all 100ms ease; 
+    z-index: 1;
+    color: orangered;
+    font-family: ara;
+	font-size: 1.6vw;
+	padding: 50px 170px;
+    margin-top: 53%;
+    left: 3%;
+}
+.member{
+    text-decoration: none;
+    color: orangered;
+}
+.member:hover{
+    color: white;
+    border:  1px solid orangered;
+}
+.member:before {
+	content:'';
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 0%;
+	height: 0px;
+	background: rgb(255, 122, 228);
+	transition: all 150ms ease;
+    color: white !important;
+
+} 
+.member:hover:before {
+	width: 100%;
+    top: 0px;
+	left: 0px;
+    height: 125px;
+    z-index: -1;
+}
+.arw-svg{
+    position: absolute;
+    height: 70%;
+    width: 50%;
+    left: 5%;
+    margin-top: 70%;
+}
+.credit-ig{
+    font-family: ara;
+    text-transform: uppercase;
+    font-size: 0.8vw;
+    color: orangered;
+    position: absolute;
+    margin-top: 110%;
+    left: 20px;
+}
+.tag-end{
+    font-family: ara;
+    position: absolute;
+    text-align: left;
+    margin-top: 113%;
+    left: 20px;
+    font-size: 1.7vw;
+}
+.line-end{
+    color: orangered;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.line-end:hover{
+    color: rgb(255, 122, 228);
+}
+.end-line{
+    position: absolute;
+    margin-top: 119%;
+    font-size: 3vw;
+    right: 20px;
+}
+.end-line a{
+    color: black;
+    text-align: center;
+    text-decoration: none;
+}
+.end-line:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: orangered;
+    transform-origin: bottom right;
+    transition: transform 1s ease-out;
+}
+.end-line:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}

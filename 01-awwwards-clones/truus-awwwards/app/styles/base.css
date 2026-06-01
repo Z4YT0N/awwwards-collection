@@ -1,0 +1,75 @@
+/* ─── Fonts ─────────────────────────────────────────────────────────────────── */
+@font-face {
+    font-family: 'DM Sans';
+    src: url('/fonts/DMSans-VariableFont_opsz,wght.ttf') format('truetype');
+    font-weight: 100 900;
+}
+
+@font-face {
+    font-family: 'Epilogue';
+    src: url('/fonts/Epilogue-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 900;
+}
+
+/* ─── Design Tokens ─────────────────────────────────────────────────────────── */
+:root {
+    --color-green: #29725f;
+    --color-lightblue: #82a0ff;
+    --color-darkblue: #4b69f0;
+    --color-lightgreen: #e6fab9;
+    --color-orange: #f5693c;
+    --color-maroon: #a0325a;
+    --color-pink: #f0befa;
+    --bg-color: #f0ebe6;
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-dark: #1a1a1a;
+    --color-black-soft: #111111;
+    --color-black-deep: #0a0a0a;
+}
+
+/* ─── Reset ─────────────────────────────────────────────────────────────────── */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::selection {
+    background-color: var(--color-pink);
+    color: var(--color-black);
+}
+
+/* Prevent selection on non-text elements */
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+/* ─── Base Elements ──────────────────────────────────────────────────────────── */
+body {
+    background-color: var(--bg-color);
+    font-family: 'Epilogue', sans-serif;
+    color: var(--color-dark);
+    overflow-x: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    cursor: url("/assets/Cursor SVG/cursor-default.svg") 2 0, auto;
+}
+
+html {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    display: none;
+}

@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+	overflow-x: hidden;
+	background-color: #000000;
+}
+
+body::-webkit-scrollbar {
+	width: 0%;
+}
+
+@font-face {
+	src: url("../fonts/63bf3e1c32ea7b11e01bdf94_HelveticaNeue-Light.otf");
+	font-family: "helveticaNeue";
+}
+
+@font-face {
+	src: url("../fonts/63bf3e1c32ea7b80ef1bdf9f_bodoni-seventytwo-itc-book-italic.ttf");
+	font-family: "bodoniseventytwo";
+}
+
+@font-face {
+	src: url("../fonts/63bf3e1c32ea7bb19e1bdfad_Humane-Medium.otf");
+	font-family: "humaneMedium";
+}

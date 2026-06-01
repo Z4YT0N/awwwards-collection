@@ -1,0 +1,43 @@
+mixin template(id, title, direction)
+  li.home__item(class=`home__item--${id}`)
+    a.home__link(href=`/case/${id}`)
+      span.home__link__wrapper=title
+        img.home__link__media(alt=`${title} Project Preview` data-direction=direction data-src=`/projects/${id}.webp`)
+
+section.home
+  .home__background
+    .home__background__top
+    .home__background__bottom
+
+  .home__wrapper
+    ul.home__list
+      +template('xbox-museum', 'XBOX MUSEUM', 'left')
+      +template('bbdo', 'BBDO', 'right')
+      +template('peggy-gou', 'PEGGY GOU', 'left')
+      +template('isabel-moranta', 'ISABEL MORANTA', 'left')
+      +template('floema', 'FLOEMA', 'left')
+      +template('garoa-skincare', 'GAROA SKINCARE', 'right')
+      +template('design-embraced', 'DESIGN EMBRACED', 'right')
+      +template('kacper-chlebowicz', 'KACPER CHLEBOWICZ', 'left')
+      +template('trolli', 'TROLLI', 'right')
+      +template('adventure-time', 'ADVENTURE TIME', 'left')
+      +template('studio-maertens', 'STUDIO MÆRTENS', 'left')
+      +template('inbound', 'INBOUND', 'left')
+      +template('redis', 'REDIS', 'left')
+      +template('kaleidoz', 'KALEIDOZ', 'left')
+      +template('erika-moreira', 'ERIKA MOREIRA', 'right')
+      +template('bruno-arizio', 'BRUNO ARIZIO', 'left')
+      +template('dominic-berzins', 'DOMINIC BERZINS', 'left')
+      +template('pagethink', 'PAGETHINK', 'left')
+      +template('neoway', 'NEOWAY', 'left')
+      +template('cult', 'CULT', 'right')
+      +template('movida', 'MOVIDA', 'left')
+      +template('lufthansa-2', 'LUFTHANSA', 'left')
+      +template('tiaa', 'TIAA', 'left')
+      +template('lufthansa-1', 'LUFTHANSA', 'left')
+      +template('shell', 'SHELL', 'left')
+      +template('corvette', 'CORVETTE', 'right')
+      +template('nike', 'NIKE', 'left')
+      +template('airbnb', 'AIRBNB', 'right')
+      +template('discovery-kids', 'DISCOVERY KIDS', 'right')
+      +template('rock-in-rio', 'ROCK IN RIO', 'left')

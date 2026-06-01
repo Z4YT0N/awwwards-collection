@@ -1,0 +1,127 @@
+/* home page style */
+.experience {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+}
+
+body {
+  background-color: var(--theme-color) !important;
+}
+
+/* banner start */
+
+.banner {
+  padding: var(--pad-10);
+}
+
+.banner .container {
+  overflow: hidden;
+}
+
+.banner .container .text-box {
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  height: fit-content;
+  font-style: italic;
+}
+
+.banner .container .left-title {
+  left: 5vw;
+  top: 20vh;
+  text-align: left;
+}
+
+.banner .container .right-title {
+  right: 5vw;
+  bottom: 20vh;
+  text-align: right;
+}
+
+.banner .container .social-links {
+  position: fixed;
+  bottom: 2vh;
+  left: 5vw;
+  width: fit-content;
+  height: fit-content;
+  z-index: 10;
+}
+
+.banner .container .social-links a {
+  font-size: var(--small-text);
+  font-weight: var(--light-font);
+  line-height: 2;
+  letter-spacing: 2px;
+  margin: 0 0.5vw;
+}
+
+.banner .container .social-links a:hover {
+  color: var(--theme-color);
+}
+
+.banner .container .copyrights {
+  position: fixed;
+  bottom: 3vh;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.banner .container .copyrights p {
+  font-size: var(--small-text);
+  font-weight: var(--light-font);
+  letter-spacing: 1px;
+}
+
+.banner .container .credits {
+  position: fixed;
+  z-index: 10;
+  right: 2vw;
+  bottom: 3vh;
+  text-align: right;
+}
+
+.banner .container .credits p {
+  font-size: 0.8rem;
+  line-height: 2;
+  letter-spacing: 1px;
+}
+
+.banner .container .credits p a {
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+.banner .container .credits p a:hover {
+  color: var(--theme-color);
+}
+
+/*  */
+@media only screen and (max-width: 600px) {
+  .banner .container .social-links {
+    display: flex;
+    flex-direction: column;
+    left: 2vw;
+  }
+  .banner .container .copyrights {
+    bottom: 1vh;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .banner .container .credits p {
+    font-size: 0.5rem;
+  }
+  .banner .container .credits p a {
+    font-size: 0.5rem;
+  }
+  .banner .container .left-title {
+    top: 30vh;
+  }
+  .banner .container .right-title {
+    bottom: 30vh;
+  }
+  .banner .container .social-links a {
+    font-size: 0.7rem;
+  }
+}

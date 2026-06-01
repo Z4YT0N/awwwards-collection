@@ -1,0 +1,174 @@
+.detail {
+  @extend %center;
+  @extend %page;
+
+  // background-color: $color-quicksand;
+  // color:  $color-quarter-spanish-white;
+
+  @include media('<phone') {
+    height: auto;
+  }
+}
+
+.detail__wrapper {
+  display: flex;
+  align-items: center;
+
+  @include media('<phone') {
+    width: 66.1rem;
+    margin: auto;
+    padding: 15rem 0 31.5rem;
+
+    display: block;
+  }
+}
+
+.detail__media {
+  position: relative;
+  width: 55.4rem;
+  height: 78.2rem;
+
+  @include media('<phone') {
+    width: 66.1rem;
+    height: 93.4rem;
+    margin: 0 auto 7.8rem;
+  }
+}
+
+.detail__media__image {
+  @extend %cover;
+}
+
+.detail__information {
+  margin-left: 8.2rem;
+
+  @include media('<phone') {
+    margin-left: 0;
+  }
+}
+
+.detail__information__collection {
+  @extend %description-12;
+
+  margin-bottom: 3.7rem;
+  text-transform: uppercase;
+}
+
+.detail__information__title {
+  @extend %title-120;
+  max-width: 9ch;
+}
+
+.detail__information__content {
+  padding-left: 10rem;
+
+  @include media('<phone') {
+    padding-left: 0;
+  }
+}
+
+.detail__information__highlights {
+
+  margin-top: 6rem;
+}
+
+.detail__information__highlight {
+  display: flex;
+  align-items: center;
+
+  &:not(:first-child) {
+    margin-top: 4rem;
+  }
+}
+
+.detail__information__highlight__icon {
+  width: 4rem;
+  height: 4rem;
+  margin-right: 3.75rem;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+
+  fill: $color-quarter-spanish-white;
+
+  > svg {
+    transform: scale(0.6);
+  }
+
+  @include media('<phone') {
+    width: 9.2rem;
+    height: 9.2rem;
+    margin-right: 5.8rem;
+  }
+}
+
+.detail__information__highlight__text {
+  @extend %description-16;
+}
+
+.detail__information__list {
+  margin-top: 4rem;
+}
+
+.detail__information__item {
+  display: flex;
+
+  &:not(:first-child) {
+    margin-top: 4rem;
+  }
+}
+
+.detail__information__item__title {
+  @extend %description-12;
+
+  padding-right: 2.5rem;
+  width: 10rem;
+
+  @include media('<phone') {
+    padding-right: 5rem;
+    width: 15rem;
+  }
+}
+
+.detail__information__item__description {
+  @extend %description-16;
+  max-width:  44rem;
+}
+
+.detail__information__link {
+  position: relative;
+  @extend %title-30;
+
+  display: inline-block;
+  margin-top: 3rem;
+
+  @include media('<phone') {
+
+  }
+}
+
+.detail__button {
+  @extend %description-14;
+
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  bottom: 5rem;
+  transform: translateX(-50%);
+  width: 12rem;
+  height: 6rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include media('<phone') {
+    bottom: 12rem;
+    width: 26.8rem;
+    height: 13rem;
+  }
+}
+
+.detail__button__icon {
+  @extend %cover;
+}
+

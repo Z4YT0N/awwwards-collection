@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+
+
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+     --font-aboreto: "Aboreto", cursive;
+  --color-background: #EEEEEE;
+  --color-light: #444444;
+}
+
+
+html,
+body {
+  background: var(--color-background);
+  font-family: var(--font-sans);
+}
+
+
+h1 {
+  font-family: var(--font-aboreto);
+}
+
+
+/* Apply this to your scrollable container (e.g., body or a div) */
+.hide-scrollbar {
+  overflow: auto;           /* allow scrolling */
+  scrollbar-width: none;    /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;            /* Chrome, Safari, Edge */
+}

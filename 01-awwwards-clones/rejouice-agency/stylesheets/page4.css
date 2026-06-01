@@ -1,0 +1,137 @@
+#page4{
+    
+    width: 100vw;
+    /* background-color: aqua;    */
+    padding: 40px;
+    color: black;
+    overflow: hidden;
+}
+
+#page4 #txt {
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin:  10px 0 ;
+}
+
+#page4 #txt p{
+    font-size: 28px
+}
+
+#page4 #txt a{
+    font-size: 24px
+}
+
+#page4 #cards{
+    /* background-color: beige; */
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+#page4 #cards .card{
+    height: 500px;
+    width: 450px;
+    position: relative;
+    
+
+}
+
+#page4 #cards .card video{
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.6s 0.5s ;
+
+}
+
+
+#page4 #cards .card img{
+    height: 100%;
+    width: 100%;
+
+    position: relative;
+    z-index: 2;
+    object-fit: cover;
+    z-index: 2;
+    transition: all 0.6s 0.5s ;
+
+    
+}
+
+#page4 #cards .card:hover video {
+    z-index: 3;
+}
+
+
+@media (max-width: 768px) {
+    #page4{
+    height:fit-content;
+        padding: 10px;
+        color: black;
+    }
+
+
+    #page4 #txt p{
+        font-size: 20px
+    }
+    
+    #page4 #txt a{
+        font-size: 16px
+    }
+
+
+  #page4 #cards .card{
+    height: 300px;
+    
+    position: relative;
+    
+
+}
+}
+
+
+@media (max-width: 425px) {
+    #page4{
+    
+        padding: 10px;
+        color: black;
+    }
+
+
+    #page4 #txt p{
+        font-size: 4vw
+    }
+    
+    #page4 #txt a{
+        font-size: 13px
+    }
+
+
+
+
+    #page4 #cards{
+        /* background-color: beige; */
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+    }
+
+  #page4 #cards .card{
+    
+    width: 100%;
+    
+    position: relative;
+    
+
+}
+}
+
+

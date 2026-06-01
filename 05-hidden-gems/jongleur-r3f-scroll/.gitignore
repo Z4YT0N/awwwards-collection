@@ -1,0 +1,32 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+/coverage/
+/.cache/
+**/.temp.*
+/apps/documentation/src/pages/api/*.md
+/apps/documentation/src/pages/api/none
+/apps/documentation/src/pages/api/.nojekyll
+/apps/documentation/src/pages/api/_modules
+/assets/optimized.gif

@@ -1,0 +1,114 @@
+@import "../../common/include-media";
+
+.buttonContainer {
+	height: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.section-one {
+	.background {
+		background-color: #ffffff;
+	}
+	.arrow {
+		stroke: #000;
+	}
+	.text {
+		color: #000;
+	}
+}
+
+.section-nine {
+	.button {
+		background-color: rgb(238, 106, 106);
+	}
+	.background {
+		background-color: #ff4040;
+	}
+	.arrow {
+		stroke: #fff;
+		transform: rotate(-30deg);
+	}
+	.text {
+		color: #000;
+	}
+}
+
+.credits {
+	.background {
+		background-color: #ffffff;
+	}
+	.arrow {
+		stroke: #000;
+		@include media(">mobile") {
+			transform: scaleX(-1);
+		}
+		@include media("<=mobile") {
+			transform: rotate(-90deg);
+		}
+	}
+	.text {
+		color: #fff;
+	}
+}
+
+.button {
+	cursor: pointer;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: none;
+	border-radius: 100%;
+	transition: transform 300ms ease;
+
+	&:hover > div {
+		transform: scale(0.75);
+	}
+
+	@include media(">mobile") {
+		width: 18vh;
+		height: 18vh;
+	}
+	@include media("<=mobile") {
+		width: 7.5rem;
+		height: 7.5rem;
+	}
+}
+
+.background {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	border-radius: 100%;
+	transition: transform 350ms ease;
+}
+
+.text {
+	width: fit-content;
+	font: 500 1.78vh/150% "Neue Haas Grotesk Display Pro", Arial, Helvetica,
+		sans-serif;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	white-space: nowrap;
+	z-index: 2;
+
+	@include media(">mobile") {
+		margin-top: 0.75rem;
+	}
+	@include media("<=mobile") {
+		margin-top: 1.34vh;
+		font-size: 1rem;
+	}
+}
+
+.arrow {
+	z-index: 2;
+
+	@include media("<=mobile") {
+		width: 4.15rem;
+	}
+}

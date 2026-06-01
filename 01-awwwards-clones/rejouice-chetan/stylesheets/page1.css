@@ -1,0 +1,165 @@
+@font-face {
+    font-family: 'nb';
+    src: url(../fonts/NBInternationalProBoo.woff2) ;
+  }
+
+@font-face {
+    font-family: 'rj';
+    src: url(../fonts/Rejouice-Headline.woff2) ;
+  }
+ 
+/* *::-webkit-scrollbar {
+    display: none;
+  } */
+
+  #main{
+    overflow: hidden;
+  }
+
+*{
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera, and Firefox */
+  }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "nb";
+}
+
+html,body{
+    min-height: 100vh;
+    width:100vw;
+    background-color: #fff6f6;
+    color: rgb(245, 245, 245);
+    overflow-x: hidden;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+
+#page1{
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    background: #000;
+    overflow: hidden;
+}
+
+ #playreel {
+    height: 130px;
+    width: 130px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.523);
+
+    position: absolute;
+    z-index:2;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor:default;
+    transform: translate(-50%,-50%) scale(0) ;
+    
+}
+
+
+ #playreel h3 {
+    font-weight: 200;
+}
+#nav{
+    height: 10vh;
+    width: 100vw;
+    position: relative;
+    
+    /* background: #000; */
+
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 4.3vw 2.5vw;
+    z-index: 3;
+}
+
+#nav h3 {
+    font-family: nb;
+    font-weight: 300;
+    font-size: 1.4vw;
+}
+
+#video{
+    height: 100%;
+    width: 100%;
+    /* background-color: antiquewhite; */
+
+    position: absolute;
+    top: 0;
+}
+video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: relative;
+    /* background: #000; */
+}
+
+
+#company-name{
+    height: 200px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    
+    
+
+    /* background: #693232; */
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 5px;
+    width: 100%;
+    
+
+}
+
+#company-name span {
+    text-transform: lowercase;
+    z-index: 2;
+    color: white;
+    overflow: hidden;
+
+    /* background: #000; */
+    
+}
+
+#company-name span h1 {
+    font-family: rj;
+    font-size: 26vw;
+    font-weight: 400;
+}
+
+
+
+
+
+@media (max-width: 768px) {
+    #nav h3 {
+        font-size: 20px;
+    }
+
+    #playreel {
+        display: none;
+        
+    }
+}
+
+

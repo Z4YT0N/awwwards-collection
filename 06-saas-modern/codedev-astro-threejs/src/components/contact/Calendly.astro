@@ -1,0 +1,19 @@
+<script
+	type='text/javascript'
+	src='https://assets.calendly.com/assets/external/widget.js'></script>
+
+<script>
+	document.addEventListener('astro:page-load', () => {
+		const container = document.getElementById('SAMPLEdivID');
+		if (!container?.hasChildNodes() && container) {
+			Calendly.initInlineWidget({
+				url: 'https://calendly.com/cosmohydra17',
+				parentElement: container,
+				prefill: {},
+				utm: {},
+			});
+		}
+	});
+</script>
+
+<div id='SAMPLEdivID' class='h-screen'></div>

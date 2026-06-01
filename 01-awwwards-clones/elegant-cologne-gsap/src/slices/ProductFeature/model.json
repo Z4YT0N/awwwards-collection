@@ -1,0 +1,56 @@
+{
+  "id": "product_feature",
+  "type": "SharedSlice",
+  "name": "ProductFeature",
+  "description": "ProductFeature",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Heading",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading2"
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Description",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,strong,em"
+          }
+        },
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Feature Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "fragrance": {
+          "type": "Link",
+          "config": {
+            "label": "Fragrance",
+            "select": "document",
+            "repeat": false,
+            "customtypes": [
+              "fragrance"
+            ]
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

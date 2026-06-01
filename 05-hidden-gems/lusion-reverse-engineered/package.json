@@ -1,0 +1,25 @@
+{
+  "name": "lusion-reverse-engineered",
+  "homepage": "https://canxerian.github.io/lusion-reverse-engineered",
+  "private": true,
+  "dependencies": {
+    "@dimforge/rapier3d-compat": "^0.14.0",
+    "countup.js": "^2.8.0",
+    "three": "^0.166.1",
+    "vite-plugin-wasm": "^3.3.0",
+    "wiggle": "^0.0.17"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.1.1",
+    "lil-gui": "^0.19.2",
+    "vite": "^5.3.4",
+    "vite-plugin-glsl": "^1.3.0"
+  },
+  "scripts": {
+    "start": "npx vite",
+    "build": "npx vite build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  },
+  "type": "module"
+}

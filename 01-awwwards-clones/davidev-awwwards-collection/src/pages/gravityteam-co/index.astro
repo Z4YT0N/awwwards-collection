@@ -1,0 +1,51 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import About from './layouts/About.svelte';
+import CoinsSlider from './layouts/CoinsSlider.astro';
+import Contact from './layouts/Contact.svelte';
+import Exchnages from './layouts/Exchnages.svelte';
+import Footer from './layouts/Footer.svelte';
+import Header from './layouts/Header.svelte';
+import JoinTheTeam from './layouts/JoinTheTeam.svelte';
+import MarketMarking from './layouts/MarketMarking.svelte';
+import Navbar from './layouts/Navbar.svelte';
+import Partners from './layouts/Partners.svelte';
+import Testimonails from './layouts/Testimonails.svelte';
+---
+
+<Layout title='Gravity Team'>
+	<main>
+		<div class='container f-c-c-c'>
+			<Navbar client:load />
+			<header class='w-full'>
+				<Header />
+				<CoinsSlider />
+			</header>
+			<About client:only />
+			<MarketMarking />
+			<Exchnages />
+			<Partners client:load />
+			<Testimonails client:load />
+			<JoinTheTeam />
+			<Contact />
+			<Footer />
+
+			<style>
+				.container {
+					margin: 3rem auto;
+				}
+				main {
+					background-color: var(--gravity-bg);
+				}
+				header {
+					display: flex;
+					justify-items: space-between;
+					gap: 3rem;
+					align-items: center;
+					flex-direction: column;
+					margin-bottom: 2rem;
+				}
+			</style>
+		</div>
+	</main>
+</Layout>

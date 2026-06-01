@@ -1,0 +1,114 @@
+/*
+ * Copyright 2020  Kazimierz Pogoda
+ *
+ * This file is part of shader-web-background.
+ *
+ * shader-web-background is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * shader-web-background is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with shader-web-background.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+html {
+  box-sizing: border-box;
+  background: black;
+  font-size: calc(10px + .5vw);
+  font-family: sans-serif;
+  scroll-behavior: smooth;
+  line-height: 1.4em;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body, h1, pre {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  height: 100vh;
+  overflow: hidden; /* in case logo is too big on a small screen */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* switch off text selection on header */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+header h1 {
+  text-transform: lowercase;
+  color: rgba(255, 255, 255, .8);
+  text-align: center;
+  font-size: calc(50px + 6vw);
+  font-weight: normal;
+  word-spacing: 100vw; /* will make sure that each word is in separate line */
+  line-height: .4em;
+  text-shadow: 0px .03em .06em black;
+  animation: fade-in 6s;
+  animation-fill-mode: both;
+}
+
+header h1 a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, .8);
+}
+
+@keyframes fade-in {
+  0%   {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+section {
+  background: rgba(0, 0, 0, .4);
+  font-size: 1.6rem;
+}
+
+#controls {
+  text-align: center;
+  line-height: 4em;
+}
+
+button {
+  background: rgba(255, 0, 255, .5);
+  border: none;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  font-size: inherit;
+  transition: color 1.6s, background 1.6s;
+  border-radius: .47rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background: rgba(255, 255, 255, .5);
+  color: black;
+}
+
+.shader-web-background-fallback {
+  background: red;
+}
+
+.shader-web-background-fallback h1::after {
+  color: red;
+  content: " shader-web-background not supported"
+}

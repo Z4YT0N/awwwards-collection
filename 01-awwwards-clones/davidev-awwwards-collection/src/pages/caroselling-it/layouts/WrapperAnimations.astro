@@ -1,0 +1,15 @@
+<main>
+	<script
+		type='module'
+		src={(await import('../utils/animations.ts?url')).default}
+	></script>
+	<slot />
+</main>
+
+<style>
+	main {
+		padding: 76px 48px;
+		background-color: var(--caro-main);
+		color: var(--caro-primary);
+	}
+</style>

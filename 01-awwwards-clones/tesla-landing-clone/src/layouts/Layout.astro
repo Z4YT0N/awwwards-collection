@@ -1,0 +1,74 @@
+---
+export interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<link
+			rel="preload"
+			href="/video.webm"
+			as="video"
+			crossorigin="anonymous"
+		/>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+<style is:global>
+	@font-face {
+		font-family: Gotham SSm;
+		font-weight: 700;
+		font-display: swap;
+		font-style: normal;
+		src: url(https://cdn-design.tesla.com/tds-fonts/x/woff2/GothamSSm-Bold_Web.woff2)
+			format("woff2");
+	}
+
+	@font-face {
+		font-family: Gotham SSm;
+		font-weight: 500;
+		font-display: swap;
+		font-style: normal;
+		src: url(https://cdn-design.tesla.com/tds-fonts/x/woff2/GothamSSm-Medium_Web.woff2)
+			format("woff2");
+	}
+
+	@font-face {
+		font-family: Gotham SSm;
+		font-weight: 400;
+		font-display: swap;
+		font-style: normal;
+		src: url(https://cdn-design.tesla.com/tds-fonts/x/woff2/GothamSSm-Book_Web.woff2)
+			format("woff2");
+	}
+
+	@font-face {
+		font-family: Gotham SSm;
+		font-weight: 300;
+		font-display: swap;
+		font-style: normal;
+		src: url(https://cdn-design.tesla.com/tds-fonts/x/woff2/GothamSSm-Light_Web.woff2)
+			format("woff2");
+	}
+
+	@font-face {
+		font-family: Gotham SSm;
+		font-weight: 200;
+		font-display: swap;
+		font-style: normal;
+		src: url(https://cdn-design.tesla.com/tds-fonts/x/woff2/GothamSSm-XLight_Web.woff2)
+			format("woff2");
+	}
+</style>

@@ -1,0 +1,173 @@
+.five{
+    height: 270vh;
+    background-color: rgb(252, 177, 237);
+}
+.col-two{
+    position: absolute;
+    height: 135vh;
+    width: 50%;
+}
+.tour{
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+}
+.tour-one{
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+}
+.col-one{
+    position: absolute;
+    height: 120vh;
+    width: 50%;
+    background-color: aqua;
+    right: 0%;
+}
+.sauna {
+    text-transform: uppercase;
+	border: 1px solid rgb(255, 122, 228);
+	background: whitesmoke;
+	padding: 10px;
+    position: absolute;
+	box-sizing: border-box;
+	transition: all 100ms ease; 
+    z-index: 1;
+    color: orangered;
+    font-family: ara;
+	font-size: 1.2vw;
+	padding: 31px 61px;
+    border-radius: 40px;
+    margin-top: 90%;
+    right: 25%;
+}
+.sauna:before {
+	content:'';
+	position: absolute;
+    border-radius: 40px;
+	top: 40px;
+	left: 0px;
+	width: 0%;
+	height: 0px;
+	background: rgb(255, 122, 228);
+	transition: all 150ms ease;
+    color: white !important;
+
+} 
+.sauna:hover:before {
+	width: 100%;
+    top: 0px;
+	left: 0px;
+    height: 80px;
+    z-index: -1;
+}
+.sauna:hover{
+  color: orangered;
+  border:  1px solid orangered;
+}
+.people{
+    color: orangered;
+    font-family: zuz;
+    font-size: 14vw;
+    text-align: center;
+    position: absolute;
+    margin-top: 70%;
+}
+.table-box{
+    position: absolute;
+    border: 1px solid orangered;
+    border-right: 0px solid orangered;
+    height: 500px;
+    width: 40%;
+    margin-top: 85%;
+    left: 5%;
+}
+.table-box-two{
+    position: absolute;
+    border: 1px solid orangered;
+    height: 500px;
+    width: 50%;
+    margin-top: 85%;
+    right: 5%;
+}
+.static{
+    position: absolute;
+    border-bottom: 1px solid orangered;
+    height: 300px;
+    width: 544px;
+}
+.sun{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.start-bo{
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    margin-top: 42%;
+    left: 46%;
+    z-index: 2;
+}
+.line-c{
+    position: absolute;
+    color: orangered;
+    font-family: ara;
+    margin-top: 80%;
+    font-size: 3vw;
+    left: 55px;
+    text-align: center;
+    text-decoration: none;
+}
+.line-c:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: orangered;
+    transform-origin: bottom right;
+    transition: transform 1s ease-out;
+}
+.line-c:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+.kastiya{
+    color: orangered;
+    position: absolute;
+    margin-top: 5%;
+    left: 20px;
+    font-size: 5vw;
+    font-family: zuz;
+}
+.start-up{
+    height: 20px;
+    width: 20px;
+    margin: 0 2px;
+    margin-top: 15%;
+    position: relative;
+    left: -40%;
+}
+.date{
+    color: orangered;
+    position: absolute;
+    font-size: 1vw;
+    text-align: left;
+    text-transform: uppercase;
+    left: 20px;
+    margin-top: 35%;
+}
+.saying{
+    color: orangered;
+    font-size: 1.5vw;
+    position: absolute;
+    text-align: left;
+    text-transform: uppercase;
+    font-family: ara;
+    font-weight: 500;
+    margin-top: 38%;
+    left: 20px;
+}

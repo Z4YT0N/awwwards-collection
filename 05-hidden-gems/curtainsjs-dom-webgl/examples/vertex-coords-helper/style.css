@@ -1,0 +1,88 @@
+@media screen {
+
+    html, body {
+        min-height: 100%;
+    }
+
+    body {
+        margin: 0;
+        font-size: 18px;
+        font-family: 'PT Sans', Verdana, sans-serif;
+        background: #ffffff;
+        line-height: 1.4;
+
+        overflow: hidden;
+    }
+
+    #page-wrap {
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    /*** canvas ***/
+
+    #canvas {
+        height: 100vh;
+        width: 100vw;
+        position: absolute;
+    }
+
+    #back-to-lib-link {
+        display: inline-block;
+        position: fixed;
+        top: 0;
+        right: 0;
+        padding: 0.25em 0.5em;
+        background: #ee6557;
+        color: white;
+        text-decoration: none;
+        z-index: 20;
+        font-size: 0.85em;
+    }
+
+    #back-to-lib-link:hover {
+        background: black;
+    }
+
+    #source-code-link {
+        display: inline-block;
+        position: fixed;
+        bottom: 1em;
+        right: 1em;
+        padding: 0.25em 0.5em;
+        background: #ee6557;
+        color: white;
+        text-decoration: none;
+        z-index: 50;
+    }
+
+    #source-code-link:hover {
+        background: black;
+    }
+
+    .plane {
+        width: 75%;
+        margin: 1em auto;
+        height: calc(100vh - 7.2em);
+    }
+
+    .plane img {
+        display: none;
+    }
+
+    #mouse-coords-helper-wrapper {
+        height: 4.2em;
+        max-width: 1300px;
+        padding: 0 10px;
+        margin: 0 auto 1em auto;
+    }
+
+
+    /*** handling errors ***/
+
+    .no-curtains .plane {
+        background: #d17379;
+    }
+
+}

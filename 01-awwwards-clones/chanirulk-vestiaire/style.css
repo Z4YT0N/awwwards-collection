@@ -1,0 +1,374 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar{
+    width: 8px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #161616;
+    border-radius: 3px;
+}
+::-webkit-scrollbar-button{
+    display: block;
+}
+
+body{
+    background-color: #efefef;
+    color: #161616;
+    height: 100vh;
+    font-family: neu;
+}
+
+@font-face {
+  font-family: neu;
+  src: url(NeuzeitSLTStd-Book.woff2);
+}
+@font-face {
+  font-family: albra;
+  src: url(Albra\ Sans\ Regular-Traced-Web.woff2);
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  float: right;
+  background-color: rgb(0, 255, 21);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: black;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: white;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+span{
+    position: absolute;
+    left: 90%;
+    top: 10px;
+}
+
+.logo{
+    position: absolute;
+    font-family: albra;
+    font-size: 1.4vw;
+    font-weight: 700;
+    top: 10px;
+    left: 10px;
+}
+.circle{
+  height: 25px;
+  width: 25px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 50%;
+  position: absolute;
+  left: 45%;
+  top: 10px;
+}
+.brand{
+    display: inline-block;
+}
+
+.v{
+    position: relative;
+    font-family: albra;
+    font-size: 1.3vw;
+    color: black;
+    font-weight: 700;
+    left: 3px;
+}
+
+.circle-two{
+    height: 25px;
+    width: 75px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    position: absolute;
+    left: 46.8%;
+    top: 10px;
+}
+
+.im{
+    position: relative;
+    font-family: albra;
+    font-size: 1.3vw;
+    color: black;
+    font-weight: 700;
+    left: 5px;
+    top: -2px;
+}
+
+
+.circle-three{
+    height: 25px;
+    width: 120px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    position: absolute;
+    left: 51.9%;
+    top: 10px;
+}
+
+.report{
+    position: relative;
+    font-family: albra;
+    font-size: 1.3vw;
+    color: black;
+    font-weight: 700;
+    left: 5px;
+    top: -2px;
+}
+
+
+.green{
+    height: 15px;
+    width: 40px;
+    background-color: rgb(0, 255, 21);
+    border-radius: 10px;
+    position: absolute;
+    left: 60%;
+    top: 3px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.down{
+    position: absolute;
+    font-size: 1vw;
+    color: black;
+    font-weight: 700;
+    left: 70%;
+    top: 13px;
+    text-decoration: none;
+}
+
+.down:hover{
+    text-decoration: underline;
+}
+.heading{
+    font-family: albra;
+    font-size: 6em;
+    font-weight: 100;
+    line-height: 85px;
+    position: absolute;
+    margin-top: 60px;
+    left: 20px;
+    font-style: italic;
+}
+
+
+.about-img{
+    height: auto;
+    width: 300px;
+    position: absolute;
+    border-radius: 20px;
+    right: 15%;
+    top: 140px;
+}
+.line{
+    position: relative;
+    top: 500px;
+}
+
+.gallery{
+    margin-top: 37%;
+    margin-left: 2%;
+    height: 130vh;
+    width: 97%;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+
+.slide{
+    background-color: rgb(0, 255, 21);
+    height: 100%;
+    width: 100%;
+    flex-shrink: 0;
+    top: 25%;
+    position: sticky;
+}
+.slide-two{
+    background-color: rgb(0, 255, 21);
+    height: 100%;
+    width: 100%;
+    flex-shrink: 0;
+    top: 26%;
+    position: sticky;
+}
+.slide-three{
+    background-color: rgb(0, 255, 21);
+    height: 100%;
+    width: 100%;
+    flex-shrink: 0;
+    top: 27%;
+    position: sticky;
+}
+.slide-four{
+    background-color: rgb(0, 255, 21);
+    height: 100%;
+    width: 100%;
+    flex-shrink: 0;
+    top: 28%;
+    position: sticky;
+}
+.slide-five{
+    background-color: rgb(0, 255, 21);
+    height: 100%;
+    width: 100%;
+    top: 29%;
+    flex-shrink: 0;
+    position: sticky;
+}
+.slide-six{
+    background-color:black;
+    height: 100%;
+    width: 100%;
+    top: 30%;
+    flex-shrink: 0;
+    position: sticky;
+}
+.small-text{
+    font-size: 1.4vw;
+    line-height: 20px;
+    color: grey;
+    text-transform: uppercase;
+    font-weight: 100;
+}
+
+.company{
+    position: absolute;
+    font-size: 1vw;
+    line-height: 20px;
+    color: grey;
+    font-weight: 100;
+    right: 55px;
+}
+
+.column {
+  float: left;
+  width: 50%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.hand-two{
+    object-fit: cover;
+    height: 700px;
+    width: 700px;
+}
+
+.slide-text{
+    font-family: albra;
+    text-align: center;
+    line-height: 90px;
+    font-size: 7vw;
+    margin-top: 160px;
+    margin-left: -25px;
+}
+
+.slide-text-three{
+    font-family: albra;
+    text-align: center;
+    line-height: 90px;
+    font-size: 7vw;
+    margin-top: 80px;
+    margin-left: -25px;
+}
+
+
+.myButton {
+    position: absolute;
+    margin-top: 60px;
+    margin-left: 260px;
+	background-color: black;
+	border-radius:28px;
+	display:inline-block;
+	cursor:pointer;
+	color:white;
+	font-family:Arial;
+	font-size: 20px;
+	padding: 20px 50px;
+	text-decoration:none;
+}
+.myButton:hover {
+	background-color:white;
+    color: black;
+}
+
+.indicator{
+    border-radius: 70px;
+    border: 1px solid black;
+    width: 70px;
+    height: 20px;
+    font-size: 1vw;
+    font-family: albra;
+    position: absolute;
+    margin-left: 22%;
+    margin-top: 20px;
+}
+
+.credit{
+    position: absolute;
+    font-family: albra;
+    font-size: 8vw;
+    color: white;
+    text-align: center;
+    margin-top: 20%;
+    left: 0;
+    transform: translate( 12%, -50%);
+    text-decoration: none;
+}
+
+.credit:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 10px;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(0, 255, 21);
+    transform-origin: bottom right;
+    transition: transform 1s ease-out;
+}
+  
+.credit:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+  

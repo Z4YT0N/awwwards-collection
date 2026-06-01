@@ -1,0 +1,20 @@
+@media screen {
+  #page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #cloth {
+    position: relative;
+    overflow: hidden;
+    width: 90%;
+    height: 90vh;
+    /* prettier-ignore */
+    height: 90svh;
+  }
+
+  .no-curtains #cloth {
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  }
+}

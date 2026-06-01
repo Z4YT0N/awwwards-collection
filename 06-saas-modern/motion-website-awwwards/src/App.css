@@ -1,0 +1,67 @@
+:root {
+    --salmon: #EF9D71;
+    --black: #000;
+    --light: #fff;
+    --cyan:  #aedee0;
+    --dcyan: #141b1b;
+    --dsalmon: #1e130e;
+}
+
+
+body {
+    transition: background-color ease-out 0.5s;
+}
+
+*::selection {
+    background-color: var(--salmon);
+}
+
+
+body[theme="black"] {
+    background-color: var(--black);
+    
+}
+
+body[theme="black"] .section {
+    color: var(--light);
+}
+body[theme="white"] {
+    background-color: var(--light);
+    
+}
+
+body[theme="white"] .section {
+    color: var(--black);
+}
+
+body[theme="cyan"] {
+    background-color: var(--cyan);
+    
+}
+
+body[theme="cyan"] .section {
+    color: var(--dcyan);
+}
+
+body[theme="salmon"] {
+    background-color: var(--salmon);  
+}
+
+body[theme="salmon"] .section {
+    color: var(--dsalmon);
+}
+
+@font-face {
+    font-family: 'Sansita';
+    src: url('./assets/fonts/font1.ttf');
+}
+
+@font-face {
+    font-family: 'SansitaReg';
+    src: url('./assets/fonts/font2.ttf');
+}
+
+@font-face {
+    font-family: 'SansitaBold';
+    src: url('./assets/fonts/font3.ttf');
+}

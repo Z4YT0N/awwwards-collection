@@ -1,0 +1,168 @@
+.six-layed{
+    height: 190vh;
+    background-color: #645832;
+    font-family: nue;
+}
+.six-line{
+    background-color: white;
+    height: 0.1px;
+    width: 130%;
+    position: absolute;
+    margin-top: 40px;
+    opacity: 0.2;
+}
+.six-line-two{
+    background-color: white;
+    height: 0.1px;
+    width: 120%;
+    position: absolute;
+    margin-top: 5%;
+    opacity: 0.2;
+}
+.six-line-three{
+    background-color: white;
+    height: 0.1px;
+    width: 120%;
+    position: absolute;
+    margin-top: 11.5%;
+    opacity: 0.2;
+}
+.explore{
+    position: absolute;
+    color: white;
+    font-size: 5vw;
+    text-transform: uppercase;
+    font-weight: lighter;
+    margin-top: 110px;
+    left: 20%;
+} 
+.clide-one{
+    position: absolute;
+    border: 1px solid white;
+    height: 560px;
+    width: 500px;
+    margin-top: 15%;
+    left: 7%;
+}
+.clide-pic{
+    position: absolute;
+    height: 450px;
+    width: 450px;
+    margin-top: 20px;
+    left: 23px;
+    overflow: hidden;
+    transition: transform 1s, filter .5s ease-out;
+    transform-origin: 50% 50%;
+}
+.clide-fill{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    overflow: hidden;
+}
+.clide-name{
+    color: white;
+    font-family: ara;
+    font-size: 1vw;
+    text-transform: uppercase;
+    margin-top: 97%;
+    position: absolute;
+    left: 5%;
+}
+.clide-price{
+    color: wheat;
+    font-family: ara;
+    font-size: 1vw;
+    text-transform: uppercase;
+    margin-top: 97%;
+    position: absolute;
+    right: 5%;
+}
+.clide-two{
+    position: absolute;
+    border: 1px solid white;
+    height: 560px;
+    width: 500px;
+    margin-top: 15%;
+    left: 35%;
+}
+.clide-three{
+    position: absolute;
+    border: 1px solid white;
+    height: 560px;
+    width: 500px;
+    margin-top: 15%;
+    left: 63%;
+}
+.clide-four{
+    position: absolute;
+    border: 1px solid white;
+    height: 560px;
+    width: 500px;
+    margin-top: 47%;
+    left: 7%;
+}
+.clide-five{
+    position: absolute;
+    border: 1px solid white;
+    height: 560px;
+    width: 500px;
+    margin-top: 47%;
+    left: 35%;
+}
+.clide-six{
+    position: absolute;
+    border: 1px solid white;
+    height: 560px;
+    width: 500px;
+    margin-top: 47%;
+    left: 63%;
+}
+.clide-pic:hover{
+    transform: scale(1.05);
+    overflow: hidden;
+    transition: transform 3s, filter 3s ease-in-out;
+}
+.six-line-last{
+    background-color: white;
+    height: 0.1px;
+    width: 130%;
+    position: absolute;
+    margin-top: 80%;
+    opacity: 0.2;
+}
+.six-line-last-two{
+    background-color: white;
+    height: 0.1px;
+    width: 130%;
+    position: absolute;
+    margin-top: 84%;
+    opacity: 0.2;
+}
+.shop-clide{
+    color: white;
+    position: absolute;
+    font-size: 1vw;
+    font-family: ara;
+    text-transform: uppercase;
+    margin-top: 81.5%;
+    left: 49%;
+    text-decoration: none;
+}
+.shop-clide:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transform-origin: bottom right;
+    transition: transform 1s ease-out;
+}
+.shop-clide:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+  

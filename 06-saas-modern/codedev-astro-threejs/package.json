@@ -1,0 +1,22 @@
+{
+	"name": "codedev",
+	"type": "module",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "astro dev --host",
+		"start": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro"
+	},
+	"dependencies": {
+		"@astrojs/svelte": "^5.7.2",
+		"@astrojs/tailwind": "^5.1.2",
+		"@fontsource-variable/inter": "^5.0.18",
+		"astro": "^4.16.7",
+		"gsap": "^3.12.5",
+		"tailwindcss": "^3.4.3",
+		"three": "^0.165.0",
+		"typescript": "^5.4.5"
+	}
+}

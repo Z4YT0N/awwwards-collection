@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidecup Family Golf</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+        integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+    <div id="cursor"></div>
+    <div id="cursor-blur"></div>
+    <nav id="nav">
+        <i class="fa-solid fa-circle-chevron-down"></i>
+        <img src="./assets/logo-white.svg" alt="Here was the logo">
+        <h4>Toptracer range</h4>
+        <h4> Golf lessons</h4>
+        <h4>Adventure Golf</h4>
+        <h4>Coffee Shop</h4>
+        <h4>Leagues</h4>
+    </nav>
+    <video src="./assets/hero-video.mp4" autoplay muted loop></video>
+    <div id="main">
+        <div id="page1">
+            <h1>Eat. Drink. Play </h1>
+            <h2>Welcome to Sidcup Family Golf</h2>
+            <p>Sidcup Family Golf is a multipurpose golf facility located in Sidcup,
+                South East London. Passionate about technology, player development and
+                making golf fun and accessible to everyone.</p>
+        </div>
+        <div id="page2">
+            <div id="scroller">
+                <div id="scroll-in">
+                    <h4>Toptracer range</h4>
+                    <h4> Golf lessons</h4>
+                    <h4>Adventure Golf</h4>
+                    <h4>Coffee Shop</h4>
+                    <h4>Leagues</h4>
+                </div>
+            </div>
+            <div id="about-us">
+                <img src="./assets/about-img-1.avif" alt="" id="about-img-1">
+                <div id="about-us-in">
+                    <h1>About US</h1>
+                    <p>Home to a 46-bay, multi-tier, floodlit driving range, powered by
+                        Toptracer Range technology. Complimented by a practice green and
+                        bunker, coffee shop and American Golf Store. There truly is
+                        something for everyone as we also boast two outdoor 18-hole
+                        dinosaur themed crazy golf courses.</p>
+                </div>
+                <img src="./assets/about-img-2.avif" alt="" id="about-img-2">
+            </div>
+            <div id="cards-conatiner">
+                <div class="cards" id="card1">
+                    Toptracer Range
+                    <div class="overlay">
+                        <i class="fa-solid fa-arrow-right-long"></i>
+                        <h3>Toptracer Range</h3>
+                        <p>Toptracer Range transforms driving ranges into interactive experiences, tracking every shot
+                            with real-time data. Perfect for golfers of all levels to practice, play, and compete!</p>
+                    </div>
+                </div>
+                <div class="cards" id="card2">
+                    Adventure golf
+                    <div class="overlay">
+                        <i class="fa-solid fa-arrow-right-long"></i>
+                        <h3>Adventure golf</h3>
+                        <p>Adventure Golf is a fun, themed mini-golf experience with creative obstacles and exciting
+                            challenges. Perfect for all ages to enjoy a unique twist on traditional golf!</p>
+                    </div>
+                </div>
+                <div class="cards" id="card3">
+                    golf lessons
+                    <div class="overlay">
+                        <i class="fa-solid fa-arrow-right-long"></i>
+                        <h3>golf lessons</h3>
+                        <p>A golf lessons helps players improve their swing, accuracy, and overall game with expert
+                            guidance. Perfect for beginners and pros looking to refine their skills!</p>
+                    </div>
+                </div>
+            </div>
+            <div id="CTA">
+                <img src="./assets/dots-side.svg" alt="">
+                <p>Signup for sidcup news and special offers straight to your inbox</p>
+                <img src="./assets/dots-side.svg" alt="">
+            </div>
+        </div>
+    </div>
+    <div id="page3">
+        <img src="./assets/quote1.svg" alt="" id="quote1">
+        <p id="quote-para">Excellent couple of hours, relax and enjoy in the fun. Staff were
+            accommodating, friendly and very helpful. Café on site for
+            refreshments etc. Will keep children enterntained during the holidays.
+            Worth a visit if you haven’t been.</p>
+        <img src="./assets/quote1.svg" alt="" id="quote2">
+    </div>
+    <div id="page4">
+        <h1>What are you waiting for?</h1>
+        <div id="page4-child">
+            <div id="ToptraceRange">
+                <h1>Toptracer range</h1>
+                <img src="./assets/page-4-toptracer.avif" alt="">
+            </div>
+            <div id="GolfLessons">
+                <h1>Golf Lessons</h1>
+                <img src="./assets/page-4-lessons-1024x683.avif" alt="">
+            </div>
+            <div id="AdventureGolf">
+                <h1>Adventure Golf</h1>
+                <img src="./assets/page4-ag-1024x682.avif" alt="">
+            </div>
+        </div>
+    </div>
+    <footer>
+        <!-- <img src="./assets/dots-footer.svg" alt=""> -->
+        <div id="f1">
+            <img src="./assets/logo-white.svg" alt="">
+            <div>
+                <i class="fa-brands fa-square-facebook"></i>
+                <i class="fa-brands fa-square-instagram"></i>
+                <i class="fa-brands fa-square-x-twitter"></i>
+            </div>
+        </div>
+        <div id="f2">
+            <h1>Toptracer Range</h1>
+            <h1>Golf Lessons</h1>
+            <h1>Adventure Golf</h1>
+        </div>
+        <div id="f3">
+            <h1>Coffee Shop</h1>
+            <h1>Leauges</h1>
+            <h1>contact us</h1>
+        </div>
+        <div id="f4">
+            <p>A20, Sidcup bypass</p>
+            <p>chislehurst</p>
+            <p>kent</p>
+            <p>tel: 0208 309 0181</p>
+            <h6>get directions</h6>
+        </div>
+    </footer>
+    <script src="app.js"></script>
+</body>
+
+</html>

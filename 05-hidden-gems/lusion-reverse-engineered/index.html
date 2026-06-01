@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, interactive-widget=resizes-content">
+    <title>Threee</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <canvas id="canvas"></canvas>
+    <div id="loading-content">
+        000
+    </div>
+    <div id="home-content" class="fade-out">
+        <section>
+            <header>
+                <div>
+                    <h3>LUSION.CO</h3>
+                    <p>A recreation by <a href="https://canxerian.com">canxerian.com</a></p>
+                </div>
+                <div>
+                    <p>Recreated for fun and education</p>
+                    <p>
+                        Visit the original: <a href="https://lusion.co">lusion.co</a>
+                    </p>
+                </div>
+                <div>
+                    <a class="button" href="https://github.com/canxerian/lusion-reverse-engineered">View on GitHub</a>
+                </div>
+            </header>
+            <div id="physics-sandbox-div"></div>
+        </section>
+        <section id="video-panel-section">
+            <div class="about-headers">
+                <div class="animated-h1-container">
+                    <h1 id="h1-topline">BEYOND VISIONS</h1>
+                </div>
+                <div class="animated-h1-container">
+                    <h1 id="h1-tagline">WITHIN REACH</h1>
+                </div>
+            </div>
+            <div class="about-paragraphs">
+                <p>
+                    Lorem ipsum odor amet, consectetuer adipiscing elit. Neque senectus sapien cras pharetra orci lorem
+                    quam arcu senectus.
+                </p>
+                <p>
+                    Aliquam at risus; odio curabitur justo commodo aliquam tristique aenean. Aptent orci
+                    aliquam auctor eu metus. Ridiculus risus luctus varius elementum elementum. Nulla massa magnis urna
+                    malesuada orci parturient.
+                </p>
+                <p>
+                    Nisi finibus magna pellentesque sapien conubia ante consequat morbi at.
+                    Ante turpis auctor posuere aptent nostra.
+                </p>
+            </div>
+            <div id="video-panel-start"></div>
+            <div id="video-panel-end-parent">
+                <div id="video-panel-end"></div>
+            </div>
+        </section>
+        <section id="project-tiles-section">
+            <h1>Featured Work</h1>
+            <div class="project-tiles-grid">
+                <div class="project-tile">
+                    <div class="project-tile-thumb" id="tile-1">
+                    </div>
+                    <h3>Tag line</h3>
+                    <h4>Tag line 2</h4>
+                </div>
+                <div class="project-tile">
+                    <div class="project-tile-thumb" id="tile-2">
+                    </div>
+                    <h3>Tag line</h3>
+                    <h4>Tag line 2</h4>
+                </div>
+                <div class="project-tile">
+                    <div class="project-tile-thumb" id="tile-3">
+                    </div>
+                    <h3>Tag line</h3>
+                    <h4>Tag line 2</h4>
+                </div>
+                <div class="project-tile">
+                    <div class="project-tile-thumb" id="tile-4">
+                    </div>
+                    <h3>Tag line</h3>
+                    <h4>Tag line 2</h4>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h1>About</h1>
+            <p>
+                This was a recreation of the https://lusion.co website by Mark Nguyen, as an education exercise
+            </p>
+            <p>
+                I'm on a journey to learn how to build 3D, immersive websites.
+                By imitating websites I like, I learn how to build them myself.
+            </p>
+            <p>
+                Through this journey, I learned
+                the basics of WebGL, Three.js, shaders and 3D modelling.
+            </p>
+            <p>
+                No source assets or code was referenced or taken from the original.
+            </p>
+        </section>
+    </div>
+    <div id="project-tile-modal" class="project-tile-content">
+        <section>
+            <h1>Hello hello</h1>
+            <p>
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua.
+            </p>
+            <p>
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat.
+            </p>
+            <div>
+                <a class="button project-tile-back-button">Go back</a>
+            </div>
+        </section>
+    </div>
+    <div id="scrollbar">
+        <div id="scrollbar-handle"></div>
+    </div>
+</body>
+
+<script type="module" src="src/homeScene.js"></script>
+<script type="module" src="src/paging.js"></script>
+
+</html>

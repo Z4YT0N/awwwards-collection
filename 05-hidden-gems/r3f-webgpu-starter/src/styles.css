@@ -1,0 +1,285 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+:root {
+  --bg-background: #111827;
+  --clr-card: #1f2937;
+  --clr-1: #6420aa;
+  --clr-2: #ff3ea5;
+  --clr-3: #ff7ed4;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+canvas {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  overflow: hidden;
+  touch-action: none;
+}
+
+body {
+  background: #020202;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+header {
+  background-image: linear-gradient(
+    to bottom,
+    #020202,
+    rgba(0, 0, 0, 0.775),
+    #02020200
+  );
+  width: 100%;
+  height: 170px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-size: 3rem;
+  font-weight: 300;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+header h1 span {
+  font-weight: 900;
+}
+
+header p {
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 200;
+  letter-spacing: -0.04em;
+  text-align: center;
+  margin-top: 0.5rem;
+  padding: 0;
+  max-width: 500px;
+}
+
+footer {
+  width: 100%;
+  height: 110px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+}
+
+.footer-buttons {
+  display: flex;
+  gap: 2rem;
+}
+
+@property --gradient-angle {
+  syntax: "<angle>";
+  initial-value: 90deg;
+  inherits: false;
+}
+
+footer button {
+  color: white;
+  padding: 1rem 1.3rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  font-size: 0.45rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 300;
+  pointer-events: all;
+  cursor: pointer;
+  position: relative;
+  cursor: pointer;
+  border: none;
+  border-radius: 50px;
+  background-color: var(--clr-card);
+  transition: all 0.3s ease;
+}
+
+footer button:hover {
+  background: rgb(65, 60, 79);
+  color: white;
+}
+
+footer button:hover:after {
+  transform: scale(1.5);
+  filter: blur(2rem);
+  transition: all 0.3s ease;
+}
+
+footer button::after,
+footer button::before {
+  content: " ";
+  position: absolute;
+  z-index: -1;
+  inset: -0.06rem;
+  background: conic-gradient(
+    from var(--gradient-angle),
+    var(--clr-card),
+    var(--clr-1),
+    var(--clr-2),
+    var(--clr-3),
+    var(--clr-2),
+    var(--clr-1),
+    var(--clr-card)
+  );
+  border-radius: inherit;
+  animation: rotate 2.5s ease-in-out infinite;
+  transition: all 0.3s ease;
+}
+
+footer button.toggle::before {
+  content: " ";
+  position: absolute;
+  z-index: -1;
+  inset: -0.06rem;
+  background: conic-gradient(
+    from var(--gradient-angle),
+    var(--clr-card),
+    var(--clr-1),
+    var(--clr-2),
+    var(--clr-3),
+    var(--clr-2),
+    var(--clr-1),
+    var(--clr-card)
+  );
+  border-radius: inherit;
+  animation: rotate2 3.5s ease-in-out infinite;
+  transition: all 0.3s ease;
+}
+
+footer button::after {
+  filter: blur(3rem);
+}
+
+@keyframes rotate {
+  0% {
+    --gradient-angle: 0deg;
+  }
+  100% {
+    --gradient-angle: 360deg;
+  }
+}
+
+@keyframes rotate2 {
+  0% {
+    --gradient-angle: 0deg;
+  }
+  50% {
+    --gradient-angle: 120deg;
+  }
+  100% {
+    --gradient-angle: 360deg;
+  }
+}
+
+.footer-text {
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 200;
+  letter-spacing: -0.04em;
+  text-align: center;
+  padding: 0;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: max-content;
+  opacity: 0.3;
+}
+
+.footer-text a {
+  color: white;
+  font-weight: 400;
+  text-decoration: none;
+  pointer-events: all;
+}
+
+.download-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 50px;
+  padding: 10px 10px;
+  text-align: center;
+  cursor: pointer;
+  z-index: 1000;
+  pointer-events: all;
+  display: flex;
+  opacity: 0.3;
+}
+
+.download-button img {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
+
+.download-button:hover {
+  background-color: #ffffff7b;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2.5rem;
+  }
+
+  header p {
+    font-size: 0.9rem;
+    max-width: 300px;
+  }
+  .download-button {
+    display: none;
+  }
+
+  .footer-buttons {
+    gap: 0.5rem;
+  }
+  footer {
+    height: 150px;
+  }
+
+  footer button {
+    padding: 0.9rem 1.3rem;
+    font-size: 0.5rem;
+  }
+
+  footer button.toggle-quality {
+    display: none;
+  }
+
+  .footer-text {
+    font-size: 0.6rem;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

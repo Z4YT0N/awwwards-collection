@@ -1,0 +1,49 @@
+---
+import { getLangFromUrl, useTranslations } from '@/i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+import { socials } from '@/scripts/consts';
+import Form from '@/components/contact/Form.astro';
+---
+
+<section class='grid relative items-center pt-20 md:grid-cols-2 gap-6'>
+	<div
+		class='absolute right-0 opacity-10 group-hover:scale-105 transition-transform inset-0 -z-10 h-full w-1/2 bg-white bg-[linear-gradient(to_right,var(--main-color)_1px,transparent_1px),linear-gradient(to_bottom,var(--main-color)_1px,transparent_1px)] bg-[size:3rem_2.2rem]'>
+	</div>
+
+	<div>
+		<h3
+			class='appear border-2 inline-block font-medium px-6 py-1 border-indigo-600/50 rounded-full'>
+			{t('contact.title')}
+		</h3>
+		<h1 class='text-3xl font-medium my-2 appear'>
+			{t('contact.subtitle')}
+		</h1>
+		<p class='appear'>
+			{t('contact.description')}
+		</p>
+
+		<nav>
+			<ul class='flex gap-6 mt-5'>
+				{
+					socials.map((social) => (
+						<li class='appear-siblings'>
+							<a
+								href={social.link}
+								target='_blank'
+								class='hover:scale-105 inline-block transition-transform'
+								rel='noopener noreferrer'>
+								<img
+									src={social.icon}
+									alt={social.name}
+									class='w-5'
+								/>
+							</a>
+						</li>
+					))
+				}
+			</ul>
+		</nav>
+	</div>
+	<Form />
+</section>

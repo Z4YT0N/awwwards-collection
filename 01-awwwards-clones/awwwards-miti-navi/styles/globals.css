@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: 'Voyage';
+    src: url('../public/static/fonts/Voyage-Regular.woff2') format('woff2'),
+      url('../public/static/fonts/Voyage-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'GTPressuraMono';
+    src: url('../public/static/fonts/GTPressuraMono.woff2') format('woff2'),
+      url('../public/static/fonts/GTPressuraMono.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'GTSectraDisplay';
+    src: url('../public/static/fonts/GTSectraDisplay-Light.woff2')
+        format('woff2'),
+      url('../public/static/fonts/GTSectraDisplay-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  html {
+    @apply text-black-100 h-full leading-normal;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream-150 h-full font-gt-pressura-mono transition-all duration-1000 ease-normal delay-1000;
+  }
+
+  ::selection {
+    @apply bg-blue;
+  }
+
+  #__next {
+    @apply overflow-hidden h-full;
+  }
+}

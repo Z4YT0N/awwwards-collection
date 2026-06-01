@@ -1,0 +1,14 @@
+# Build
+public
+
+# Node
+node_modules
+
+# Data
+data.json
+
+# Vercel
+.vercel
+
+# Environment
+.env

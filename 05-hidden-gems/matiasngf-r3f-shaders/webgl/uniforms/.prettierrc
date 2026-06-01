@@ -1,0 +1,20 @@
+{
+  "semi": false,
+  "singleQuote": false,
+  "arrowParens": "always",
+  "tabWidth": 2,
+  "printWidth": 80,
+  "trailingComma": "none",
+  "endOfLine": "auto",
+  "plugins": ["prettier-plugin-tailwindcss", "prettier-plugin-glsl"],
+  "overrides": [
+    {
+      "files": ["*.vert", "*.frag", "*.glsl"],
+      "options": {
+        "parser": "glsl-parser",
+        "tabWidth": 2,
+        "printWidth": 80
+      }
+    }
+  ]
+}

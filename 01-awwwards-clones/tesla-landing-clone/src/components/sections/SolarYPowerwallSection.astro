@@ -1,0 +1,19 @@
+---
+import Section from "../../layouts/Section.astro";
+import FooterOne from "../../layouts/footers/FooterOne.astro";
+import Button from "../commons/Button.astro";
+import Picture from "../commons/Picture.astro";
+import Title from "../commons/Title.astro";
+---
+
+<Section>
+    <Picture slot="background" name="Solar-Panels" breakpoint="xs" />
+
+    <Title slot="title" text="Solar y Powerwall" />
+
+    <p slot="subtitle" class="text-sm text-default">Energía para todos</p>
+
+    <FooterOne slot="footer">
+        <Button slot="content" text="Saber más" flavour="neutral" />
+    </FooterOne>
+</Section>

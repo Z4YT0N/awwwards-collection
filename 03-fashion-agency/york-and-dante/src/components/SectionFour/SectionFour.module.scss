@@ -1,0 +1,127 @@
+@import "../../common/include-media";
+
+.section {
+	position: relative;
+	display: flex;
+	background-color: #ffffff;
+	color: #000000;
+
+	@include media(">mobile") {
+		height: 100vh;
+		width: 150vh;
+		justify-content: space-between;
+	}
+	@include media("<=mobile") {
+		flex-direction: column-reverse;
+	}
+}
+
+.left {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	@include media(">mobile") {
+		width: 58%;
+		padding: 20.22vh 6.78vh 20vh 18.89vh;
+	}
+	@include media("<=mobile") {
+		padding: 2.25rem 1.5rem 0;
+	}
+}
+
+.corner {
+	& > line {
+		stroke-dasharray: 50;
+		stroke-dashoffset: 50;
+	}
+
+	@include media("<=mobile") {
+		display: none;
+	}
+}
+
+.title {
+	color: #121212;
+	font: 600 8vh/98.49% "New York Extra Large", serif;
+	letter-spacing: -0.06em;
+	white-space: pre-wrap;
+
+	@include media("<=mobile") {
+		font-size: 3rem;
+		margin-bottom: 2.25rem;
+	}
+}
+
+.green {
+	color: #0D6C4D;
+}
+
+.scribble {
+	stroke-dasharray: 1002;
+	stroke-dashoffset: 1002;
+
+	@include media(">mobile") {
+		position: absolute;
+		left: 22.87vh;
+		bottom: -3vh;
+	}
+	@include media("<=mobile") {
+		width: 294px;
+		height: 158px;
+		margin-bottom: -0.875rem;
+	}
+}
+
+.right {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	@include media(">mobile") {
+		width: 42%;
+		padding: 19vh 8vh 18vh;
+	}
+	@include media("<=mobile") {
+		padding: 3rem 1.5rem 0;
+	}
+}
+
+.header {
+	color: #121212;
+	font: 500 5.33vh/98.49% "New York Extra Large", serif;
+	letter-spacing: -0.06em;
+	white-space: pre-wrap;
+
+	@include media("<=mobile") {
+		font-size: 2.25rem;
+		margin-bottom: 3rem;
+	}
+}
+
+.line {
+	align-self: center;
+
+	& > line {
+		stroke-dasharray: 52;
+		stroke-dashoffset: 52;
+	}
+
+	@include media("<=mobile") {
+		display: none;
+	}
+}
+
+.text {
+	font: 500 2.35vh/150% "Neue Haas Grotesk Display Pro", Arial, Helvetica,
+		sans-serif;
+	white-space: pre-wrap;
+
+	@include media(">mobile") {
+		text-align: justify;
+	}
+	@include media("<=mobile") {
+		font-size: 1rem;
+	}
+}

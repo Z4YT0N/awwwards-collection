@@ -1,0 +1,47 @@
+[
+    {
+        "id": "act",
+        "route": "activation",
+        "name": "Activation"
+    },
+    {
+        "id": "ani",
+        "route": "animation",
+        "name": "Animation"
+    },
+    {
+        "id": "cre",
+        "route": "creative",
+        "name": "Creative"
+    },
+    {
+        "id": "des",
+        "route": "design",
+        "name": "Design"
+    },
+    {
+        "id": "dev",
+        "route": "development",
+        "name": "Development"
+    },
+    {
+        "id": "gam",
+        "route": "games",
+        "name": "Games"
+    },
+    {
+        "id": "ill",
+        "route": "illustration",
+        "name": "Illustration"
+    },
+    {
+        "id": "ins",
+        "route": "installation",
+        "name": "Installation"
+    },
+    {
+        "id": "soc",
+        "route": "social-content",
+        "name": "Social Content"
+    }
+]

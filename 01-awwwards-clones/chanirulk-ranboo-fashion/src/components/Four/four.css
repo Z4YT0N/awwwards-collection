@@ -1,0 +1,127 @@
+.four{
+    height: 270vh;
+    background-color: black;
+    font-family: rabo;
+}
+.column-two {
+    float: left;
+    width: 30.33%;
+    padding: 10px;
+    position: relative;
+    left: 30px;
+    height: auto;
+    overflow-x: hidden;
+    overflow: hidden;
+    border-radius: 10px;
+
+}
+.row-two:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.fill{
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+    border-radius: 10px;
+    border: 1px solid black;
+    overflow-x: hidden;
+    overflow: hidden;
+}
+.fill-two{
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+    border-radius: 10px;
+    border: 1px solid black;
+    overflow-x: hidden;
+    overflow: hidden;
+}
+.box{
+    height: 57px;
+    width: 95%;
+    left: 11px;
+    position: absolute;
+    margin-top: -15%;
+    border-top: 1px solid black;
+    border-radius: 0px 0px  10px 10px;
+}
+.price{
+    font-size: 3vw;
+    position: absolute;
+    margin-top: -3px;
+    left: 8px;
+}
+.curen{
+    position: absolute;
+    font-family: araz;
+    font-size: 1vw;
+    right: 10px;
+    margin-top: 20px;
+}
+.fill{
+    transform-origin: 65% 75%;
+    transition: transform 1s, filter .5s ease-out;
+}
+.fill:hover{
+        transform: scale(1.2);
+}
+.column-three {
+    margin-top: 1%;
+    float: left;
+    width: 30.33%;
+    padding: 10px;
+    position: relative;
+    left: 30px;
+    height: auto;
+    overflow-x: hidden;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.column-three-cover {
+    margin-top: 1%;
+    float: left;
+    width: 62%;
+    padding: 10px;
+    position: relative;
+    left: 30px;
+    height: 500px;
+    overflow-x: hidden;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.row-three:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.column-four {
+    margin-top: 1%;
+    float: left;
+    width: 30.33%;
+    padding: 10px;
+    position: relative;
+    left: 30px;
+    height: auto;
+    overflow-x: hidden;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.column-four-cover {
+    margin-top: 1%;
+    float: left;
+    width: 62%;
+    padding: 10px;
+    position: relative;
+    left: 30px;
+    height: 500px;
+    overflow-x: hidden;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.row-four:after {
+    content: "";
+    display: table;
+    clear: both;
+}

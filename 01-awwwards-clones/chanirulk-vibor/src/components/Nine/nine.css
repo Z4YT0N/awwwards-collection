@@ -1,0 +1,81 @@
+.nine{
+    overflow-x: hidden;
+    font-family: Formular;
+    background-color: rgb(7, 7, 7);
+    height: 150vh;
+    border-bottom: 1px solid white;
+}
+.credit-line{
+    position: absolute;
+    color: grey;
+    position: absolute;
+    text-transform: uppercase;
+    font-size: 0.9vw;
+    left: 4%;
+}
+.leaf{
+    position: absolute;
+    height: auto;
+    width: 350px;
+    margin-top: 6%;
+    left: 40%;
+    transform: rotate(-20deg);
+} 
+.leaf-head{
+    color: white;
+    font-size: 11vw;
+    text-transform: uppercase;
+    position: absolute;
+    margin-top: 50px;
+    left: 15.5%;
+}
+.myButton {
+    position: absolute;
+    margin-top: 52%;
+    left: 45%;
+	background-color:grey;
+	display: inline-block;
+	cursor: pointer;
+	color: white;
+	font-size: 17px;
+	padding: 16px 31px;
+	text-decoration: none;
+}
+.myButton:hover {
+	background-color:red;
+    color: white;
+}
+.need{
+    color: white;
+    font-size: 1vw;
+    position: absolute;
+    margin-top: 58%;
+    left: 42.5%;
+}
+.contact{
+    font-size: 1vw;
+    color: red;
+    position: absolute;
+    text-decoration: underline;
+    margin-top: 57%;
+    left: 50%;
+}
+.contact:hover{
+    color: white;
+    text-decoration: none;
+}
+.contact a:after {
+    top: 32px;
+    content: '';
+    position: absolute;
+    width: 0%;
+    transform: scaleX(0);
+    height: 0px;
+    transform-origin: bottom right;
+    transition: transform 1s ease-out;
+}
+.contact:hover:after {
+    text-decoration: none;
+    transform: scaleX(0);
+    transform-origin: bottom left;
+}

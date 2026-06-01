@@ -1,0 +1,32 @@
+/* -------------- Activities Section Styles ----------------- */
+
+
+.activities-title-break {
+    color: #181717;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.activities-title-clip {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #f4efe7;
+    clip-path: inset(100% 0 0 0);
+    white-space: wrap;
+    transition: none;
+    z-index: 100;
+}
+
+.activities-part {
+    overflow: hidden;
+}
+
+.progress-line {
+    /* top: 50%;
+    left: 50%;
+    transform: translate(-72%, -50%); */
+    border-radius: 10px;
+}

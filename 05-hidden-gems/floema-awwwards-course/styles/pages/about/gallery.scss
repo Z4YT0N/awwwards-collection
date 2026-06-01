@@ -1,0 +1,41 @@
+.about__gallery {
+  position: relative;
+  height: 58.6rem;
+  margin: 15rem 0;
+  pointer-events: none;
+
+  visibility: hidden;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.about__gallery__wrapper {
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
+
+  opacity: 0;
+
+
+  display: flex;
+  align-items: center;
+
+}
+
+.about__gallery__media {
+  position: relative;
+  margin: 0 4rem;
+  height: 43.7rem;
+  width: 30.9rem;
+}
+
+.about__gallery__media__image {
+  @extend %cover;
+}
+

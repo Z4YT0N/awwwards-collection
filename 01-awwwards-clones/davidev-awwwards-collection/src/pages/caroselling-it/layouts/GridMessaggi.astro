@@ -1,0 +1,103 @@
+<section class='container-messagi'>
+	<header>
+		<span class='come'> (come)</span>
+		<div class='title'>
+			<h2>progettiamo per il futuro.</h2>
+			<div>
+				<p>
+					Nei momenti caotici il linguaggio e la comunicazione possono fare
+					piccole grandi cose, tipo lasciare 5 messaggi nella capsula del tempo
+				</p>
+			</div>
+		</div>
+		<img src='/caroselling-it/line-h.png' alt='line -' />
+	</header>
+	<div class='grid-messagi'>
+		<div class='grid-item'>
+			<span class='ani-grid-number'>01</span>
+			<div>Progetta contenuti come se lavorassi per la Fisher Price.</div>
+		</div>
+		<div class='grid-item'>
+			<span class='ani-grid-number'>02</span>
+			<div>Progetta contenuti come se lavorassi per la Fisher Price.</div>
+		</div>
+		<div class='grid-item'>
+			<span class='ani-grid-number'>03</span>
+			<div>Progetta contenuti come se lavorassi per la Fisher Price.</div>
+		</div>
+		<div class='grid-item'>
+			<span class='ani-grid-number'>04</span>
+			<div>Progetta contenuti come se lavorassi per la Fisher Price.</div>
+		</div>
+		<div class='grid-item'>
+			<span class='ani-grid-number'>05</span>
+			<div>Progetta contenuti come se lavorassi per la Fisher Price.</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.container-messagi {
+		margin-top: var(--divider-top);
+		& header {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: flex-start;
+			gap: 1rem;
+			& .come {
+				font-size: var(--text-lg);
+				padding-top: 1rem;
+				margin-right: 1rem;
+			}
+			& .title {
+				display: flex;
+				flex-direction: column;
+				gap: 1rem;
+				& h2 {
+					font-size: calc(var(--text-3xl) + 1rem);
+					font-weight: 700;
+				}
+				& div {
+					max-width: 80%;
+					margin-top: 2rem;
+				}
+				& p {
+					font-size: var(--text-lg);
+					font-weight: 400;
+					& span {
+						font-weight: 700;
+					}
+				}
+			}
+			& img {
+				width: 55%;
+				max-width: 100%;
+				padding-top: 1rem;
+			}
+		}
+	}
+
+	.grid-messagi {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 5rem;
+		margin-top: 5rem;
+		padding: 1rem 5rem;
+		& .grid-item {
+			display: flex;
+			flex-direction: row;
+			gap: 1.5rem;
+			& span {
+				font-size: var(--title);
+				font-weight: 500;
+				line-height: 1;
+			}
+			& div {
+				font-size: var(--text-lg);
+				font-weight: 500;
+				max-width: 160px;
+			}
+		}
+	}
+</style>

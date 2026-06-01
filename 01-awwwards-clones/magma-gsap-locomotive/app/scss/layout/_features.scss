@@ -1,0 +1,61 @@
+@use "../util" as u;
+
+.features {
+	padding: 0 2rem;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+
+	&__info {
+		@include u.breakpoint-up(large) {
+			width: 50%;
+			margin-left: auto;
+		}
+
+		.title {
+			margin-bottom: 2rem;
+		}
+
+		.text {
+			font-size: clamp(0.875rem, 2.3vw, 1.5625rem);
+
+			@include u.breakpoint-down(medium) {
+				width: 60%;
+			}
+		}
+	}
+
+	&__carousel {
+		width: 100%;
+
+		.swiper {
+			width: 100%;
+			height: 100%;
+		}
+
+		.swiper-wrapper {
+			transition-timing-function: linear;
+		}
+
+		.swiper-slide {
+			text-align: center;
+			font-size: 18px;
+			background: transparent;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: #000;
+			width: 10%;
+		}
+
+		.swiper-slide img {
+			display: block;
+			object-fit: contain;
+
+			@include u.breakpoint-down(small) {
+				height: 1.875rem;
+			}
+		}
+	}
+}

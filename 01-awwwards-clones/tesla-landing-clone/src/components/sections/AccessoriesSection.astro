@@ -1,0 +1,23 @@
+---
+import Section from "../../layouts/Section.astro";
+import Button from "../commons/Button.astro";
+import Title from "../commons/Title.astro";
+import Footer from "../Footer.astro";
+import Picture from "../commons/Picture.astro";
+---
+
+<Section>
+    <Picture slot="background" name="Accessories" breakpoint="2xs" />
+
+    <Title slot="title" text="Accesorios" />
+
+    <div
+        slot="footer"
+        class="pb-12 2xs:pb-20 2md:pb-7 flex justify-center 2md:gap-8 2md:flex-col 2md:items-center"
+    >
+        <Button text="Comprar ahora" />
+        <div class="justify-self-end hidden 2md:block">
+            <Footer />
+        </div>
+    </div>
+</Section>

@@ -1,0 +1,64 @@
+name: Staging PR Deploy
+on:
+  pull_request:
+    branches: [dev]
+    paths-ignore:
+      - "**.md"
+env:
+  PR_REPO_NAME: staging-pr-${{ github.event.pull_request.node_id }}
+jobs:
+  create-page-host:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create new repository for temporary deployment
+        uses: dcyoung/ga-create-git-repo@v1.0.0
+        with:
+          name: ${{ env.PR_REPO_NAME }}
+          access-token: ${{ secrets.PAT }}
+  pr-build-deploy:
+    needs: create-page-host
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    environment:
+      name: pr-staging
+      url: https://dcyoung.github.io/${{ env.PR_REPO_NAME }}/
+    steps:
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+      - name: Set GitHub Actions as Commit Author
+        run: |
+          git config --global user.name github-actions
+          git config --global user.email github-actions@github.com
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+        with:
+          path: "pr-build"
+      - name: Install and Build
+        run: |
+          cd pr-build/app
+          bun install --frozen-lockfile
+          bun run build --base=/${{ env.PR_REPO_NAME }}/
+        env:
+          CI: ""
+      - name: Checkout temporary deployment target repo
+        uses: actions/checkout@v4
+        with:
+          repository: dcyoung/${{ env.PR_REPO_NAME }}
+          fetch-depth: 0
+          path: "pr-deploy"
+          token: ${{ secrets.PAT }}
+      - name: Push files to target
+        run: |
+          cp -r pr-build/app/dist/* pr-deploy
+          cd pr-deploy
+          git add .
+          git commit -m $GITHUB_SHA
+          git branch -M gh-pages
+          git push -f -u origin gh-pages
+      - name: Create link in PR
+        uses: mshick/add-pr-comment@v2
+        with:
+          message: |
+            **Staging Preview:**
+            https://dcyoung.github.io/${{ env.PR_REPO_NAME }}/

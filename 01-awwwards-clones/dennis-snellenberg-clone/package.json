@@ -1,0 +1,62 @@
+{
+  "name": "dennis-snellenberg-portfolio",
+  "title": "Dennis Snellenberg • Freelance Designer & Developer",
+  "description": "Helping brands thrive in the digital world. Located in The Netherlands. Delivering tailor-made digital designs and building interactive websites from scratch. © Code by Dennis",
+  "author": {
+    "name": "Ali Bagheri",
+    "email": "alibagheri2079.dev@gmail.com",
+    "url": "https://www.github.com/alibagheri2079"
+  },
+  "keywords": [
+    "Design",
+    "Develope",
+    "Freelance"
+  ],
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "@studio-freight/lenis": "^1.0.29",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.0.0",
+    "framer-motion": "^10.16.16",
+    "gsap": "^3.12.4",
+    "lucide-react": "^0.298.0",
+    "next": "14.0.4",
+    "next-cloudinary": "^5.13.0",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-wrap-balancer": "^1.1.0",
+    "styled-components": "^6.1.1",
+    "tailwind-merge": "^2.1.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.0.1",
+    "cssnano": "^6.0.2",
+    "eslint": "^8",
+    "eslint-config-next": "14.0.4",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-tailwindcss": "^3.13.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^15.2.0",
+    "postcss": "^8",
+    "postcss-import": "^15.1.0",
+    "postcss-preset-env": "^9.3.0",
+    "postcss-styled-syntax": "^0.5.0",
+    "prettier": "^3.1.1",
+    "stylelint": "^16.0.2",
+    "stylelint-config-standard": "^35.0.0",
+    "stylelint-config-tailwindcss": "^0.0.7",
+    "stylelint-order": "^6.0.4",
+    "tailwindcss": "^3.3.0",
+    "tailwindcss-animate": "^1.0.7"
+  }
+}

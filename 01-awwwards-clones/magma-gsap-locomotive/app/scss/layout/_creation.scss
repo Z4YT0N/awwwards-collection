@@ -1,0 +1,130 @@
+@use "../util" as u;
+
+.creation {
+	overflow: hidden;
+
+	&__title {
+		width: 100%;
+		margin-bottom: 3rem;
+
+		@include u.breakpoint-up(large) {
+			margin-bottom: 5rem;
+		}
+	}
+
+	&__grid {
+		position: relative;
+
+		@include u.breakpoint-up(large) {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: 1fr;
+			grid-template-areas: "timeline canvas";
+		}
+
+		.grid__left {
+			overflow: hidden;
+			@include u.breakpoint-up(large) {
+				grid-area: timeline;
+				display: flex;
+				flex-direction: column;
+				gap: 5rem;
+			}
+
+			.roadmap__items {
+				position: relative;
+				display: flex;
+				flex-direction: column;
+				gap: 2rem;
+				padding: 0 0 2rem 3.5rem;
+
+				@include u.breakpoint-up(large) {
+					grid-area: timeline;
+					gap: 4rem;
+				}
+
+				picture {
+					display: block;
+					width: 90%;
+					@include u.breakpoint-up(large) {
+						display: none;
+					}
+				}
+
+				.info {
+					position: relative;
+					display: flex;
+					flex-direction: column;
+					gap: 1rem;
+					width: 60%;
+
+					.line {
+						position: absolute;
+						top: 0.4375rem;
+						left: -2.5rem;
+						background-color: var(--semi-blue);
+						height: 800%;
+						width: 2px;
+
+						&::before {
+							content: "";
+							position: absolute;
+							top: -0.3125rem;
+							left: -0.3125rem;
+							width: 0.75rem;
+							height: 0.75rem;
+							border-radius: 50%;
+							background-color: var(--semi-blue);
+						}
+					}
+
+					&__count {
+						position: relative;
+						font-size: 0.875rem;
+					}
+
+					&__title h2 {
+						font-size: clamp(24px, 10vw, 2.5rem);
+						font-weight: 100;
+						width: 80%;
+						font-size: 2.875rem;
+					}
+
+					&__text {
+						font-weight: 1.125rem;
+						font-size: 1.5rem;
+					}
+				}
+			}
+		}
+
+		.grid__right {
+			visibility: hidden;
+
+			@include u.breakpoint-down(large) {
+				display: none;
+			}
+
+			@include u.breakpoint-up(large) {
+				visibility: visible;
+				grid-area: canvas;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				overflow: hidden;
+			}
+
+			.roadmap__canvas {
+				visibility: hidden;
+
+				@include u.breakpoint-up(large) {
+					visibility: visible;
+					width: 100%;
+					height: fit-content;
+					object-fit: contain;
+					position: relative;
+				}
+			}
+		}
+	}
+}

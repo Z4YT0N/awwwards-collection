@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Text&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      body{
+        margin: 0;
+        font-family: 'Roboto', sans-serif;
+        color: white;
+      }
+      #crosshair{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 2%;
+        transform: translate(-50%, -50%);
+      }
+      #ammo_container{
+        position: absolute;
+        right: 5%;
+        bottom: 5%;
+        font-size: 3em;
+      }
+      #progress{
+        position: absolute;
+        bottom: 9%;
+        left: 0;
+        width: 0;
+        height: 2%;
+        background-color: white;
+      }
+      #health_container{
+        position: absolute;
+        bottom: 8%;
+        left: 5%;
+        width: 18%;
+        height: 2%;
+        border: 1px solid #ffffff;
+      }
+      #health_progress{
+        position: absolute;
+        background-color: #ffffff;
+        width: 100%;
+        height: 100%;
+      }
+      #game_hud{
+        visibility: hidden;
+      }
+      #menu{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        visibility: hidden;
+      }
+      h1{
+        font-family: 'Libre Barcode 39 Text', cursive;
+        font-size: 4em;
+      }
+      button{
+        background-color: rgba(0,0,0,0);
+        color: rgb(221, 221, 221);
+        font-size: 1.5em;
+        border: none;
+        cursor: pointer;
+        margin-top: 10%;
+        font-weight: 700;
+      }
+      #debug{
+        position: absolute;
+        right: 5%;
+        top: 5%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="debug"></div>
+    <div id="menu">
+      <h1>Shooter Game Demo</h1>
+      <button id="start_game">NEW GAME</button>
+    </div>
+    <div id="game_hud">
+      <img id="crosshair" src="<%=require('./ui/crosshair.png')%>" />
+      <div id="ammo_container">
+        <span id="current_ammo">0</span>
+        <span>|</span>
+        <span id="max_ammo">0</span>
+      </div>
+      <div id="health_container">
+        <div id="health_progress"></div>
+      </div>
+    </div>
+    <div id="progress"></div>
+    <my-app></my-app>
+  </body>
+</html>

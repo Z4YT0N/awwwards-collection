@@ -1,0 +1,36 @@
+name: Test & Lint
+
+on:
+  push:
+    branches: [master, docs]
+  pull_request:
+    branches: [master, docs]
+
+jobs:
+  install:
+    name: Run tests and lint project
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        id: pnpm-install
+
+      - name: Use Node.js 16
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Run vitest
+        run: pnpm test
+
+      - name: Run eslint
+        run: pnpm lint
+
+      - name: Check types
+        run: pnpm typecheck

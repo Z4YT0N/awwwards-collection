@@ -1,0 +1,161 @@
+.welcome {
+  --color-black: #000;
+  --color-gray: #0f0f0f;
+  --color-gray-lighter: #262626;
+  --rounded-lg: 8px;
+  --rounded-md: 4px;
+
+  min-height: 100vh;
+  color: white;
+  padding: 72px 0;
+  z-index: 1;
+  background: var(--color-black);
+}
+
+.container {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding-left: 28px;
+  padding-right: 28px;
+  z-index: 1;
+}
+
+.logo {
+  display: block;
+  margin-bottom: 32px;
+  padding: 20px;
+  border: 1px solid var(--color-gray-lighter);
+  max-width: max-content;
+  border-radius: var(--rounded-lg);
+  background: black;
+}
+
+.box {
+  background: var(--color-gray);
+  border-radius: var(--rounded-lg);
+  border: 1px solid var(--color-gray-lighter);
+}
+
+.box:not(.noPadding) {
+  padding: 20px;
+}
+
+.boxEntry:not(:last-child) {
+  border-bottom: 1px solid var(--color-gray-lighter);
+}
+
+.boxEntry a {
+  text-decoration: none !important;
+}
+
+.boxEntry .contributors {
+  justify-self: self-end;
+  padding-left: 20px;
+}
+
+.boxEntry .contributors .contributor {
+  transition: all 0.2s ease-in-out;
+  display: inline-block;
+  vertical-align: top;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.boxEntry .contributors .contributor:not(:last-child) {
+  margin-right: 6px;
+}
+
+.boxEntry .contributors:not(:hover) .contributor:not(:first-child) {
+  margin-left: -20px;
+}
+
+.tags .tag {
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--color-gray-lighter);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.tags .tag:not(:last-child) {
+  margin-right: 6px;
+}
+
+.tags .activeTag:hover {
+  text-decoration: line-through;
+}
+
+.linkInner {
+  padding: 20px;
+  align-items: center;
+}
+
+.boxEntry .leftSign {
+  background-color: var(--color-gray-lighter);
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 16px;
+}
+
+.boxEntry .linkInner p {
+  margin-left: 16px;
+  display: inline-block;
+}
+
+.experimentsHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 32px;
+  margin-bottom: 16px;
+}
+
+.experimentsHeader .filterTags {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.experimentInner {
+  padding: 20px;
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(2, 1fr) minmax(10%, auto);
+}
+
+.experimentInner .info h4 {
+  margin-left: 16px;
+  display: inline-block;
+}
+
+.experimentInner .tags {
+  justify-self: flex-end;
+}
+
+.welcome code {
+  padding: 2px 6px;
+  border-radius: var(--rounded-md);
+  background: var(--color-gray-lighter);
+}
+
+.welcome .header {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.welcome .header:not(.noMargin) {
+  margin-top: 32px;
+  margin-bottom: 16px;
+}
+
+.welcome p + p {
+  margin-top: 8px;
+}
+
+.welcome a {
+  text-decoration: underline;
+}

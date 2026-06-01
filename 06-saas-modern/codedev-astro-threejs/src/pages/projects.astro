@@ -1,0 +1,14 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Bento from '@/components/projects/Bento.astro';
+import { getLangFromUrl, useTranslations } from '@/i18n/utils';
+import CallToAction from '@/components/CallToAction.astro';
+const lang = getLangFromUrl(Astro.url);
+---
+
+<Layout title='CodeDev - Projects'>
+	<main class='section min-h-screen mb-20'>
+		<Bento />
+	</main>
+	<CallToAction />
+</Layout>

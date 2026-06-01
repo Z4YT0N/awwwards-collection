@@ -1,0 +1,32 @@
+{
+  "typescript": {
+    "lineWidth": 100,
+    "semiColons": "prefer",
+    "quoteStyle": "alwaysSingle",
+    "jsx.quoteStyle": "preferDouble",
+    "trailingCommas": "never",
+    "preferSingleLine": true,
+    "functionDeclaration.bracePosition": "sameLine",
+    "functionExpression.bracePosition": "sameLine",
+    "objectExpression.preferSingleLine": false,
+    "arrayExpression.preferSingleLine": false,
+    "typeLiteral.preferSingleLine": false,
+    "objectExpression.trailingCommas": "onlyMultiLine",
+    "typeParameters.preferSingleLine": false,
+    "jsxAttributes.preferSingleLine": false
+  },
+  "malva": {
+    "printWidth": 80
+  },
+  "excludes": [
+    "**/node_modules",
+    "**/*-lock.json",
+    "**/.next",
+    "**/.husky"
+  ],
+  "plugins": [
+    "./node_modules/@dprint/typescript/plugin.wasm",
+    "./node_modules/@dprint/json/plugin.wasm",
+    "./node_modules/dprint-plugin-malva/plugin.wasm"
+  ]
+}

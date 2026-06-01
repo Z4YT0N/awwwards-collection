@@ -1,0 +1,16 @@
+.cr{
+    height: 5vh;
+    overflow-x: hidden;
+}
+
+.credit-line{
+    margin-top: 1px;
+    color: #236bf3;
+    text-transform: uppercase;
+    font-weight: 700;
+    position: absolute;
+    text-align: center;
+    justify-content: center;
+    font-size: 30px;
+    left: 35%;
+}

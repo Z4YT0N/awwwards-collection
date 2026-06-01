@@ -1,0 +1,25 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"eyebrow": {
+				"__TYPE__": "FieldContent",
+				"value": "ship",
+				"type": "Text"
+			},
+			"text": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Eu pariatur proident ullamco in exercitation anim minim nostrud labore ipsum consequat. Pariatur Lorem anim ea sint deserunt excepteur anim. Aliquip sunt proident amet eu excepteur magna aliqua aliqua incididunt sit id consequat Lorem non."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

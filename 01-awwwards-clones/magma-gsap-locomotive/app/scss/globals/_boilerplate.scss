@@ -1,0 +1,244 @@
+@use "../util" as u;
+
+@font-face {
+	font-family: "Jost";
+	src: url("fonts/jost-variable.ttf");
+}
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 100%;
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	font-family: "Jost", sans-serif;
+	color: var(--white);
+}
+
+// Typography
+
+h1,
+h2,
+h3 {
+	font-weight: 100;
+	line-height: 1;
+}
+
+h1 {
+	font-size: 3.75rem;
+
+	@include u.breakpoint-up(medium) {
+		font-size: 5.3125rem;
+	}
+
+	@include u.breakpoint-up(large) {
+		font-size: 4.6875rem;
+	}
+
+	@include u.breakpoint-down(verysmall) {
+		font-size: clamp(32px, 15vw, 58px);
+	}
+}
+
+p {
+	font-size: 1.125rem;
+	font-weight: 100;
+	line-height: 1.25;
+
+	@include u.breakpoint-up(medium) {
+		font-size: 1.5625rem;
+	}
+
+	@include u.breakpoint-up(large) {
+		font-size: 0.9375rem;
+	}
+}
+
+span {
+	position: relative;
+}
+
+a {
+	text-decoration: none;
+	color: var(--white);
+}
+
+li {
+	list-style: none;
+}
+
+button {
+	font-weight: 400;
+	font-size: 0.875rem;
+	border: 2px solid hsla(0, 0%, 100%, 0.6);
+	color: var(--white);
+
+	@include u.breakpoint-up(medium) {
+		font-size: 1.1875rem;
+	}
+
+	@include u.breakpoint-up(large) {
+		font-size: 0.75rem;
+	}
+}
+
+// Main CSS
+#main {
+	position: relative;
+	overflow: hidden;
+	background-color: var(--background-color);
+}
+
+#page1,
+#page2,
+#page3,
+#page4,
+#page5,
+#page6,
+#page7,
+#page8,
+#page9,
+#page10,
+#page11,
+#page12,
+#page13 {
+	height: 100vh;
+	width: 100vw;
+	position: relative;
+}
+
+#page9,
+#page10,
+#page11,
+#page13 {
+	height: 100%;
+}
+
+#page12 {
+	background-color: var(--dark-blue);
+	height: 80vh;
+}
+
+#page1 > video,
+#page8 > video {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+}
+
+#page2,
+#page4,
+#page6,
+#page7,
+#page9 {
+	background-color: var(--semi-blue);
+}
+
+#page10 {
+	background-color: var(--dark-blue);
+}
+
+#page11 {
+	background-color: var(--white);
+}
+
+#page13 {
+	background-color: #0f0f17;
+}
+
+#page3 > canvas,
+#page5 > canvas,
+#page7 > canvas {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+// Helper class
+.container {
+	padding-block: 6.375rem;
+	width: 85%;
+	height: 100%;
+	margin-inline: auto;
+	position: relative;
+}
+
+.text_header {
+	font-size: 0.875rem;
+	margin-bottom: 1.875rem;
+
+	@include u.breakpoint-up(medium) {
+		font-size: 1.4375rem;
+	}
+
+	@include u.breakpoint-up(large) {
+		font-size: 0.875rem;
+	}
+
+	@include u.breakpoint-down(verysmall) {
+		font-size: clamp(0.625rem, 5vw, 0.875rem);
+	}
+}
+
+.text_main {
+	font-size: 2rem;
+	line-height: 1.1;
+	color: hsla(0, 0%, 100%, 0.3);
+
+	@include u.breakpoint-up(medium) {
+		font-size: 3.875rem;
+	}
+
+	@include u.breakpoint-up(large) {
+		font-size: 3.1875rem;
+	}
+
+	@include u.breakpoint-down(verysmall) {
+		font-size: clamp(1.25rem, 12vw, 2rem);
+	}
+}
+
+.textAnimation {
+	width: 90%;
+	height: 100%;
+	margin-inline: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding-top: 8.75rem;
+	text-align: left;
+}
+
+.cta {
+	width: 10rem;
+	height: 3.125rem;
+	border-radius: 3.125rem;
+	background-color: var(--white);
+	color: var(--dark-blue);
+
+	@include u.breakpoint-up(medium) {
+		width: 15rem;
+		height: 4.25rem;
+	}
+
+	@include u.breakpoint-up(large) {
+		width: 11rem;
+		height: 3.125rem;
+		font-size: 0.75rem;
+	}
+
+	@include u.breakpoint-down(verysmall) {
+		width: 7.5rem;
+		height: 2.5rem;
+		font-size: 0.75rem;
+	}
+}

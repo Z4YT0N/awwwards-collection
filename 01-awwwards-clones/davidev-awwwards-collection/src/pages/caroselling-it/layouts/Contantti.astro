@@ -1,0 +1,139 @@
+---
+import ButtonEffect from '../components/ButtonEffect.astro';
+import ButtonMore from '../components/ButtonMore.astro';
+---
+
+<footer class='footer'>
+	<div class='header-f'>
+		<span class='title'>Contatti</span>
+		<ul class='f-c-r'>
+			<li>
+				<ButtonEffect content='Facebook' />
+			</li>
+			<li>
+				<ButtonEffect content='Instagram' />
+			</li>
+			<li>
+				<ButtonEffect content='Linkedin' />
+			</li>
+		</ul>
+	</div>
+	<form>
+		<div class='group-labels'>
+			<div class='fake-select'>
+				<span> Vorrei conoscervi per parlare di</span>
+				<span>+</span>
+			</div>
+			<div class='fake-select'>
+				<span> Vorrei conoscervi per parlare di</span>
+				<span>+</span>
+			</div>
+		</div>
+		<div class='group-labels'>
+			<div class='fake-select'>
+				<span> Vorrei conoscervi per parlare di</span>
+				<span>+</span>
+			</div>
+			<div class='fake-input'></div>
+		</div>
+		<div class='group-labels'>
+			<div class='fake-input'></div>
+			<div class='fake-input'></div>
+		</div>
+		<div class='fake-text-area'></div>
+		<div class='footer-form'>
+			<div>
+				<div>
+					Spuntando questa casella ci autorizzi al trattamento dei tuoi dati
+					personali, ne avremo cura.
+				</div>
+				<div>
+					Spuntando questa casella ci autorizzi al trattamento dei tuoi dati
+					personali, ne avremo cura.
+				</div>
+			</div>
+			<button class='btn-env-effect'> invia</button>
+		</div>
+	</form>
+</footer>
+
+<style>
+	.footer {
+		margin-top: var(--divider-top);
+		padding-top: 3rem;
+		border-top: var(--bt-primary);
+	}
+	.header-f {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		& .title {
+			font-size: var(--title-lg);
+		}
+		& ul {
+			gap: 1.5rem;
+		}
+	}
+	.footer {
+		& form {
+			margin-left: 35%;
+			& .group-labels {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 2rem;
+				margin: 0.5rem 0;
+			}
+			& .fake-input {
+				background-color: var(--caro-main);
+				padding: 2rem;
+				border-bottom: var(--bt-primary);
+			}
+			& .fake-select {
+				display: flex;
+				padding: 1rem 0;
+				width: 100%;
+				border-bottom: var(--bt-primary);
+				justify-content: space-between;
+				& span {
+					font-size: var(--title-sm);
+				}
+			}
+			& .fake-text-area {
+				width: 100%;
+				height: 10rem;
+				background-color: var(--caro-main);
+				border-bottom: var(--bt-primary);
+			}
+		}
+	}
+	.footer-form {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		gap: 3rem;
+		padding: 2rem 0;
+		& div {
+			font-size: var(--text-sm);
+			& div {
+				margin: 0.5rem 0;
+				max-width: 400px;
+			}
+		}
+	}
+
+	.btn-env-effect {
+		font-size: var(--text-lg);
+		line-height: 1;
+		padding: 1rem 5rem;
+		border: 1px solid var(--caro-primary);
+		background-color: transparent;
+		border-radius: 4rem;
+		&:hover {
+			background-color: var(--caro-secondary);
+			border-color: var(--caro-secondary);
+			transition: all 1s ease-in-out;
+		}
+	}
+</style>

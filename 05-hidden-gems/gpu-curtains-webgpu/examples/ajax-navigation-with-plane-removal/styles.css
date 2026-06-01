@@ -1,0 +1,78 @@
+:root {
+  --transition-duration: 1s;
+}
+
+@media screen {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: var(--transition-duration);
+  }
+
+  #loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+    background: var(--dark-color);
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s;
+  }
+
+  .images-loaded #loader {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  #navigation {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 2.25rem;
+    background: rgba(var(--dark-color-rgb), 0.5);
+  }
+
+  #navigation a {
+    margin: 0 1rem;
+  }
+
+  #navigation a.active {
+    border-color: var(--light-color);
+    background: var(--light-color);
+    color: var(--dark-color);
+  }
+
+  #page {
+    min-height: initial;
+    padding-top: 6.5rem;
+  }
+
+  #content {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  #content-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .plane {
+    width: calc(50% - 2.25rem);
+    margin: 2.25rem 0;
+    aspect-ratio: 1.5;
+    overflow: hidden;
+    display: flex;
+  }
+
+  .plane img {
+    display: none;
+  }
+}

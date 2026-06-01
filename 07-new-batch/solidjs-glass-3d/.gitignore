@@ -1,0 +1,23 @@
+# Dependencies
+/node_modules
+
+# Environment
+.env
+.env.local
+
+# Compiled output and build artifacts
+/dist
+/build
+/public/build
+
+# Package Manager files
+package-lock.json
+npm-debug.log
+yarn-error.log
+.pnpm-store
+
+# Editor/OS specific files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

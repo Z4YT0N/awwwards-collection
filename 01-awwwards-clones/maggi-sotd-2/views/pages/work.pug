@@ -1,0 +1,196 @@
+extends ../base.pug
+
+mixin image({name,pic})
+    img(data-src=`/works/${name}/${pic}` alt="Picture")
+
+mixin video({name,reel})
+    video(src=`/works/${name}/${reel}` autoplay muted loop)
+
+block variables
+    - var template = 'work'
+    - var id = work.data.imgs_link
+
+block body
+    .work(data-background="" data-color="")
+        canvas
+            canvas(data-cursor-play)
+            canvas(data-cursor-view)
+        //- Scroll wrapper
+        .work__wrapper
+            .work__banner(data-cursor-scroll)
+                .work__banner__inner
+                    .work__banner__content__wrapper
+                        .work__banner__title__wrapper
+                            .work__banner__title__left
+                                h1.title_2.splitter!=work.data.banner[0].title.replace(/\n/g,"</br>")
+                                p.small-paragraph.splitter!=work.data.banner[0].paragraph.replace(/\n/g,"</br>")
+                            .work__banner__title__right
+                                a.link.btn_1.splitter.main__btn.no-transition(href=`${work.data.banner[0].web_link.url}` target="blank")!=work.data.banner[0].link.replace(/\n/g,"</br>")
+                        .work__banner__main__content
+                            p.big__paragraph(data-animation="paragraph")!=work.data.banner[0].paragraph_2.replace(/\n/g,"</br>")
+                            .info__lists__wrapper
+                                ul.info__list
+                                    each item in work.data.banner[0].client
+                                        li.info__item
+                                            p.small-paragraph(data-animation="paragraph")=item.text
+                                ul.info__list
+                                    each item in work.data.banner[0].services
+                                        li.info__item
+                                            p.small-paragraph(data-animation="paragraph")=item.text
+                                ul.info__list
+                                    each item in work.data.banner[0].industries
+                                        li.info__item
+                                            p.small-paragraph(data-animation="paragraph")=item.text
+                                ul.info__list
+                                    each item in work.data.banner[0].date
+                                        li.info__item
+                                            p.small-paragraph(data-animation="paragraph")=item.text
+                //- bg wrapper
+                .work__banner__bg
+                    figure.work__banner__bg__wrapper
+                        +image({
+                            name: id,
+                            pic:'banner.webp'
+                            })
+                //- bg logo
+                .work__banner__logo
+                    h1.text EXORSE
+
+            //- objectives
+            .work__objectives
+                .work__objectives__inner
+                    .work__objectives__content__wrapper
+                        .work__objectives__left
+                            h6.heading(data-animation="paragraph")!=work.data.objectives[0].heading.replace(/\n/g,"</br>")
+                        .work__objectives__right
+                            h1.title_2(data-animation="paragraph")!=work.data.objectives[0].title.replace(/\n/g,"</br>")
+                            p.small-paragraph(data-animation="paragraph")!=work.data.objectives[0].paragraph.replace(/\n/g,"</br>")
+                            p.small-paragraph(data-animation="paragraph")!=work.data.objectives[0].paragraph_2.replace(/\n/g,"</br>")
+
+            //- grid section
+            .work__grid
+                .work__grid__inner
+                    .work__grid__wrapper
+                        figure.grid__item.grid__item__one
+                            +image({
+                                name: id,
+                                pic: 'grid-1.webp'
+                            })
+                        figure.grid__item.grid__item__two
+                            +image({
+                                name: id,
+                                pic: 'grid-2.webp'
+                            })
+                        figure.grid__item.grid__item__three
+                            +image({
+                                name: id,
+                                pic: 'grid-3.webp'
+                            })
+                        figure.grid__item.grid__item__four
+                            +image({
+                                name: id,
+                                pic: 'grid-4.webp'
+                            })
+                        figure.grid__item.grid__item__five
+                            +image({
+                                name: id,
+                                pic: 'grid-5.webp'
+                            })
+
+            //- solution
+            .work__solution
+                .work__solution__inner
+                    .work__solution__content__wrapper
+                        .work__solution__content__left
+                            h6.heading(data-animation="paragraph")!=work.data.solutions[0].heading.replace(/\n/g,"</br>")
+                        .work__solution__content__right
+                            p.small-paragraph(data-animation="paragraph")!=work.data.solutions[0].paragraph.replace(/\n/g,"</br>")
+                            p.small-paragraph(data-animation="paragraph")!=work.data.solutions[0].paragraph_2.replace(/\n/g,"</br>")
+
+            //- reel 1
+            .work__reel
+                .work__reel__inner
+                    +video({
+                        name:id,
+                        reel: 'reel-1.mp4'
+                    })
+
+            //- design
+            .work__design
+                .work__design__inner
+                    figure.work__design__pic__wrapper
+                        +image({
+                            name:id,
+                            pic:'design-1.webp'
+                        })
+
+            //- specials
+            .work__special
+                .work__special__inner
+                    .work__special__left__wrapper
+                        figure.work__special__pic__wrapper
+                            +image({
+                                name:id,
+                                pic:'special-left.webp'
+                            })
+                    .work__special__right__wrapper
+                        .work__special__content__wrapper
+                            h6.heading(data-animation="paragraph")!=work.data.special[0].heading.replace(/\n/g,"</br>")
+                            p.small-paragraph(data-animation="paragraph")!=work.data.special[0].paragraph.replace(/\n/g,"</br>")
+                        figure.work__special__pic__wrapper
+                            +image({
+                                name:id,
+                                pic:'special-right.webp'
+                            })
+
+            //- screen
+            .work__screen
+                .work__screen__inner
+                    figure.work__screen__pic__wrapper
+                        +image({
+                            name:id,
+                            pic:'screen.webp'
+                        })
+
+            //- special 2
+            .work__special__two
+                .work__special__two__inner
+                    .work__special__two__content__wrapper
+                        .work__special__two__content__left
+                            h6.heading(data-animation="paragraph")!=work.data.special_two[0].heading.replace(/\n/g,"</br>")
+                        .work__special__two__content__right
+                            h1.mini-title(data-animation="paragraph")!=work.data.special_two[0].title.replace(/\n/g,"</br>")
+                            p.small-paragraph(data-animation="paragraph")!=work.data.special_two[0].paragraph.replace(/\n/g,"</br>")
+                    .work__special__design
+                        figure.work__special__design__pic__wrapper
+                            +image({
+                                name:id,
+                                pic:'design-2.webp'
+                            })
+
+            //- awards
+            .work__awards
+                .work__awards__inner
+                    .work__awards__content
+                        .work__awards__left
+                            h6.heading(data-animation="paragraph")!=work.data.awards[0].heading.replace(/\n/g,"</br>")
+                        .work__awards__right
+                            h1.mini-title(data-animation="paragraph")!=work.data.awards[0].title.replace(/\n/g,"</br>")
+                            ul.awards__list
+                                each item in work.data.awards[0].award_list
+                                    li.awards__item
+                                        p.paragraph(data-animation="paragraph")=item.text
+
+            //- next
+            .work__next
+                .work__next__inner
+                    .work__next__wrapper
+                        h1.mini-title(data-animation="paragraph")!=work.data.next[0].title.replace(/\n/g,"</br>")
+                        p.small-paragraph(data-animation="paragraph")!=work.data.next[0].paragraph.replace(/\n/g,"</br>")
+                        a.next__btn.main__btn.btn_1(href=`/work/${work.data.next[0].link.uid}` data-animation="paragraph" data-cursor-view) Next project
+                .work__next__bg
+                    figure.work__next__bg__pic__wrapper
+                        +image({
+                            name:id,
+                            pic:'next.webp'
+                        })

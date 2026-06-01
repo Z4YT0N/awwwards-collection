@@ -1,0 +1,144 @@
+.seven{
+    overflow-x: hidden;
+    height: 200vh;
+    font-family: gara;
+}
+
+.column-last {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  height: 300px; 
+  margin-top: 150px;
+  margin-left: 35px;
+}
+.insta{
+    border-radius: 0%;
+}
+
+
+.row-last:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+.social{
+    font-family: ara;
+    font-size: 3vw;
+    color: orangered;
+    position: absolute;
+    left: 20%;
+}
+
+.social-btn{
+    position: absolute;
+    margin-top: 75px;
+    margin-left: 10%;
+	background-color:orangered;
+	border-radius:28px;
+	border:1px solid orangered;
+	display:inline-block;
+	cursor:pointer;
+	color: white;
+    font-family: ara;
+	font-size: 1.5vw;
+	padding: 15px 30px;
+	text-decoration:none;
+}
+.social-btn:hover {
+  font-family: ara;
+	 background-color:#f7f6f2;
+    color: orangered;
+}
+
+
+.social-btn:after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  transform: scaleX(0);
+  height: 1px;
+  background-color: orangered;
+  transform-origin: none;
+  transition: none;
+}
+
+.social-btn:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.slide-back{
+    background-color: orangered;
+    height: 100vh;
+    margin-top: 11.5%;
+}
+
+.column-footer {
+  float: left;
+  width: 43%;
+  padding: 10px;
+  height: 300px; 
+  margin-top: 10px;
+  margin-left: 55px;
+}
+
+
+.row-footer:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.head-footer{
+    font-size: 20vw;
+    font-weight: 700;
+    position: absolute;
+    color: #f7f6f2;
+    text-decoration: underline;
+}
+
+.footer-text{
+    color: #f7f6f2;
+    font-family: ara;
+    font-size: 2vw;
+}
+
+.re{
+    font-family: gara;
+}
+
+.credit{
+    font-family: ara;
+    font-size: 8vw;
+    position: relative;
+    color: white;
+    text-decoration: none;
+    top: 100px;
+    left: 100px;
+    float: left;
+}
+.credit:hover{
+    font-family: ara;
+}
+
+
+.credit:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #f7f6f2;
+    transform-origin: bottom right;
+    transition: transform 1s ease-out;
+}
+  
+.credit:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+  

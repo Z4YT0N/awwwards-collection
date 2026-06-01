@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<!-- Metas -->
+		<title>curtains.js | Basic plane example</title>
+	    <meta name="description" content="A basic WebGL plane bound to a HTML DOM element with curtains.js">
+
+		<link href="https://fonts.googleapis.com/css?family=PT+Sans:400" rel="stylesheet">
+
+		<style>
+			body {
+				/* make the body fits our viewport */
+				position: relative;
+				width: 100%;
+				height: 100vh;
+				margin: 0;
+				overflow: hidden;
+				font-family: 'PT Sans', Verdana, sans-serif;
+				font-size: 18px;
+			}
+
+			#canvas {
+				/* make the canvas wrapper fits the document */
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+			}
+
+			#back-to-lib-link {
+				display: inline-block;
+				position: fixed;
+				top: 0;
+				right: 0;
+				padding: 0.25em 0.5em;
+				background: #ee6557;
+				color: white;
+				text-decoration: none;
+				z-index: 20;
+				font-size: 0.85em;
+			}
+
+			#back-to-lib-link:hover {
+				background: black;
+			}
+
+            #source-code-link {
+                display: inline-block;
+                position: fixed;
+                bottom: 1em;
+                right: 1em;
+                padding: 0.25em 0.5em;
+                background: #ee6557;
+                color: white;
+                text-decoration: none;
+                z-index: 20;
+            }
+
+            #source-code-link:hover {
+                background: black;
+            }
+
+            .wrapper {
+                width: 100%;
+                height: 100vh;
+                display: flex;
+            }
+
+			.plane {
+				/* define the size of your plane */
+                width: 80%;
+                height: 80vh;
+                margin: 10vh auto;
+			}
+
+			.plane img {
+				/* hide the img element */
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+
+		<div id="canvas"></div>
+
+		<a href="https://www.curtainsjs.com/" title="back to curtains.js website" id="back-to-lib-link" target="_blank">back to curtains.js website</a>
+
+        <div class="wrapper">
+            <div class="plane">
+                <img src="../medias/plane-texture-3.jpg" crossorigin="" />
+            </div>
+        </div>
+
+
+        <a href="https://github.com/martinlaxenaire/curtainsjs/blob/master/examples/basic-plane/index.html" title="Show source code" id="source-code-link" target="_blank">&lt;/ &gt;</a>
+
+        <script id="plane-vs" type="x-shader/x-vertex">
+			precision mediump float;
+
+			// those are the mandatory attributes that the lib sets
+			attribute vec3 aVertexPosition;
+			attribute vec2 aTextureCoord;
+
+			// those are mandatory uniforms that the lib sets and that contain our model view and projection matrix
+			uniform mat4 uMVMatrix;
+			uniform mat4 uPMatrix;
+
+			// our texture matrix that will handle image cover
+			uniform mat4 uTextureMatrix0;
+
+			// if you want to pass your vertex and texture coords to the fragment shader
+			varying vec3 vVertexPosition;
+			varying vec2 vTextureCoord;
+
+			void main() {
+				vec3 vertexPosition = aVertexPosition;
+
+				gl_Position = uPMatrix * uMVMatrix * vec4(vertexPosition, 1.0);
+
+				// set the varyings
+				// here we use our texture matrix to calculate te accurate texture coords
+				vTextureCoord = (uTextureMatrix0 * vec4(aTextureCoord, 0.0, 1.0)).xy;
+				vVertexPosition = vertexPosition;
+			}
+        </script>
+        <script id="plane-fs" type="x-shader/x-fragment">
+			precision mediump float;
+
+			// get our varyings
+			varying vec3 vVertexPosition;
+			varying vec2 vTextureCoord;
+
+			// the uniform we declared inside our javascript
+			uniform float uTime;
+
+			// our texture sampler (default name, to use a different name please refer to the documentation)
+			uniform sampler2D uSampler0;
+
+			void main() {
+				vec2 textureCoord = vTextureCoord;
+
+				// displace our pixels along the X axis based on our time uniform
+				// textures coords are ranging from 0.0 to 1.0 on both axis
+				textureCoord.x += sin(textureCoord.y * 25.0) * cos(textureCoord.x * 25.0) * (cos(uTime / 50.0)) / 25.0;
+
+				gl_FragColor = texture2D(uSampler0, textureCoord);
+			}
+        </script>
+
+		<script type="module">
+            import {Curtains, Plane} from '../../src/index.mjs';
+
+            window.addEventListener("load", () => {
+				// set up our WebGL context and append the canvas to our wrapper
+				const curtains = new Curtains({
+                    container: "canvas",
+                    pixelRatio: Math.min(1.5, window.devicePixelRatio) // limit pixel ratio for performance
+                });
+
+				// get our plane element
+				const planeElements = document.getElementsByClassName("plane");
+
+				// set our initial parameters (basic uniforms)
+				const params = {
+					vertexShaderID: "plane-vs", // our vertex shader ID
+					fragmentShaderID: "plane-fs", // our framgent shader ID
+					uniforms: {
+						time: {
+							name: "uTime", // uniform name that will be passed to our shaders
+							type: "1f", // this means our uniform is a float
+							value: 0,
+						},
+					}
+				};
+
+                const plane = new Plane(curtains, planeElements[0], params);
+
+                // set up our basic methods
+                plane.onRender(() => { // fired at each requestAnimationFrame call
+                    plane.uniforms.time.value++; // update our time uniform value
+                });
+
+			});
+		</script>
+
+	</body>
+</html>

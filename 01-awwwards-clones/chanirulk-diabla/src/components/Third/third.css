@@ -1,0 +1,142 @@
+.thrd{
+    height: 130vh;
+    font-family: "lue";
+}
+
+
+.column-third {
+  float: left;
+  width: 31%;
+  padding: 10px;
+  height: 650px;
+  margin-left: 5px;
+}
+
+
+
+.column-fourth {
+  float: left;
+  width: 15%;
+  padding: 10px;
+  height: 650px;
+  margin-left: 5px;
+}
+
+
+.row-third:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.pink-wall{
+    height: auto;
+    width: 400px;
+}
+
+.aces{
+    color: red;
+    text-transform: uppercase;
+    font-size: 1vw;
+}
+
+.des-one{
+    font-size: 1.5vw;
+    color: red;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.todos {
+	border-radius: 28px;
+	border: 1px solid red;
+	display: inline-block;
+	cursor: pointer;
+	color: red;
+	font-size: 15px;
+	padding: 5px 50px;
+	text-decoration: none;
+    text-transform: uppercase;
+}
+.todos:hover {
+	background-color: red;
+    color: white;
+}
+.todos:active {
+	position: relative;
+	top: 1px;
+}
+
+
+.todos-two {
+    margin-top: 30px;
+	border-radius: 28px;
+	border: 1px solid red;
+	display: inline-block;
+	cursor: pointer;
+	color: red;
+	font-size: 15px;
+	padding: 5px 50px;
+	text-decoration: none;
+    text-transform: uppercase;
+}
+.todos-two:hover {
+	background-color: red;
+    color: white;
+}
+.todos-two:active {
+	position: relative;
+	top: 1px;
+}
+
+.rest{
+    height: auto;
+    width: 400px;
+}
+
+.ranibow{
+    height: auto;
+    width: 200px;
+}
+
+.top-one{
+    color: red;
+    text-transform: uppercase;
+    text-align: left;
+    font-size: 1.3vw;
+}
+
+.sub-text-one{
+    color: red;
+    font-size: 1vw;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.brief{
+    font-size: 1.2vw;
+    color: red;
+    text-align: left;
+}
+
+
+
+.info {
+	border-radius: 28px;
+	border: 1px solid red;
+	display: inline-block;
+	cursor: pointer;
+	color: red;
+	font-size: 15px;
+	padding: 5px 22px;
+	text-decoration: none;
+    text-transform: uppercase;
+}
+.info:hover {
+	background-color: red;
+    color: white;
+}
+.info:active {
+	position: relative;
+	top: 1px;
+}

@@ -1,0 +1,64 @@
+{
+  "id": "fragrance_list",
+  "type": "SharedSlice",
+  "name": "FragranceList",
+  "description": "FragranceList",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "eyebrow": {
+          "type": "Text",
+          "config": {
+            "label": "Eyebrow",
+            "placeholder": ""
+          }
+        },
+        "heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Heading",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading2"
+          }
+        },
+        "body": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Body",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,strong,em"
+          }
+        },
+        "fragrances": {
+          "type": "Group",
+          "config": {
+            "label": "Fragrances",
+            "repeat": true,
+            "fields": {
+              "fragrance": {
+                "type": "Link",
+                "config": {
+                  "label": "Fragrance",
+                  "select": "document",
+                  "repeat": false,
+                  "customtypes": [
+                    "fragrance"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

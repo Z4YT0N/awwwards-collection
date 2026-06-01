@@ -1,0 +1,345 @@
+{
+  "clips": [
+    {
+      "id": "rollovers",
+      "src": "/audio/rollovers_mixdown.mp3",
+      "sprites": [
+        {
+          "id": "menu1",
+          "d": [
+            0,
+            1520
+          ]
+        },
+        {
+          "id": "menu2",
+          "d": [
+            1520,
+            1755
+          ]
+        },
+        {
+          "id": "menu3",
+          "d": [
+            3276,
+            1565
+          ]
+        },
+        {
+          "id": "menu4",
+          "d": [
+            4841,
+            1200
+          ]
+        },
+        {
+          "id": "1",
+          "d": [
+            6043,
+            2400
+          ]
+        },
+        {
+          "id": "2",
+          "d": [
+            8443,
+            2389
+          ]
+        },
+        {
+          "id": "3",
+          "d": [
+            10833,
+            2235
+          ]
+        },
+        {
+          "id": "4",
+          "d": [
+            13068,
+            2244
+          ]
+        }
+      ]
+    },
+    {
+      "id": "default",
+      "src": "/audio/default_mixdown.mp3",
+      "sprites": [
+        {
+          "id": "word_appear",
+          "d": [
+            0,
+            155
+          ]
+        },
+        {
+          "id": "resnX",
+          "d": [
+            155,
+            650
+          ]
+        },
+        {
+          "id": "random_1",
+          "d": [
+            6561,
+            5815
+          ]
+        },
+        {
+          "id": "random_2",
+          "d": [
+            12376,
+            7331
+          ]
+        }
+      ]
+    }
+  ],
+  "tracks": [
+    {
+      "id" : "shapes",
+      "looping" : true,
+      "src" : "/audio/shapes_mixdown.mp3",
+      "volume": 0.8
+    },
+    {
+      "id": "tunnel",
+      "looping": false,
+      "src": "/audio/tunnel.mp3",
+      "volume": 0.8
+    },
+    {
+      "id": "bat_saw",
+      "looping": true,
+      "src": "/audio/bats_mixdown.mp3",
+      "volume": 0.8
+    },
+    {
+      "id": "menu_drop",
+      "looping": true,
+      "src": "/audio/menu_drop_loop.mp3",
+      "volume": 0.5
+    },
+    {
+      "id": "drop_vibrate",
+      "looping": false,
+      "src": "/audio/drop_vibrate.mp3",
+      "volume": 0.8
+    },
+    {
+      "id": "shapeshifter",
+      "looping": true,
+      "src": "/audio/shapeshifter.mp3",
+      "volume": 1
+    },
+    {
+      "id": "interactive",
+      "looping": false,
+      "src": "/audio/interactive.mp3",
+      "volume": 1
+    },
+    {
+      "id": "accordian",
+      "looping": false,
+      "src": "/audio/accordian_mixdown.mp3",
+      "volume": 1,
+      "sprites": [
+        {
+          "id": "a1",
+          "d": [
+            0,
+            1872
+          ]
+        },
+        {
+          "id": "a2",
+          "d": [
+            1872,
+            1032
+          ]
+        },
+        {
+          "id": "a3",
+          "d": [
+            2904,
+            1056
+          ]
+        },
+        {
+          "id": "a4",
+          "d": [
+            3960,
+            1608
+          ]
+        },
+        {
+          "id": "a5",
+          "d": [
+            5568,
+            1104
+          ]
+        },
+        {
+          "id": "a6",
+          "d": [
+            6672,
+            744
+          ]
+        },
+        {
+          "id": "a7",
+          "d": [
+            7416,
+            912
+          ]
+        },
+        {
+          "id": "a8",
+          "d": [
+            8328,
+            960
+          ]
+        },
+        {
+          "id": "a9",
+          "d": [
+            9288,
+            1008
+          ]
+        },
+        {
+          "id": "a10",
+          "d": [
+            10296,
+            1752
+          ]
+        },
+        {
+          "id": "a11",
+          "d": [
+            12048,
+            696
+          ]
+        },
+        {
+          "id": "a12",
+          "d": [
+            12744,
+            672
+          ]
+        },
+        {
+          "id": "a13",
+          "d": [
+            13416,
+            504
+          ]
+        },
+        {
+          "id": "a14",
+          "d": [
+            13920,
+            624
+          ]
+        },
+        {
+          "id": "a15",
+          "d": [
+            14544,
+            768
+          ]
+        },
+        {
+          "id": "a16",
+          "d": [
+            15312,
+            2928
+          ]
+        },
+        {
+          "id": "a17",
+          "d": [
+            18240,
+            768
+          ]
+        },
+        {
+          "id": "a17",
+          "d": [
+            19000,
+            1608
+          ]
+        },
+        {
+          "id": "a18",
+          "d": [
+            20616,
+            480
+          ]
+        },
+        {
+          "id": "a19",
+          "d": [
+            21096,
+            624
+          ]
+        }
+      ]
+    }
+  ],
+  "ambients": {
+    "tracks": [
+      {
+        "id": "inside_drop",
+        "looping": true,
+        "src": "/audio/inside_drop_01.mp3",
+        "volume": 1,
+        "page": "about"
+      },
+      {
+        "volume": 0.6,
+        "id": "2",
+        "src": "/audio/bg_02.mp3",
+        "fade" :  false
+      },
+      {
+        "volume": 0.6,
+        "id": "3",
+        "src": "/audio/bg_01.mp3",
+        "fade" : false
+      },
+      {
+        "volume": 0.6,
+        "id": "1",
+        "src": "/audio/bg_03.mp3",
+        "fade" : false
+      },
+      {
+        "id": "work_1",
+        "src": "/audio/work_01.mp3",
+        "volume": 0.5,
+        "page": "work"
+      },
+      {
+        "id": "work_4",
+        "src": "/audio/work_04.mp3",
+        "volume": 0.5,
+        "page": "work"
+      },
+      {
+        "id": "work_2",
+        "src": "/audio/work_02.mp3",
+        "volume": 0.5,
+        "page": "work"
+      },
+      {
+        "id": "work_3",
+        "src": "/audio/work_03.mp3",
+        "volume": 0.5,
+        "page": "work"
+      }
+    ]
+  }
+}

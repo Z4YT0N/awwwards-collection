@@ -1,0 +1,119 @@
+.home{
+    height: 100vh;
+    font-family: time;
+    background-color: #f3ebe3;
+}
+.logo{
+    color: black;
+    font-size: 2vw;
+    font-weight: 100;
+    position: absolute;
+    top: 10px;
+    left: 47%;
+}
+.header{
+    position: absolute;
+    top: 8%;
+    left: 7px;
+    width: 99%;
+    height: 90%;
+    border-radius: 20px;
+    overflow: hidden;
+    text-align: center;
+}
+.head{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+.title{
+    position: absolute;
+    color: white;
+    font-size: 6vw;
+    top: 26%;
+    left: 32%;
+    line-height: 80px;
+    z-index: 2;
+}
+.slant{
+    font-family: Arial;
+    font-style: italic;
+}
+
+.myButton {
+    position: absolute;
+    top: 60%;
+    left: 45%;
+	background-color: white;
+	display: inline-block;
+	cursor: pointer;
+	color: black;
+    font-family: ara;
+	font-size: 10px;
+	padding: 16px 31px;
+    border-radius: 20px;
+	text-decoration: none;
+    text-transform: uppercase;
+    z-index: 2;
+}
+.myButton:hover {
+	background-color: black;
+    color: white;
+    border: 1px solid white;
+}
+.head{
+    border-radius: 20px;
+    animation: move 10s ease-in infinite alternate;
+}
+@keyframes move {
+     
+    25% {
+        transform: translateY(-2px);
+    }
+
+    50% {
+        transform: translateY(3px);
+    }
+    
+
+    75% {
+        transform: translateY(3px);
+    }
+   
+    100% {
+        transform: translateY(2px);
+    }
+}
+.credit{
+    position: absolute;
+    font-family: ara;
+    font-weight: 500;
+    top: 2%;
+    left: 10px;
+}
+.credit a{
+    color: black;
+    text-decoration: none;
+}
+.credit a:hover{
+    color: brown;
+}
+.credit:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transform-origin: bottom right;
+    transition: transform 1s ease-out;
+}
+.credit:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+sup{
+    font-size: 1vw;
+}

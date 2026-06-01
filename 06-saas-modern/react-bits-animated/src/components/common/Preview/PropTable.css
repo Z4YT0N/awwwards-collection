@@ -1,0 +1,133 @@
+/* ─── Prop Table ────────────────────────────────────────────────────────────── */
+.prop-table-section {
+  margin-top: 3em;
+}
+
+/* ─── Desktop table ────────────────────────────────────────────────────────── */
+.prop-table-wrap {
+  margin-top: 1.5em;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.prop-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Geist', sans-serif;
+}
+
+.prop-table thead th {
+  text-align: left;
+  padding: 14px 18px;
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.55);
+  letter-spacing: 0.02em;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  white-space: nowrap;
+}
+
+.prop-table tbody tr {
+  transition: background 0.15s ease;
+}
+
+.prop-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.prop-table tbody td {
+  padding: 14px 18px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  vertical-align: middle;
+}
+
+.prop-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.prop-type {
+  font-family: 'Geist Mono', monospace;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.65);
+  max-width: 340px;
+  line-height: 1.5;
+}
+
+/* ─── Code pill ────────────────────────────────────────────────────────────── */
+.prop-code {
+  font-family: 'Geist Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  color: #d4d0dc;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 3px 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+/* ─── Mobile cards (hidden by default) ─────────────────────────────────────── */
+.prop-cards {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 1.5em;
+}
+
+.prop-card {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.prop-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.prop-card-type {
+  font-family: 'Geist Mono', monospace;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+  flex-shrink: 0;
+}
+
+.prop-card-desc {
+  font-family: 'Geist', sans-serif;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.prop-card-default {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.prop-card-label {
+  font-family: 'Geist', sans-serif;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.45);
+  flex-shrink: 0;
+}
+
+/* ─── Responsive ───────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .prop-table-wrap {
+    display: none;
+  }
+
+  .prop-cards {
+    display: flex;
+  }
+}

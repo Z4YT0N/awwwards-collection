@@ -1,0 +1,49 @@
+{
+  "format": "custom",
+  "id": "skateboard",
+  "label": "Skateboard",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "name": {
+        "type": "Text",
+        "config": {
+          "label": "Name",
+          "placeholder": ""
+        }
+      },
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "UID"
+        }
+      },
+      "image": {
+        "type": "Image",
+        "config": {
+          "label": "Image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "price": {
+        "type": "Number",
+        "config": {
+          "label": "Price (cents)",
+          "placeholder": ""
+        }
+      },
+      "customizer_link": {
+        "type": "Link",
+        "config": {
+          "label": "Customizer Link",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "select": null,
+          "allowText": true
+        }
+      }
+    }
+  }
+}

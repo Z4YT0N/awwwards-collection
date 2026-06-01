@@ -1,0 +1,594 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700&family=Poppins&display=swap');
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing:border-box;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+}
+
+#main{
+    position: relative;
+    overflow: hidden;
+    background-color: #0a3cce;
+}
+@font-face {
+    font-family: a;
+    src: url(./jost-variable.ttf);
+}
+@font-face {
+    font-family: b;
+    src: url(./KFOlCnqEu92Fr1MmEU9fBBc4\ \(1\).ttf);
+}
+@font-face {
+    font-family: c;
+    src: url(./KFOmCnqEu92Fr1Mu4mxK\ \(1\).ttf);
+}
+
+#page1{
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    overflow: hidden;
+}
+
+#page1 video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+#page1 nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 30px;
+    position: absolute;
+    height: 10vh;
+    width: 100vw;
+    z-index: 1;
+}
+
+#page1 nav img{
+    margin-top: -1.7vw;
+    width: 9%;
+    height: auto;
+    width: 10rem;
+    margin-right: 5rem;
+}
+#right-nav button{
+    padding: 10px 20px;
+    margin-right:10px ;
+    border-radius: 50px;
+    background-color: #0b48ed;
+    color: white;
+    font-family: jost;
+    font-size: 15px;
+    border: 1px solid rgba(255,255,255,.3);
+    transition: border-color ease-out .6s;
+    z-index: 9;
+    position: relative; 
+    overflow: hidden;
+}
+#right-nav button::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: white; /* Starting color of the animation */
+    z-index: -1;
+    transition: height .6s ease-out, background-color 0.2s ease-out; /* Transition for animation */
+}
+
+#right-nav button:hover::before {
+    height: 100%; 
+    background-color: #fff; /* Ending color of the animation (blue) */
+    
+}
+#right-nav button:hover {
+    color: #fff; /* Change text color to blue on hover */
+    cursor: pointer;
+    color: #0b48ed;
+}
+.bottom-page1{
+    position: absolute;
+    bottom: 5%;
+    left: 15%;
+    height: 35vh;
+    width: 50vw;
+    left: 10;
+    z-index: 1;
+}
+.bottom-page1 h1{
+    font-family: jost;
+    font-size: 5vw;
+    font-weight: 300;
+    line-height: 1;
+    color: #fff;
+}
+.bottom-page1-inner{
+    position: absolute;
+    bottom: 0%;
+    height: 35%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: jost;
+    z-index: 1;
+}
+
+.bottom-page1-inner h4{
+    font-size: 1.3vw;
+    color: #fff;
+    font-weight: 100;
+}
+
+.bottom-page1-inner button{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    background-color: #fff;
+    color: #0b48ed;
+    font-family: jost;
+    font-size: 1rem;
+    position: relative; /* Added position relative for animation */
+    overflow: hidden;
+}
+
+.bottom-page1-inner button::before {
+     content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: white; /* Starting color of the animation */
+    z-index: -1;
+    transition: height .6s ease-out, background-color 0.2s ease-out; /* Transition for animation */
+}
+
+.bottom-page1-inner button:hover::before {
+    height: 100%; /* Expand the height to cover the button on hover */
+    background-color: black; /* Ending color of the animation (black) for Learn More */
+}
+
+.bottom-page1-inner button:hover {
+    color: blue; /* Change text color to blue on hover */
+    cursor: pointer;
+}
+
+#page2{
+    display: flex;
+    align-items: start;
+    font-family: jost;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    background-color: #0a3cce;
+    overflow: hidden;
+    padding: 0vw 8vw;
+    color: #fff;
+}
+
+#page2 h2{
+    font-weight: 100;
+    margin-bottom: 3vw;
+}
+#page2 h1{
+    width: 90%;
+    line-height: 1.3;
+    font-size: 4vw;
+    font-weight: 400;
+    color: #dadada69;
+}
+
+#page3{
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    background-color: #0a3cce;
+}
+#page3 canvas{
+    max-height: 100vh;
+    max-width: 100vw;
+    position: relative;
+}
+
+#page4{
+    display: flex;
+    align-items: start;
+    font-family: jost;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    background-color: #0a3cce;
+    overflow: hidden;
+    padding: 0vw 8vw;
+    color: #fff;
+}
+
+#page4 h3{
+    font-weight: 100;
+    margin-bottom: 3vw;
+}
+#page4 h1{
+    width: 90%;
+    line-height: 1.3;
+    font-size: 4vw;
+    font-weight: 400;
+    color: #dadada69;
+}
+
+#page5{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+}
+
+#page5 canvas{
+    max-height: 100vh;
+    max-width: 100vw;
+    position: relative;
+}
+
+#page6{
+
+    display: flex;
+    align-items: start;
+    font-family: jost;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    background-color: #0a3cce;
+    overflow: hidden;
+    padding: 0vw 8vw;
+    color: #fff;
+    
+}
+
+#page6 h2{
+    font-weight: 100;
+    margin-bottom: 3vw;
+}
+#page6 h1{
+    width: 90%;
+    line-height: 1.3;
+    font-size: 4vw;
+    font-weight: 400;
+    color: #dadada69;
+}
+
+#page7{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: #0a3cce;
+}
+
+#page7 canvas{
+    max-height: 100vh;
+    max-width: 100vw;
+    position: relative;
+}
+
+.page7-cir{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9;
+    height: 30vw;
+    width: 30vw;
+    border: 1px solid #fff;
+    border-radius: 50%;
+}
+
+.page7-cir-inner{
+    height: 70%;
+    width: 70%;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    background-color: transparent;
+}
+
+#page8{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: #0a3cce;
+}
+
+#page8 video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.page8-bottom{
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.page8-bottom h1{
+    color: #fff;
+    font-family: jost;
+    margin-bottom: 2vw;
+    font-size: 5vw;
+    font-weight: 400;
+}
+
+.page8-bottom button{
+    padding: 20px 30px;
+    border-radius: 50px;
+    border: none;
+    background: #fff;
+    color: #0a3cce;
+    text-transform: uppercase;
+}
+
+#page9{
+    display: flex;
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: #0a3cce;
+}
+
+.left9{
+    height: 100%;
+    width: 40%;
+    background-color: #0a3cce;
+    position: relative;
+}
+
+.left9 h1{
+    position: absolute;
+    top: 40%;
+    right: 5%;
+    transform: translateY(-50%);
+    font-size: 5vw;
+    font-family: jost;
+    font-weight: 400;
+    color: #fff;
+    line-height: 1;
+}
+.right9{
+    height: 100%;
+    width: 60%;
+    background-color: #0a3cce;
+    position: relative;
+}
+
+.right9-center{
+    height: 55%;
+    width: 85%;
+    background-color: #0a3cce;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+    background-size: cover;
+    background-image: url(https://thisismagma.com/wp-content/uploads/2023/04/magma.wp2.cubdev.com-home-1.jpeg);
+}
+
+#page10{
+    display: flex;
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: #0a3cce;
+}
+
+.right10{
+    height: 100%;
+    width: 60%;
+    position: relative;
+    left: 40%;
+    background-color: #0a3cce;
+}
+
+.right10-inner{
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    flex-direction: column;
+    height: 33.3%;
+    width: 100%;
+    font-family: jost;
+    color: #fff;
+}
+
+.right10-inner h1{
+    font-size: 2vw;
+}
+.right10-inner p{
+    margin-top: 2vw;
+    font-size: 1.3vw;
+    width: 80%;
+}
+
+#page11{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: #fff;
+}
+
+
+#page11 h1{
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    font-size: 4vw;
+    font-family: jost;
+    font-weight: 400;
+    color: #000;
+    line-height: 1;
+}
+
+.page11-inner{
+    display: flex;
+    top: 18%;
+    position: relative;
+    margin-bottom: 2vw;
+    height: 24%;
+    width: 100%;
+    /* background-color: green; */
+}
+
+.left11{
+    position: relative;
+    height: 100%;
+    width: 40%;
+    left: 5%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.left11 img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.right11{
+    /* padding-top: 5vw; */
+    color: #000;
+    left: 50%;
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    font-family: jost;
+}
+
+.right11 .date{
+    font-weight: 300;
+    font-size: 2rem;
+    /* margin-bottom: 5%; */
+    padding: 0 20px 30px 0;
+    line-height: 1;
+}
+.right11 p{
+    font-size: 2vw;
+    bottom: 10%;
+    font-weight: 400;
+}
+
+#page12{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: #02268e;
+}
+.page12-inner{
+    position: absolute;
+    top: 20%;
+    right: 10%;
+    color: #fff;
+    font-family: a;
+}
+.page12-inner>h1{
+    font-size: 5vw;
+    font-weight: 100;
+    margin-bottom: 2rem;
+}
+.page12-inner>p{
+    font-size: 1.3vw;
+}
+
+
+#page13{
+    position: relative;
+    height: 50vh;
+    width: 100vw;
+    background-color: #000;
+    color: #fff;
+    font-family: a;
+    padding: 7vw 10vw;
+}
+#page13>h1{
+    font-size: 5vw;
+    line-height: 1;
+    font-weight: 100;
+}
+#page13>button{
+    padding: 18px 30px;
+    border: none;
+    background-color: #0a3cce;
+    color: #fff;
+    border-radius: 50px;
+    margin-top: 2vw;
+}
+
+
+#page14{
+    position: relative;
+    height: 60vh;
+    width: 100vw;
+    background-color: #000;
+}
+.page14-inner{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0vw 5vw;
+    font-family: a;
+    height: 33.3%;
+    width: 100%;
+    color: #fff;
+    border-top: .5px solid #ffffff5c;
+    border-bottom: .5px solid #ffffff48;
+}
+.page14-inner>i{
+    font-weight: 100;
+    font-size: 2.4vw;
+    position: relative;
+    z-index: 9999;
+}
+.page14-inner>h1{
+    font-size: 3vw;
+    font-weight: 100;
+    position: relative;
+    z-index: 9999;
+}
+
+.center14{
+    height: 0%;
+    width: 100%;
+    background-color: #0a3cce;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    transition: all ease .5s;
+}
+
+
+.page14-inner:hover .center14{
+    height: 100%;
+}

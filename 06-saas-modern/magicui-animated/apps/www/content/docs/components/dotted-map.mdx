@@ -1,0 +1,144 @@
+---
+title: Dotted Map
+date: 2025-12-31
+description: A component with a svg dotted map.
+author: dillionverma, Yeom-JinHo
+published: true
+---
+
+<ComponentPreview name="dotted-map-demo" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @magicui/dotted-map
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="dotted-map" />
+
+<Step>Update the import paths to match your project setup.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Examples
+
+### Smaller Dots
+
+<ComponentPreview name="dotted-map-demo-2" />
+
+### PulseMarker
+
+<ComponentPreview name="dotted-map-demo-3" />
+
+## Usage
+
+```tsx showLineNumbers
+import { DottedMap, type Marker } from "@/components/ui/dotted-map"
+```
+
+```tsx showLineNumbers
+<div className="relative h-[400px] w-full overflow-hidden rounded-xl border">
+  <DottedMap />
+</div>
+```
+
+### With Custom Markers
+
+```tsx showLineNumbers
+import { DottedMap, type Marker } from "@/components/ui/dotted-map"
+import type { TCountryCode } from "countries-list"
+
+type CountryCode = Lowercase<TCountryCode>
+
+type MyMarker = Marker & {
+  overlay: {
+    countryCode: CountryCode
+    label: string
+  }
+}
+
+const markers: MyMarker[] = [
+  {
+    lat: 37.5665,
+    lng: 126.978,
+    size: 2.8,
+    overlay: { countryCode: "kr", label: "Seoul" },
+  },
+]
+
+<DottedMap<MyMarker>
+  markers={markers}
+  renderMarkerOverlay={({ marker, x, y, r }) => {
+    // Custom overlay rendering
+    return <text x={x} y={y}>{marker.overlay.label}</text>
+  }}
+/>
+```
+
+## Props
+
+| Prop                  | Type                  | Default     | Description                                                    |
+| --------------------- | --------------------- | ----------- | -------------------------------------------------------------- |
+| `width`               | `number`              | `150`       | Width of the SVG map.                                          |
+| `height`              | `number`              | `75`        | Height of the SVG map.                                         |
+| `mapSamples`          | `number`              | `5000`      | Number of sample points for map generation.                    |
+| `markers`             | `Marker[]`            | `[]`        | Array of markers to display on the map.                        |
+| `dotColor`            | `string`              | `undefined` | Color of the map dots (uses currentColor if not set).          |
+| `markerColor`         | `string`              | `"#FF6900"` | Color of the markers.                                          |
+| `dotRadius`           | `number`              | `0.2`       | Radius of the map dots.                                        |
+| `stagger`             | `boolean`             | `true`      | Whether to stagger dots in alternating rows for visual effect. |
+| `pulse`               | `boolean`             | `false`     | Enables built-in pulse animation for markers.                  |
+| `renderMarkerOverlay` | `(args) => ReactNode` | `undefined` | Custom render function for marker overlays.                    |
+| `className`           | `string`              | `undefined` | Additional class names applied to the SVG.                     |
+| `style`               | `React.CSSProperties` | `undefined` | Inline styles merged into the SVG.                             |
+
+## Types
+
+### Marker
+
+```tsx
+export interface Marker {
+  lat: number
+  lng: number
+  size?: number
+  pulse?: boolean
+}
+```
+
+Set `pulse` on `DottedMap` to animate all markers (and use `marker.pulse = false` to opt out per marker). Without the `pulse` prop, only markers with `marker.pulse = true` will pulse.
+
+The `DottedMap` component supports generic types, allowing you to extend the `Marker` interface with custom properties:
+
+```tsx
+import type { TCountryCode } from "countries-list"
+
+type CountryCode = Lowercase<TCountryCode>
+
+type MyMarker = Marker & {
+  overlay: {
+    countryCode: CountryCode
+    label: string
+  }
+}
+;<DottedMap<MyMarker> markers={markers} />
+```

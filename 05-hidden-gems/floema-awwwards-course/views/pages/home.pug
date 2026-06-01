@@ -1,0 +1,23 @@
+extends ../base.pug
+
+block variables
+  - var template = "home"
+
+block content
+  .home(data-background="#C97164" data-color="#f9f1e7")
+    .home__wrapper
+      .home__titles
+        each collection, index in collections
+          .home__titles__label=`${home.data.collection} ${ParseToNumbers(index)}`
+          .home__titles__title=collection.data.title
+
+      .home__gallery
+        each media, index in home.data.gallery
+          if (index < 15)
+            figure.home__gallery__media
+              img.home__gallery__media__image(alt=media.image.alt data-src=media.image.url)
+
+      a.home__link(href=Link(home.data.collection))=home.data.button
+        svg.home__link__icon(viewBox="0 0 288 60"  xmlns="http://www.w3.org/2000/svg")
+          path(stroke="currentColor" fill="none" d="M144.5 60C223.753 60 288 46.7924 288 30.5C288 14.2076 223.753 1 144.5 1C65.2471 1 1 14.2076 1 30.5C1 46.7924 65.2471 60 144.5 60Z")
+          path.home__link__icon__path(stroke="#ffc400" fill="none" d="M144.5 60C223.753 60 288 46.7924 288 30.5C288 14.2076 223.753 1 144.5 1C65.2471 1 1 14.2076 1 30.5C1 46.7924 65.2471 60 144.5 60Z")

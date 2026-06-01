@@ -1,0 +1,86 @@
+---
+import logo from '@/assets/logo.svg';
+import LanguagePicker from '@/components/LanguagePicker.astro';
+import {
+	getLangFromUrl,
+	useTranslations,
+	useTranslatedPath,
+} from '@/i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+---
+
+<header
+	class='sticky top-0 bg-white z-50 font-medium border-b border-b-slate-600/10'>
+	<nav>
+		<ul class='flex items-center relative section p-5 gap-5 justify-center'>
+			<ul class='flex gap-6 basis-0 sm:grow justify-end'>
+				<li>
+					<a
+						class='opacity-85 hover:opacity-100 transition-colors'
+						href={translatePath('/')}>{t('nav.home')}</a
+					>
+				</li>
+				<li>
+					<a
+						class='opacity-85 hover:opacity-100 transition-colors'
+						href={translatePath('/about')}>{t('nav.about')}</a
+					>
+				</li>
+			</ul>
+
+			<li class='header-logo hidden sm:block'>
+				<a
+					class='opacity-85 hover:opacity-100 transition-colors'
+					href={translatePath('/')}
+					><img src={logo.src} alt='Logo' class='w-10' /></a
+				>
+			</li>
+
+			<ul class='flex gap-6 basis-0 grow'>
+				<li>
+					<a
+						class='opacity-85 hover:opacity-100 transition-colors'
+						href={translatePath('/projects')}>{t('nav.projects')}</a
+					>
+				</li>
+				<li>
+					<a
+						class='opacity-85 hover:opacity-100 transition-colors'
+						href={translatePath('/contact')}>{t('nav.contact')}</a
+					>
+				</li>
+			</ul>
+
+			<li class='absolute right-0'><LanguagePicker /></li>
+		</ul>
+	</nav>
+</header>
+
+<style>
+	@keyframes show {
+		0% {
+			width: 0px;
+		}
+
+		100% {
+			width: 40px;
+		}
+	}
+
+	.header-logo {
+		view-timeline: --logoHeader block;
+		animation-timeline: --logoHeader;
+
+		animation-name: show;
+		/* animation-fill-mode: both; */
+		/* animation-range: 79% 4%; */
+		animation-range: entry 45% cover 3%;
+
+		/* animation-range: 50% normal; */
+		/* animation-range: cover 20%; */
+		/* animation-range: -100px; */
+	}
+</style>

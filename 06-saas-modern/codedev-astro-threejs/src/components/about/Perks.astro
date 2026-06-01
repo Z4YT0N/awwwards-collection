@@ -1,0 +1,42 @@
+---
+import { getLangFromUrl, useTranslations } from '@/i18n/utils';
+import perksImg from '@/assets/perks.webp';
+import { Image } from 'astro:assets';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+import { perks } from '@/scripts/consts';
+---
+
+<section class='section mb-28'>
+	<h2 class='text-3xl mt-10 appear font-medium'>
+		{t('about.perks.title')}
+	</h2>
+	<p class='mb-7 appear'>{t('about.perks.description')}</p>
+
+	<div class='grid md:grid-cols-2 rounded-xl overflow-hidden'>
+		<Image
+			src={perksImg}
+			width={800}
+			height={300}
+			alt=''
+			class='object-cover h-full w-full appear-top'
+		/>
+		<div class='flex flex-col justify-center appear bg-slate-50'>
+			{
+				perks[lang].map((perk, i) => (
+					<article class='p-7 appear-siblings border-b-[1px] border-b-slate-900/20 group'>
+						<div class='absolute inset-0 opacity-5 -z-10 h-full group-hover:scale-[1.01] transition-transform w-full bg-[linear-gradient(to_right,var(--main-color)_1px,transparent_1px),linear-gradient(to_bottom,var(--main-color)_1px,transparent_1px)] bg-[size:14px_24px]' />
+
+						<h4 class='text-xl mb-2 font-medium'>
+							<span class='font-semibold text-indigo-600'>
+								{(i + 1).toString().padStart(2, '0')}
+							</span>{' '}
+							{perk.title}
+						</h4>
+						<p>{perk.description}</p>
+					</article>
+				))
+			}
+		</div>
+	</div>
+</section>

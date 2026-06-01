@@ -1,0 +1,44 @@
+<script src='@/scripts/logo3D'></script>
+
+<div id='logo3d' class='w-full self-center max-h-[500px] mb-2 appear-top'>
+	<img
+		src='/logopurple.svg'
+		id='logo-loader'
+		class='w-[350px] my-10 mx-auto'
+		alt=''
+	/>
+</div>
+
+<style is:global>
+	#logo3d {
+		width: 100%;
+		height: 300px;
+	}
+
+	canvas {
+		margin-inline: auto;
+		z-index: 100;
+		position: relative;
+	}
+
+	@keyframes show {
+		0% {
+			scale: 100%;
+			opacity: 1;
+		}
+		90% {
+			opacity: 1;
+		}
+		100% {
+			scale: 14%;
+			opacity: 0;
+		}
+	}
+
+	canvas {
+		view-timeline: --logo block;
+		animation-timeline: --logo;
+		animation-name: show;
+		animation-range: 60% normal;
+	}
+</style>

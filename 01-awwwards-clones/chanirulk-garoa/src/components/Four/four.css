@@ -1,0 +1,17 @@
+.four{
+    height: 100vh;
+    font-family: time;
+    background-color: #f3ebe3;
+}
+.text-drop{
+    font-size: 4vw;
+    color: black;
+    position: absolute;
+    line-height: 50px;
+    left: 10%;
+    margin-top: 15%;
+}
+.high{
+    height: auto;
+    width: 45px;
+}

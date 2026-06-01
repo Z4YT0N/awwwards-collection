@@ -1,0 +1,18 @@
+.f{
+    height: 53vh;
+    font-family: "lue";
+    border-top: 1px solid red;
+    border-bottom: 1px solid red;
+}
+
+
+.head-f{
+    color: red;
+    text-transform: uppercase;
+}
+
+.images img{
+    height: auto;
+    width: 150px;
+    margin-left: 65px;
+}

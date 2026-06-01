@@ -1,0 +1,137 @@
+#page6{
+    height: 60vh;
+    width: 100%;
+    position: relative;
+    /* background: #000; */
+}
+
+#page6 #part-1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+    font-family: nb;
+    color: black;
+    margin: 0 40px;
+    padding-bottom: 10px;
+}
+
+
+#page6 #part-1 h1{
+    font-size: 120px;
+    font-weight: 500;
+    letter-spacing: -5px;
+    
+}
+
+
+#page6 #part-1 a{
+    align-self: flex-end;
+    margin-right: 20px;
+    font-size: 26px;
+    
+}
+
+
+#page6 #infinite{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-end;
+    /* overflow:hidden; */
+    gap:20px;
+    position: relative;
+    width: fit-content;
+
+    /* background: #000; */
+    /* transform: skewY(-3deg); */
+   
+    animation:  marquee  15s linear 0s infinite;
+}
+
+@keyframes marquee {
+
+    0%{
+        transform: translate(0);
+    }
+    100%{
+        transform: translate(calc(-50% - 10px ));
+}
+}
+#page6 #infinite .element{
+    width: 350px;
+    flex-shrink: 0;
+    height: fit-content;
+}
+
+
+#page6 #infinite .element img{
+    width: 100%;
+    object-fit: cover;
+}
+
+
+
+@media (max-width: 768px) {
+
+    #page6{
+        height: 70vh;
+        width: 100%;
+        position: relative;
+        
+    }
+    #page6 #part-1 h1{
+        font-size: 70px;
+    
+        
+    }
+
+    #page6 #part-1 a{
+        align-self: flex-end;
+        margin-right: 20px;
+        font-size: 19px;
+        
+    }
+    
+
+    #page6 #infinite .element{
+        width: 200px;
+        flex-shrink: 0;
+        height: fit-content;
+    }
+    
+    
+}
+
+
+@media (max-width: 425px) {
+
+    #page6{
+        height: 50vh;
+        width: 100%;
+        position: relative;
+        
+    }
+    #page6 #part-1 h1{
+        font-size: 50px;
+    
+        
+    }
+
+    #page6 #part-1 a{
+        align-self: flex-end;
+        margin-right: 20px;
+        font-size: 19px;
+        
+    }
+    
+
+    #page6 #infinite .element{
+        width: 200px;
+        flex-shrink: 0;
+        height: fit-content;
+    }
+    
+    
+}
+
+

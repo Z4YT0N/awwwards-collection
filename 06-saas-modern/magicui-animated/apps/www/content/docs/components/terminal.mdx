@@ -1,0 +1,97 @@
+---
+title: Terminal
+date: 2025-01-16
+description: An implementation of the MacOS terminal. Useful for showcasing a command line interface.
+author: dillionverma
+published: true
+---
+
+<ComponentPreview name="terminal-demo" />
+
+## Examples
+
+### Custom Delays
+
+<ComponentPreview name="terminal-demo-2" />
+
+## Installation
+
+<Tabs defaultValue="cli">
+
+<TabsList>
+  <TabsTrigger value="cli">CLI</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @magicui/terminal
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copy and paste the following code into your project.</Step>
+
+<ComponentSource name="terminal" />
+
+</Steps>
+
+</TabsContent>
+
+</Tabs>
+
+## Usage
+
+```tsx showLineNumbers
+import {
+  AnimatedSpan,
+  Terminal,
+  TypingAnimation,
+} from "@/components/ui/terminal"
+```
+
+```tsx showLineNumbers
+<Terminal>
+  <TypingAnimation>pnpm dlx shadcn@latest init</TypingAnimation>
+  <AnimatedSpan>✔ Preflight checks.</AnimatedSpan>
+  <AnimatedSpan>✔ Validating Tailwind CSS.</AnimatedSpan>
+  <TypingAnimation>Success! Project initialization completed.</TypingAnimation>
+</Terminal>
+```
+
+The terminal sequences its children automatically. Each `TypingAnimation` or `AnimatedSpan` starts when the previous finishes. Manual `delay` props are optional and typically unnecessary.
+
+## Props
+
+### Terminal
+
+| Prop          | Type        | Default | Description                                                    |
+| ------------- | ----------- | ------- | -------------------------------------------------------------- |
+| `children`    | `ReactNode` | `-`     | Terminal content: a list of `TypingAnimation`/`AnimatedSpan`.  |
+| `className`   | `string`    | `-`     | Custom CSS class for styling.                                  |
+| `sequence`    | `boolean`   | `true`  | Enable auto sequencing so each line starts after the previous. |
+| `startOnView` | `boolean`   | `true`  | Start sequencing when the terminal enters the viewport.        |
+
+### AnimatedSpan
+
+| Prop          | Type        | Default | Description                                                                 |
+| ------------- | ----------- | ------- | --------------------------------------------------------------------------- |
+| `children`    | `ReactNode` | `-`     | Content to be faded in.                                                     |
+| `className`   | `string`    | `-`     | Custom CSS class for styling.                                               |
+| `delay`       | `number`    | `0`     | Delay in ms before animation starts (used when `sequence` is `false`).      |
+| `startOnView` | `boolean`   | `false` | If `true`, waits for viewport visibility before animating when unsequenced. |
+
+### TypingAnimation
+
+| Prop          | Type                                                                                                       | Default  | Description                                                              |
+| ------------- | ---------------------------------------------------------------------------------------------------------- | -------- | ------------------------------------------------------------------------ |
+| `children`    | `string`                                                                                                   | `-`      | Text to be typed.                                                        |
+| `className`   | `string`                                                                                                   | `-`      | Custom CSS class for styling.                                            |
+| `duration`    | `number`                                                                                                   | `60`     | Milliseconds per character.                                              |
+| `delay`       | `number`                                                                                                   | `0`      | Delay in ms before typing starts (used when `sequence` is `false`).      |
+| `as`          | `"article" \| "div" \| "h1" \| "h2" \| "h3" \| "h4" \| "h5" \| "h6" \| "li" \| "p" \| "section" \| "span"` | `"span"` | The component type to render.                                            |
+| `startOnView` | `boolean`                                                                                                  | `true`   | If `true`, waits for viewport visibility before typing when unsequenced. |

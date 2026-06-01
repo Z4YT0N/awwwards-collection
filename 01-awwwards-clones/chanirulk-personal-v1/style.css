@@ -1,0 +1,230 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+}
+
+@font-face {
+    font-family: "night";
+    src: url(TheNightWatch.woff2) format("woff2");
+}
+  
+
+@font-face {
+  font-family: "ivar";
+  src: url(IvarDisplayCondensed-Light.woff2) format("woff2");
+}
+
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #888;
+}
+::-webkit-scrollbar-thumb {
+  background: whitesmoke;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: whitesmoke;
+}
+
+#black{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    color: whitesmoke;
+    z-index: 99;
+    overflow-x: hidden;
+}
+
+#chaniru-start{
+    height: 80px;
+    font-family: "night";
+    margin-top: 5%;
+    margin-left: 5%;
+}
+
+
+#rightscroll{
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    font-family: "night";
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 20%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    height: 100%;
+}
+
+#rightscroll h1{
+    font-size: 5vw;
+}
+
+#main{
+    width: 100%;
+    height: 150vh;
+    background-color: #E1DFDD;
+}
+
+#nav{
+    position: fixed;
+    height: 55px;
+    padding-left: 5%;
+    padding-right: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#nav a{
+    text-decoration: none;
+    color: black;
+    font-size: 1.5vw;
+    text-transform: uppercase;
+    font-weight: 700;
+    position: relative;
+    left: 170%;
+}
+
+
+#nav a:hover{
+    color: rgb(156, 156, 156);
+}
+
+#nav h1{
+    font-size: 1.5vw;
+}
+
+#navmain{
+    position: absolute;
+    top: 3%;
+    left: 25%;
+    display: flex;
+    width: 40%;
+    justify-content: space-between;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+}
+
+#navmain h1{
+    font-size: 1.5vw;
+}
+
+#creative{
+    width: 90%;
+    position: absolute;
+    left: 5%;
+    top: 15%;
+}
+#creative h1{
+    font-weight: 600;
+    font-size: 8vw;
+}
+
+#creativeimg{
+    width: 35vw;
+    height: 17vw;
+    background-image: url(./img/Untitled\ design\ \(3\).png);
+    background-size: cover;
+    background-position: left;
+}
+
+#chaniru{
+    position: absolute;
+    font-family:"night";
+    left: 50%;
+    line-height: 0.6em;
+}
+
+
+
+#small-des{
+    position: absolute;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    font-size: 1vw;
+    font-weight: 500;
+    top: 130%;
+    left: 20%;
+}
+
+#arrowimg{
+    margin-top: 50px;
+    position: absolute;
+    background-image: url(./img/arrow.png);
+    background-size: cover;
+    background-position: left;
+    height: 120px;
+    width: 60px;
+}
+
+#arrowimg{
+    animation: move 5s ease-in infinite alternate;
+}
+
+
+
+@keyframes move {
+     
+    25% {
+        transform: translateY(20px);
+    }
+
+    50% {
+        transform: translateY(30px);
+    }
+    
+
+    75% {
+        transform: translateY(60px);
+    }
+   
+    100% {
+        transform: translateY(100px);
+    }
+}
+
+
+#cone{
+    width: 100%;
+    height: 60%;
+}
+
+#firsth1{
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#firsth2{
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#main-2{
+    width: 100%;
+    height: 100vh;
+    background-color: #E1DFDD;
+}
+
+#follow{
+    position: absolute;
+    font-family: "night";
+    left: 40px;
+    font-size: 7vw;
+}

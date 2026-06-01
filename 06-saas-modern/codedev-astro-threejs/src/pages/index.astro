@@ -1,0 +1,21 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Hero from '@/components/home/Hero.astro';
+import Services from '@/components/Services.astro';
+import Techs from '@/components/home/Techs.astro';
+import Process from '@/components/home/Process.astro';
+import CallToAction from '@/components/CallToAction.astro';
+import Gallery from '@/components/home/Gallery.astro';
+---
+
+<Layout title='CodeDev'>
+	<div
+		class='fixed top-0 h-screen opacity-[0.02] w-screen rotate-180 transform bg-[radial-gradient(60%_120%_at_50%_50%,hsla(0,0%,100%,0)_0,var(--main-color)_100%)] pointer-events-none'>
+	</div>
+	<Hero />
+	<Services className='section' />
+	<Techs />
+	<Process />
+	<Gallery />
+	<CallToAction />
+</Layout>

@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>shader web background</title>
+
+  <meta name="description"  content="A library displaying GLSL fragment shaders as a website background" />
+  <meta name="keywords"     content="OpenGL, GLSL, WebGL, shader, shaders, fragment shader, web, web development, background, animation" />
+  <meta name="author"       content="Kazik Pogoda" />
+
+  <meta property="og:title"         content="shader web background" />
+  <meta property="og:type"          content="website" />
+  <meta property="og:url"           content="https://xemantic.github.io/shader-web-background/" />
+  <meta property="og:image"         content="https://xemantic.github.io/shader-web-background/media/shader-web-backgroung.jpg" />
+  <meta property="og:image:type"    content="image/jpeg" />
+  <meta property="og:image:width"   content="1200" />
+  <meta property="og:image:height"  content="630" />
+  <meta property="og:image:alt"     content="shader web background logo" />
+  <meta property="og:description"   content="A library displaying GLSL fragment shaders as a website background" />
+  <meta property="og:locale"        content="en_US" />
+  <meta property="fb:app_id"        content="3733288006778720" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <link rel="shortcut icon" href="media/icons/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="media/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="media/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="media/icons/favicon-16x16.png">
+  <link rel="manifest" href="media/icons/site.webmanifest">
+  <link rel="mask-icon" href="media/icons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-config" content="media/icons/browserconfig.xml">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+
+  <script>
+    /*
+    @licstart  The following is the entire license notice for the
+    JavaScript and GLSL code in this page.
+
+    Copyright (C) 2020  Kazimierz Pogoda
+
+    The JavaScript and GLSL code in this page is free software: you can
+    redistribute it and/or modify it under the terms of the GNU
+    General Public License (GNU GPL) as published by the Free Software
+    Foundation, either version 3 of the License, or (at your option)
+    any later version.  The code is distributed WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS
+    FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+    As additional permission under GNU GPL version 3 section 7, you
+    may distribute non-source (e.g., minimized or compacted) forms of
+    that code without the copy of the GNU GPL normally required by
+    section 4, provided you include this license notice and a URL
+    through which recipients can access the Corresponding Source.
+
+
+    @licend  The above is the entire license notice
+    for the JavaScript and GLSL code in this page.
+    */
+  </script>
+  <script>
+// -- https://xemantic.github.io/shader-web-background/
+const shaderWebBackground={};(()=>{'use strict';const t=(a,b)=>{b.initHalfFloatRGBATexture(b.width,b.height);a.texParameteri(a.TEXTURE_2D,
+a.TEXTURE_MIN_FILTER,a.LINEAR);a.texParameteri(a.TEXTURE_2D,a.TEXTURE_MAG_FILTER,
+a.LINEAR);a.texParameteri(a.TEXTURE_2D,a.TEXTURE_WRAP_S,a.CLAMP_TO_EDGE);a.texParameteri(a.TEXTURE_2D,
+a.TEXTURE_WRAP_T,a.CLAMP_TO_EDGE)},x=(a,b)=>{console.warn("shader-web-background cannot shade, adding fallback CSS classes");
+document.documentElement.classList.add("shader-web-background-fallback");b.classList.add("shader-web-background-fallback");
+if(a instanceof shaderWebBackground.GlError)console.warn("Not sufficient WebGL support:",
+a);else throw a;};
+function y(a,b){if(!a)throw new shaderWebBackground.ConfigError(b);}
+function z(a){y(a instanceof HTMLCanvasElement,"config.canvas must be instance of canvas");
+return a}
+function A(){const a=document.createElement("canvas"),b=a.style;a.id="shader-web-background";b.width=
+"100vw";b.height="100vh";b.position="fixed";b.top="0";b.left="0";b.zIndex=-9999;return a}
+function B(a,b,c){y(a instanceof HTMLScriptElement&&a.type===b,'Shader source element of id "'+
+c+'" should be of type: <script type="'+(b+'" id="'+c+'">'))}
+function D(a){const b=document.getElementById(a);y(b,'Missing shader source: <script type="x-shader/x-fragment" id="'+
+(a+'">'));B(b,"x-shader/x-fragment",a);return b.text}
+function E(a){a+="Vertex";const b=document.getElementById(a);return b?(B(b,"x-shader/x-vertex",
+a),b.text):"attribute vec2 V;void main(){gl_Position=vec4(V,0,1);}"}
+function F(a,b){"loading"!==document.readyState?b():window.addEventListener(a,b)}
+class G{constructor(a,b,c,d){this.g=c;const l=a.gl;this.h=()=>{for(const f of d)f.u(l,
+f.location,b)};this.i=()=>{var f=c.v,h=a.gl;h.bindBuffer(h.ARRAY_BUFFER,a.j);h.enableVertexAttribArray(f);
+h.vertexAttribPointer(f,2,h.FLOAT,!1,0,0);h.drawArrays(h.TRIANGLE_STRIP,0,4);h.disableVertexAttribArray(f);
+h.bindBuffer(h.ARRAY_BUFFER,null);f=a.gl;for(h=0;h<a.g;h++)f.activeTexture(f.TEXTURE0+
+h),f.bindTexture(f.TEXTURE_2D,null);a.g=0}}}
+function H(a){var b={antialias:!1,depth:!1,alpha:!1};try{return new I(a,b)}catch(c){throw new shaderWebBackground.GlError(c.message);
+}}
+function J(a,b,c,d,l,f){function h(e,m,n){try{{var k=p;const q=k.gl,P=K(k,e,q.VERTEX_SHADER,m),
+Q=K(k,e,q.FRAGMENT_SHADER,n),v=q.createProgram();q.attachShader(v,P);q.attachShader(v,
+Q);q.linkProgram(v);var r=v}return r}catch(q){throw new shaderWebBackground.ConfigError(q.message);
+}}const p=H(a),w=[],g={gl:p.gl,canvas:a,width:0,height:0,cssPixelRatio:0,cssWidth:0,
+cssHeight:0,isOverShader:(e,m)=>{const n=a.getBoundingClientRect();return e>=n.left&&
+e<=n.right&&m>=n.top&&m<=n.bottom},toShaderX:e=>(e-a.getBoundingClientRect().left)*
+g.cssPixelRatio+.5,toShaderY:e=>a.height-(e-a.getBoundingClientRect().top)*g.cssPixelRatio-
+.5,s:()=>g.cssWidth!==a.clientWidth||g.cssHeight!==a.clientHeight?(g.resize(),!0):
+!1,resize:()=>{const e=window.devicePixelRatio||1,m=a.clientWidth,n=a.clientHeight,
+k=Math.floor(m*e),r=Math.floor(n*e);a.width=k;a.height=r;g.width=k;g.height=r;g.cssPixelRatio=
+e;g.cssWidth=m;g.cssHeight=n;p.gl.viewport(0,0,p.canvas.width,p.canvas.height);for(const q of w)q.g.l(k,
+r)},texture:(e,m)=>{{var n=p;const k=n.gl;m=m instanceof L?m.g:m;k.activeTexture(k.TEXTURE0+
+n.g);k.bindTexture(k.TEXTURE_2D,m);k.uniform1i(e,n.g++)}},buffers:{},initHalfFloatRGBATexture:(e,
+m)=>{p.h.g(e,m)}},R=Object.keys(b).length-1;let S=0;for(const e in b){if(S++<R){const k=
+b[e].texture||t;g.buffers[e]=M(p,()=>{k(p.gl,g)})}const m=N(p,h(e,E(e),D(e)),g.buffers[e]),
+n=b[e].uniforms||{};var u=Object.keys(n);for(const k of m.m)y(n[k.name],'No configuration for uniform "'+
+k.name+'" defined in shader "'+e+'"'),u=u.filter(r=>r!==k.name);0!==u.length&&console.warn('Extra uniforms configured for shader "'+
+e+'", which are not present in the shader code - might have been removed by GLSL compiler if not used: '+
+u.join(", "));u=m.m.map(k=>({location:k.location,u:n[k.name]}));w.push(new G(p,g,
+m,u))}const C=()=>{g.s()&&d&&d(g.width,g.height,g);l&&l(g);for(const e of w)e.g.i(e.h,
+e.i);f&&f(g);requestAnimationFrame(C)};F("load",()=>{g.resize();c&&c(g);d&&d(g.width,
+g.height,g);requestAnimationFrame(C)});return g}
+shaderWebBackground.Error=class extends Error{constructor(a){super(a);this.name="shaderWebBackground.Error"}};
+shaderWebBackground.ConfigError=class extends shaderWebBackground.Error{constructor(a){super(a);
+this.name="shaderWebBackground.ConfigError"}};
+shaderWebBackground.GlError=class extends shaderWebBackground.Error{constructor(a){super(a);this.name=
+"shaderWebBackground.GlError"}};
+shaderWebBackground.shade=function(a){y(a,"Missing config argument");const b=a.canvas?
+z(a.canvas):A();y(a.shaders,"No shaders specified in config");try{const c=J(b,a.shaders,
+a.onInit,a.onResize,a.onBeforeFrame,a.onAfterFrame);a.canvas||F("DOMContentLoaded",
+()=>{document.body.appendChild(b)});return c}catch(c){(a.onError||x)(c,b)}};const O=[-1,1,1,1,-1,-1,1,-1];
+function T(a,b){return a.j(a.gl.getExtension(b),b+" extension is not supported")}
+class U{constructor(a,b){this.gl=a;this.j=b}g(){}}
+class V extends U{constructor(a,b){super(a,b);this.h=T(this,"OES_texture_half_float");
+T(this,"OES_texture_half_float_linear")}g(a,b){const c=this.gl;c.texImage2D(c.TEXTURE_2D,
+0,c.RGBA,a,b,0,c.RGBA,this.h.HALF_FLOAT_OES,null)}}
+class W extends U{constructor(a,b){super(a,b);T(this,"EXT_color_buffer_float");this.gl.getExtension("OES_texture_float_linear")}g(a,
+b){const c=this.gl;c.texImage2D(c.TEXTURE_2D,0,c.RGBA16F,a,b,0,c.RGBA,c.HALF_FLOAT,
+null)}}
+function X(a){a=a.split(/\r?\n/);const b=a.length.toString().length;var c=[];a.forEach((d,
+l)=>{l=(l+1).toString();l=l.length>=b?l:" ".repeat(b-l.length)+l;c.push(l+": "+d+
+"\n")});return c.join("")}function M(a,b){return new L(a.gl,()=>{b(a.gl)})}
+function N(a,b,c){const d=a.gl;a=[];const l=d.getProgramParameter(b,d.ACTIVE_UNIFORMS);
+for(let f=0;f<l;f++){const h=d.getActiveUniform(b,f);a.push({name:h.name,location:d.getUniformLocation(b,
+h.name)})}return{v:d.getAttribLocation(b,"V"),m:a,l:c?(f,h)=>c.l(f,h):()=>{},i:(f,
+h)=>{d.useProgram(b);f();c?(f=c.g,c.g=c.h,c.h=f,c.i(h)):h()}}}
+function K(a,b,c,d){a=a.gl;c=a.createShader(c);a.shaderSource(c,d);a.compileShader(c);
+if(!a.getShaderParameter(c,a.COMPILE_STATUS)){const l=String(a.getShaderInfoLog(c));
+a.deleteShader(c);b="Cannot compile shader - "+b+": "+l;console.log(b);console.log(X(d));
+throw Error(b);}return c}
+class I{constructor(a,b){this.canvas=a;const c=(l,f)=>{if(!l)throw Error(f);return l};
+let d=a.getContext("webgl2",b);if(d)this.h=new W(d,c);else if(d=a.getContext("webgl",
+b))this.h=new V(d,c);c(d,"webgl context not supported on supplied canvas element: "+
+a);this.gl=d;a=d.createBuffer();d.bindBuffer(d.ARRAY_BUFFER,a);d.bufferData(d.ARRAY_BUFFER,
+new Float32Array(O),d.STATIC_DRAW);d.bindBuffer(d.ARRAY_BUFFER,null);this.j=a;this.buffers=
+{};this.g=0}}
+function Y(a){const b=a.gl,c=b.createTexture();b.bindTexture(b.TEXTURE_2D,c);a.o(b);
+b.bindTexture(b.TEXTURE_2D,null);return c}
+class L{constructor(a,b){this.j=a.createFramebuffer();this.gl=a;this.o=b;this.g=this.h=
+null}l(){this.h&&this.gl.deleteTexture(this.h);this.g&&this.gl.deleteTexture(this.g);
+this.h=Y(this);this.g=Y(this)}i(a){const b=this.gl;b.bindFramebuffer(b.FRAMEBUFFER,
+this.j);b.framebufferTexture2D(b.FRAMEBUFFER,b.COLOR_ATTACHMENT0,b.TEXTURE_2D,this.g,
+0);a();b.framebufferTexture2D(b.FRAMEBUFFER,b.COLOR_ATTACHMENT0,b.TEXTURE_2D,null,
+0);b.bindFramebuffer(b.FRAMEBUFFER,null)}};})()
+//# sourceMappingURL=dist/shader-web-background.min.js.map
+  </script>
+  <script>
+    // spectral_zucconi6 by Alan Zucconi rewritten from GLSL to JS by Kazik Pogoda
+    // GLSL: https://www.shadertoy.com/view/ls2Bz1
+
+    const ONE_IN_3D = [1, 1, 1];
+    const c1 = [3.54585104, 2.93225262, 2.41593945];
+    const x1 = [0.69549072, 0.49228336, 0.27699880];
+    const y1 = [0.02312639, 0.15225084, 0.52607955];
+    const c2 = [3.90307140, 3.21182957, 3.96587128];
+    const x2 = [0.11748627, 0.86755042, 0.66077860];
+    const y2 = [0.84897130, 0.88445281, 0.73949448];
+    const saturate = (x) => Math.min(Math.max(x, 0), 1);
+    const to3d = (x) => [x, x, x];
+    const add3d = (x, y) => [x[0] + y[0], x[1] + y[1], x[2] + y[2]];
+    const subtract3d = (x, y) => [x[0] - y[0], x[1] - y[1], x[2] - y[2]];
+    const multiply3d = (x, y) => [x[0] * y[0], x[1] * y[1], x[2] * y[2]];
+    const pow23d = (x) => multiply3d(x, x);
+    const saturate3d = (x) => [saturate(x[0]), saturate(x[1]), saturate(x[2])];
+    const bump3y = (x, yoffset) => saturate3d(subtract3d(subtract3d(ONE_IN_3D, pow23d(x)), yoffset));
+    const spectral_zucconi6 = (x) => add3d(bump3y(multiply3d(c1, subtract3d(to3d(x), x1)), y1), bump3y(multiply3d(c2, subtract3d(to3d(x), x2)), y2));
+  </script>
+  <script type="x-shader/x-fragment" id="feedback">
+    precision highp float;
+
+    uniform vec2      iResolution;
+    uniform float     iMinDimension;
+    uniform sampler2D iChannel0;
+    uniform vec2      iScreenRatioHalf;
+    uniform vec2      iFeedbackZoomCenter;
+    uniform float     iFeedbackZoomRate;
+    uniform vec2      iFeedbackShiftVector;
+    uniform float     iFeedbackFadeRate;
+    uniform float     iFeedbackColorShiftZoom;
+    uniform float     iFeedbackColorShiftImpact;
+    uniform vec2      iDrawCenter;
+    uniform float     iDrawIntensity;
+    uniform float     iBlobEdgeSmoothing;
+    uniform float     iBlob1Radius;
+    uniform float     iBlob1PowFactor;
+    uniform vec3      iBlob1Color;
+    uniform float     iBlob2Radius;
+    uniform float     iBlob2PowFactor;
+    uniform vec3      iBlob2Color;
+    uniform float     iColorShiftOfRadius;
+
+    /*
+      Normally it would be provided by texture parameters, but on iOS the texture REPEAT works only
+      for textures which size is the power of 2.
+     */
+    vec4 repeatedTexture(in sampler2D channel, in vec2 uv) {
+      return texture2D(channel, mod(uv, 1.));
+    }
+
+    float drawBlob(
+      in vec2 st,
+      in vec2 center,
+      in float radius,
+      in float edgeSmoothing
+    ) {
+      float dist = length((st - center) / radius);
+      return dist * smoothstep(1., 1. - iBlobEdgeSmoothing, dist);
+    }
+
+    void main() {
+      vec2 uv = gl_FragCoord.xy / iResolution;
+      vec2 st = (gl_FragCoord.xy * 2. - iResolution) / iMinDimension;
+
+      float drawDist = length(st - iDrawCenter);
+
+      vec3 colorShift = repeatedTexture(
+        iChannel0,
+        uv - st * iFeedbackColorShiftZoom * iScreenRatioHalf
+      ).rgb;
+
+      vec2 stShift = vec2(0);
+      stShift += iFeedbackZoomRate * (st - iFeedbackZoomCenter);
+      stShift += (colorShift.rg - .5) * iFeedbackColorShiftImpact;
+      stShift += iFeedbackShiftVector;
+      stShift *= iScreenRatioHalf;
+
+      vec3 prevColor = repeatedTexture(iChannel0, uv - stShift).rgb;
+      prevColor *= iFeedbackFadeRate;
+
+      vec3 drawColor = vec3(0);
+
+      float radius =
+        1.
+        + (colorShift.r + colorShift.g + colorShift.b) * iColorShiftOfRadius;
+      drawColor +=
+        pow(
+          drawBlob(st, iDrawCenter, radius * iBlob1Radius, iBlobEdgeSmoothing),
+          iBlob1PowFactor
+        ) * iBlob1Color;
+      drawColor +=
+        pow(
+          drawBlob(st, iDrawCenter, radius * iBlob2Radius, iBlobEdgeSmoothing),
+          iBlob2PowFactor
+        ) * iBlob2Color;
+
+      vec3 color = vec3(0);
+      drawColor *= iDrawIntensity;
+      prevColor *= iFeedbackFadeRate;
+      color += prevColor;
+      color += drawColor;
+
+      color = clamp(color, 0., 1.);
+      gl_FragColor = vec4(color, 1.);
+    }
+  </script>
+
+  <!--
+    The "image" shader will just copy the "feedback" output to the canvas.
+   -->
+  <script type="x-shader/x-fragment" id="image">
+    precision highp float;
+
+    uniform vec2 iResolution;
+    uniform sampler2D iChannel0;
+
+    void main(){
+      gl_FragColor = texture2D(iChannel0, gl_FragCoord.xy / iResolution);
+    }
+  </script>
+  <script>
+    var time;
+
+    var minDimension;
+    var screenRatioHalfX;
+    var screenRatioHalfY;
+
+    var mouseX;
+    var mouseY;
+
+    var stMouseX;
+    var stMouseY;
+
+    var tiltLR = 0;
+    var tiltFB = 0;
+    var tiltFBDelta = null;
+
+    var feedbackShiftVectorX;
+    var feedbackShiftVectorY;
+
+    var oldScrollY;
+
+    var drawCenterX;
+    var drawCenterY;
+
+    const feedbackMouseShiftFactor = .003;
+    const feedbackTiltShiftFactor = .0002;
+    const backgroundParallaxScrollingFactor = .5;
+    const blob1ColorPulseSpeed = .04;
+    const blob2ColorPulseSpeed = .04;
+    const blob2ColorPulseShift = .5;
+    const drawCenterShiftDownScale = .99;
+
+    var blob1Color;
+    var blob2Color;
+
+    const loadScript = (src) => new Promise((resolve, reject) => {
+      const script = document.createElement("script");
+      script.src = src;
+      script.type = "text/javascript";
+      script.async = true;
+      script.onload = resolve;
+      script.onerror = reject;
+      document.head.appendChild(script);
+    });
+
+    const onWindowLoad = () => new Promise((resolve) => {
+      window.addEventListener("load", resolve);
+    });
+
+    function goFullScreen(canvas, noSleep) {
+      screenfull.on("change", () => {
+        if (!screenfull.isFullscreen) {
+          noSleep.disable();
+        }
+      });
+      screenfull
+        .request(canvas)
+        .then(() => noSleep.enable());
+    }
+
+    function newButton(label, action) {
+      const button = document.createElement("button");
+      button.textContent = label;
+      button.addEventListener("click", action);
+      return button;
+    }
+
+    function addControl(control) {
+      document
+        .getElementById("controls")
+        .appendChild(control);
+    }
+
+    function maybeAddFullScreenAction() {
+      if (screenfull.isEnabled) {
+        const canvas = document.getElementById("shader-web-background");
+        const noSleep = new NoSleep();
+        addControl(
+          newButton(
+            "Go Full Screen",
+            () => goFullScreen(canvas, noSleep)
+          )
+        );
+      }
+    }
+
+    function handleDeviceOrientationChange(event) {
+      if (event.beta) {
+        if (tiltFBDelta) {
+          tiltFB = event.beta - tiltFBDelta;
+        } else {  // first reading or calibration
+          tiltFBDelta = event.beta;
+          tiltFB = 0;
+        }
+      }
+      if (event.gamma) {
+        tiltLR = event.gamma;
+      }
+    }
+
+    const deviceOrientationEvent = "deviceorientation";
+
+    function trackDeviceOrientation() {
+      window.addEventListener(deviceOrientationEvent, handleDeviceOrientationChange, false);
+    }
+
+    function untrackDeviceOrientation() {
+      window.removeEventListener(deviceOrientationEvent, handleDeviceOrientationChange, false);
+    }
+
+    function calibrateDeviceOrientation() {
+      tiltFBDelta = null;
+    }
+
+    function initDeviceOrientation() {
+      if (DeviceOrientationEvent.requestPermission) {
+        DeviceOrientationEvent.requestPermission()
+          .then(response => {
+            if (response == "granted") {
+              tiltFBDelta = null;
+              untrackDeviceOrientation(); // just in case it is subsequent attempt
+              trackDeviceOrientation();
+            }
+          })
+          .catch(console.error);
+      } else {
+        trackDeviceOrientation();
+        tiltFBDelta = null;
+      }
+    }
+
+    function maybeAddCalibrateDeviceOrientationAction() {
+      if (window.DeviceOrientationEvent) {
+       addControl(
+          newButton(
+            "Calibrate Device Orientation",
+            () => initDeviceOrientation()
+          )
+        );
+      }
+    }
+
+    function maybeAddActions() {
+      maybeAddCalibrateDeviceOrientationAction();
+      maybeAddFullScreenAction();
+    }
+
+    if (window.DeviceOrientationEvent) {
+      if (!DeviceOrientationEvent.requestPermission) {
+        trackDeviceOrientation();
+      }
+    }
+
+    document.addEventListener("mousemove", (event) => {
+       mouseX = event.clientX;
+       mouseY = event.clientY;
+    });
+
+    onWindowLoad()
+      .then(() => Promise.all([
+        loadScript("https://unpkg.com/screenfull/dist/screenfull.js"),
+        loadScript("https://unpkg.com/nosleep.js/dist/NoSleep.min.js")
+      ]))
+      .then(maybeAddActions);
+
+    shaderWebBackground.shade({
+      onInit: (ctx) => {
+        mouseX = ctx.cssWidth / 2.;
+        mouseY = ctx.cssHeight / 2.;
+        oldScrollY = window.scrollY;
+        drawCenterX = 0;
+        drawCenterY = 0;
+      },
+      onResize: (width, height) => {
+        minDimension = Math.min(width, height);
+        if (width >= height) {
+          screenRatioHalfX = height / width * .5;
+          screenRatioHalfY = .5;
+        } else {
+          screenRatioHalfX = .5;
+          screenRatioHalfY = width / height * .5;
+        }
+      },
+      onBeforeFrame: (ctx) => {
+        stMouseX = (2 * ctx.toShaderX(mouseX) - ctx.width) / minDimension;
+        stMouseY = (2 * ctx.toShaderY(mouseY) - ctx.height) / minDimension;
+        time = performance.now() / 1000;
+        const scrollY = window.scrollY;
+        const scrollYDelta = scrollY - oldScrollY;
+        if (scrollYDelta === 0) {
+          feedbackShiftVectorY = 0;
+        } else {
+          feedbackShiftVectorY =
+            scrollYDelta / minDimension
+            * 2 * ctx.cssPixelRatio
+            * backgroundParallaxScrollingFactor;
+          drawCenterY += feedbackShiftVectorY;
+        }
+        oldScrollY = scrollY;
+        if (tiltFBDelta) { // we have device orientation readings, better than mouse
+          feedbackShiftVectorX = tiltLR * feedbackTiltShiftFactor;
+          feedbackShiftVectorY += tiltFB * -feedbackTiltShiftFactor;
+        } else {
+          feedbackShiftVectorX = stMouseX * feedbackMouseShiftFactor;
+          feedbackShiftVectorY += stMouseY * feedbackMouseShiftFactor;
+        }
+        blob1Color = spectral_zucconi6((time * blob1ColorPulseSpeed) % 1);
+        blob2Color = spectral_zucconi6((time * blob2ColorPulseSpeed + blob2ColorPulseShift) % 1);
+      },
+      shaders: {
+        feedback: {
+          uniforms: {
+            iResolution:               (gl, loc, ctx) => gl.uniform2f(loc, ctx.width, ctx.height),
+            iMinDimension:             (gl, loc) => gl.uniform1f(loc, minDimension),
+            iScreenRatioHalf:          (gl, loc) => gl.uniform2f(loc, screenRatioHalfX, screenRatioHalfY),
+            iFeedbackZoomCenter:       (gl, loc) => gl.uniform2f(loc, 0, 0),
+            iFeedbackZoomRate:         (gl, loc) => gl.uniform1f(loc, .001),
+            iFeedbackShiftVector:      (gl, loc) => gl.uniform2f(loc, feedbackShiftVectorX, feedbackShiftVectorY),
+            iFeedbackFadeRate:         (gl, loc) => gl.uniform1f(loc, .999),
+            iFeedbackColorShiftZoom:   (gl, loc) => gl.uniform1f(loc, .2),
+            iFeedbackColorShiftImpact: (gl, loc) => gl.uniform1f(loc, .004),
+            iDrawCenter:               (gl, loc) => gl.uniform2f(loc, drawCenterX, drawCenterY),
+            iDrawIntensity:            (gl, loc) => gl.uniform1f(loc, .35),
+            iBlobEdgeSmoothing:        (gl, loc) => gl.uniform1f(loc, .04),
+            iBlob1Radius:              (gl, loc) => gl.uniform1f(loc, .3),
+            iBlob1PowFactor:           (gl, loc) => gl.uniform1f(loc, 40.),
+            iBlob1Color:               (gl, loc) => gl.uniform3f(loc, blob1Color[0], blob1Color[1], blob1Color[2]),
+            iBlob2Radius:              (gl, loc) => gl.uniform1f(loc, .4),
+            iBlob2PowFactor:           (gl, loc) => gl.uniform1f(loc, 40.),
+            iBlob2Color:               (gl, loc) => gl.uniform3f(loc, blob2Color[0], blob2Color[1], blob2Color[2]),
+            iColorShiftOfRadius:       (gl, loc) => gl.uniform1f(loc, .5),
+            iChannel0:                 (gl, loc, ctx) => ctx.texture(loc, ctx.buffers.feedback)
+          }
+        },
+        image: {
+          uniforms: {
+            iResolution: (gl, loc, ctx) => gl.uniform2f(loc, ctx.width, ctx.height),
+            iChannel0: (gl, loc, ctx) => ctx.texture(loc, ctx.buffers.feedback),
+          }
+        }
+      },
+      onAfterFrame: () => {
+        drawCenterY *= drawCenterShiftDownScale;
+      },
+      onError: (error, canvas) => {
+        document.documentElement.classList.add("fallback-background");
+        if (error instanceof shaderWebBackground.GlError) {
+          console.log("Could not shade, adding fallback CSS classes:", error);
+          // in regular web design we would just silently switch to fallback style
+          window.alert(
+            "The shader-web-background does not support your device/browser, therefore "
+              + "you cannot experience what is described here, try with another device");
+        } else {
+          throw error;
+        }
+      }
+    });
+  </script>
+  <style>
+    html {
+      box-sizing: border-box;
+      background: black;
+      font-size: calc(16px + .8vw);
+      font-family: sans-serif;
+      scroll-behavior: smooth;
+      line-height: 2em;
+    }
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }
+    body {
+      color: white;
+      overflow-x: hidden;
+    }
+    body, h1, h2, p, ul, blockquote {
+      margin: 0;
+      padding: 0;
+    }
+    p, ul {
+      margin-top: .618rem;
+      margin-bottom: .618rem;
+    }
+    h2 {
+      font-size: 1.5rem;
+      text-align: center;
+      margin-top: 1.618rem;
+      margin-bottom: 1.618rem;
+      line-height: 2.15em;
+    }
+    section {
+      background: rgba(0, 0, 0, .3);
+      margin-top: 0rem;
+      padding-top: .618rem;
+      padding-bottom: 2rem;
+    }
+    section, footer {
+      margin-bottom: 6.472rem;
+    }
+    header {
+      height: 100vh;
+      opacity: 1;
+      transition: opacity 2s;
+    }
+    header h1 {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    header, section, footer {
+      padding-left:  calc(-20px + 10vw);
+      padding-right: calc(-20px + 10vw);
+    }
+    a {
+      text-decoration: none;
+      color: white;
+      background: rgba(255, 0, 255, .2);
+      transition: color 2s, background 2s;
+      padding: .31rem .13rem;
+      margin: -.31rem -.13rem;
+      border-radius: .47rem;
+    }
+    a:hover {
+      color: black;
+      background: rgba(0, 255, 0, .2);
+    }
+    ul {
+      margin-left: 1.1rem;
+    }
+    li {
+      margin-bottom: .618rem;
+    }
+    footer {
+      font-size: .8rem;
+      text-align: center;
+      font-style: italic;
+      line-height: 2.15em;
+    }
+    .scroll-to-intro {
+      margin-top: -6vh;
+      height: 6vh;
+      position: relative;
+    }
+    .scroll-to-intro a {
+      background: radial-gradient(farthest-side at bottom,
+        rgba(255, 255, 255, .6),
+        rgba(255, 255, 255, .0)
+      );
+      display: block;
+      height: 100%;
+      animation: 5s blink linear infinite;
+      animation-fill-mode: both;
+      animation-delay: 10s;
+    }
+    button {
+      background: rgba(255, 0, 255, .6);
+      margin: .618em;
+      border: none;
+      color: white;
+      padding: .618em;
+      text-align: center;
+      font-size: inherit;
+      transition: color 1.6s, background 1.6s;
+      border-radius: .47rem;
+      cursor: pointer;
+    }
+    button:hover {
+      background: rgba(0, 255, 0, .6);
+      color: black;
+    }
+    a.tea {
+      background: transparent;
+      margin: 0;
+      padding: 0;
+      transition: filter 2s;
+    }
+    a.tea:hover {
+      filter: invert(1);
+    }
+    a.tea > img {
+      height: 1.8rem;
+      vertical-align: middle;
+    }
+    .logo {
+      height: 100%;
+      pointer-events: none;
+      animation: fade-in 20s;
+      animation-fill-mode: both;
+      animation-delay: 5s;
+    }
+    .logo g {
+      fill: #ffffff;
+      opacity: 1;
+    }
+    .logo #reds {
+      animation: fade-to-red linear 15s infinite;
+      animation-fill-mode: forwards;
+      animation-delay: 20s;
+    }
+    .logo #greens {
+      animation: fade-to-green linear 15s infinite;
+      animation-fill-mode: forwards;
+      animation-delay: 21s;
+    }
+    .logo #blues {
+      animation: fade-to-blue linear 15s infinite;
+      animation-fill-mode: forwards;
+      animation-delay: 22s;
+    }
+    #controls {
+      text-align: center;
+    }
+    .fallback-background {
+      background: black url("media/fallback.jpg");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+    @keyframes blink {
+      0%   { opacity: 0; }
+      50%  { opacity: 0; }
+      75%  { opacity: 1; }
+      100% { opacity: 0; }
+    }
+    @keyframes fade-in {
+      0%   { opacity: 0; }
+      100% { opacity: .5; }
+    }
+    @keyframes fade-to-red {
+      0%,20%,100% { fill: #ffffff; }
+      7%,10% { fill: #ff0000; }
+    }
+    @keyframes fade-to-green {
+      0%,20%,100% { fill: #ffffff; }
+      7%,10% { fill: #00ff00; }
+    }
+    @keyframes fade-to-blue {
+      0%,20%,100% { fill: #ffffff; }
+      7%,10% { fill: #0000ff; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>
+      <svg class="logo" viewBox="0 0 240.675 161.075" aria-labelledby="logoTitle logoDesc" role="img">
+        <title id="logoTitle">shader web background</title>
+        <desc id="logoDesc">full screen vector logo of the shader-web-background library</desc>
+        <g transform="scale(.26458)">
+          <path id="whites" d="M149.33 121.76c-9.02 0-15.9 2.6-20.63 7.78-4.74 5.07-7.1
+            12.29-7.1 21.64a37.9 37.9 0 004.56 18.6c3.04 5.42 8.4 11.5 16.07 18.27 6.08 5.3 10.26 9.86
+            12.51 13.7 2.26 3.72 3.38 8.06 3.38 13.02 0 4.17-.84 7.21-2.53 9.13-1.58 1.8-3.95 2.7-7.1
+            2.7-6.43 0-9.65-3.83-9.65-11.5V207h-17.58v6.76c0 9.59 2.3 16.97 6.93 22.16 4.62 5.07 11.44
+            7.6 20.46 7.6 9.13 0 16.07-2.59 20.8-7.77 4.85-5.19 7.27-12.63
+            7.27-22.32 0-7.44-1.46-13.93-4.4-19.45-2.92-5.53-8.28-11.67-16.06-18.43-6.09-5.3-10.31-9.81-12.68-13.53A22.76
+            22.76 0 01140.2 150c0-7.56 3.1-11.33 9.3-11.33 3.04 0 5.35.96 6.93 2.87 1.58 1.8 2.37 4.74
+            2.37 8.8v6.09h17.59v-4.9c0-9.6-2.31-16.92-6.94-22-4.5-5.18-11.22-7.77-20.12-7.77zm38.05
+            1.69v118.38h18.6v-53.27h19.96v53.27h18.6V123.45h-18.6v48.2h-19.96v-48.2zm85.4 0L253.5
+            241.83h17.25l3.38-23.17h21.14v-.34l3.38 23.5h18.6l-19.27-118.37zm53.44 0v118.38h28.4c9.25 0
+            16.19-2.48 20.8-7.45 4.63-4.96 6.94-12.23
+            6.94-21.81v-59.86c0-9.59-2.31-16.86-6.93-21.82-4.62-4.96-11.56-7.44-20.8-7.44zm68.66
+            0v118.38h50.73V224.9h-32.13v-36.35H439v-16.92h-25.53v-31.28h32.13v-16.91zm176.03 0l12
+            118.38h24.7l8.45-79.82h.34l8.45
+            79.82h23.17l12-118.38h-16.06l-8.28 90.98h-.34l-8.8-90.98h-20.29l-8.8 90.98h-.33l-8.29-90.98zm98.59
+            0v118.38h50.73V224.9H688.1v-36.35h25.53v-16.92H688.1v-31.28h32.13v-16.91zm-324.68 16.9h9.47c3.04 0
+            5.35.91 6.93 2.71 1.7 1.8 2.54 4.74 2.54 8.8v61.56c0 4.05-.85 6.99-2.54 8.79-1.58 1.8-3.89
+            2.7-6.93 2.7h-9.47zm-60.37 3.73h.34l8.28 58.51h-16.74zm-.19 221.2c-8.9 0-15.73 2.53-20.46
+            7.6-4.62 5.08-6.93 12.23-6.93 21.48v63.59c0 9.24 2.3 16.4 6.93 21.47 4.73 5.08 11.55 7.61
+            20.46 7.61 8.9 0 15.67-2.53 20.3-7.6 4.73-5.08 7.1-12.24 7.1-21.48V441.2h-17.6v18.1c0
+            7.21-3.1 10.82-9.3 10.82-6.2 0-9.3-3.6-9.3-10.82v-66.12c0-7.33 3.1-11 9.3-11 6.2 0 9.3 3.67
+            9.3 11v13.7h17.6v-12.52c0-9.25-2.37-16.4-7.1-21.48-4.63-5.07-11.4-7.6-20.3-7.6zm267.03
+            0c-9.14 0-16.13 2.58-20.98 7.77-4.84 5.19-7.27 12.51-7.27 21.99v62.23c0 9.47 2.43 16.8 7.27
+            21.98 4.85 5.19 11.84 7.78 20.98 7.78 9.13 0 16.12-2.6 20.96-7.78 4.85-5.18 7.28-12.51
+            7.28-21.98v-62.23c0-9.48-2.43-16.8-7.28-21.99-4.84-5.19-11.83-7.78-20.96-7.78zm-346.34
+            1.68l-19.28 118.38h17.25l3.38-23.17h21.14v-.34l3.38 23.51h18.6l-19.28-118.38zm117.87
+            0v118.38h18.6v-37.71l7.44-15.05 15.73 52.76h19.45l-22.5-74.91 22.16-43.47h-18.6l-23.68
+            49.9v-49.9zm268.54 0v90.3c0 9.59 2.37 16.98 7.1 22.16 4.74 5.08 11.62 7.61 20.64 7.61 9.02
+            0 15.9-2.53 20.63-7.6 4.73-5.2 7.1-12.58 7.1-22.16v-90.3h-17.92v91.65c0 4.06-.85 6.99-2.54
+            8.8-1.58 1.8-3.89 2.7-6.93 2.7-3.05
+            0-5.41-.9-7.1-2.7-1.58-1.81-2.38-4.74-2.38-8.8v-91.66zm68.66 0v118.38h16.58v-86.41h.33l22.33
+            86.41h19.1V366.96H701.8v70.86h-.34l-18.1-70.86zm72.21 0v118.38h28.41c9.25 0 16.18-2.48
+            20.8-7.44 4.63-4.96 6.94-12.23
+            6.94-21.82v-59.86c0-9.58-2.31-16.86-6.94-21.82-4.62-4.96-11.55-7.44-20.8-7.44zM551.3
+            382.18c6.42 0 9.63 3.9 9.63 11.67v64.6c0 7.78-3.2 11.67-9.63 11.67-6.43
+            0-9.65-3.89-9.65-11.67v-64.6c0-7.78 3.22-11.67 9.65-11.67zm199.54 1.7h9.47c3.05 0
+            5.36.9 6.94 2.7 1.69 1.8 2.53 4.74 2.53 8.8v61.55c0 4.06-.84 7-2.53 8.8-1.58
+            1.8-3.9 2.7-6.94 2.7h-9.47zm-534.21 3.72h.34l8.28 58.5H208.5z"/>
+          <path id="greens" d="M416.5 365.27c-9.02 0-15.9 2.6-20.63 7.78-4.73 5.07-7.1
+            12.4-7.1 21.99v62.23c0 9.58 2.37 16.97 7.1 22.15 4.74 5.08 11.61 7.61 20.63 7.61s15.9-2.53
+            20.63-7.6c4.74-5.2 7.1-12.58 7.1-22.16v-38.73h-26.88v16.91h9.3v23.17c0 7.67-3.21 11.5-9.64
+            11.5-6.42 0-9.64-3.83-9.64-11.5v-64.77c0-7.78 3.22-11.67 9.64-11.67 6.43 0 9.64 3.9 9.64
+            11.67v11.33h17.59v-10.14c0-9.59-2.37-16.92-7.1-21.99-4.74-5.19-11.62-7.78-20.64-7.78z"/>
+          <path id="reds" d="M456.26 123.45v118.38h18.6v-50.74h6.43c4.29 0 7.27 1.07 8.96
+            3.22 1.8 2.14 2.7 5.92 2.7 11.33v21.64c0 4.4.12 7.44.35 9.13.22 1.7.67 3.5 1.35
+            5.42h18.94a20.53 20.53 0
+            01-1.7-6.1c-.22-2.13-.33-4.9-.33-8.28v-20.8c0-6.99-.96-12.57-2.87-16.74-1.8-4.17-4.96-6.93-9.47-8.29v-.33c8.11-3.27
+            12.17-11.05 12.17-23.34v-7.27c0-9.25-2.2-16.07-6.6-20.47-4.39-4.5-11.38-6.76-20.96-6.76zm18.6
+            16.9h8.46c3.27 0 5.64.97 7.1 2.88 1.58 1.92 2.37 5.02 2.37 9.3v9.14c0 4.5-.96 7.72-2.88
+            9.64-1.8 1.91-4.56 2.87-8.28 2.87h-6.77zm-18.62 226.61v118.38h18.6v-50.73h6.43c4.29 0 7.28
+            1.07 8.97 3.21 1.8 2.14 2.7 5.92 2.7 11.33v21.65c0 4.4.11 7.44.34 9.13.22 1.7.68 3.5 1.35
+            5.41h18.94a20.53 20.53 0
+            01-1.69-6.09c-.22-2.14-.34-4.9-.34-8.28v-20.8c0-7-.96-12.57-2.87-16.75-1.8-4.17-4.96-6.93-9.47-8.28v-.34c8.12-3.27
+            12.18-11.05 12.18-23.34v-7.27c0-9.25-2.2-16.06-6.6-20.46-4.4-4.51-11.39-6.77-20.97-6.77zm18.6
+            16.92h8.46c3.27 0 5.64.95 7.1 2.87 1.58 1.92 2.37 5.02 2.37 9.3v9.13c0 4.51-.95 7.73-2.87
+            9.64-1.8 1.92-4.57 2.88-8.29 2.88h-6.76z"/>
+          <path id="blues" d="M730.88 123.45v118.38h29.26c9.25 0 16.23-2.37 20.97-7.1
+            4.85-4.86 7.27-11.84 7.27-20.98v-10.14c0-13.3-4.62-21.54-13.86-24.7v-.33a16.97 16.97 0
+            008.96-8.29c2.03-3.83 3.04-8.8
+            3.04-14.88v-4.73c0-9.25-2.2-16.07-6.6-20.47-4.4-4.5-11.38-6.76-20.96-6.76zm18.6
+            16.9h8.97c3.27 0 5.64.97 7.1 2.88 1.58 1.92 2.37 5.02 2.37 9.3v6.6c0 4.51-.96 7.72-2.88
+            9.64-1.8 1.92-4.56 2.87-8.28 2.87h-7.27zm0 48.2h8.3c4.28 0 7.32 1.08 9.12 3.22 1.92 2.03 2.88
+            5.75 2.88 11.16v10.32c0 4.28-.79 7.33-2.37 9.13-1.58 1.69-4 2.53-7.27 2.53H749.5zM122.26
+            366.97v118.38h29.26c9.24 0 16.23-2.37 20.97-7.1 4.85-4.85 7.27-11.84
+            7.27-20.97v-10.15c0-13.3-4.62-21.53-13.87-24.69v-.34a16.98 16.98 0 008.97-8.28c2.03-3.84
+            3.04-8.8 3.04-14.88v-4.74c0-9.25-2.2-16.06-6.6-20.46-4.4-4.51-11.38-6.77-20.96-6.77zm18.6
+            16.92h8.97c3.27 0 5.63.95 7.1 2.87 1.58 1.92 2.37 5.02 2.37 9.3v6.6c0 4.5-.96 7.72-2.88
+            9.64-1.8 1.91-4.56 2.87-8.28 2.87h-7.27zm0 48.19h8.3c4.28 0 7.32 1.07 9.12 3.21 1.92 2.03
+            2.88 5.75 2.88 11.17v10.31c0 4.29-.79 7.33-2.37 9.13-1.58 1.7-4 2.54-7.27 2.54h-10.65z"/>
+        </g>
+      </svg>
+    </h1>
+  </header>
+  <nav class="scroll-to-intro"><a href="#intro"></a></nav>
+  <section id="intro">
+    <h2>I want this magic on my website!</h2>
+    <p>
+      And you can have it! The <em><nobr>shader-web-background</nobr></em> open source project is
+      here for you to provide an immersive experience on the web.
+    </p>
+    <div id="controls"></div>
+    <p>
+      <a class="tea" href="https://www.buymeacoffee.com/kazik">
+        <img loading="lazy" alt="Buy me a tea" src="https://img.buymeacoffee.com/button-api/?text=Buy me a tea&emoji=🍵&slug=kazik&button_colour=FF00FFC0&font_colour=FFFFFF">
+      </a>
+      or
+      <a href="https://github.com/sponsors/xemantic/">sponsor xemantic on GitHub</a>, If you
+      enjoy interacting with this creature behind.
+    </p>
+    <p>
+      If you are familiar with web development, then you can just
+      <a href="https://github.com/xemantic/shader-web-background">use <em>shader-web-background</em>
+      as a library</a>. Otherwise don't worry &mdash; <a href="https://xemantic.com/">xemantic can
+      make this magic happen for you</a> with custom shaders and generative artwork tailored
+      to your needs.
+    </p>
+    <p>
+      It's not just an effect, but rather a
+      <a href="https://en.wikipedia.org/wiki/Generative_art">generative</a> creature which emerged
+      out of my
+      <a href="https://en.wikipedia.org/wiki/Kabbalah">Kabbalistic</a> meditation with numbers,
+      coefficients of life and beauty, the phenomenon of
+      <a href="https://en.wikipedia.org/wiki/Autopoiesis">autopoiesis</a> &mdash; the capacity
+      of a system to reproduce and maintain itself. Therefore it's highly
+      <a href="https://en.wikipedia.org/wiki/Conceptual_art">conceptual</a> experience prepared to
+      be displayed on the web, but far away from typical
+      <a href="https://en.wikipedia.org/wiki/Internet_art">net art</a> aesthetics.
+      Interactive <a href="https://en.wikipedia.org/wiki/Feedback">feedback loop</a> of
+      <a href="https://en.wikipedia.org/wiki/Video_synthesizer">video synthesis</a>
+      merged with <a href="https://en.wikipedia.org/wiki/Generative_design">generative design</a>
+      bring <a href="https://en.wikipedia.org/wiki/Synesthesia">synaesthetic</a> pixel&ndash;perfect
+      experience and naturally perceived fluidity of mesmerizing motion.
+      Evolution of <a href="https://en.wikipedia.org/wiki/Negentropy">negentropic</a>
+      <a href="https://en.wikipedia.org/wiki/Homeostasis">homeostasis</a> emerges new
+      <a href="https://en.wikipedia.org/wiki/Artificial_life">artificial life</a> forms of light.
+      I believe that mapping <a href="https://en.wikipedia.org/wiki/Dispersion_(optics)">natural
+      light dispersion spectrum</a> to RGB values can evoke special emotions. Check out my
+      article &mdash;
+      <a href="https://medium.com/@kazikpogoda/not-so-discreet-charm-of-machine-colors-1390d4dba3db?source=friends_link&sk=2ceccd011ec5452732b9156142e1cb48">
+        Not so discreet charm of machine colors.
+      </a>
+    </p>
+  </section>
+  <section id="what-makes-this-magic">
+    <h2>What makes this magic?</h2>
+    <p>
+      If you are here, probably you have already learned about
+      <a href="https://en.wikipedia.org/wiki/Shader">shaders</a>.
+      This is the technology rendering in real time the background behind this text.
+      The <em>shader-web-background</em> makes it easy to include complex, interactive and
+      portable shaders as a
+      part of your web design.
+    </p>
+    <p>
+      The documentation
+      on <a href="https://github.com/xemantic/shader-web-background">project's GitHub repository</a>
+      will guide you. Take a look at <a href="#demo">Demo</a> section to see what's possible.
+    </p>
+  </section>
+  <section id="features">
+    <h2>Features</h2>
+    <ul>
+      <li>
+        <strong>simplicity</strong>: it is just rendering canvas background as fragment shader.
+      </li>
+      <li>
+        <strong>speed</strong>: designed to be embedded in HTML and start rendering before
+        other page resources are downloaded.
+      </li>
+      <li>
+        <strong>extensibility</strong>: adding own interaction and controls is trivial.
+      </li>
+      <li>
+        <strong>convenience</strong>: straightforward API, specific errors will inform you about
+        mistakes which are otherwise hard to debug.
+      </li>
+      <li>
+        <strong>minimal footprint</strong>: transpiled from JavaScript to JavaScript
+        with <a href="https://github.com/google/closure-compiler">Google Closure Compiler</a>.
+      </li>
+      <li>
+        <strong>pixel feedback loops</strong>: preserving movement in time on offscreen buffers
+        with floating&ndash;point precision.
+      </li>
+      <li>
+        <strong>shadertoy support</strong>: including multipass shaders
+      </li>
+      <li>
+        <strong>cross browser / cross device</strong>: on Chrome, Safari, Firefox or Edge, either
+        with WebGL 1 or 2, on Linux, Windows, Mac, iPhone or Samsung phone &mdash; it will use
+        optimal strategy to squeeze out what's possible from the browser and the hardware.
+      </li>
+    </ul>
+  </section>
+  <section id="why-is-it-fast">
+    <h2>Why is it fast?</h2>
+    <p>
+      This website starts in milliseconds because there are no additional resources to be loaded
+      &mdash; no extra code, no images. All the artwork and style is provided in the source code
+      of this HTML page.
+    </p>
+    <p>
+      The shader will run on the
+      <a href="https://en.wikipedia.org/wiki/Graphics_processing_unit">GPU</a>,
+      not <a href="https://en.wikipedia.org/wiki/Central_processing_unit">CPU</a>, and modern
+      devices, including our mobiles, already have one. Surprisingly rich visual effects can be
+      achieved with very efficient code.
+    </p>
+    <p>
+      Real time interactive shader offers a different perspective on compression &mdash; pure
+      mathematics has orders of magnitude higher <q>compression</q> rate comparing to MPEG video.
+      In contrary to video&ndash;loops, generatively synthesized video signal can be also interactive
+      and it has no artifacts rather letting one perceive the maximal quality of the display device.
+    </p>
+  </section>
+  <section id="demo">
+    <h2>Demo</h2>
+    <p>
+      Examples and use cases, including custom shaders prepared for those of you who
+      <a class="tea" href="https://www.buymeacoffee.com/kazik">
+        <img loading="lazy" alt="Buy me a tea" src="https://img.buymeacoffee.com/button-api/?text=Bought me a tea&emoji=🍵&slug=kazik&button_colour=FF00FFC0&font_colour=FFFFFF">
+      </a>:
+    </p>
+    <ul>
+      <li>
+        <a href="demo/demo.html">demo</a> &mdash; the same effect as on this page, showing
+        the potential of the whole library, relays directly on the JS sources, therefore it is
+        used during development.
+      </li>
+      <li>
+        <a href="demo/minimal.html">minimal</a> &mdash; very basic shader background
+        without any uniforms. It is using embedded minimized version of the library instead.
+      </li>
+      <li>
+        <a href="demo/feedback.html">feedback</a> &mdash; simple feedback loop example.
+      </li>
+      <li>
+        <a href="demo/shadertoy-default.html">shadertoy-default</a> &mdash; the template Shadertoy
+        shader showing how to include the upstream code.
+      </li>
+      <li>
+        <a href="demo/shadertoy-warping-procedural-2.html">shadertoy-warping-procedural-2</a> &mdash;
+        beautiful work by the co-author of Shadertoy
+        <a href="https://www.iquilezles.org/">Inigo Quilez</a>.
+      </li>
+      <li>
+        <a href="demo/shadertoy-reaction-diffusion-2-pass.html">shadertoy-reaction-diffusion-2-pass</a>
+        &mdash; multipass example.
+      </li>
+      <li>
+        <a href="demo/mouse.html">mouse</a> &mdash; simple example with mouse input, compatible with
+        Shadertoy conventions.
+      </li>
+      <li>
+        <a href="demo/mouse-normalized.html">mouse normalized</a> &mdash; slight modification
+        of the mouse example to avoid normalization of the same mouse coordinates for each pixel.
+      </li>
+      <li>
+        <a href="demo/texture-blue-marble-to-flat-earth.html">
+          texture: Blue Marble to Flat Earth mapping
+        </a> &mdash; how to load a texture.
+      </li>
+      <li>
+        <a href="demo/multiple-shaders.html">multiple shaders</a> &mdash; how to use multiple
+        shaders with multiple canvases?
+      </li>
+      <li>
+        <a href="demo/parallax-scrolling.html">parallax scrolling</a> &mdash; a simple trick to
+        achieve <a href="https://en.wikipedia.org/wiki/Parallax_scrolling">Parallax scrolling</a>
+        effect.
+      </li>
+      <li>
+        <a href="demo/hydra.html">Hydra Demo</a> &mdash;
+        <a href="https://hydra-book.naotohieda.com/#/feedback?id=feedback">feedback effect</a> from
+        <a href="https://hydra-book.naotohieda.com/">Hydra Book</a> by
+        <a href="https://naotohieda.com/">Naoto Hiéda</a>
+      </li>
+      <li>
+        <a href="src/test/html/errors">errors</a>
+        &mdash; test cases for misconfiguration.
+      </li>
+    </ul>
+    <p>
+      Missing your favorite shader? - create pull request and add it to this list. The best way to
+      learn how <em>shader-web-background</em> works.
+    </p>
+  </section>
+  <section id="projects-using-shader-web-background">
+    <h2>Projects using <em>shader-web-background</em></h2>
+    <ul>
+      <li><a href="https://xemantic.com/">xemantic</a> &mdash; author's website</li>
+      <li>
+        <a href="https://xemantic.github.io/fuck-the-ai-which-is-abusing-your-reptilian-brain-to-make-you-addicted-to-movies-instead-of-art/">
+          Fuck the AI which is abusing your reptilian brain to make you addicted to movies instead of art
+        </a>  &mdash;  a hybrid of Netflix / game console like interface for building artistic projects focused
+        on visual content.
+      </li>
+      <li><a href="https://industria.illutron.dk/">Industria</a> - a fully immersive seaborn Industrial Revolution
+        experience onboard Illutron boat (Copenhagen)</li>
+    </ul>
+    <p>
+      If you want to add your project to the list, then
+      <a href="https://github.com/xemantic/shader-web-background/edit/main/index.html">create
+        a pull request</a>, or send a message to <a href="https://xemantic.com">xemantic</a>.
+    </p>
+  </section>
+  <section id="alternatives">
+    <h2>Alternatives</h2>
+    <p>
+      <strong>
+        This project is not focused on providing complete abstraction over
+        <a href="https://en.wikipedia.org/wiki/WebGL">WebGL</a>, but rather on providing the
+        experience &mdash; high quality visuals as a part of web design, which will work wherever
+        it is technically possible.
+      </strong>
+    </p>
+    <p>
+      I designed and coded <em>shader-web-background</em> because all the other projects
+      doing similar things have slightly different focus, therefore it was neither possible to
+      achieve the aesthetics I desire, nor to make it work consistently on platforms like iOS.
+      It is worth mentioning these projects here because, they brought the inspiration and they
+      might be still more useful for your purposes:
+    </p>
+    <ul>
+      <li>
+        <a href="https://github.com/patriciogonzalezvivo/glslCanvas">glslCanvas</a> by
+        <a href="http://patriciogonzalezvivo.com/">Patricio Gonzalez Vivo</a>, the author of
+        <a href="https://thebookofshaders.com/">The Book of Shaders</a>, our Bible ;) It also
+        supports vertex shaders, but does not support WebGL 2 and floating-point texture
+        precision.
+      </li>
+      <li>
+        <a href="https://www.shadertoy.com/">Shadertoy</a> by
+        <a href="http://www.poljeremias.com/">Pol Jeremias</a> and
+        <a href="https://www.iquilezles.org/">Inigo Quilez</a>, the <q>YouTube for nerds</q>
+        where every <q>movie</q> is synthesized with pure mathematics. It was my ambition
+        to make this project compatible with Shadertoy. I am happy to
+        discover that some of the shadertoy shaders, which does not work with iOS devices,
+        will be displayed well by this library.
+      </li>
+      <li>
+        <a href="https://hydra.ojack.xyz/">Hydra</a> by
+        <a href="https://ojack.xyz/">Olivia Jack</a>, a perfect tool for connecting the generative
+        and the performative in the form of browser based live&ndash;coding environment. It is possible
+        to export Hydra shaders and use them with this library, see
+        <a href="demo/hydra.html">Hydra demo</a>.
+      </li>
+      <li>
+        <a href="https://threejs.org/">three.js</a>, probably the most comprehensive abstraction
+        over WebGL.
+      </li>
+      <li>
+        <a href="https://regl-project.github.io/regl/">regl</a>, fast functional WebGL.
+      </li>
+    </ul>
+  </section>
+  <section id="license">
+    <h2>License</h2>
+    <p>
+      The <em><nobr>shader-web-background</nobr></em> is released under
+      <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GNU General Public License version 3</a>
+      which makes it suitable for Open Source and personal projects. I would like to provide
+      separate commercial license similar to the one offered by
+      <a href="https://flickity.metafizzy.co/">Flickity</a> project.
+    </p>
+    <p>
+      This software is open and free.
+      <a class="tea" href="https://www.buymeacoffee.com/kazik">
+        <img loading="lazy" alt="Buy me a tea" src="https://img.buymeacoffee.com/button-api/?text=Buy me a tea&emoji=🍵&slug=kazik&button_colour=FF00FFC0&font_colour=FFFFFF">
+      </a>
+      (I don't like coffee) or
+      <a href="https://github.com/sponsors/xemantic/">sponsor xemantic on GitHub</a>,
+      if you want to express your support.
+    </p>
+  </section>
+  <footer>
+    Made in Berlin by <a href="https://xemantic.com/">Kazik Pogoda</a>, with
+    dedication and &hearts;
+    <br/>
+    I made it because I was missing the proper base for sharing my creative expression in the time of
+    pandemic.
+    <em><a href="https://en.wikipedia.org/wiki/George_Berkeley">Esse est percipi</a></em> &mdash;
+    to exist is to be perceived. Our generative artworks exist only when there is an audience
+    experiencing them. Therefore I hope this project will be helpful for you as well.
+  </footer>
+</body>
+</html>

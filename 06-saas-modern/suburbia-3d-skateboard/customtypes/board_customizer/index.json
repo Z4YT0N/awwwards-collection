@@ -1,0 +1,86 @@
+{
+  "format": "custom",
+  "id": "board_customizer",
+  "label": "Board Customizer",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Wheels": {
+      "wheels": {
+        "type": "Group",
+        "config": {
+          "label": "Wheels",
+          "repeat": true,
+          "fields": {
+            "texture": {
+              "type": "Image",
+              "config": {
+                "label": "Texture",
+                "constraint": {},
+                "thumbnails": []
+              }
+            },
+            "uid": {
+              "type": "Text",
+              "config": {
+                "label": "UID",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "Decks": {
+      "decks": {
+        "type": "Group",
+        "config": {
+          "label": "Decks",
+          "repeat": true,
+          "fields": {
+            "texture": {
+              "type": "Image",
+              "config": {
+                "label": "Texture",
+                "constraint": {},
+                "thumbnails": []
+              }
+            },
+            "uid": {
+              "type": "Text",
+              "config": {
+                "label": "UID",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "Metals": {
+      "metals": {
+        "type": "Group",
+        "config": {
+          "label": "Metals",
+          "repeat": true,
+          "fields": {
+            "color": {
+              "type": "Color",
+              "config": {
+                "label": "Color",
+                "placeholder": ""
+              }
+            },
+            "uid": {
+              "type": "Text",
+              "config": {
+                "label": "UID",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

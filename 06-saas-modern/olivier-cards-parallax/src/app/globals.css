@@ -1,0 +1,18 @@
+@font-face {
+  font-family: 'Title';
+  src: url('../../public/fonts/Neglige.otf');
+}
+@font-face {
+  font-family: 'Body';
+  src: url('../../public/fonts/NeueMontreal_Medium.otf');
+}
+
+body{
+  margin: 0px;
+  font-family: 'Body';
+  margin-bottom: 100vh;
+}
+
+h2{
+  font-family: 'Title';
+}

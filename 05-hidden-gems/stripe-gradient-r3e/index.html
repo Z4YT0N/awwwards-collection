@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html class="MktRoot" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/DGLogo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stripe Gradient</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div>
+      <section class="Section HomepageHero">
+        <div class="Section__container">
+          <div class="Section__layoutContainer">
+            <div class="Section__layout">
+              <div class="ColumnLayout" data-columns="2,2">
+                <section class="Copy">
+                  <header class="HomepageHeroHeader" data-js-controller="HomepageHeroHeader">
+                    <h1 class="HomepageHeroHeader__title" data-js-target-list="HomepageHeroHeader.title">Financial infrastructure for the internet</h1>
+                    <div class="HomepageHeroGradient Gradient isLoaded">
+                      <canvas class="Gradient__canvas" data-js-controller="Gradient"></canvas>
+                    </div>
+                    <div class="HomepageHeroHeader__title HomepageHeroHeader__title--overlay HomepageHeroHeader__title--burn" data-js-target-list="HomepageHeroHeader.title" aria-hidden="true">
+                      Financial infrastructure for the internet
+                    </div>
+                    <div class="HomepageHeroHeader__title HomepageHeroHeader__title--overlay" data-js-target-list="HomepageHeroHeader.title" aria-hidden="true">
+                      Financial infrastructure for the internet
+                    </div>
+                  </header>
+                  <div class="Copy__body">
+                    Millions of companies of all sizes—from startups to Fortune 500s—use Stripe’s software and APIs to accept payments, send payouts, and manage their businesses online.
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script type="module" src="/Gradient.js"></script>
+  </body>
+</html>

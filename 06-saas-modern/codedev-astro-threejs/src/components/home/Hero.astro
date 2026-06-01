@@ -1,0 +1,51 @@
+---
+import Logo3D from '@/components/home/Logo3D.astro';
+import {
+	getLangFromUrl,
+	useTranslations,
+	useTranslatedPath,
+} from '@/i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+import arrowIcon from '@/assets/icons/arrow-big.svg';
+---
+
+<main
+	class='flex flex-col-reverse relative justify-center items-center section text-center min-h-screen pb-40'>
+	<div class='absolute -z-10 h-full w-full bg-white'>
+		<div
+			class='absolute bottom-0 left-0 right-0 top-0 opacity-20 bg-[linear-gradient(to_right,var(--main-color)_1px,transparent_1px),linear-gradient(to_bottom,var(--main-color)_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]'>
+		</div>
+	</div>
+
+	<div>
+		<h1 class='text-5xl md:text-7xl font-bold inline-block anim-typewriter'>
+			CodeDev
+		</h1>
+		<p class='opacity-85 mt-3 max-w-[45em] appear'>
+			{t('home.description')}
+		</p>
+		<a
+			href={translatePath('/contact')}
+			class='text-lg underline mt-4 inline-block appear text-indigo-600 group hover:!-translate-x-1 transition-transform'>
+			{t('home.meeting')}
+			<img
+				src={arrowIcon.src}
+				alt=''
+				class='w-7 absolute right-0 group-hover:opacity-100 opacity-0 top-0 bottom-0 my-auto group-hover:translate-x-8 transition-all'
+			/>
+		</a>
+	</div>
+	<Logo3D />
+</main>
+
+<style>
+	.anim-typewriter {
+		width: 7.18em;
+		margin: 0 auto;
+		border-right: 10px solid rgba(79, 70, 229, 1);
+		white-space: nowrap;
+		overflow: hidden;
+	}
+</style>

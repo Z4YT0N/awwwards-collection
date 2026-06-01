@@ -1,0 +1,56 @@
+---
+import {
+	getLangFromUrl,
+	useTranslatedPath,
+	useTranslations,
+} from '@/i18n/utils';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+import arrowIcon from '@/assets/icons/arrow-big.svg';
+import { projects } from '@/scripts/consts';
+import { Image } from 'astro:assets';
+---
+
+<section class='section mt-36 mb-32'>
+	<h2 class='appear text-3xl font-medium'>{t('projects')}</h2>
+	<div class='flex justify-between items-center mt-1'>
+		<p class='appear'>{t('projects.description')}</p>
+		<a
+			href={translatePath('/projects')}
+			class='underline inline-block relative appear group hover:!-translate-x-1 transition-transform'>
+			{t('projects.viewall')}
+			<img
+				src={arrowIcon.src}
+				alt=''
+				class='w-5 absolute right-0 group-hover:opacity-100 opacity-0 top-0 bottom-0 my-auto group-hover:translate-x-6 transition-all'
+			/>
+		</a>
+	</div>
+
+	<div class='md:grid grid-cols-2 flex flex-col gap-5 mt-6'>
+		{
+			projects[lang]
+				.filter((project) => project.gallery)
+				.map((project, i) => (
+					<a
+						target='_blank'
+						rel='noopener noreferrer'
+						href={project.link}
+						class={`inline-block relative rounded-xl overflow-hidden min-h-64 w-full h-full group  ${i === 2 ? 'row-span-2 col-start-2 row-start-1' : ''} appear-siblings3`}>
+						<p class='absolute bottom-0 bg-black/85 text-white p-4 w-full text-xl transition-transform group-hover:translate-y-0 translate-y-16'>
+							{project.name}
+						</p>
+						<Image
+							src={project.img}
+							width={500}
+							height={200}
+							loading='lazy'
+							alt={project.alt ?? project.name + ' preview'}
+							class='absolute w-full h-full top-0 left-0 object-cover -z-20 group-hover:scale-[1.04] transition-transform'
+						/>
+					</a>
+				))
+		}
+	</div>
+</section>

@@ -1,0 +1,168 @@
+<header class='container'>
+	<div class='contianer-title'>
+		<h1 class='title header-title'>
+			<span class='block'> Caroselling</span>
+			<span class='block'> digital studio for</span>
+			<div class='block effect-before'>
+				<span> human experiences</span>
+			</div>
+		</h1>
+		<video class='header-video' autoplay loop playsinline muted>
+			<source src='/caroselling-it/header-video.mp4' type='video/mp4' />
+		</video>
+	</div>
+	<div class='modal'>
+		<p>
+			Usiamo il design per mettere al
+			<span> centro le persone e le loro scelte.</span>
+		</p>
+		<p>
+			Realizziamo
+			<span> siti web, brand identity e contenuti creativi</span>
+			che prendono per mano i tuoi clienti e li portano
+			<span> verso di te.</span>
+		</p>
+	</div>
+	<section class='controllers'>
+		<img src='/caroselling-it/line.png' alt='line svg' />
+		<span>scorri e scopri di più</span>
+		<button class='toggle-muted'>
+			<svg
+				width='33'
+				height='33'
+				viewBox='0 0 33 33'
+				fill='none'
+				xmlns='http://www.w3.org/2000/svg'
+			>
+				<path
+					d='M8.0967 24.2241L1.15101 31.1698L0.473129 30.4928L7.39913 23.5668L6.97815 23.1702V11.6809L16.8351 2.40064V14.1318L22.5 8.46687C21.8005 7.94476 21.0414 7.50739 20.2395 7.16268L20.6239 6.27946C21.5378 6.67226 22.3996 7.17673 23.1901 7.78055L25.0897 5.88099C24.5103 5.474 23.9 5.11229 23.2651 4.799L23.6898 3.93548C24.4188 4.29647 25.1169 4.71579 25.7778 5.18998L30.3205 0.647339L30.9984 1.32428L26.5439 5.77879C27.7814 6.79287 28.8505 7.99621 29.712 9.34446C30.8625 11.1362 31.6131 13.1553 31.9125 15.2635C32.212 17.3717 32.0536 19.5191 31.4475 21.5604C30.8414 23.6016 29.8017 25.489 28.4003 27.0922C26.9989 28.6954 25.2689 29.9774 23.327 30.851L22.9323 29.9743C25.3647 28.876 27.4281 27.098 28.8747 24.8551C30.3214 22.6122 31.0891 19.9999 31.0865 17.3309C31.0748 15.2449 30.6007 13.1869 29.697 11.3068C28.7932 9.4268 27.483 7.77147 25.8613 6.45948L23.9308 8.38999C26.1072 10.3555 27.4947 13.0455 27.8349 15.9582C28.1751 18.871 27.4446 21.8081 25.7797 24.2222C24.4373 26.1837 22.5362 27.6972 20.3239 28.5661L19.9741 27.6688C21.7299 26.9662 23.2775 25.8269 24.4699 24.3591C25.6623 22.8913 26.4596 21.1436 26.7876 19.2811C27.1157 17.4186 26.9633 15.5034 26.3442 13.7165C25.725 11.9295 24.6602 10.33 23.2501 9.06974L16.8426 15.4763V32.4449L8.0967 24.2241ZM15.8731 30.2294V16.4477L8.77552 23.5462L15.8731 30.2294ZM7.93731 12.0963V22.753L8.07701 22.8861L15.8722 15.091V4.62555L7.93731 12.0963ZM0.0380859 23.099V11.7531H4.83013V23.099H0.0380859ZM0.998182 22.1389H3.87284V12.7132H0.998182V22.1389Z'
+					fill='white'></path>
+			</svg>
+		</button>
+	</section>
+	<!-- <script
+		type='module'
+		src={(await import('../utils/animations.ts?url')).default}
+	></script> -->
+	<script defer type='module'>
+		const EVENT_CLICK = 'click';
+
+		const $video = document.querySelector('.header-video');
+		const $btnToggle = document.querySelector('.toggle-muted');
+
+		const $modal = document.querySelector('.modal');
+
+		function toggleMuted() {
+			if ($video === null) return;
+
+			$btnToggle.classList.toggle('active');
+			$video.muted = !$video.muted;
+		}
+
+		// animate('')
+
+		/**
+		 * {$video} HTMLVideoELement
+		 */
+
+		/**
+		 * {$btnToggle} HTMLButtonElement
+		 */
+
+		$btnToggle.addEventListener(EVENT_CLICK, toggleMuted);
+	</script>
+</header>
+
+<style>
+	.container {
+		position: relative;
+	}
+	.container-title {
+		position: relative;
+	}
+	.header-video {
+		position: absolute;
+		top: 15%;
+		left: 15%;
+		width: 100%;
+		height: auto;
+		max-width: 720px;
+		object-fit: cover;
+		height: 360px;
+		border-radius: 0.5rem;
+		z-index: 6;
+	}
+	.title {
+		line-height: 1.2;
+		position: relative;
+		z-index: 9;
+		font-size: var(--title-xl);
+		font-weight: var(--medium);
+		padding-top: 5rem;
+	}
+	.effect-before {
+		position: relative;
+		& span {
+			position: relative;
+			z-index: 9;
+		}
+		&::before {
+			content: '';
+			position: absolute;
+			bottom: 1rem;
+			left: 0;
+			width: 32%;
+			height: 48px;
+			border-radius: 2px;
+			z-index: 6;
+			background: var(--caro-secondary);
+		}
+	}
+	.modal {
+		position: absolute;
+		top: 8rem;
+		right: -8rem;
+		max-width: 380px;
+		z-index: 7;
+		backdrop-filter: blur(16px);
+		border-radius: 1rem;
+		padding: 1rem;
+		& p:first-child {
+			margin-bottom: 1rem;
+			opacity: 0.8;
+		}
+		& p {
+			& span {
+				font-weight: var(--bold);
+				font-size: var(--text-lg);
+				opacity: 1;
+			}
+		}
+	}
+	.controllers {
+		display: flex;
+		justify-content: flex-start;
+		align-items: flex-end;
+		& span {
+			margin-left: 1rem;
+			margin-right: 3rem;
+		}
+		& .toggle-muted {
+			width: 48px;
+			height: auto;
+			&:hover {
+				transform: scale(1.1);
+				transition: all 0.3s ease-in-out;
+				& svg path {
+					fill: var(--caro-secondary);
+					transition: all 0.3s ease-in-out;
+				}
+			}
+		}
+		& .toggle-muted.active {
+			& svg path {
+				fill: var(--caro-effect);
+			}
+		}
+	}
+</style>

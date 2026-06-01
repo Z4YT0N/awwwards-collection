@@ -1,0 +1,137 @@
+
+@media only screen and (max-width: 600px) {
+    *{
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+        font-family: "Plain Light";
+        color: #fff;
+    }
+    
+    html, body{
+        cursor:initial;
+    }
+
+    .mousefollower{
+        display: none;
+    }
+
+    #page1{
+        height: fit-content;
+        width: 100%;
+        position: relative;
+
+    }
+
+    #loader{
+        position: fixed;
+        height: 100vh;
+        width: 100vw;
+        background-color: #000000;
+        padding: 12vh 5vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .line{
+        gap:2vh;
+        line-height:7vh;
+    }
+    .line #counter{
+        gap: 1vh;
+        margin-right: 3vw;
+    
+        
+    }
+    .line #counter h4, .line #counter h5{
+        font-size:3vh;
+    } 
+    .line h1{
+        font-size: 5vh;
+        text-transform: uppercase;
+        /* background-color: red; */
+    
+    }
+    .line h6{
+        font-size:5vh;
+    }
+
+    #plswait h4{
+        font-size: 3vw;
+    }
+
+    #part-1{
+        width: 100%;
+    }
+    #part-1 div{
+        width: 100%;
+        justify-content: space-between
+    }
+
+    #part-2{
+        display: none;
+    }
+    #part-1 h3{
+        display: none; 
+    }
+
+    #web-graphic h1{
+        border-bottom:none;
+    }
+
+    #web-graphic h1:hover{
+        color:white;
+        border: none;
+        font-weight: 200;
+    }
+
+    #flag{
+        display: none;
+    }
+    #page2{
+        padding-top:10vw;
+        height: fit-content;
+        margin-left: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    #page2 #vidcont{
+        height: 30vh;
+        width: 90vw;
+    }
+
+
+    #page3{
+        padding-top:8vw;
+    }
+
+    #page4{
+        padding-top:8vw;
+    }
+
+    #page4-content{
+        margin-left:15%;
+    }
+
+    #page5{
+        min-height: fit-content;
+        padding-top:.5vw ;
+        margin: 3vw auto;
+    }
+
+    .page5-elem h1, .page5-elem2 h1{
+        -webkit-text-stroke:.2px #fff;
+    }
+    
+    .page5-elem h1 span, .page5-elem2 h1 span{
+        -webkit-text-stroke: .2px #fff;
+    }
+
+    #page6{
+        min-height:fit-content;
+        padding-top: 15vw;
+    
+    }
+    
+}

@@ -1,0 +1,160 @@
+.m{
+    height: 100vh;
+    border-bottom: 2px  solid #236bf3;
+    overflow-x: hidden;
+}
+
+.m-right{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.m-left{
+    flex: 1;
+    position: relative;
+    margin-top: 2%;
+}
+
+.m-title{
+    color: #236bf3;
+    font-weight: 700;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 70px;
+    text-transform: uppercase;
+    left: 1%;
+    position: absolute;
+}
+
+.m-exp{
+    color: #236bf3;
+    font-weight: 700;
+    font-size: 22px;
+    text-transform: uppercase;
+    left: 1%;
+    position: absolute;
+    margin-top: 180px;
+}
+
+
+.css-input {
+    padding: 6px;
+    background-color:transparent;
+	border-radius:28px;
+	border: 1px solid #236bf3;
+	cursor:pointer;
+	color: #236bf3;
+	font-size:20px;
+    position: absolute;
+    left: 60%;
+    margin-top: 100px;
+}
+
+.css-input::placeholder{
+    color: #236bf3;
+    left: 8%;
+    position: absolute;
+}
+
+.css-input:hover{
+    border: 1px solid red;
+}
+
+
+.css-input-two {
+    padding: 6px;
+    background-color:transparent;
+	border-radius:28px;
+	border: 1px solid #236bf3;
+	cursor:pointer;
+	color: #236bf3;
+	font-size:20px;
+    position: absolute;
+    left: 80%;
+    margin-top: 100px;
+}
+
+.css-input-two::placeholder{
+    color: #236bf3;
+    left: 8%;
+    position: absolute;
+}
+
+.css-input-two:hover{
+    border: 1px solid red;
+}
+
+
+.css-input-three {
+    padding: 6px 140px;
+    background-color:transparent;
+	border-radius:28px;
+	border: 1px solid #236bf3;
+	cursor:pointer;
+	color: #236bf3;
+	font-size:20px;
+    position: absolute;
+    left: 60%;
+    margin-top: 190px;
+}
+
+.css-input-three::placeholder{
+    color: #236bf3;
+    left: 4%;
+    position: absolute;
+}
+
+.css-input-three:hover{
+    border: 1px solid red;
+}
+
+
+
+.myButton-f {
+    position: relative;
+    margin-top: 160px;
+    left: 74%;
+	background-color:transparent;
+	border-radius:28px;
+	border:1px solid #236bf3;
+	display:inline-block;
+	cursor:pointer;
+	color: #236bf3;
+    font-family: 'Times New Roman', Times, serif;
+	font-size: 20px;
+	font-weight: bolder;
+    text-transform: uppercase;
+	padding:10px 33px;
+	text-decoration:none;
+}
+.myButton-f:hover {
+    font-family: Arial, Helvetica, sans-serif;
+	background-color:#236bf3;
+    color: white;
+    border: 1px solid white;
+}
+.myButton-f:active {
+	position:relative;
+	top:1px;
+}
+
+
+.m-fac{
+    color: #236bf3;
+    font-weight: 700;
+    font-size: 22px;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    top: 120px;
+    left: 57%;
+    padding: 10px;
+}
+
+.m-fac:hover{
+    color: #236bf3;
+    text-shadow:  -100px 30px  2px  red;
+
+}

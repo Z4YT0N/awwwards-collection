@@ -1,0 +1,23 @@
+@media screen {
+  #page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .plane {
+    display: block;
+    transition: all 0.5s;
+  }
+
+  .plane.canvas-texture-ready {
+    /*opacity: 0;*/
+    -webkit-text-fill-color: transparent;
+  }
+
+  .plane h1 {
+    margin: 0;
+    padding: 0 0.5em;
+    font-size: 5vw;
+  }
+}
